@@ -4,15 +4,21 @@
 \title{Controls on Sea-Air CO$_{2}$ Flux in EBUS}
 \author{Riley X. Brady}
 \date{\today}
+\setlength\parindent{0pt}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
 
 \begin{document}
 
 \maketitle
 \begin{abstract}
-	Test
+\noindent Working to understand what controls historical variability in Sea-Air CO$_{2}$ Flux in Eastern Boundary Upwelling Systems. I use FG\_CO2 output from the CESM Large Ensemble and correlate it to various climate indices derived from model output.
 \end{abstract}
 
+\section{California Current}
 
-\section{}
+\subsection{Study Site}
+For simplicity, I am using the latitudinal bounds set up by \citet{Chavez:2009}. This equates to 34N - 44N for the CCS. In terms of longitude, I want to approach it similarly to \citet{Turi:2014}, generating a 100km band (0-100km), a near-offshore band (100km-400km), and a far-offshore band (400km-800km). I can use the lon\_bounds that comes with the model output (since longitude varies with latitude). This can help to standardize the sections we're looking at and differentiate between coastal and curl-driven upwelling areas.
 
+\bibliography{../../EBUS_BGC_Bibliography.bib}
 \end{document}
