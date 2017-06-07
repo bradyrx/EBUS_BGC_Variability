@@ -51,7 +51,7 @@ def main():
     ds.attrs['area units'] = "m2"
 
     # California (for now)
-    # 25N - 45N; 230E - 250E
+    
     a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, 25, 230)
     b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, 45, 250)
 

@@ -19,7 +19,10 @@ VAR=FG_CO2
 LAT=TLAT
 LON=TLONG
 AREA=TAREA
+ANGLE=ANGLET
+VAR1=HTN
+VAR2=HTE
 
 cd ${MAIN_DIR}
 
-ls *.nc | parallel 'echo {}; ncks -v FG_CO2,TLAT,TLONG,TAREA {} reduced.{}'
+ls *.nc | parallel 'echo {}; ncks -v FG_CO2,TLAT,TLONG,TAREA,ANGLET,HTE,HTN {} reduced.{}'
