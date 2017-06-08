@@ -15,14 +15,7 @@
 # This makes it easier to manage when loading a bunch of files into xArray.
 
 MAIN_DIR=/glade/scratch/rbrady/fgco2_monthly
-VAR=FG_CO2
-LAT=TLAT
-LON=TLONG
-AREA=TAREA
-ANGLE=ANGLET
-VAR1=HTN
-VAR2=HTE
 
 cd ${MAIN_DIR}
 
-ls *.nc | parallel 'echo {}; ncks -v FG_CO2,TLAT,TLONG,TAREA,ANGLET,HTE,HTN {} reduced.{}'
+ls *.nc | parallel 'echo {}; ncks -v FG_CO2,TLAT,TLONG,TAREA,ANGLET,DXT,DYT,REGION_MASK {} reduced.{}'

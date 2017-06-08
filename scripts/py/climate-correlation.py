@@ -72,6 +72,7 @@ def main():
            '025', '026', '027', '028', '029', '030', '031', '032', '033',
            '034', '035', '101', '102', '103', '104', '105']
     ds_gas['ensemble'] = ens
+    ds_gas = ds_gas.where(ds_gas['TLAT'] >= 34).where(ds_gas['TLAT'] <= 44)
 
     # Subtract out the ensemble mean from all members (create residuals)
     ds_residuals = ds_gas['FG_CO2'] - ds_gas['FG_CO2'].mean(dim='ensemble')

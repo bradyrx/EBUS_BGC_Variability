@@ -50,10 +50,9 @@ def main():
     ds.attrs['carbon flux units'] = "mol/m2/yr"
     ds.attrs['area units'] = "m2"
 
-    # California (for now)
-    
-    a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, 25, 230)
-    b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, 45, 250)
+    # California (for now; extensive offshore region)
+    a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, 25, 215)
+    b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, 46, 260)
 
     # Slice out CCS, cover 1920 to 2015 per Adam Phillip's climate indices.
     ds = ds.sel(nlat=slice(a, b), nlon=slice(c, d), time=slice('1920-01', '2015-12'))
