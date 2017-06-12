@@ -30,15 +30,13 @@ def smooth_series(x, len):
     return pd.rolling_mean(x, len)
 
 def seaborn_jointplot(carbonData, climateData, ensNum):
-    # Make sure these data are presented as pandas dataframes. You can do this
-    # inline below by saying "ds[ens].to_pandas()"
-    df = pd.DataFrame({'Nino3.4':climateData,
+    df = pd.DataFrame({'PDO':climateData,
                        'FG_CO2':carbonData})
     fig = plt.figure(figsize=(6,6))
     with sns.axes_style("white"):
-        sns.jointplot(x='Nino3.4', y='FG_CO2', data=df,
+        sns.jointplot(x='PDO', y='FG_CO2', data=df,
                       kind='reg', space=0, color='k')
-        plt.savefig('figs/smoothed_jointplot_nino_' + ensNum + '.png', dpi=1000,
+        plt.savefig('smoothed_jointplot_PDO_' + ensNum + '.png', dpi=1000,
                     transparent=True)
         plt.close(fig)
 
@@ -150,28 +148,32 @@ def main():
         ts3 = ds_cvdp['pdo'][idx, 11::].values
         ts4 = ds_cvdp['npo'][idx, 11::].values
         print "Working on simulation " + str(idx+1) + " of 35..."
+        
+        # +++ Create Seaborn stats plots
+        ensNum = str(idx)
+        seaborn_jointplot(ts1, ts3, ensNum)  
 
-        # Run Linear regressions.
-        slope, r, r2, p = linear_regression(ts2, ts1)
-        df_enso['Slope'][idx] = slope
-        df_enso['R Value'][idx] = r
-        df_enso['R Squared'][idx] = r2
-        df_enso['P-Value'][idx] = p
+        # +++ Run Linear regressions.
+        # slope, r, r2, p = linear_regression(ts2, ts1)
+        # df_enso['Slope'][idx] = slope
+        # df_enso['R Value'][idx] = r
+        # df_enso['R Squared'][idx] = r2
+        # df_enso['P-Value'][idx] = p
 
-        slope, r, r2, p = linear_regression(ts3, ts1)
-        df_pdo['Slope'][idx] = slope
-        df_pdo['R Value'][idx] = r
-        df_pdo['R Squared'][idx] = r2
-        df_pdo['P-Value'][idx] = p
+        # slope, r, r2, p = linear_regression(ts3, ts1)
+        # df_pdo['Slope'][idx] = slope
+        # df_pdo['R Value'][idx] = r
+        # df_pdo['R Squared'][idx] = r2
+        # df_pdo['P-Value'][idx] = p
 
-        slope, r, r2, p = linear_regression(ts4, ts1)
-        df_npo['Slope'][idx] = slope
-        df_npo['R Value'][idx] = r
-        df_npo['R Squared'][idx] = r2
-        df_npo['P-Value'][idx] = p
-    df_enso.to_csv('smoothed_fgco2_vs_enso')
-    df_pdo.to_csv('smoothed_fgco2_vs_pdo')
-    df_npo.to_csv('smoothed_fgco2_vs_npo')
+        # slope, r, r2, p = linear_regression(ts4, ts1)
+        # df_npo['Slope'][idx] = slope
+        # df_npo['R Value'][idx] = r
+        # df_npo['R Squared'][idx] = r2
+        # df_npo['P-Value'][idx] = p
+    # df_enso.to_csv('smoothed_fgco2_vs_enso')
+    # df_pdo.to_csv('smoothed_fgco2_vs_pdo')
+    #df_npo.to_csv('smoothed_fgco2_vs_npo')
 
 if __name__ == '__main__':
     main()
