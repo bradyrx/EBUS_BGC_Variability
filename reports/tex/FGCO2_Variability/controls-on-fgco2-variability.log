@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUN 2017 10:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUN 2017 10:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -151,39 +151,39 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 15.
 
-<../../figs/calcs-study-site.png, id=1, 433.62pt x 289.08pt>
-File: ../../figs/calcs-study-site.png Graphic file (type png)
+<../../figs/CCS/study-site/calcs-study-site.png, id=1, 433.62pt x 289.08pt>
+File: ../../figs/CCS/study-site/calcs-study-site.png Graphic file (type png)
 
-<use ../../figs/calcs-study-site.png>
-Package pdftex.def Info: ../../figs/calcs-study-site.png used on input line 25.
-
+<use ../../figs/CCS/study-site/calcs-study-site.png>
+Package pdftex.def Info: ../../figs/CCS/study-site/calcs-study-site.png used on
+ input line 25.
 (pdftex.def)             Requested size: 228.0pt x 152.00305pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 26.
- (./controls-on-fgco2-variability.bbl
-[1
+
+(./controls-on-fgco2-variability.bbl [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../../f
-igs/calcs-study-site.png>]) [2] (./controls-on-fgco2-variability.aux) ) 
+igs/CCS/study-site/calcs-study-site.png>]) [2] (./controls-on-fgco2-variability
+.aux) ) 
 Here is how much of TeX's memory you used:
  1854 strings out of 493014
- 26146 string characters out of 6133351
+ 26221 string characters out of 6133351
  86366 words of memory out of 5000000
  5392 multiletter control sequences out of 15000+600000
  9936 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,6n,23p,501b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local
-/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
-6/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
+2.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 Output written on controls-on-fgco2-variability.pdf (2 pages, 150308 bytes).
 PDF statistics:
  54 PDF objects out of 1000 (max. 8388607)
