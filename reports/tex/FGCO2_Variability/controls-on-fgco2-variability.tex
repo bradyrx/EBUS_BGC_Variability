@@ -1,5 +1,5 @@
 \documentclass[]{article}
-
+\usepackage{graphicx}			
 %opening
 \title{Controls on Sea-Air CO$_{2}$ Flux in EBUS}
 \author{Riley X. Brady}
@@ -18,7 +18,14 @@
 \section{California Current}
 
 \subsection{Study Site}
-For simplicity, I am using the latitudinal bounds set up by \citet{Chavez:2009}. This equates to 34N - 44N for the CCS. In terms of longitude, I want to approach it similarly to \citet{Turi:2014}, generating a 100km band (0-100km), a near-offshore band (100km-400km), and a far-offshore band (400km-800km). I can use the lon\_bounds that comes with the model output (since longitude varies with latitude). This can help to standardize the sections we're looking at and differentiate between coastal and curl-driven upwelling areas.
+For simplicity, I am using the latitudinal bounds set up by \citet{Chavez:2009}. This equates to 34N - 44N for the CCS. In terms of longitude, I want to approach it similarly to \citet{Turi:2014}. In the future, I can make this banded if needed (0-100km, 100-400km, etc.), but for now, 4 regions by 3 bands per region is a lot to work with. Instead, I am just restricting it to 800km offshore and bounded by 10 degrees of latitude for standardization.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=19pc]{../../figs/calcs-study-site.png}
+	\caption{Time-averaged (1920-2015) and ensemble-averaged sea-air CO$_{2}$ flux (FGCO2). Simply depicting the region over which time series are analyzed/correlated with respect to climate indices.}
+\end{figure}
+
 
 \bibliography{../../EBUS_BGC_Bibliography.bib}
 \end{document}
