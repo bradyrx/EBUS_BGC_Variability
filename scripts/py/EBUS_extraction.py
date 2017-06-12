@@ -4,8 +4,6 @@
 # Purpose: Take in a global netCDF, extract an upwelling system, save as a netCDF all cleaned up with datetime
 # axis and so on. Meant to be used with HTC (e.g. with GNU Parallel).
 
-# NOTE : For now, this script is coded for the CCS and for FG_CO2 (as it contains the conversion in it). It can be modified in the future to be more robust.
-
 # INPUT 1 : NetCDF of ensemble member to be worked on. (Ideally global; should be full path name, e.g. /glade/scratch/.../001.nc)
 # INPUT 2 : Variable name (shell string).
 # INPUT 3 : Output directory, where processed .nc files will land. The directory should end in a backslash.
@@ -17,6 +15,39 @@ import sys
 import numpy as np
 import pandas as pd
 import xarray as xr
+
+def detect_EBUS(x):
+    # Will return latitude and longitude boundings for the selected region.
+    # x should be a string from the following:
+        # CalCS : California Current
+        # BenCS : Benguela Current
+        # CanCS : Canary Current
+        # HumCS : Humboldt Current
+    if x == "CalCS":
+        lat1 = 25
+        lat2 = 46
+        lon1 = 215
+        lon2 = 260
+    elif x == "BenCS":
+        lat1 = -30
+        lat2 = -16
+        lon1 = 0
+        lon2 = 20
+    elif x == "CanCS":
+        lat1 = 10
+        lat2 = 24
+        lon1 = 330
+        lon2 = 355
+    elif x == "HumCS":
+        lat1 = -20
+        lat2 = 0
+        lon1 = 260
+        lon2 = 290
+    else:
+        raise ValueError('\n' + 'Must select from the following EBUS strings:'
+                         + '\n' + 'CalCS' + '\n' + 'CanCS' + '\n' + 'BenCS' +
+                         '\n' + 'HumCS')
+    return lat1, lat2, lon1, lon2
 
 def find_indices(latGrid, lonGrid, latPoint, lonPoint):
     dx = lonGrid - lonPoint
@@ -37,7 +68,8 @@ def main():
 
     # Convert to sea-air flux in mol/m2/yr
     dataVar = sys.argv[2] # Input on command line; usually a shell variable.
-    ds[dataVar] = ds[dataVar] * ((-1 * 3600 * 24 * 365.25) / (1000 * 100))
+    if dataVar == "FG_CO2":
+        ds[dataVar] = ds[dataVar] * ((-1 * 3600 * 24 * 365.25) / (1000 * 100))
     
     # Convert area to m2
     ds['TAREA'] = ds['TAREA'] / (100 * 100)
@@ -51,8 +83,8 @@ def main():
     ds.attrs['area units'] = "m2"
 
     # California (for now; extensive offshore region)
-    a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, 25, 215)
-    b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, 46, 260)
+    a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat1, lon1)
+    b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat2, lon2)
 
     # Slice out CCS, cover 1920 to 2015 per Adam Phillip's climate indices.
     ds = ds.sel(nlat=slice(a, b), nlon=slice(c, d), time=slice('1920-01', '2015-12'))
