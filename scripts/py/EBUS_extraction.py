@@ -6,7 +6,8 @@
 
 # INPUT 1 : NetCDF of ensemble member to be worked on. (Ideally global; should be full path name, e.g. /glade/scratch/.../001.nc)
 # INPUT 2 : Variable name (shell string).
-# INPUT 3 : Output directory, where processed .nc files will land. The directory should end in a backslash.
+# INPUT 3 : EBUS identifier : CalCS, BenCS, CanCS, HumCS
+# INPUT 4 : Output directory, where processed .nc files will land. The directory should end in a backslash.
 
 # Allow a file input to be referenced.
 import sys
@@ -67,7 +68,7 @@ def main():
     ds.attrs = {} # Clear out the legacy attributes from CESM and NCO.
 
     # Convert to sea-air flux in mol/m2/yr
-    dataVar = sys.argv[2] # Input on command line; usually a shell variable.
+    dataVar = sys.argv[2] # Variable name (e.g. FG_CO2) 
     if dataVar == "FG_CO2":
         ds[dataVar] = ds[dataVar] * ((-1 * 3600 * 24 * 365.25) / (1000 * 100))
     
@@ -81,8 +82,16 @@ def main():
     # Add in some metadata
     ds.attrs['carbon flux units'] = "mol/m2/yr"
     ds.attrs['area units'] = "m2"
-
-    # California (for now; extensive offshore region)
+    
+    # Get region bounds for EBU. If Benguela, need to convert the longitude
+    # grid to go over the equator.
+    EBUS_NAME = sys.argv[3]
+    if EBUS_NAME == "BenCS":
+        lon = np.asarray(ds['TLONG'])
+        mask = (lon > 180)
+        lon[mask] = lon[mask] - 360
+        ds['TLONG'] = (('nlat','nlon'), lon) # Now -180 to 180 range.
+    lat1, lat2, lon1, lon2 = detect_EBUS(EBUS_NAME)
     a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat1, lon1)
     b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat2, lon2)
 
@@ -91,8 +100,8 @@ def main():
 
     # File output as netCDF
     ens = fileName[-20:-17] # This works if you maintain the standard naming convention of VAR.ENS.192001-210012.nc
-    newFile = dataVar + '.' + ens + '.CCS.192001-201512.nc'
-    outDir = sys.argv[3]
+    newFile = dataVar + '.' + ens + '.' + EBUS_NAME + '.192001-201512.nc'
+    outDir = sys.argv[4]
     ds.to_netcdf(outDir + newFile)
 
 if  __name__ == '__main__':

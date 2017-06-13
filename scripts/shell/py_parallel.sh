@@ -11,16 +11,18 @@
 
 # Author  : Riley X. Brady
 # Date    : 06/01/2017
-# Purpose : Use GNU Parallel to do HTC on a python script. Generally used for an ensemble.
+# Purpose : Use basic UNIX constructs to throughput a number of ensemble members into a
+# Python script (with independent operations of course).
 
 script=EBUS_extraction.py
 VAR=FG_CO2
-OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/
+EBU=HumCS
+OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/${VAR}/${EBU}/
 
 time (
 for INPUT in /glade/scratch/rbrady/fgco2_monthly/reduced*.nc
 do
-    python ${script} ${INPUT} ${VAR} ${OUT} &
+    python ${script} ${INPUT} ${VAR} ${EBU} ${OUT} &
 done
 wait
 )
