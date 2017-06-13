@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 JUN 2017 15:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 JUN 2017 13:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -251,107 +251,182 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 23.
- <../../figs/CCS/study-site/calcs-study-site.png, id=1, 433.62pt x 289.08pt>
-File: ../../figs/CCS/study-site/calcs-study-site.png Graphic file (type png)
 
-<use ../../figs/CCS/study-site/calcs-study-site.png>
-Package pdftex.def Info: ../../figs/CCS/study-site/calcs-study-site.png used on
- input line 32.
+<../../figs/calcs/study-site/calcs-study-site.png, id=1, 433.62pt x 289.08pt>
+File: ../../figs/calcs/study-site/calcs-study-site.png Graphic file (type png)
+
+<use ../../figs/calcs/study-site/calcs-study-site.png>
+Package pdftex.def Info: ../../figs/calcs/study-site/calcs-study-site.png used 
+on input line 31.
 (pdftex.def)             Requested size: 228.0pt x 152.00305pt.
 
-<../../figs/CCS/timeseries/ccs-unfiltered-fgco2-series-example.png, id=3, 1300.
-86pt x 289.08pt>
-File: ../../figs/CCS/timeseries/ccs-unfiltered-fgco2-series-example.png Graphic
- file (type png)
+<../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png, id=3, 130
+0.86pt x 289.08pt>
+File: ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png Graph
+ic file (type png)
 
-<use ../../figs/CCS/timeseries/ccs-unfiltered-fgco2-series-example.png>
-Package pdftex.def Info: ../../figs/CCS/timeseries/ccs-unfiltered-fgco2-series-
-example.png used on input line 41.
+<use ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png>
+Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-serie
+s-example.png used on input line 40.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../../f
-igs/CCS/study-site/calcs-study-site.png>]
-<../../figs/CCS/timeseries/ccs-filtered-fgco2-series-example.png, id=17, 1300.8
+igs/calcs/study-site/calcs-study-site.png>]
+<../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png, id=17, 1300
+.86pt x 289.08pt>
+File: ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png Graphic
+ file (type png)
+
+<use ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png>
+Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-
+example.png used on input line 48.
+(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+
+[2 <../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png> <../..
+/figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png>]
+<../../figs/calcs/fft/fft-CCS-001-frequencyHz.png, id=23, 1300.86pt x 289.08pt>
+File: ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png Graphic file (type png)
+<use ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png>
+Package pdftex.def Info: ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png used 
+on input line 57.
+(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+
+<../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png, id=24, 130
+0.86pt x 289.08pt>
+File: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png Graphi
+c file (type png)
+
+<use ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png>
+Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nin
+o34-plot.png used on input line 65.
+(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+
+<../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png, id=25, 1300.8
 6pt x 289.08pt>
-File: ../../figs/CCS/timeseries/ccs-filtered-fgco2-series-example.png Graphic f
+File: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png Graphic f
 ile (type png)
 
-<use ../../figs/CCS/timeseries/ccs-filtered-fgco2-series-example.png>
-Package pdftex.def Info: ../../figs/CCS/timeseries/ccs-filtered-fgco2-series-ex
-ample.png used on input line 49.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
- [2 <../../figs/CCS/timeseries/ccs-unfiltered-fgco2-series-example.png> <../../
-figs/CCS/timeseries/ccs-filtered-fgco2-series-example.png>]
-<../../figs/CCS/fft/fft-CCS-001-frequencyHz.png, id=23, 1300.86pt x 289.08pt>
-File: ../../figs/CCS/fft/fft-CCS-001-frequencyHz.png Graphic file (type png)
-
-<use ../../figs/CCS/fft/fft-CCS-001-frequencyHz.png>
-Package pdftex.def Info: ../../figs/CCS/fft/fft-CCS-001-frequencyHz.png used on
- input line 58.
+<use ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png>
+Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo
+-plot.png used on input line 71.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
-<../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png, id=24, 1300.
-86pt x 289.08pt>
-File: ../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png Graphic 
-file (type png)
+<../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png, id
+=26, 578.16pt x 578.16pt>
+File: ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.pn
+g Graphic file (type png)
 
-<use ../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png>
-Package pdftex.def Info: ../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-nino3
-4-plot.png used on input line 66.
+<use ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png
+>
+Package pdftex.def Info: ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Cor
+relation-Scatter.png used on input line 81.
+(pdftex.def)             Requested size: 348.0pt x 347.9926pt.
+ [3 <../../figs/calcs/fft/fft-CCS-001-frequencyHz.png> <../../figs/calcs/timese
+ries/ccs-smoothed-fgco2-and-nino34-plot.png> <../../figs/calcs/timeseries/ccs-s
+moothed-fgco2-and-pdo-plot.png>]
+<../../figs/calcs/histograms/calcs-correlation-histograms.png, id=33, 1300.86pt
+ x 867.24pt>
+File: ../../figs/calcs/histograms/calcs-correlation-histograms.png Graphic file
+ (type png)
+
+<use ../../figs/calcs/histograms/calcs-correlation-histograms.png>
+Package pdftex.def Info: ../../figs/calcs/histograms/calcs-correlation-histogra
+ms.png used on input line 87.
+(pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4 <../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png>
+]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5 <../../figs/calcs/histograms/calcs-correlation-histograms.png>] [6] [7]
+[8
+
+]
+<../../figs/humcs/study-site/humboldt-current-study-site.png, id=53, 433.62pt x
+ 433.62pt>
+File: ../../figs/humcs/study-site/humboldt-current-study-site.png Graphic file 
+(type png)
+ <use ../../figs/humcs/study-site/humboldt-current-study-site.png>
+Package pdftex.def Info: ../../figs/humcs/study-site/humboldt-current-study-sit
+e.png used on input line 198.
+(pdftex.def)             Requested size: 348.0pt x 348.01466pt.
+
+<../../figs/humcs/study-site/humboldt-current-DXT-Cum.png, id=54, 578.16pt x 39
+7.485pt>
+File: ../../figs/humcs/study-site/humboldt-current-DXT-Cum.png Graphic file (ty
+pe png)
+ <use ../../figs/humcs/study-site/humboldt-current-DXT-Cum.png>
+Package pdftex.def Info: ../../figs/humcs/study-site/humboldt-current-DXT-Cum.p
+ng used on input line 204.
+(pdftex.def)             Requested size: 348.0pt x 239.2449pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png, id=55, 1300
+.86pt x 289.08pt>
+File: ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png Graphic
+ file (type png)
+
+<use ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png>
+Package pdftex.def Info: ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-
+example.png used on input line 213.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
-<../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png, id=25, 1300.86p
-t x 289.08pt>
-File: ../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png Graphic fil
-e (type png)
-
-<use ../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png>
-Package pdftex.def Info: ../../figs/CCS/timeseries/ccs-smoothed-fgco2-and-pdo-p
-lot.png used on input line 72.
+<../../figs/humcs/fft/fft-HCS-001-frequencyHz.png, id=56, 1300.86pt x 289.08pt>
+File: ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png Graphic file (type png)
+<use ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png>
+Package pdftex.def Info: ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png used 
+on input line 219.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
- [3 <../../figs/CCS/fft/fft-CCS-001-frequencyHz.png> <../../figs/CCS/timeseries
-/ccs-smoothed-fgco2-and-nino34-plot.png> <../../figs/CCS/timeseries/ccs-smoothe
-d-fgco2-and-pdo-plot.png>]
-<../../figs/CCS/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png, id=3
-2, 578.16pt x 578.16pt>
-File: ../../figs/CCS/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png 
-Graphic file (type png)
 
-<use ../../figs/CCS/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png>
-Package pdftex.def Info: ../../figs/CCS/correlations_scatter/CCS-ENSO-PDO-Corre
-lation-Scatter.png used on input line 82.
-(pdftex.def)             Requested size: 300.0pt x 300.00092pt.
 
-<../../figs/CCS/correlations_scatter/ensemble-correlation-distribution-enso+pdo
-.png, id=33, 1300.86pt x 433.62pt>
-File: ../../figs/CCS/correlations_scatter/ensemble-correlation-distribution-ens
-o+pdo.png Graphic file (type png)
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<use ../../figs/CCS/correlations_scatter/ensemble-correlation-distribution-enso
-+pdo.png>
-Package pdftex.def Info: ../../figs/CCS/correlations_scatter/ensemble-correlati
-on-distribution-enso+pdo.png used on input line 88.
-(pdftex.def)             Requested size: 468.0pt x 155.99721pt.
 
-Underfull \hbox (badness 4341) in paragraph at lines 89--89
-[]\OT1/cmr/m/it/12 Figure 8: |Dis-tri-bu-tion of cor-re-la-tions be-tween smoot
-hed FGCO2 anoma-lies and
- []
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[4 <../../figs/CCS/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png> <
-../../figs/CCS/correlations_scatter/ensemble-correlation-distribution-enso+pdo.
-png>] [5] (./controls-on-fgco2-variability.bbl [6]) [7]
+
+<../../figs/humcs/histograms/humcs-correlation-histograms.png, id=57, 1300.86pt
+ x 867.24pt>
+File: ../../figs/humcs/histograms/humcs-correlation-histograms.png Graphic file
+ (type png)
+
+<use ../../figs/humcs/histograms/humcs-correlation-histograms.png>
+Package pdftex.def Info: ../../figs/humcs/histograms/humcs-correlation-histogra
+ms.png used on input line 228.
+(pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
+ [9
+
+ <../../figs/humcs/study-site/humboldt-current-study-site.png>] [10 <../../figs
+/humcs/study-site/humboldt-current-DXT-Cum.png> <../../figs/humcs/timeseries/hc
+s-filtered-fgco2-series-example.png> <../../figs/humcs/fft/fft-HCS-001-frequenc
+yHz.png>]
+[11 <../../figs/humcs/histograms/humcs-correlation-histograms.png>] [12]
+[13] [14
+
+] (./controls-on-fgco2-variability.bbl) [15
+
+]
 (./controls-on-fgco2-variability.aux) ) 
 Here is how much of TeX's memory you used:
- 3512 strings out of 493014
- 56002 string characters out of 6133351
- 129882 words of memory out of 5000000
- 7020 multiletter control sequences out of 15000+600000
+ 3549 strings out of 493014
+ 57552 string characters out of 6133351
+ 137882 words of memory out of 5000000
+ 7047 multiletter control sequences out of 15000+600000
  11163 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,39p,611b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,9n,39p,883b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/
@@ -362,10 +437,10 @@ e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
 ublic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb>
-Output written on controls-on-fgco2-variability.pdf (7 pages, 802045 bytes).
+Output written on controls-on-fgco2-variability.pdf (15 pages, 1172452 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
