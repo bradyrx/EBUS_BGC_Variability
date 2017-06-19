@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 JUN 2017 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 JUN 2017 12:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -155,37 +155,49 @@ Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \@lastruleclass=\count95
 \@thisrulewidth=\dimen125
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks16
+\SOUL@lasttoken=\toks17
+\SOUL@cmds=\toks18
+\SOUL@buffer=\toks19
+\SOUL@token=\toks20
+\SOUL@spaceskip=\skip45
+\SOUL@ttwidth=\dimen126
+\SOUL@uldp=\dimen127
+\SOUL@ulht=\dimen128
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen126
-\captionmargin@=\dimen127
-\captionwidth=\dimen128
-\caption@tempdima=\dimen129
-\caption@indent=\dimen130
-\caption@parindent=\dimen131
-\caption@hangindent=\dimen132
+\captionmargin=\dimen129
+\captionmargin@=\dimen130
+\captionwidth=\dimen131
+\caption@tempdima=\dimen132
+\caption@indent=\dimen133
+\caption@parindent=\dimen134
+\caption@hangindent=\dimen135
 )
 \c@ContinuedFloat=\count96
 )
 (./controls-on-fgco2-variability.aux)
 \openout1 = `controls-on-fgco2-variability.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -224,40 +236,40 @@ LaTeX Font Info:    ... okay on input line 19.
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count97
-\scratchdimen=\dimen133
+\scratchdimen=\dimen136
 \scratchbox=\box26
 \nofMPsegments=\count98
 \nofMParguments=\count99
-\everyMPshowfont=\toks16
+\everyMPshowfont=\toks21
 \MPscratchCnt=\count100
-\MPscratchDim=\dimen134
+\MPscratchDim=\dimen137
 \MPnumerator=\count101
 \makeMPintoPDFobject=\count102
-\everyMPtoPDFconversion=\toks17
+\everyMPtoPDFconversion=\toks22
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 21.
+(Font)              <20.74> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 21.
+(Font)              <14.4> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 21.
+(Font)              <12> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 21.
+(Font)              <7> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 23.
+(Font)              <10.95> on input line 25.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 23.
+(Font)              <8> on input line 25.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 23.
+(Font)              <6> on input line 25.
 
 <../../figs/calcs/study-site/calcs-study-site.png, id=1, 433.62pt x 289.08pt>
 File: ../../figs/calcs/study-site/calcs-study-site.png Graphic file (type png)
 
 <use ../../figs/calcs/study-site/calcs-study-site.png>
 Package pdftex.def Info: ../../figs/calcs/study-site/calcs-study-site.png used 
-on input line 31.
+on input line 33.
 (pdftex.def)             Requested size: 228.0pt x 152.00305pt.
 
 <../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png, id=3, 130
@@ -267,7 +279,7 @@ ic file (type png)
 
 <use ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png>
 Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-serie
-s-example.png used on input line 40.
+s-example.png used on input line 42.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 [1
@@ -281,7 +293,7 @@ File: ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png Graphic
 
 <use ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png>
 Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-
-example.png used on input line 48.
+example.png used on input line 50.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 [2 <../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png> <../..
@@ -290,7 +302,7 @@ example.png used on input line 48.
 File: ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png Graphic file (type png)
 <use ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png>
 Package pdftex.def Info: ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png used 
-on input line 57.
+on input line 59.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 <../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png, id=24, 130
@@ -300,7 +312,7 @@ c file (type png)
 
 <use ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png>
 Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nin
-o34-plot.png used on input line 65.
+o34-plot.png used on input line 67.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 <../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png, id=25, 1300.8
@@ -310,7 +322,7 @@ ile (type png)
 
 <use ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png>
 Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo
--plot.png used on input line 71.
+-plot.png used on input line 73.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 <../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png, id
@@ -321,7 +333,7 @@ g Graphic file (type png)
 <use ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png
 >
 Package pdftex.def Info: ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Cor
-relation-Scatter.png used on input line 81.
+relation-Scatter.png used on input line 83.
 (pdftex.def)             Requested size: 348.0pt x 347.9926pt.
  [3 <../../figs/calcs/fft/fft-CCS-001-frequencyHz.png> <../../figs/calcs/timese
 ries/ccs-smoothed-fgco2-and-nino34-plot.png> <../../figs/calcs/timeseries/ccs-s
@@ -333,7 +345,7 @@ File: ../../figs/calcs/histograms/calcs-correlation-histograms.png Graphic file
 
 <use ../../figs/calcs/histograms/calcs-correlation-histograms.png>
 Package pdftex.def Info: ../../figs/calcs/histograms/calcs-correlation-histogra
-ms.png used on input line 87.
+ms.png used on input line 89.
 (pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
 
 
@@ -357,7 +369,7 @@ File: ../../figs/humcs/study-site/humboldt-current-study-site.png Graphic file
 (type png)
  <use ../../figs/humcs/study-site/humboldt-current-study-site.png>
 Package pdftex.def Info: ../../figs/humcs/study-site/humboldt-current-study-sit
-e.png used on input line 198.
+e.png used on input line 200.
 (pdftex.def)             Requested size: 348.0pt x 348.01466pt.
 
 <../../figs/humcs/study-site/humboldt-current-DXT-Cum.png, id=54, 578.16pt x 39
@@ -366,7 +378,7 @@ File: ../../figs/humcs/study-site/humboldt-current-DXT-Cum.png Graphic file (ty
 pe png)
  <use ../../figs/humcs/study-site/humboldt-current-DXT-Cum.png>
 Package pdftex.def Info: ../../figs/humcs/study-site/humboldt-current-DXT-Cum.p
-ng used on input line 204.
+ng used on input line 206.
 (pdftex.def)             Requested size: 348.0pt x 239.2449pt.
 
 
@@ -380,14 +392,14 @@ File: ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png Graphic
 
 <use ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png>
 Package pdftex.def Info: ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-
-example.png used on input line 213.
+example.png used on input line 215.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 <../../figs/humcs/fft/fft-HCS-001-frequencyHz.png, id=56, 1300.86pt x 289.08pt>
 File: ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png Graphic file (type png)
 <use ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png>
 Package pdftex.def Info: ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png used 
-on input line 219.
+on input line 221.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
 
@@ -404,7 +416,7 @@ File: ../../figs/humcs/histograms/humcs-correlation-histograms.png Graphic file
 
 <use ../../figs/humcs/histograms/humcs-correlation-histograms.png>
 Package pdftex.def Info: ../../figs/humcs/histograms/humcs-correlation-histogra
-ms.png used on input line 228.
+ms.png used on input line 230.
 (pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
  [9
 
@@ -413,18 +425,32 @@ ms.png used on input line 228.
 s-filtered-fgco2-series-example.png> <../../figs/humcs/fft/fft-HCS-001-frequenc
 yHz.png>]
 [11 <../../figs/humcs/histograms/humcs-correlation-histograms.png>] [12]
-[13] [14
+[13]
+<../../figs/bencs/study-site/benguela-current-study-site.png, id=79, 433.62pt x
+ 433.62pt>
+File: ../../figs/bencs/study-site/benguela-current-study-site.png Graphic file 
+(type png)
+ <use ../../figs/bencs/study-site/benguela-current-study-site.png>
+Package pdftex.def Info: ../../figs/bencs/study-site/benguela-current-study-sit
+e.png used on input line 343.
+(pdftex.def)             Requested size: 469.75502pt x 469.7781pt.
 
-] (./controls-on-fgco2-variability.bbl) [15
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14
+
+] [15 <../../figs/bencs/study-site/benguela-current-study-site.png>]
+[16] [17] (./controls-on-fgco2-variability.bbl) [18
 
 ]
 (./controls-on-fgco2-variability.aux) ) 
 Here is how much of TeX's memory you used:
- 3549 strings out of 493014
- 57552 string characters out of 6133351
- 137882 words of memory out of 5000000
- 7047 multiletter control sequences out of 15000+600000
- 11163 words of font info for 39 fonts, out of 8000000 for 9000
+ 3728 strings out of 493014
+ 60032 string characters out of 6133351
+ 141356 words of memory out of 5000000
+ 7219 multiletter control sequences out of 15000+600000
+ 11476 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,9n,39p,883b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/font
@@ -437,10 +463,10 @@ e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
 ublic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb>
-Output written on controls-on-fgco2-variability.pdf (15 pages, 1172452 bytes).
+Output written on controls-on-fgco2-variability.pdf (18 pages, 1240377 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 127 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

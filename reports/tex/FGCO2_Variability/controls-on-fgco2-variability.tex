@@ -6,6 +6,8 @@
 \usepackage{natbib}
 \usepackage{booktabs}
 \bibliographystyle{plainnat}
+\usepackage{soul}
+
 \usepackage[format=plain,
 labelfont=it,
 textfont=it]{caption}
@@ -331,6 +333,100 @@ I regress the smoothed FGCO2 anomalies onto four predictors for the HumCS: Nino3
 \clearpage
 \subsection{Summary}
 Variability in FGCO2 in the HumCS has a stronger relationship with conventional Pacific climate indices (PDO and Nino3.4) than does variability in the CalCS. Interestingly, FGCO2 anomalies vary in the opposite direction of ENSO/PDO, while CalCS anomalies vary in the same direction. Perhaps the HumCS gas flux is controlled mainly by upwelling of DIC-rich waters, and during El Ni\~no events, that upwelling is supressed, and thus gas flux weakens. 
+
+\section{Benguela Current}
+\subsection{Study Site}
+
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/bencs/study-site/benguela-current-study-site.png}
+	\caption{800km offshore swath in the Benguela Current over which correlations are conducted. The data are time averaged from 1920-2015 for one ensemble member.}
+	\label{fig:ben-study-site}
+\end{figure}
+
+\subsection{Regressing onto Climate Indices}
+
+\newpage
+\begin{table}[p!]
+	\centering
+	\caption{Results of the regression analysis between FGCO2 in the Benguela Current and the Nino3.4 index.}
+\begin{tabular}{c | c c c c}
+	\toprule
+	\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} & P-Value \\
+	\midrule
+	001 &  -0.00 &    -0.01 &       0.00 &     0.72 \\
+	002 &  -0.00 &    -0.01 &       0.00 &     0.86 \\
+	009 &  -0.00 &    -0.00 &       0.00 &     0.87 \\
+	010 &   0.00 &     0.00 &       0.00 &     1.00 \\
+	011 &   0.05 &     0.13 &       0.02 &     0.00 \\
+	012 &  -0.05 &    -0.11 &       0.01 &     0.00 \\
+	013 &  -0.01 &    -0.03 &       0.00 &     0.39 \\
+	014 &  -0.00 &    -0.00 &       0.00 &     0.88 \\
+	015 &  -0.00 &    -0.01 &       0.00 &     0.76 \\
+	016 &   0.02 &     0.03 &       0.00 &     0.25 \\
+	017 &  -0.02 &    -0.04 &       0.00 &     0.17 \\
+	018 &  -0.07 &    -0.14 &       0.02 &     0.00 \\
+	019 &   0.04 &     0.09 &       0.01 &     0.00 \\
+	020 &  -0.01 &    -0.02 &       0.00 &     0.53 \\
+	021 &   0.01 &     0.02 &       0.00 &     0.40 \\
+	022 &   0.06 &     0.12 &       0.01 &     0.00 \\
+	023 &  -0.03 &    -0.05 &       0.00 &     0.07 \\
+	024 &   0.06 &     0.13 &       0.02 &     0.00 \\
+	025 &  -0.02 &    -0.03 &       0.00 &     0.27 \\
+	026 &  -0.04 &    -0.09 &       0.01 &     0.00 \\
+	027 &   0.07 &     0.14 &       0.02 &     0.00 \\
+	028 &   0.06 &     0.13 &       0.02 &     0.00 \\
+	029 &   0.01 &     0.02 &       0.00 &     0.53 \\
+	030 &   0.00 &     0.00 &       0.00 &     0.96 \\
+	031 &  -0.02 &    -0.04 &       0.00 &     0.15 \\
+	032 &  -0.02 &    -0.04 &       0.00 &     0.20 \\
+	033 &  -0.03 &    -0.08 &       0.01 &     0.01 \\
+	034 &  -0.05 &    -0.11 &       0.01 &     0.00 \\
+	035 &  -0.03 &    -0.07 &       0.00 &     0.03 \\
+	101 &  -0.03 &    -0.06 &       0.00 &     0.06 \\
+	102 &  -0.02 &    -0.04 &       0.00 &     0.14 \\
+	103 &  -0.00 &    -0.01 &       0.00 &     0.79 \\
+	104 &  -0.01 &    -0.02 &       0.00 &     0.47 \\
+	105 &   0.01 &     0.01 &       0.00 &     0.63 \\
+	\bottomrule
+	\textbf{Mean} & 0.00 & -0.01 & 0.01 & \\
+	\textbf{Std. Dev} & 0.03 & 0.07 & 0.01 & \\
+\end{tabular}
+	\label{tab:bencs:enso}
+\end{table}
+
+\begin{table}[p!]
+	\centering
+	\caption{Results of the regression analysis between FGCO2 in the Benguela Current and the AMO index. Simulations with insignificant results (p $>$ 0.05) were removed from the table.}
+\begin{tabular}{c | c c c c}
+	\toprule
+	\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} & P-Value \\
+	\midrule
+	001 &   0.47 &     0.14 &       0.02 &     0.00 \\
+	002 &   0.71 &     0.17 &       0.03 &     0.00 \\
+	010 &   0.23 &     0.07 &       0.00 &     0.02 \\
+	012 &   0.66 &     0.20 &       0.04 &     0.00 \\
+	016 &   0.47 &     0.14 &       0.02 &     0.00 \\
+	018 &   0.33 &     0.09 &       0.01 &     0.00 \\
+	021 &   0.69 &     0.21 &       0.05 &     0.00 \\
+	022 &   0.34 &     0.10 &       0.01 &     0.00 \\
+	024 &   0.31 &     0.08 &       0.01 &     0.00 \\
+	025 &   0.48 &     0.13 &       0.02 &     0.00 \\
+	027 &  -0.40 &    -0.11 &       0.01 &     0.00 \\
+	029 &   0.33 &     0.09 &       0.01 &     0.00 \\
+	031 &   0.37 &     0.10 &       0.01 &     0.00 \\
+	102 &   0.45 &     0.13 &       0.02 &     0.00 \\
+	103 &   0.42 &     0.14 &       0.02 &     0.00 \\
+	104 &   0.48 &     0.14 &       0.02 &     0.00 \\
+	105 &   0.22 &     0.07 &       0.01 &     0.02 \\
+	\bottomrule
+	\textbf{Mean} & 0.00 & -0.01 & 0.01 & \\
+	\textbf{Std. Dev} & 0.03 & 0.07 & 0.01 & \\
+\end{tabular}
+	\label{tab:bencs:amo}
+	
+\end{table}
 
 \clearpage
 \bibliography{../../EBUS_BGC_Bibliography.bib}
