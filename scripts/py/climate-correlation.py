@@ -3,9 +3,13 @@
 # Purpose : Take in data from an EBUS (for now optimized for FG_CO2) and
 # correlate/regress it against a few climate indices from the CVDP dataset that
 # Adam Phillips developed.
-
+# NOTE : Make sure to input a string argument of which EBUS you want to operate
+# on.
 # UNIX-style globbing
 import glob
+
+# Allow for inputs
+import sys
 
 # Numerics
 import numpy as np
@@ -40,47 +44,57 @@ def seaborn_jointplot(carbonData, climateData, ensNum):
                     transparent=True)
         plt.close(fig)
 
-def autocorr_plot(ts1, ts2, ts3, ts4, ensNum):
-    fig = plt.figure(figsize=(12,12))
-    ax1 = fig.add_subplot(411)
-    ax1.set_ylabel("FG_CO2 Autocorrelation")
-    sm.graphics.tsa.plot_acf(ts1, lags=40, ax=ax1)
-    ax2 = fig.add_subplot(412)
-    ax2.set_ylabel("Nino 3.4 Autocorrelation")
-    sm.graphics.tsa.plot_acf(ts2, lags=40, ax=ax2)
-    ax3 = fig.add_subplot(413)
-    ax3.set_ylabel("PDO Autocorrelation")
-    sm.graphics.tsa.plot_acf(ts3, lags=40, ax=ax3)
-    ax4 = fig.add_subplot(414)
-    ax4.set_ylabel("NPO Autocorrelation")
-    sm.graphics.tsa.plot_acf(ts4, lags=40, ax=ax4)
-    plt.savefig('figs/autocorrelation_' + ensNum + '.svg', dpi=1000,
-                transparent=True)
-    plt.close(fig)
-
-def linear_regression(x, y):
+def linear_regression(df, idx, x, y):
+    # df is where you will store the output.
     slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
-    return slope, r_value, r_value**2, p_value
+    df['Slope'][idx] = slope
+    df['R Value'][idx] = r_value
+    df['R Squared'][idx] = r_value**2
+    df['P-Value'][idx] = p_value
+    return df
 
 def drop_ensemble_dim(ds, x):
     ds[x] = (('nlat', 'nlon'), ds[x][0])
     return ds
 
+def chavez_bounds(x):
+    if x == "CalCS":
+        lat1 = 34
+        lat2 = 44
+    elif x == "CanCS":
+        lat1 = 12
+        lat2 = 22
+    elif x == "BenCS":
+        lat1 = -28
+        lat2 = -18
+    elif x == "HumCS":
+        lat1 = -16
+        lat2 = -6
+    else:
+        raise ValueError('\n' + 'Must Select from the following EBUS strings:'
+                         + '\n' + 'CalCS' + '\n' + 'CanCS' + '\n' + 'BenCS' +
+                         '\n' + 'HumCS')
+    return lat1, lat2
+
 def main():
-    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/'
+    EBU = sys.argv[1]
+    print("Operating on : {}".format(EBU))
+    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/' + EBU + '/'
     ds = xr.open_mfdataset(fileDir + '*.nc', concat_dim='ensemble')
     # Reduce ensemble dimension for coordinates.
     ds = drop_ensemble_dim(ds, 'DXT')
     ds = drop_ensemble_dim(ds, 'TAREA')
     ds = drop_ensemble_dim(ds, 'REGION_MASK')
     ds = drop_ensemble_dim(ds, 'TLAT')
-    ds = drop_ensemble_dim(ds, 'TLONG')
+    if EBU != "HumCS":
+        ds = drop_ensemble_dim(ds, 'TLONG')
     del ds['DYT']
     del ds['ANGLET']
     # Convert DXT to kilometers.
     ds['DXT'] = ds['DXT'] / 100 / 1000
     # Filter out latitude to Chavez bounds.
-    ds = ds.where(ds['TLAT'] >= 34).where(ds['TLAT'] <= 44)
+    lat1, lat2 = chavez_bounds(EBU)
+    ds = ds.where(ds['TLAT'] >= lat1).where(ds['TLAT'] <= lat2)
     # Create a masked array for DXT since it doesn't follow the same NaN
     # structure as the co2/region_mask output.
     co2 = ds['FG_CO2'][0,0]
@@ -120,7 +134,11 @@ def main():
     ds_cvdp = xr.open_mfdataset(fileDir + '*.nc', decode_times=False,
                                 concat_dim='ensemble')
     ds_cvdp = ds_cvdp.rename({'npo_pc_mon': 'npo',
-                              'pdo_timeseries_mon': 'pdo'})
+                              'pdo_timeseries_mon': 'pdo',
+                              'amo_timeseries_mon': 'amo',
+                              'ipo_timeseries_mon': 'ipo',
+                              'nao_pc_mon': 'nao',
+                              'sam_pc_mon': 'sam'})
     times = pd.date_range('1920-01', '2016-01', freq='M')
     ds_cvdp['time'] = times
 
@@ -130,14 +148,16 @@ def main():
     # + - + - + - STATISTICAL ANALYSIS + - + - + -
     # Create a DataFrame to store correlation analysis on different climate
     # indices.
-    index = np.arange(0, 35, 1)
+    index = np.arange(0, 34, 1)
     columns = ['Slope', 'R Value', 'R Squared', 'P-Value']
     df_enso = pd.DataFrame(index=index, columns=columns)
     df_pdo = pd.DataFrame(index=index, columns=columns)
-    df_npo = pd.DataFrame(index=index, columns=columns)
+    df_amo = pd.DataFrame(index=index, columns=columns)
+    df_nao = pd.DataFrame(index=index, columns=columns)
+    df_sam = pd.DataFrame(index=index, columns=columns)
     for idx in np.arange(0, 34, 1):
         # Apply annual filter to the FG_CO2 data and only match up with same
-        # legnth time series from CVDP package.
+        # length time series from CVDP package.
         ts1 = ds_residuals[idx].values
         # Apply 12-month rolling mean to the FG_CO2 data.
         ts1 = smooth_series(ts1, 12)
@@ -146,34 +166,25 @@ def main():
         # Only compare the same length time series.
         ts2 = ds_cvdp['nino34'][idx, 11::].values
         ts3 = ds_cvdp['pdo'][idx, 11::].values
-        ts4 = ds_cvdp['npo'][idx, 11::].values
-        print "Working on simulation " + str(idx+1) + " of 35..."
-        
+        ts4 = ds_cvdp['amo'][idx, 11::].values
+        ts5 = ds_cvdp['nao'][idx, 11::].values
+        ts6 = ds_cvdp['sam'][idx, 11::].values
+        print "Working on simulation " + str(idx+1) + " of 34..."
         # +++ Create Seaborn stats plots
-        ensNum = str(idx)
-        seaborn_jointplot(ts1, ts3, ensNum)  
+        # ensNum = str(idx)
+        # seaborn_jointplot(ts1, ts3, ensNum)  
 
         # +++ Run Linear regressions.
-        # slope, r, r2, p = linear_regression(ts2, ts1)
-        # df_enso['Slope'][idx] = slope
-        # df_enso['R Value'][idx] = r
-        # df_enso['R Squared'][idx] = r2
-        # df_enso['P-Value'][idx] = p
-
-        # slope, r, r2, p = linear_regression(ts3, ts1)
-        # df_pdo['Slope'][idx] = slope
-        # df_pdo['R Value'][idx] = r
-        # df_pdo['R Squared'][idx] = r2
-        # df_pdo['P-Value'][idx] = p
-
-        # slope, r, r2, p = linear_regression(ts4, ts1)
-        # df_npo['Slope'][idx] = slope
-        # df_npo['R Value'][idx] = r
-        # df_npo['R Squared'][idx] = r2
-        # df_npo['P-Value'][idx] = p
-    # df_enso.to_csv('smoothed_fgco2_vs_enso')
-    # df_pdo.to_csv('smoothed_fgco2_vs_pdo')
-    #df_npo.to_csv('smoothed_fgco2_vs_npo')
+        df_enso = linear_regression(df_enso, idx, ts2, ts1)
+        df_pdo = linear_regression(df_pdo, idx, ts3, ts1)
+        df_amo = linear_regression(df_amo, idx, ts4, ts1)
+        df_nao = linear_regression(df_nao, idx, ts5, ts1)
+        df_sam = linear_regression(df_sam, idx, ts6, ts1)
+    df_enso.to_csv('smoothed_fgco2_vs_enso_' + EBU)
+    df_pdo.to_csv('smoothed_fgco2_vs_pdo_' + EBU)
+    df_amo.to_csv('smoothed_fgco2_vs_amo_' + EBU)
+    df_nao.to_csv('smoothed_fgco2_vs_nao_' + EBU)
+    df_sam.to_csv('smoothed_fgco2_vs_sam_' + EBU)
 
 if __name__ == '__main__':
     main()
