@@ -3,44 +3,46 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: controls-on-fgco2-variability.aux
 The style file: plainnat.bst
 Database file #1: ../../EBUS_BGC_Bibliography.bib.bib
+Warning--empty journal in Landschutzer2012
 You've used 2 entries,
             2773 wiz_defined-function locations,
-            611 strings with 5359 characters,
-and the built_in function-call counts, 1005 in all, are:
-= -- 94
-> -- 51
+            613 strings with 5442 characters,
+and the built_in function-call counts, 1283 in all, are:
+= -- 106
+> -- 114
 < -- 1
-+ -- 17
-- -- 15
-* -- 89
-:= -- 159
-add.period$ -- 8
++ -- 38
+- -- 36
+* -- 122
+:= -- 215
+add.period$ -- 9
 call.type$ -- 2
-change.case$ -- 11
+change.case$ -- 18
 chr.to.int$ -- 2
-cite$ -- 4
-duplicate$ -- 41
-empty$ -- 80
-format.name$ -- 19
-if$ -- 203
+cite$ -- 5
+duplicate$ -- 40
+empty$ -- 71
+format.name$ -- 40
+if$ -- 250
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 2
-newline$ -- 20
+newline$ -- 21
 num.names$ -- 8
-pop$ -- 16
+pop$ -- 31
 preamble$ -- 1
-purify$ -- 9
+purify$ -- 16
 quote$ -- 0
-skip$ -- 32
+skip$ -- 40
 stack$ -- 0
-substring$ -- 48
-swap$ -- 2
+substring$ -- 23
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 22
-warning$ -- 0
-while$ -- 10
+warning$ -- 1
+while$ -- 8
 width$ -- 0
-write$ -- 37
+write$ -- 38
+(There was 1 warning)

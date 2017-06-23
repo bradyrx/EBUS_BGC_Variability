@@ -10,6 +10,8 @@
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{threeparttable}
+\usepackage{rotating}
+\usepackage{pdflscape}
 
 \usepackage[format=plain,
 labelfont=it,
@@ -29,9 +31,19 @@ textfont=it]{caption}
 \end{abstract}
 
 \newpage
-\section{Study Sites}
-For simplicity, I am using the latitudinal bounds set up by \citet{Chavez:2009}, which dictates the ten degrees of most active upwelling via satellite wind stress climatology. I then constrain the offshore region to within 800km (via cell width output from the model). 
+\section{Model Evaluation}
+Figure~\ref{fig:evaluation} compares 30-year annual climatologies of sea-air CO$_{2}$ flux (FGCO2) across the four upwelling systems (spanning 1982-2011). The top row is derived from the 30-year monthly resolution neural network by \citet{Landschutzer2012}. The bottom row is the ensemble mean of 34 members of the CESM Large Ensemble spanning the same time period.
 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/all-systems/landschuetzer-model-climatological-comparison.png}
+	\caption{Annual averages of Sea-Air CO$_{2}$ flux over 1982-2011 for the four major eastern boundary upwelling systems. The top row is semi-observational data, while the bottom row is the ensemble mean from the CESM Large Ensemble.}
+	\label{fig:evaluation}
+\end{figure}
+
+\section{Study Sites}
+For simplicity, I am using the latitudinal bounds set up by \citet{Chavez2009}, which dictates the ten degrees of most active upwelling via satellite wind stress climatology. I then constrain the offshore region to within 800km (via cell width output from the model). 
+\clearpage
 \begin{figure*}[!h]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
@@ -51,7 +63,7 @@ For simplicity, I am using the latitudinal bounds set up by \citet{Chavez:2009},
         \centering
         \includegraphics[width=\linewidth]{../../figs/bencs/study-site/benguela-current-study-site.png}
     \end{subfigure}
-    \caption{Nearshore regions for each EBUS over which area-weighted FGCO2 is computed. The latitude is constrained by the 10 degree bounds of most active upwelling (per \citet{Chavez:2009}). The longitude is constrained to 800km offshore to standardize region sizes across different latitudes.}
+    \caption{Nearshore regions for each EBUS over which area-weighted FGCO2 is computed. The latitude is constrained by the 10 degree bounds of most active upwelling (per \citet{Chavez2009}). The longitude is constrained to 800km offshore to standardize region sizes across different latitudes.}
     \label{model:setup}
 \end{figure*}
 
@@ -335,14 +347,87 @@ Interestingly, CanCS gas flux has a reasonable relationship with ENSO and the PD
 \end{table}
 
 \section{Cross Correlation}
-Perhaps we are underestimating the strength of relationship between some climate indices and EBU CO$_{2}$ flux, as we are not lagging/leading the correlations properly. Due to the physical mechanisms behind ENSO, there might be a sort of lag between a strong El Ni\~no and an anomalous gas flux. \\
+Perhaps we are underestimating the strength of relationship between some climate indices and EBU CO$_{2}$ flux, as we are not lagging/leading the correlations properly. Due to the physical mechanisms behind ENSO, there might be a sort of lag between a strong El Ni\~no and an anomalous gas flux. Since we are trying to understand controls on CO$_{2}$ flux variability, it probably only makes sense to look at situations where the climate index leads the gas flux anomalies. \\
 
+Figure~\ref{fig:CalCS-ENSO-Cross} shows little consistency in enhanced correlations at any lead/lag. I would argue that there is little sense in correlating anything but lag zero in the case of CalCS and Nino3.4. However, turning our attention to the HumCS, we find a strong case to compute a lag correlation for ENSO, rather than a standard lag zero correlation (Figure~\ref{fig:HumCS-ENSO-Cross}). In 100\% of the simulations, the correlation is stronger when leading FGCO2 anomalies by 4-5 months with the Nino3.4 index. \\
+
+Table~\ref{tab:HumCS-ENSO-5lag} displays the results of a regression analysis between HumCS FGCO2 anomalies and the Nino3.4 index with a 5-month lead. Without the lead, a 1 degree C El Ni\~no event would explain 17\% of the FGCO2 variability on average (r = -0.40) (Table~\ref{tab:enso-pacific}). After applying a 5-month lead time to the Nino3.4 index, we find the same El Ni\~no event would explain 26\% of the FGCO2 variability (r = -0.51) (Table~\ref{tab:HumCS-ENSO-5lag})). Across all systems and the four major climate index predictors, there is really only a strong argument to lead HumCS FGCO2 anomalies by a few months with ENSO. 
+
+\newpage
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\linewidth]{../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.png}
-	\caption{R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.}
+	\caption{Cross correlations between CalCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.}
 	\label{fig:CalCS-ENSO-Cross}
 \end{figure}
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/humcs/cross-correlation/Nino34_FGCO2_cross-correlation_HumCS.png}
+	\caption{Cross correlations between HumCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.}
+	\label{fig:HumCS-ENSO-Cross}
+\end{figure}
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=29pc]{../../figs/humcs/histograms/humcs-smoothedFGCO2-enso-lag5-histograms.png}
+	\caption{Distribution of r values for a correlation between HumCS FGCO2 anomalies and the Nino3.4 index with a 5-month lead time.}
+	\label{fig:HumCS-ENSO-hist-5lag}
+\end{figure}
+
+\clearpage
+\begin{table}
+	\centering
+\caption{Results for regressing HumCS FGCO2 anomalies onto Nino3.4 time series with a 5-month lead. Results with $p$ $>$ 0.05 are excluded.}	
+\begin{tabular}{c c c c}
+	\toprule
+	\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} \\
+	\midrule
+	0  &  -0.31 &    -0.45 &       0.20 \\
+	1  &  -0.41 &    -0.46 &       0.21 \\
+	2  &  -0.31 &    -0.41 &       0.17 \\
+	3  &  -0.40 &    -0.52 &       0.27 \\
+	4  &  -0.40 &    -0.55 &       0.30 \\
+	5  &  -0.39 &    -0.54 &       0.29 \\
+	6  &  -0.43 &    -0.54 &       0.29 \\
+	7  &  -0.38 &    -0.56 &       0.31 \\
+	8  &  -0.38 &    -0.49 &       0.24 \\
+	9  &  -0.41 &    -0.49 &       0.24 \\
+	10 &  -0.28 &    -0.48 &       0.23 \\
+	11 &  -0.41 &    -0.49 &       0.24 \\
+	12 &  -0.43 &    -0.53 &       0.28 \\
+	13 &  -0.35 &    -0.58 &       0.34 \\
+	14 &  -0.38 &    -0.49 &       0.24 \\
+	15 &  -0.45 &    -0.57 &       0.33 \\
+	16 &  -0.34 &    -0.41 &       0.17 \\
+	17 &  -0.38 &    -0.51 &       0.26 \\
+	18 &  -0.40 &    -0.55 &       0.30 \\
+	19 &  -0.41 &    -0.50 &       0.25 \\
+	20 &  -0.35 &    -0.47 &       0.22 \\
+	21 &  -0.33 &    -0.49 &       0.24 \\
+	22 &  -0.45 &    -0.52 &       0.27 \\
+	23 &  -0.37 &    -0.52 &       0.27 \\
+	24 &  -0.41 &    -0.50 &       0.25 \\
+	25 &  -0.46 &    -0.61 &       0.37 \\
+	26 &  -0.29 &    -0.43 &       0.19 \\
+	27 &  -0.34 &    -0.45 &       0.20 \\
+	28 &  -0.32 &    -0.43 &       0.19 \\
+	29 &  -0.36 &    -0.53 &       0.28 \\
+	30 &  -0.35 &    -0.58 &       0.34 \\
+	31 &  -0.37 &    -0.52 &       0.27 \\
+	32 &  -0.44 &    -0.59 &       0.34 \\
+	33 &  -0.50 &    -0.55 &       0.30 \\
+	\bottomrule
+	\textbf{Mean} & -0.38 & -0.51 & 0.26  \\
+	\textbf{Std} & 0.05 & 0.05 & 0.05  \\
+\end{tabular}
+\begin{tablenotes}
+	\centering
+	\item $^{a}$ mol/m$^{2}$/yr/degC
+\end{tablenotes}
+\label{tab:HumCS-ENSO-5lag}
+\end{table}
+
 
 \clearpage
 \bibliography{../../EBUS_BGC_Bibliography.bib}

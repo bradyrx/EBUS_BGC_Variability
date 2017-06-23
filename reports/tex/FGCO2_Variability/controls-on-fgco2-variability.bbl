@@ -5,19 +5,21 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Chavez and Messi{\'e}(2009)]{Chavez:2009}
-Francisco~P Chavez and Monique Messi{\'e}.
-\newblock A comparison of eastern boundary upwelling ecosystems.
-\newblock \emph{Progress in Oceanography}, 83\penalty0 (1):\penalty0 80--96,
-  2009.
+\bibitem[Chavez and Messi{\'{e}}(2009)]{Chavez2009}
+Francisco~P. Chavez and Monique Messi{\'{e}}.
+\newblock {A comparison of Eastern Boundary Upwelling Ecosystems}.
+\newblock \emph{Prog. Oceanogr.}, 83\penalty0 (1-4):\penalty0 80--96, 2009.
+\newblock ISSN 00796611.
+\newblock \doi{10.1016/j.pocean.2009.07.032}.
+\newblock URL \url{http://dx.doi.org/10.1016/j.pocean.2009.07.032}.
 
-\bibitem[Turi et~al.(2014)Turi, Lachkar, and Gruber]{Turi:2014}
-G.~Turi, Z.~Lachkar, and N.~Gruber.
-\newblock Spatiotemporal variability and drivers of pco$_{2}$ and air--sea
-  co$_{2}$ fluxes in the california current system: an eddy-resolving modeling
-  study.
-\newblock \emph{Biogeosciences}, 11\penalty0 (3):\penalty0 671--690, 2014.
-\newblock \doi{10.5194/bg-11-671-2014}.
-\newblock URL \url{http://www.biogeosciences.net/11/671/2014/}.
+\bibitem[Landsch{\"{u}}tzer et~al.(2012)Landsch{\"{u}}tzer, Gruber, Haumann,
+  R{\"{o}}denbeck, Bakker, Heuven, Hoppema, Metzl, Sweeney, and
+  Takahashi]{Landschutzer2012}
+Peter Landsch{\"{u}}tzer, Nicolas Gruber, F~Alexander Haumann, Christian
+  R{\"{o}}denbeck, Dorothee C~E Bakker, Steven~Van Heuven, Mario Hoppema,
+  Nicolas Metzl, Colm Sweeney, and Taro Takahashi.
+\newblock {Ocean carbon sink}.
+\newblock 349\penalty0 (6253), 2012.
 
 \end{thebibliography}
