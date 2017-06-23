@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  19 JUN 2017 12:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  23 JUN 2017 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -167,6 +167,9 @@ Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
 \SOUL@uldp=\dimen127
 \SOUL@ulht=\dimen128
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
@@ -183,21 +186,27 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 )
 \c@ContinuedFloat=\count96
 )
-(./controls-on-fgco2-variability.aux)
+\c@subfigure=\count97
+\c@subtable=\count98
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+Package: threeparttable 2003/06/13  v 3.0
+\@tempboxb=\box26
+) (./controls-on-fgco2-variability.aux)
 \openout1 = `controls-on-fgco2-variability.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -235,238 +244,229 @@ LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count97
+\scratchcounter=\count99
 \scratchdimen=\dimen136
-\scratchbox=\box26
-\nofMPsegments=\count98
-\nofMParguments=\count99
+\scratchbox=\box27
+\nofMPsegments=\count100
+\nofMParguments=\count101
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count100
+\MPscratchCnt=\count102
 \MPscratchDim=\dimen137
-\MPnumerator=\count101
-\makeMPintoPDFobject=\count102
+\MPnumerator=\count103
+\makeMPintoPDFobject=\count104
 \everyMPtoPDFconversion=\toks22
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 23.
+(Font)              <20.74> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 23.
+(Font)              <14.4> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 23.
+(Font)              <12> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 23.
+(Font)              <7> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 25.
+(Font)              <10.95> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 25.
+(Font)              <8> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 25.
+(Font)              <6> on input line 28.
+ [1
 
-<../../figs/calcs/study-site/calcs-study-site.png, id=1, 433.62pt x 289.08pt>
-File: ../../figs/calcs/study-site/calcs-study-site.png Graphic file (type png)
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<../../figs/calcs/study-site/california-current-study-site.png, id=11, 650.43pt
+ x 650.43pt>
+File: ../../figs/calcs/study-site/california-current-study-site.png Graphic fil
+e (type png)
 
-<use ../../figs/calcs/study-site/calcs-study-site.png>
-Package pdftex.def Info: ../../figs/calcs/study-site/calcs-study-site.png used 
-on input line 33.
-(pdftex.def)             Requested size: 228.0pt x 152.00305pt.
+<use ../../figs/calcs/study-site/california-current-study-site.png>
+Package pdftex.def Info: ../../figs/calcs/study-site/california-current-study-s
+ite.png used on input line 39.
+(pdftex.def)             Requested size: 187.89914pt x 187.89536pt.
 
-<../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png, id=3, 130
-0.86pt x 289.08pt>
-File: ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png Graph
-ic file (type png)
-
-<use ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png>
-Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-unfiltered-fgco2-serie
-s-example.png used on input line 42.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
-
-[1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../../f
-igs/calcs/study-site/calcs-study-site.png>]
-<../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png, id=17, 1300
-.86pt x 289.08pt>
-File: ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png Graphic
- file (type png)
-
-<use ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png>
-Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-filtered-fgco2-series-
-example.png used on input line 50.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
-
-[2 <../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png> <../..
-/figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png>]
-<../../figs/calcs/fft/fft-CCS-001-frequencyHz.png, id=23, 1300.86pt x 289.08pt>
-File: ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png Graphic file (type png)
-<use ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png>
-Package pdftex.def Info: ../../figs/calcs/fft/fft-CCS-001-frequencyHz.png used 
-on input line 59.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
-
-<../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png, id=24, 130
-0.86pt x 289.08pt>
-File: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png Graphi
-c file (type png)
-
-<use ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png>
-Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nin
-o34-plot.png used on input line 67.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
-
-<../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png, id=25, 1300.8
-6pt x 289.08pt>
-File: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png Graphic f
-ile (type png)
-
-<use ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png>
-Package pdftex.def Info: ../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo
--plot.png used on input line 73.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
-
-<../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png, id
-=26, 578.16pt x 578.16pt>
-File: ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.pn
-g Graphic file (type png)
-
-<use ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png
->
-Package pdftex.def Info: ../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Cor
-relation-Scatter.png used on input line 83.
-(pdftex.def)             Requested size: 348.0pt x 347.9926pt.
- [3 <../../figs/calcs/fft/fft-CCS-001-frequencyHz.png> <../../figs/calcs/timese
-ries/ccs-smoothed-fgco2-and-nino34-plot.png> <../../figs/calcs/timeseries/ccs-s
-moothed-fgco2-and-pdo-plot.png>]
-<../../figs/calcs/histograms/calcs-correlation-histograms.png, id=33, 1300.86pt
- x 867.24pt>
-File: ../../figs/calcs/histograms/calcs-correlation-histograms.png Graphic file
- (type png)
-
-<use ../../figs/calcs/histograms/calcs-correlation-histograms.png>
-Package pdftex.def Info: ../../figs/calcs/histograms/calcs-correlation-histogra
-ms.png used on input line 89.
-(pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4 <../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png>
-]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5 <../../figs/calcs/histograms/calcs-correlation-histograms.png>] [6] [7]
-[8
-
-]
-<../../figs/humcs/study-site/humboldt-current-study-site.png, id=53, 433.62pt x
- 433.62pt>
+<../../figs/humcs/study-site/humboldt-current-study-site.png, id=13, 650.43pt x
+ 650.43pt>
 File: ../../figs/humcs/study-site/humboldt-current-study-site.png Graphic file 
 (type png)
  <use ../../figs/humcs/study-site/humboldt-current-study-site.png>
 Package pdftex.def Info: ../../figs/humcs/study-site/humboldt-current-study-sit
-e.png used on input line 200.
-(pdftex.def)             Requested size: 348.0pt x 348.01466pt.
+e.png used on input line 44.
+(pdftex.def)             Requested size: 187.89914pt x 187.89536pt.
 
-<../../figs/humcs/study-site/humboldt-current-DXT-Cum.png, id=54, 578.16pt x 39
-7.485pt>
-File: ../../figs/humcs/study-site/humboldt-current-DXT-Cum.png Graphic file (ty
-pe png)
- <use ../../figs/humcs/study-site/humboldt-current-DXT-Cum.png>
-Package pdftex.def Info: ../../figs/humcs/study-site/humboldt-current-DXT-Cum.p
-ng used on input line 206.
-(pdftex.def)             Requested size: 348.0pt x 239.2449pt.
+<../../figs/cancs/study-site/canary-current-study-site.png, id=14, 650.43pt x 6
+50.43pt>
+File: ../../figs/cancs/study-site/canary-current-study-site.png Graphic file (t
+ype png)
+ <use ../../figs/cancs/study-site/canary-current-study-site.png>
+Package pdftex.def Info: ../../figs/cancs/study-site/canary-current-study-site.
+png used on input line 48.
+(pdftex.def)             Requested size: 187.89914pt x 187.89536pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png, id=55, 1300
-.86pt x 289.08pt>
-File: ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png Graphic
- file (type png)
-
-<use ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png>
-Package pdftex.def Info: ../../figs/humcs/timeseries/hcs-filtered-fgco2-series-
-example.png used on input line 215.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
-
-<../../figs/humcs/fft/fft-HCS-001-frequencyHz.png, id=56, 1300.86pt x 289.08pt>
-File: ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png Graphic file (type png)
-<use ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png>
-Package pdftex.def Info: ../../figs/humcs/fft/fft-HCS-001-frequencyHz.png used 
-on input line 221.
-(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-<../../figs/humcs/histograms/humcs-correlation-histograms.png, id=57, 1300.86pt
- x 867.24pt>
-File: ../../figs/humcs/histograms/humcs-correlation-histograms.png Graphic file
- (type png)
-
-<use ../../figs/humcs/histograms/humcs-correlation-histograms.png>
-Package pdftex.def Info: ../../figs/humcs/histograms/humcs-correlation-histogra
-ms.png used on input line 230.
-(pdftex.def)             Requested size: 469.75502pt x 313.17218pt.
- [9
-
- <../../figs/humcs/study-site/humboldt-current-study-site.png>] [10 <../../figs
-/humcs/study-site/humboldt-current-DXT-Cum.png> <../../figs/humcs/timeseries/hc
-s-filtered-fgco2-series-example.png> <../../figs/humcs/fft/fft-HCS-001-frequenc
-yHz.png>]
-[11 <../../figs/humcs/histograms/humcs-correlation-histograms.png>] [12]
-[13]
-<../../figs/bencs/study-site/benguela-current-study-site.png, id=79, 433.62pt x
- 433.62pt>
+<../../figs/bencs/study-site/benguela-current-study-site.png, id=15, 650.43pt x
+ 650.43pt>
 File: ../../figs/bencs/study-site/benguela-current-study-site.png Graphic file 
 (type png)
  <use ../../figs/bencs/study-site/benguela-current-study-site.png>
 Package pdftex.def Info: ../../figs/bencs/study-site/benguela-current-study-sit
-e.png used on input line 343.
-(pdftex.def)             Requested size: 469.75502pt x 469.7781pt.
+e.png used on input line 52.
+(pdftex.def)             Requested size: 187.89914pt x 187.89536pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+[2 <../../figs/calcs/study-site/california-current-study-site.png> <../../figs/
+humcs/study-site/humboldt-current-study-site.png> <../../figs/cancs/study-site/
+canary-current-study-site.png> <../../figs/bencs/study-site/benguela-current-st
+udy-site.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--67
+
+ []
+
+[3]
+<../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png, id=28, 13
+00.86pt x 289.08pt>
+File: ../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png Graph
+ic file (type png)
+
+<use ../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png>
+Package pdftex.def Info: ../../figs/calcs/timeseries/calcs-filtered-fgco2-serie
+s-example.png used on input line 75.
+(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+
+<../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png, id=29, 13
+00.86pt x 289.08pt>
+File: ../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png Graph
+ic file (type png)
+
+<use ../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png>
+Package pdftex.def Info: ../../figs/humcs/timeseries/humcs-filtered-fgco2-serie
+s-example.png used on input line 79.
+(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+
+<../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png, id=30, 13
+00.86pt x 289.08pt>
+File: ../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png Graph
+ic file (type png)
+
+<use ../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png>
+Package pdftex.def Info: ../../figs/cancs/timeseries/cancs-filtered-fgco2-serie
+s-example.png used on input line 83.
+(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+
+<../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png, id=31, 13
+00.86pt x 289.08pt>
+File: ../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png Graph
+ic file (type png)
+
+<use ../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png>
+Package pdftex.def Info: ../../figs/bencs/timeseries/bencs-filtered-fgco2-serie
+s-example.png used on input line 87.
+(pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+[4
+
+ <../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png> <../../f
+igs/humcs/timeseries/humcs-filtered-fgco2-series-example.png> <../../figs/cancs
+/timeseries/cancs-filtered-fgco2-series-example.png> <../../figs/bencs/timeseri
+es/bencs-filtered-fgco2-series-example.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+<../../figs/pacific/pacific-EBU-correlation-distributions.png, id=39, 1300.86pt
+ x 1011.78pt>
+File: ../../figs/pacific/pacific-EBU-correlation-distributions.png Graphic file
+ (type png)
+
+<use ../../figs/pacific/pacific-EBU-correlation-distributions.png>
+Package pdftex.def Info: ../../figs/pacific/pacific-EBU-correlation-distributio
+ns.png used on input line 105.
+(pdftex.def)             Requested size: 469.75502pt x 365.36752pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[14
+[5]
 
-] [15 <../../figs/bencs/study-site/benguela-current-study-site.png>]
-[16] [17] (./controls-on-fgco2-variability.bbl) [18
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[6 <../../figs/pacific/pacific-EBU-correlation-distributions.png>] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
+
+ []
+
+
+<../../figs/atlantic/atlantic-EBU-correlation-distributions.png, id=56, 1300.86
+pt x 1011.78pt>
+File: ../../figs/atlantic/atlantic-EBU-correlation-distributions.png Graphic fi
+le (type png)
+
+<use ../../figs/atlantic/atlantic-EBU-correlation-distributions.png>
+Package pdftex.def Info: ../../figs/atlantic/atlantic-EBU-correlation-distribut
+ions.png used on input line 225.
+(pdftex.def)             Requested size: 469.75502pt x 365.36752pt.
+ [9
+
+ <../../figs/atlantic/atlantic-EBU-correlation-distributions.png>] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+
+ []
+
+[11]
+<../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.png, i
+d=67, 1156.32pt x 1156.32pt>
+File: ../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.p
+ng Graphic file (type png)
+
+<use ../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.pn
+g>
+Package pdftex.def Info: ../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-
+correlation_CalCS.png used on input line 342.
+(pdftex.def)             Requested size: 469.75502pt x 469.75385pt.
+ [12 <../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.p
+ng>] (./controls-on-fgco2-variability.bbl) [13
 
 ]
 (./controls-on-fgco2-variability.aux) ) 
 Here is how much of TeX's memory you used:
- 3728 strings out of 493014
- 60032 string characters out of 6133351
- 141356 words of memory out of 5000000
- 7219 multiletter control sequences out of 15000+600000
+ 3804 strings out of 493014
+ 61067 string characters out of 6133351
+ 152063 words of memory out of 5000000
+ 7291 multiletter control sequences out of 15000+600000
  11476 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,39p,883b,298s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,9n,43p,1028b,366s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmtt12.pfb>
-Output written on controls-on-fgco2-variability.pdf (18 pages, 1240377 bytes).
+ype1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmtt12.pfb>
+Output written on controls-on-fgco2-variability.pdf (13 pages, 1498270 bytes).
 PDF statistics:
- 127 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

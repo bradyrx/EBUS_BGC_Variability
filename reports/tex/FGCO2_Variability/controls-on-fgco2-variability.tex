@@ -7,6 +7,9 @@
 \usepackage{booktabs}
 \bibliographystyle{plainnat}
 \usepackage{soul}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{threeparttable}
 
 \usepackage[format=plain,
 labelfont=it,
@@ -22,411 +25,324 @@ textfont=it]{caption}
 
 \maketitle
 \begin{abstract}
-\noindent Working to understand what controls historical variability in Sea-Air CO$_{2}$ Flux in Eastern Boundary Upwelling Systems. I use FG\_CO2 output from the CESM Large Ensemble and correlate/regress it with various climate indices derived from model output (using Adam Phillip's CESM-LE CVDP output). In total, we have 34 ensemble members to work with, and treat them as independent time series.
+\noindent I am working to understand what controls historical variability in Sea-Air CO$_{2}$ Flux in Eastern Boundary Upwelling Systems. I use FG\_CO2 output from the CESM Large Ensemble and correlate/regress it against various climate indices derived from model output (using Adam Phillip's CESM-LE CVDP output). In total, we have 34 ensemble members to work with, and treat them as independent time series.
 \end{abstract}
 
-\section{California Current (CalCS)}
-\subsection{Study Site}
-For simplicity, I am using the latitudinal bounds set up by \citet{Chavez:2009}. This equates to 34N - 44N for the CalCS. In terms of longitude, I want to approach it similarly to \citet{Turi:2014}. In the future, I can make this banded if needed (0-100km, 100-400km, etc.), but for now, 4 regions by 3 bands per region is a lot to work with. Instead, I am just restricting it to 800km offshore and bounded by 10 degrees of latitude for standardization.
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=19pc]{../../figs/calcs/study-site/calcs-study-site.png}
-	\caption{Time-averaged (1920-2015) and ensemble-averaged sea-air CO$_{2}$ flux (FGCO2). Simply depicting the region over which time series are analyzed/correlated with respect to climate indices.}
-	\label{fig:1}
-\end{figure}
-
-\subsection{Time Series Filtering}
-The major goal of this portion of the study is to correlate a monthly time series of FGCO2 with monthly climate indices from the CVDP output (spanning 1920-2015). First, I subtract the ensemble mean (N=34) time series of area-weighted FGCO2 in the region outlined in Figure~\ref{fig:1} from each individual simulation. This leaves us with 34 independent anomaly time series, which we can think of as being the \it natural \rm flux of CO$_{2}$ into and out of the coastal ocean. At first glance, however, the FGCO2 output is much too noisy to correlate with a slower process such as ENSO. Figure~\ref{fig:1} displays an example simulation (S001) to communicate this point. Note that this noise is not distinct to the chosen simulation.
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/ccs-unfiltered-fgco2-series-example.png}
-	\caption{Area-weighted average FGCO2 anomalies (ensemble mean removed) for simulation 001 over the domain in Figure~\ref{fig:1}.}
-	\label{fig:2}
-\end{figure}
-
-We can apply a quick 12-month (annual) rolling mean to smooth out some of the noisiness. Figure~\ref{fig:3} shows the smoothed time series in black for simulation 001 (with the original unfiltered time series from Figure~\ref{fig:2} in blue). We only lose 11 data points on a 1140 length array by smoothing. 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/ccs-filtered-fgco2-series-example.png}
-	\caption{Area-weighted average FGCO2 anomalies (ensemble mean removed) for simulation 001 over the domain in Figure~\ref{fig:1}.}
-	\label{fig:3}
-\end{figure}
-
-An FFT of Figure~\ref{fig:2} is fairly inconclusive. At the very least, there is power at lower frequencies that diminishes at higher frequencies. It looks more red than white.
 \newpage
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{../../figs/calcs/fft/fft-CCS-001-frequencyHz.png}
-	\caption{Area-weighted average FGCO2 anomalies (ensemble mean removed) for simulation 001 over the domain in Figure~\ref{fig:1}.}
-	\label{fig:4}
-\end{figure}
+\section{Study Sites}
+For simplicity, I am using the latitudinal bounds set up by \citet{Chavez:2009}, which dictates the ten degrees of most active upwelling via satellite wind stress climatology. I then constrain the offshore region to within 800km (via cell width output from the model). 
 
-Now smoothed, the FGCO2 anomalies vary more closely with the Nino3.4 index, and even moreso with the PDO index.
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-nino34-plot.png}
-	\caption{Area-weighted average FGCO2 anomalies for simulation 001 with a one-year moving average applied (black line). The bar plot reflects the detrended Nino3.4 index from the same simulation.}
-	\label{fig:5}
-\end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/ccs-smoothed-fgco2-and-pdo-plot.png}
-	\caption{Same as Figure~\ref{fig:5}, but with the PDO index.}
-	\label{fig:6}
-\end{figure}
+\begin{figure*}[!h]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../figs/calcs/study-site/california-current-study-site.png}
+    \end{subfigure}%
+    ~ 
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../figs/humcs/study-site/humboldt-current-study-site.png}
+    \end{subfigure} \\
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../figs/cancs/study-site/canary-current-study-site.png}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../figs/bencs/study-site/benguela-current-study-site.png}
+    \end{subfigure}
+    \caption{Nearshore regions for each EBUS over which area-weighted FGCO2 is computed. The latitude is constrained by the 10 degree bounds of most active upwelling (per \citet{Chavez:2009}). The longitude is constrained to 800km offshore to standardize region sizes across different latitudes.}
+    \label{model:setup}
+\end{figure*}
 
-\subsection{Regressing onto Climate Indices}
-I can now regress these smoothed FGCO2 anomalies onto three main predictors: Nino3.4, PDO, and NPO. Figure~\ref{fig:7} displays a scatter plot for all 34 ensemble members comparing their R-Value for ENSO to their R-Value for PDO. Save for one outlier in the bottom left, simulations cluster generally toward strong correlations for both metrics, favoring the PDO index. Figure~\ref{fig:8} displays histograms of R-Values for each of the three climate indices for all 34 ensemble members. Table~\ref{tab:1} and Table~\ref{tab:2} display raw results (R value, R$^{2}$, and regression coefficient) for every simulation. There is no table for the NPO due to its low correlation values.
+\section{General Methodology}
+We use 34 CESM-LENS members, which can be treated as entirely independent time series, spanning 1920-2100 at monthly resolution. We focus, however, on the 1920-2015 period, since we are trying to understand the historical controls on FGCO2 variability (and as Adam Phillip's CVDP package covers this same period). The area-weighted mean (using TAREA) of FGCO2 is computed for each EBUS, generating a 34x1152 time series matrix. \\
 
+First, we subtract the ensemble mean time series from each individual simulation. This de-trends the data, leaving us with 34 independent anomaly time series, which we can think of as the \it natural \rm flux of CO$_{2}$ into and out of the coastal ocean. We then load in climate index time series (Nino3.4, PDO, AMO, NAO, SAM) for the same ensemble members, and remove the linear trend from each to similarly produce anomaly time series. \\
+
+% Add here proof that the anomaly time series are accurately describing inter-multi decadal modes of variability by performing an FFT on the raw climate indices.
+
+We apply a 12-month (annual) rolling mean to all FGCO2 anomaly time series, as we find the raw time series to be much too noisy for meaningful correlations. See Figure~\ref{smoothed:series}, which demonstrated raw (color) time series for simulation 001 for each EBUS and the smoothed time series overlaid in black. This is defensible, as an FFT of these raw time series shows roughly red noise. \\
+% Add FFT subplots.
+
+Lastly, we regress the smoothed FGCO2 anomalies onto the four main predictors: Nino3.4, PDO, AMO, and SAM. 
+
+\clearpage
+\begin{figure*}[!h]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png}
+	\end{subfigure}
+	\caption{FGCO2 anomalies for arbitrary simulation 001 in color with their annual smoothing counterpart overlaid in black.}
+	\label{smoothed:series}
+\end{figure*}
+
+\section{Climate Correlations}
+I have split the analysis into the two major ocean basins that house our four EBUS. This is because (1) it eases the viewing and interpretation of statistical tests, and (2) we might glean some similarities and differences between the two basins. 
+
+\subsection{Pacific Sector}
+Figure~\ref{fig:pacific-histograms} displays the results of using four climate indices (Nino3.4, PDO, AMO, and SAM) as predictors for CalCS and HumCS natural CO$_{2}$ fluxes over the 1920-2015 period. We find that ENSO and PDO have the largest influence on natural CO$_{2}$ flux variability, and have inverse impacts on the two systems. \\
+
+During an El Ni\~no event, more CO$_{2}$ fluxes out of the CalCS, while more CO$_{2}$ is taken up by the HumCS. Perhaps this illuminates the dependency of CalCS FGCO2 on SST variability, which would alter the solubility of pCO$_{2}$; during a warm event, low pCO$_{2}$ solubility would force carbon out of the CalCS. On the other hand, SSTs might be more stable in the more tropical HumCS, so FGCO2 variability could be more dependent on DIC delivery from depth. During El Ni\~no events, upwelling of high-DIC water would be suppressed, leading to an influx of carbon. These ideas can be tested by using Takahashi formulae to separate temperature-dependent pCO$_{2}$ effects from non-temperature-dependent effects. These arguments might also hold for the PDO, since it has a large impact on Pacific Ocean SST patterns. Raw values for the regression slope, r-value, and r$^{2}$ can be found in Table~\ref{tab:enso-pacific} (Nino3.4) and Table~\ref{tab:pdo-pacific} (PDO). \\
+
+An interesting result is that AMO has a small, but discernible correlation with CalCS CO$_{2}$ flux, but hovers around an r-value of zero for the HumCS. Perhaps atmospheric teleconnections between the North Atlantic and North Pacific play a role here.
+ 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=29pc]{../../figs/calcs/correlations_scatter/CCS-ENSO-PDO-Correlation-Scatter.png}
-	\caption{R values for annually smoothed FGCO2 anomalies in the CCS compared to Nino3.4 and PDO indices for all 34 ensemble members.}
-	\label{fig:7}
-\end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{../../figs/calcs/histograms/calcs-correlation-histograms.png}
-	\caption{Distribution of correlations between smoothed FGCO2 anomalies and various climate indices across all ensemble members.}
-	\label{fig:8}
+	\includegraphics[width=\linewidth]{../../figs/pacific/pacific-EBU-correlation-distributions.png}
+	\caption{R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.}
+	\label{fig:pacific-histograms}
 \end{figure}
 
 \newpage
 \begin{table}[!h]
-\centering
-\caption{Regression Results by simulation, with Nino3.4 index as the predictor and FGCO2 anomalies as the criterion. All results have a p-value $<<$ 0.05.}
-\begin{tabular}{c | c c c}
-	\toprule
-	\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} \\
+	\centering
+	\caption{Results for regressing FGCO2 anomalies onto Nino3.4 time series for the two Pacific upwelling systems. Results with $p$ $>$ 0.05 are excluded.}
+\begin{tabular}{c c c c | c c c}
+	& \multicolumn{3}{c}{CalCS} & \multicolumn{3}{c}{HumCS} \\
+	\cmidrule{2-4}\cmidrule{5-7}
+	\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
 	\midrule
-	001 &   0.04 &     0.30 &       0.09 \\
-	002 &   0.06 &     0.33 &       0.11 \\
-	009 &   0.03 &     0.18 &       0.03 \\
-	010 &   0.04 &     0.22 &       0.05 \\
-	011 &   0.01 &     0.04 &       0.00 \\
-	012 &   0.05 &     0.28 &       0.08 \\
-	013 &   0.06 &     0.33 &       0.11 \\
-	014 &   0.05 &     0.35 &       0.12 \\
-	015 &   0.05 &     0.29 &       0.08 \\
-	016 &   0.04 &     0.22 &       0.05 \\
-	017 &   0.04 &     0.27 &       0.07 \\
-	018 &   0.05 &     0.29 &       0.08 \\
-	019 &   0.04 &     0.21 &       0.04 \\
-	020 &   0.05 &     0.30 &       0.09 \\
-	021 &   0.03 &     0.18 &       0.03 \\
-	022 &   0.04 &     0.24 &       0.06 \\
-	023 &   0.03 &     0.22 &       0.05 \\
-	024 &   0.06 &     0.33 &       0.11 \\
-	025 &   0.05 &     0.34 &       0.12 \\
-	026 &   0.04 &     0.25 &       0.06 \\
-	027 &   0.04 &     0.28 &       0.08 \\
-	028 &   0.03 &     0.17 &       0.03 \\
-	029 &   0.05 &     0.33 &       0.11 \\
-	030 &   0.03 &     0.19 &       0.04 \\
-	031 &   0.04 &     0.24 &       0.06 \\
-	032 &   0.04 &     0.20 &       0.04 \\
-	033 &   0.02 &     0.14 &       0.02 \\
-	034 &   0.06 &     0.31 &       0.10 \\
-	035 &   0.03 &     0.17 &       0.03 \\
-	101 &   0.07 &     0.44 &       0.20 \\
-	102 &   0.04 &     0.26 &       0.07 \\
-	103 &   0.04 &     0.22 &       0.05 \\
-	104 &   0.05 &     0.35 &       0.12 \\
-	105 &   0.02 &     0.12 &       0.01 \\
+	001 &   0.04 &     0.30 &       0.09 &  -0.20 &    -0.29 &       0.08 \\
+	002 &   0.06 &     0.33 &       0.11 &  -0.31 &    -0.35 &       0.12 \\
+	009 &   0.03 &     0.18 &       0.03 &  -0.24 &    -0.31 &       0.10 \\
+	010 &   0.04 &     0.22 &       0.05 &  -0.33 &    -0.44 &       0.19 \\
+	011 &    - &      - &                    -  &  -0.28 &    -0.39 &       0.15 \\
+	012 &   0.05 &     0.28 &       0.08 &  -0.31 &    -0.43 &       0.19 \\
+	013 &   0.06 &     0.33 &       0.11 &  -0.33 &    -0.42 &       0.17 \\
+	014 &   0.05 &     0.35 &       0.12 &  -0.30 &    -0.44 &       0.19 \\
+	015 &   0.05 &     0.29 &       0.08 &  -0.34 &    -0.44 &       0.20 \\
+	016 &   0.04 &     0.22 &       0.05 &  -0.32 &    -0.38 &       0.14 \\
+	017 &   0.04 &     0.27 &       0.07 &  -0.26 &    -0.45 &       0.20 \\
+	018 &   0.05 &     0.29 &       0.08 &  -0.33 &    -0.40 &       0.16 \\
+	019 &   0.04 &     0.21 &       0.04 &  -0.35 &    -0.43 &       0.19 \\
+	020 &   0.05 &     0.30 &       0.09 &  -0.22 &    -0.36 &       0.13 \\
+	021 &   0.03 &     0.18 &       0.03 &  -0.28 &    -0.36 &       0.13 \\
+	022 &   0.04 &     0.24 &       0.06 &  -0.37 &    -0.46 &       0.22 \\
+	023 &   0.03 &     0.22 &       0.05 &  -0.31 &    -0.37 &       0.14 \\
+	024 &   0.06 &     0.33 &       0.11 &  -0.33 &    -0.44 &       0.19 \\
+	025 &   0.05 &     0.34 &       0.12 &  -0.29 &    -0.40 &       0.16 \\
+	026 &   0.04 &     0.25 &       0.06 &  -0.32 &    -0.39 &       0.15 \\
+	027 &   0.04 &     0.28 &       0.08 &  -0.22 &    -0.30 &       0.09 \\
+	028 &   0.03 &     0.17 &       0.03 &  -0.26 &    -0.38 &       0.15 \\
+	029 &   0.05 &     0.33 &       0.11 &  -0.39 &    -0.46 &       0.21 \\
+	030 &   0.03 &     0.19 &       0.04 &  -0.30 &    -0.42 &       0.17 \\
+	031 &   0.04 &     0.24 &       0.06 &  -0.34 &    -0.42 &       0.18 \\
+	032 &   0.04 &     0.20 &       0.04 &  -0.39 &    -0.51 &       0.26 \\
+	033 &   0.02 &     0.14 &       0.02 &  -0.14 &    -0.22 &       0.05 \\
+	034 &   0.06 &     0.31 &       0.10 &  -0.25 &    -0.32 &       0.10 \\
+	035 &   0.03 &     0.17 &       0.03 &  -0.31 &    -0.42 &       0.18 \\
+	101 &   0.07 &     0.44 &       0.20 &  -0.28 &    -0.41 &       0.17 \\
+	102 &   0.04 &     0.26 &       0.07 &  -0.24 &    -0.40 &       0.16 \\
+	103 &   0.04 &     0.22 &       0.05 &  -0.29 &    -0.40 &       0.16 \\
+	104 &   0.05 &     0.35 &       0.12 &  -0.41 &    -0.56 &       0.31 \\
+	105 &   0.02 &     0.12 &       0.01 &  -0.45 &    -0.49 &       0.24 \\
 	\bottomrule
-	\textbf{Mean} & 0.04 & 0.25 & 0.07 \\
-	\textbf{Std. Dev} & 0.01 & 0.08 & 0.04 \\
+	\textbf{Mean} & 0.04 & 0.26 & 0.07 & -0.30 & -0.40 & 0.17 \\
+	\textbf{Std} & 0.01 & 0.07 & 0.04 & 0.06 & 0.06 & 0.05
 \end{tabular}
-\label{tab:1}
+\begin{tablenotes}
+	\centering
+	\item $^{a}$ mol/m$^{2}$/yr/degC
+\end{tablenotes}
+\label{tab:enso-pacific}
 \end{table}
 
+\newpage
 \begin{table}[!h]
-\centering
-\caption{Same as Table~\ref{tab:1}, but as compared to the PDO index}
-\begin{tabular}{c | c c c}
-	\toprule
-	\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} \\
-	\midrule
-	001 &   0.06 &     0.38 &       0.14 \\
-	002 &   0.06 &     0.35 &       0.12 \\
-	009 &   0.06 &     0.36 &       0.13 \\
-	010 &   0.06 &     0.35 &       0.12 \\
-	011 &   0.03 &     0.17 &       0.03 \\
-	012 &   0.07 &     0.38 &       0.15 \\
-	013 &   0.04 &     0.25 &       0.06 \\
-	014 &   0.06 &     0.34 &       0.11 \\
-	015 &   0.05 &     0.29 &       0.09 \\
-	016 &   0.05 &     0.28 &       0.08 \\
-	017 &   0.06 &     0.37 &       0.14 \\
-	018 &   0.05 &     0.28 &       0.08 \\
-	019 &   0.07 &     0.36 &       0.13 \\
-	020 &   0.06 &     0.37 &       0.14 \\
-	021 &   0.04 &     0.26 &       0.07 \\
-	022 &   0.07 &     0.40 &       0.16 \\
-	023 &   0.05 &     0.37 &       0.14 \\
-	024 &   0.08 &     0.44 &       0.19 \\
-	025 &   0.07 &     0.41 &       0.17 \\
-	026 &   0.05 &     0.33 &       0.11 \\
-	027 &   0.03 &     0.19 &       0.04 \\
-	028 &   0.07 &     0.43 &       0.19 \\
-	029 &   0.03 &     0.22 &       0.05 \\
-	030 &   0.05 &     0.27 &       0.07 \\
-	031 &   0.05 &     0.30 &       0.09 \\
-	032 &   0.05 &     0.29 &       0.09 \\
-	033 &   0.05 &     0.34 &       0.11 \\
-	034 &   0.04 &     0.23 &       0.05 \\
-	035 &   0.04 &     0.23 &       0.05 \\
-	101 &   0.05 &     0.29 &       0.08 \\
-	102 &   0.07 &     0.39 &       0.15 \\
-	103 &   0.06 &     0.34 &       0.11 \\
-	104 &   0.06 &     0.39 &       0.15 \\
-	105 &   0.05 &     0.30 &       0.09 \\
-	\bottomrule
-	\textbf{Mean} & 0.05 & 0.32 & 0.11 \\
-	\textbf{Std. Dev} & 0.01 & 0.07 & 0.04 \\
-\end{tabular}
-\label{tab:2}
-\end{table}
-\clearpage
-\subsection{Summary}
-Unfiltered FGCO2 anomalies were quite noisy and thus had low correlation strength with Pacific Ocean climate indices. The regression analysis was stronger upon applying a 12-month moving average to these time series, which can be defended by the red noise-like FFT that characterizes the FGCO2 time series. FGCO2 variability was positively correlated with both Nino3.4 and PDO indices, but hovered around an r-value of 0 for the NPO. Correlations were stronger for the PDO (with an average R$^{2}$ of 11\%) than for ENSO (an average R$^{2}$ of 7\%). Despite r-values centering around 0.3 for both of these indices, the average regression coefficient was only 0.04 (ENSO) and 0.05 (PDO) mol/m$^{2}$/yr per degree C of SST deviations. I would consider that a fairly weak relationship, given a mean state of the system on the order of 1mol/m${2}$/yr.
-
-\clearpage
-\section{Humboldt Current (HumCS)}
-\subsection{Study Site}
-I apply similar methodology to the northern Humboldt Current along Peru (a more equatorial region). Here, the \citet{Chavez:2009} bounds dictate a 10 degree latitude band spanning 16S to 6S, the most equatorward system to be studied. Similarly, I pull a swath that is within 800km of the model coastline. Figure~\ref{fig:9} displays the studied region. Figure~\ref{fig:10} shows a flattened (non-projection) example of the distance to coastline function that has been used in selecting these regions.
-\begin{figure}[!h]
 	\centering
-	\includegraphics[width=29pc]{../../figs/humcs/study-site/humboldt-current-study-site.png}
-	\caption{800km swath in the Humboldt Current over which correlations are conducted. The data are time-averaged (1920-2015) for one ensemble member.}
-	\label{fig:9}
-\end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=29pc]{../../figs/humcs/study-site/humboldt-current-DXT-Cum.png}
-	\caption{A flattened pseudocolor plot of DXT\_Cum, which maps the distance from the model coastline.}
-	\label{fig:10}
-\end{figure}
-
-\subsection{Time Series Filtering}
-Similar to the CalCS, FGCO2 anomaly time series are noisy, so I apply a 12-month moving average to smooth them out. See Figure~\ref{fig:11} for the unfiltered and filtered FGCO2 time series. Lastly, Figure~\ref{fig:12} shows an FFT for simulation 001, which appears to be more 'red' than the CalCS.
- \begin{figure}[!h]
- 	\centering
- 	\includegraphics[width=\linewidth]{../../figs/humcs/timeseries/hcs-filtered-fgco2-series-example.png}
- 	\caption{FGCO2 anomalies in the HumCS for simulation 001. The red line is the unfiltered anomaly plot, while the black line is the time series after applying a 12-month rolling average.}
- 	\label{fig:11}
- \end{figure}
- \begin{figure}[!h]
- 	\centering
- 	\includegraphics[width=\linewidth]{../../figs/humcs/fft/fft-HCS-001-frequencyHz.png}
- 	\caption{FFT of the unfiltered time series from Figure~\ref{fig:11}.}
- 	\label{fig:12}
- \end{figure}
-
-\subsection{Regressing onto Climate Indices}
-I regress the smoothed FGCO2 anomalies onto four predictors for the HumCS: Nino3.4, PDO, IPO, and SAM. Figure~\ref{fig:13} displays histograms for the r-value for each climate index. Table~\ref{tab:3} and Table~\ref{tab:4} show individual results for the Nino3.4 and PDO regression analysis, respectively. There are no table results for the IPO or SAM, since the relationships were not as strong. Interestingly, Nino3.4 and PDO had the \it inverse \rm impact on FGCO2 in the HumCS than in the CalCS.
- \begin{figure}[!h]
-	\centering
-	\includegraphics[width=\linewidth]{../../figs/humcs/histograms/humcs-correlation-histograms.png}
-	\caption{Histograms of all 34 ensemble members r-value with each climate index.}
-	\label{fig:13}
-\end{figure}
-
-\newpage
-\begin{table}[p!]
-	\centering
-	\caption{Regression analysis between annual filtered FGCO2 anomalies in the Humboldt Current System and the Nino3.4 index. All results have $p$ $<<$ 0.05.}
-	\begin{tabular}{c | c c c}
-		\toprule
-		\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} \\
+	\caption{Results for regressing FGCO2 anomalies onto PDO time series for the two Pacific upwelling systems. Results with $p$ $>$ 0.05 are excluded.}
+	\begin{tabular}{c c c c | c c c}
+		& \multicolumn{3}{c}{CalCS} & \multicolumn{3}{c}{HumCS} \\
+		\cmidrule{2-4}\cmidrule{5-7}
+		\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
 		\midrule
-		001 &  -0.20 &    -0.29 &       0.08 \\
-		002 &  -0.31 &    -0.35 &       0.12 \\
-		009 &  -0.24 &    -0.31 &       0.10 \\
-		010 &  -0.33 &    -0.44 &       0.19 \\
-		011 &  -0.28 &    -0.39 &       0.15 \\
-		012 &  -0.31 &    -0.43 &       0.19 \\
-		013 &  -0.33 &    -0.42 &       0.17 \\
-		014 &  -0.30 &    -0.44 &       0.19 \\
-		015 &  -0.34 &    -0.44 &       0.20 \\
-		016 &  -0.32 &    -0.38 &       0.14 \\
-		017 &  -0.26 &    -0.45 &       0.20 \\
-		018 &  -0.33 &    -0.40 &       0.16 \\
-		019 &  -0.35 &    -0.43 &       0.19 \\
-		020 &  -0.22 &    -0.36 &       0.13 \\
-		021 &  -0.28 &    -0.36 &       0.13 \\
-		022 &  -0.37 &    -0.46 &       0.22 \\
-		023 &  -0.31 &    -0.37 &       0.14 \\
-		024 &  -0.33 &    -0.44 &       0.19 \\
-		025 &  -0.29 &    -0.40 &       0.16 \\
-		026 &  -0.32 &    -0.39 &       0.15 \\
-		027 &  -0.22 &    -0.30 &       0.09 \\
-		028 &  -0.26 &    -0.38 &       0.15 \\
-		029 &  -0.39 &    -0.46 &       0.21 \\
-		030 &  -0.30 &    -0.42 &       0.17 \\
-		031 &  -0.34 &    -0.42 &       0.18 \\
-		032 &  -0.39 &    -0.51 &       0.26 \\
-		033 &  -0.14 &    -0.22 &       0.05 \\
-		034 &  -0.25 &    -0.32 &       0.10 \\
-		035 &  -0.31 &    -0.42 &       0.18 \\
-		101 &  -0.28 &    -0.41 &       0.17 \\
-		102 &  -0.24 &    -0.40 &       0.16 \\
-		103 &  -0.29 &    -0.40 &       0.16 \\
-		104 &  -0.41 &    -0.56 &       0.31 \\
-		105 &  -0.45 &    -0.49 &       0.24 \\
+		001 &   0.06 &     0.38 &       0.14 &  -0.23 &    -0.28 &       0.08 \\
+		002 &   0.06 &     0.35 &       0.12 &  -0.20 &    -0.24 &       0.06 \\
+		009 &   0.06 &     0.36 &       0.13 &  -0.17 &    -0.22 &       0.05 \\
+		010 &   0.06 &     0.35 &       0.12 &  -0.27 &    -0.36 &       0.13 \\
+		011 &   0.03 &     0.17 &       0.03 &  -0.29 &    -0.38 &       0.14 \\
+		012 &   0.07 &     0.38 &       0.15 &  -0.20 &    -0.25 &       0.06 \\
+		013 &   0.04 &     0.25 &       0.06 &  -0.22 &    -0.30 &       0.09 \\
+		014 &   0.06 &     0.34 &       0.11 &  -0.25 &    -0.30 &       0.09 \\
+		015 &   0.05 &     0.29 &       0.09 &  -0.17 &    -0.23 &       0.05 \\
+		016 &   0.05 &     0.28 &       0.08 &  -0.18 &    -0.22 &       0.05 \\
+		017 &   0.06 &     0.37 &       0.14 &  -0.23 &    -0.34 &       0.11 \\
+		018 &   0.05 &     0.28 &       0.08 &  -0.14 &    -0.17 &       0.03 \\
+		019 &   0.07 &     0.36 &       0.13 &  -0.26 &    -0.32 &       0.10 \\
+		020 &   0.06 &     0.37 &       0.14 &  -0.26 &    -0.38 &       0.15 \\
+		021 &   0.04 &     0.26 &       0.07 &  -0.27 &    -0.35 &       0.12 \\
+		022 &   0.07 &     0.40 &       0.16 &  -0.29 &    -0.35 &       0.12 \\
+		023 &   0.05 &     0.37 &       0.14 &  -0.16 &    -0.19 &       0.04 \\
+		024 &   0.08 &     0.44 &       0.19 &  -0.26 &    -0.34 &       0.12 \\
+		025 &   0.07 &     0.41 &       0.17 &  -0.25 &    -0.30 &       0.09 \\
+		026 &   0.05 &     0.33 &       0.11 &  -0.17 &    -0.21 &       0.04 \\
+		027 &   0.03 &     0.19 &       0.04 &  -0.24 &    -0.29 &       0.08 \\
+		028 &   0.07 &     0.43 &       0.19 &  -0.20 &    -0.31 &       0.09 \\
+		029 &   0.03 &     0.22 &       0.05 &  -0.26 &    -0.27 &       0.07 \\
+		030 &   0.05 &     0.27 &       0.07 &  -0.17 &    -0.23 &       0.05 \\
+		031 &   0.05 &     0.30 &       0.09 &  -0.24 &    -0.29 &       0.08 \\
+		032 &   0.05 &     0.29 &       0.09 &  -0.35 &    -0.48 &       0.23 \\
+		033 &   0.05 &     0.34 &       0.11 &  -0.15 &    -0.21 &       0.04 \\
+		034 &   0.04 &     0.23 &       0.05 &  -0.16 &    -0.21 &       0.04 \\
+		035 &   0.04 &     0.23 &       0.05 &  -0.17 &    -0.23 &       0.05 \\
+		101 &   0.05 &     0.29 &       0.08 &  -0.27 &    -0.35 &       0.12 \\
+		102 &   0.07 &     0.39 &       0.15 &  -0.28 &    -0.39 &       0.15 \\
+		103 &   0.06 &     0.34 &       0.11 &  -0.25 &    -0.35 &       0.12 \\
+		104 &   0.06 &     0.39 &       0.15 &  -0.42 &    -0.48 &       0.23 \\
+		105 &   0.05 &     0.30 &       0.09 &  -0.24 &    -0.26 &       0.07 \\
 		\bottomrule
-		\textbf{Mean} & -0.30 & -0.40 & 0.17 \\
-		\textbf{Std. Dev} & 0.06 & 0.06 & 0.05 \\
+		\textbf{Mean} & 0.05 & 0.32 & 0.11 & -0.23 & -0.30 & 0.09 \\
+		\textbf{Std} & 0.01 & 0.07 & 0.04 & 0.06 & 0.08 & 0.05
 	\end{tabular}
-	\label{tab:3}
+	\begin{tablenotes}
+		\centering
+		\item $^{a}$ mol/m$^{2}$/yr/degC
+	\end{tablenotes}
+	\label{tab:pdo-pacific}
 \end{table}
-
-\newpage
-\begin{table}[p!]
-	\centering
-	\caption{Same as Table~\ref{tab:3} but for the PDO Index..}
-	\begin{tabular}{c | c c c}
-		\toprule
-		\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} \\
-		\midrule
-		001 &  -0.23 &    -0.28 &       0.08 \\
-		002 &  -0.20 &    -0.24 &       0.06 \\
-		009 &  -0.17 &    -0.22 &       0.05 \\
-		010 &  -0.27 &    -0.36 &       0.13 \\
-		011 &  -0.29 &    -0.38 &       0.14 \\
-		012 &  -0.20 &    -0.25 &       0.06 \\
-		013 &  -0.22 &    -0.30 &       0.09 \\
-		014 &  -0.25 &    -0.30 &       0.09 \\
-		015 &  -0.17 &    -0.23 &       0.05 \\
-		016 &  -0.18 &    -0.22 &       0.05 \\
-		017 &  -0.23 &    -0.34 &       0.11 \\
-		018 &  -0.14 &    -0.17 &       0.03 \\
-		019 &  -0.26 &    -0.32 &       0.10 \\
-		020 &  -0.26 &    -0.38 &       0.15 \\
-		021 &  -0.27 &    -0.35 &       0.12 \\
-		022 &  -0.29 &    -0.35 &       0.12 \\
-		023 &  -0.16 &    -0.19 &       0.04 \\
-		024 &  -0.26 &    -0.34 &       0.12 \\
-		025 &  -0.25 &    -0.30 &       0.09 \\
-		026 &  -0.17 &    -0.21 &       0.04 \\
-		027 &  -0.24 &    -0.29 &       0.08 \\
-		028 &  -0.20 &    -0.31 &       0.09 \\
-		029 &  -0.26 &    -0.27 &       0.07 \\
-		030 &  -0.17 &    -0.23 &       0.05 \\
-		031 &  -0.24 &    -0.29 &       0.08 \\
-		032 &  -0.35 &    -0.48 &       0.23 \\
-		033 &  -0.15 &    -0.21 &       0.04 \\
-		034 &  -0.16 &    -0.21 &       0.04 \\
-		035 &  -0.17 &    -0.23 &       0.05 \\
-		101 &  -0.27 &    -0.35 &       0.12 \\
-		102 &  -0.28 &    -0.39 &       0.15 \\
-		103 &  -0.25 &    -0.35 &       0.12 \\
-		104 &  -0.42 &    -0.48 &       0.23 \\
-		105 &  -0.24 &    -0.26 &       0.07 \\
-		\bottomrule
-		\textbf{Mean} & -0.23 & -0.30 & 0.09 \\
-		\textbf{Std. Dev} & 0.06 & 0.08 & 0.05 \\
-	\end{tabular}
-	\label{tab:4}
-\end{table}
-
 \clearpage
-\subsection{Summary}
-Variability in FGCO2 in the HumCS has a stronger relationship with conventional Pacific climate indices (PDO and Nino3.4) than does variability in the CalCS. Interestingly, FGCO2 anomalies vary in the opposite direction of ENSO/PDO, while CalCS anomalies vary in the same direction. Perhaps the HumCS gas flux is controlled mainly by upwelling of DIC-rich waters, and during El Ni\~no events, that upwelling is supressed, and thus gas flux weakens. 
+\subsection{Atlantic Sector}
+Figure~\ref{fig:atlantic-histograms} displays distributions of correlation tests between FGCO2 anomalies in the two Atlantic Ocean EBUS (Canary and Benguela) and the same four climate indices. At first glance, the results are much weaker than that of the Pacific systems. I find it surprising that the SAM has virtually no impact on the BenCS, when it is the only EBUS that interfaces directly with the Southern Ocean. \\
 
-\section{Benguela Current}
-\subsection{Study Site}
-
+Interestingly, CanCS gas flux has a reasonable relationship with ENSO and the PDO. As much as 15\% of FGCO2 variability in the CanCS can be explained by ENSO in some simulations (Table~\ref{tab:enso-atlantic}). We find a similar situation with regards to the PDO (Table~\ref{tab:pdo-atlantic}). There is a slight relationship between FGCO2 anomalies in the CanCS and the AMO, but it isn't even as strong as the correlation with ENSO and PDO. Overall, the BenCS is not well-explained by any major climate index.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\linewidth]{../../figs/bencs/study-site/benguela-current-study-site.png}
-	\caption{800km offshore swath in the Benguela Current over which correlations are conducted. The data are time averaged from 1920-2015 for one ensemble member.}
-	\label{fig:ben-study-site}
+	\includegraphics[width=\linewidth]{../../figs/atlantic/atlantic-EBU-correlation-distributions.png}
+	\caption{R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.}
+	\label{fig:atlantic-histograms}
 \end{figure}
 
-\subsection{Regressing onto Climate Indices}
+\newpage
+\begin{table}[!h]
+	\centering
+	\caption{Results for regressing FGCO2 anomalies onto ENSO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.}
+	\begin{tabular}{c c c c | c c c}
+		& \multicolumn{3}{c}{CanCS} & \multicolumn{3}{c}{BenCS} \\
+		\cmidrule{2-4}\cmidrule{5-7}
+		\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
+		\midrule
+		001 &   0.04 &     0.28 &       0.08 &    - &      - &        - \\
+		002 &   0.06 &     0.31 &       0.10 &    - &      - &        - \\
+		009 &   0.03 &     0.18 &       0.03 &    - &      - &        - \\
+		010 &   0.05 &     0.29 &       0.08 &    - &      - &        - \\
+		011 &   0.04 &     0.25 &       0.06 &   0.05 &     0.13 &       0.02 \\
+		012 &   0.04 &     0.28 &       0.08 &  -0.05 &    -0.11 &       0.01 \\
+		013 &   0.04 &     0.22 &       0.05 &    - &      - &        - \\
+		014 &   0.05 &     0.34 &       0.12 &    - &      - &        - \\
+		015 &   0.03 &     0.16 &       0.03 &    - &      - &        - \\
+		016 &   0.02 &     0.10 &       0.01 &    - &      - &        - \\
+		017 &   0.05 &     0.38 &       0.15 &    - &      - &        - \\
+		018 &   0.03 &     0.17 &       0.03 &  -0.07 &    -0.14 &       0.02 \\
+		019 &   0.02 &     0.11 &       0.01 &   0.04 &     0.09 &       0.01 \\
+		020 &   0.05 &     0.32 &       0.10 &    - &      - &        - \\
+		021 &   0.02 &     0.12 &       0.01 &    - &      - &        - \\
+		022 &   0.02 &     0.15 &       0.02 &   0.06 &     0.12 &       0.01 \\
+		023 &   0.04 &     0.22 &       0.05 &    - &      - &        - \\
+		024 &   0.04 &     0.25 &       0.06 &   0.06 &     0.13 &       0.02 \\
+		025 &   0.01 &     0.08 &       0.01 &    - &      - &        - \\
+		026 &   0.05 &     0.27 &       0.07 &  -0.04 &    -0.09 &       0.01 \\
+		027 &   0.03 &     0.20 &       0.04 &   0.07 &     0.14 &       0.02 \\
+		028 &   0.01 &     0.07 &       0.00 &   0.06 &     0.13 &       0.02 \\
+		029 &   0.05 &     0.31 &       0.10 &    - &      - &        - \\
+		031 &   0.02 &     0.15 &       0.02 &    - &      - &        - \\
+		032 &   0.03 &     0.15 &       0.02 &    - &      - &        - \\
+		033 &   0.03 &     0.21 &       0.04 &  -0.03 &    -0.08 &       0.01 \\
+		034 &   0.03 &     0.17 &       0.03 &  -0.05 &    -0.11 &       0.01 \\
+		035 &   0.01 &     0.07 &       0.00 &  -0.03 &    -0.07 &       0.00 \\
+		101 &   0.03 &     0.22 &       0.05 &    - &      - &        - \\
+		102 &   0.03 &     0.19 &       0.04 &    - &      - &        - \\
+		103 &   0.07 &     0.39 &       0.15 &    - &      - &        - \\
+		104 &   0.03 &     0.23 &       0.05 &    - &      - &        - \\
+		105 &   0.02 &     0.13 &       0.02 &    - &      - &        - \\
+		\bottomrule
+		\textbf{Mean} & 0.03 & 0.21 & 0.05 & 0.01 & 0.01 & 0.01 \\
+		\textbf{Std} & 0.01 & 0.09 & 0.04 & 0.05 & 0.11 & 0.01
+	\end{tabular}
+	\begin{tablenotes}
+		\centering
+		\item $^{a}$ mol/m$^{2}$/yr/degC
+	\end{tablenotes}
+	\label{tab:enso-atlantic}
+\end{table}
 
 \newpage
-\begin{table}[p!]
+\begin{table}[!h]
 	\centering
-	\caption{Results of the regression analysis between FGCO2 in the Benguela Current and the Nino3.4 index.}
-\begin{tabular}{c | c c c c}
-	\toprule
-	\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} & P-Value \\
-	\midrule
-	001 &  -0.00 &    -0.01 &       0.00 &     0.72 \\
-	002 &  -0.00 &    -0.01 &       0.00 &     0.86 \\
-	009 &  -0.00 &    -0.00 &       0.00 &     0.87 \\
-	010 &   0.00 &     0.00 &       0.00 &     1.00 \\
-	011 &   0.05 &     0.13 &       0.02 &     0.00 \\
-	012 &  -0.05 &    -0.11 &       0.01 &     0.00 \\
-	013 &  -0.01 &    -0.03 &       0.00 &     0.39 \\
-	014 &  -0.00 &    -0.00 &       0.00 &     0.88 \\
-	015 &  -0.00 &    -0.01 &       0.00 &     0.76 \\
-	016 &   0.02 &     0.03 &       0.00 &     0.25 \\
-	017 &  -0.02 &    -0.04 &       0.00 &     0.17 \\
-	018 &  -0.07 &    -0.14 &       0.02 &     0.00 \\
-	019 &   0.04 &     0.09 &       0.01 &     0.00 \\
-	020 &  -0.01 &    -0.02 &       0.00 &     0.53 \\
-	021 &   0.01 &     0.02 &       0.00 &     0.40 \\
-	022 &   0.06 &     0.12 &       0.01 &     0.00 \\
-	023 &  -0.03 &    -0.05 &       0.00 &     0.07 \\
-	024 &   0.06 &     0.13 &       0.02 &     0.00 \\
-	025 &  -0.02 &    -0.03 &       0.00 &     0.27 \\
-	026 &  -0.04 &    -0.09 &       0.01 &     0.00 \\
-	027 &   0.07 &     0.14 &       0.02 &     0.00 \\
-	028 &   0.06 &     0.13 &       0.02 &     0.00 \\
-	029 &   0.01 &     0.02 &       0.00 &     0.53 \\
-	030 &   0.00 &     0.00 &       0.00 &     0.96 \\
-	031 &  -0.02 &    -0.04 &       0.00 &     0.15 \\
-	032 &  -0.02 &    -0.04 &       0.00 &     0.20 \\
-	033 &  -0.03 &    -0.08 &       0.01 &     0.01 \\
-	034 &  -0.05 &    -0.11 &       0.01 &     0.00 \\
-	035 &  -0.03 &    -0.07 &       0.00 &     0.03 \\
-	101 &  -0.03 &    -0.06 &       0.00 &     0.06 \\
-	102 &  -0.02 &    -0.04 &       0.00 &     0.14 \\
-	103 &  -0.00 &    -0.01 &       0.00 &     0.79 \\
-	104 &  -0.01 &    -0.02 &       0.00 &     0.47 \\
-	105 &   0.01 &     0.01 &       0.00 &     0.63 \\
-	\bottomrule
-	\textbf{Mean} & 0.00 & -0.01 & 0.01 & \\
-	\textbf{Std. Dev} & 0.03 & 0.07 & 0.01 & \\
-\end{tabular}
-	\label{tab:bencs:enso}
+	\caption{Results for regressing FGCO2 anomalies onto PDO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.}
+	\begin{tabular}{c c c c | c c c}
+		& \multicolumn{3}{c}{CanCS} & \multicolumn{3}{c}{BenCS} \\
+		\cmidrule{2-4}\cmidrule{5-7}
+		\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
+		\midrule
+		001 &   0.05 &     0.30 &       0.09 &  -0.01 &    -0.02 &       0.00 \\
+		002 &   0.07 &     0.39 &       0.15 &  -0.00 &    -0.00 &       0.00 \\
+		009 &   0.02 &     0.11 &       0.01 &  -0.03 &    -0.05 &       0.00 \\
+		010 &   0.05 &     0.28 &       0.08 &  -0.01 &    -0.01 &       0.00 \\
+		011 &   0.03 &     0.17 &       0.03 &   0.01 &     0.02 &       0.00 \\
+		012 &   0.02 &     0.11 &       0.01 &   0.02 &     0.04 &       0.00 \\
+		013 &   0.03 &     0.21 &       0.04 &   0.02 &     0.03 &       0.00 \\
+		014 &   0.05 &     0.27 &       0.07 &  -0.02 &    -0.04 &       0.00 \\
+		015 &   0.02 &     0.11 &       0.01 &   0.03 &     0.07 &       0.01 \\
+		016 &   0.02 &     0.14 &       0.02 &   0.04 &     0.07 &       0.01 \\
+		017 &   0.04 &     0.22 &       0.05 &  -0.02 &    -0.05 &       0.00 \\
+		018 &   0.01 &     0.08 &       0.01 &  -0.01 &    -0.01 &       0.00 \\
+		019 &   0.01 &     0.06 &       0.00 &   0.09 &     0.19 &       0.03 \\
+		020 &   0.02 &     0.13 &       0.02 &  -0.00 &    -0.01 &       0.00 \\
+		021 &   0.01 &     0.06 &       0.00 &   0.06 &     0.13 &       0.02 \\
+		022 &   0.03 &     0.16 &       0.03 &   0.09 &     0.18 &       0.03 \\
+		023 &  -0.01 &    -0.05 &       0.00 &  -0.01 &    -0.02 &       0.00 \\
+		024 &   0.02 &     0.11 &       0.01 &   0.04 &     0.08 &       0.01 \\
+		025 &   0.03 &     0.17 &       0.03 &  -0.04 &    -0.08 &       0.01 \\
+		026 &   0.02 &     0.13 &       0.02 &   0.02 &     0.05 &       0.00 \\
+		027 &   0.03 &     0.19 &       0.03 &   0.06 &     0.10 &       0.01 \\
+		028 &   0.02 &     0.13 &       0.02 &   0.05 &     0.11 &       0.01 \\
+		029 &   0.06 &     0.33 &       0.11 &   0.06 &     0.12 &       0.01 \\
+		030 &   0.01 &     0.05 &       0.00 &   0.05 &     0.10 &       0.01 \\
+		031 &   0.00 &     0.02 &       0.00 &  -0.01 &    -0.02 &       0.00 \\
+		032 &   0.03 &     0.20 &       0.04 &  -0.03 &    -0.06 &       0.00 \\
+		033 &   0.03 &     0.22 &       0.05 &   0.01 &     0.02 &       0.00 \\
+		034 &   0.03 &     0.14 &       0.02 &  -0.05 &    -0.10 &       0.01 \\
+		035 &   0.02 &     0.15 &       0.02 &   0.02 &     0.04 &       0.00 \\
+		101 &   0.01 &     0.04 &       0.00 &   0.03 &     0.05 &       0.00 \\
+		102 &   0.03 &     0.19 &       0.03 &   0.00 &     0.01 &       0.00 \\
+		103 &   0.05 &     0.31 &       0.09 &   0.06 &     0.12 &       0.01 \\
+		104 &   0.04 &     0.27 &       0.07 &   0.02 &     0.03 &       0.00 \\
+		105 &   0.03 &     0.19 &       0.04 &   0.02 &     0.05 &       0.00 \\
+		\bottomrule
+		\textbf{Mean} & 0.03 & 0.16 & 0.04 & 0.02 & 0.03 & 0.01 \\
+		\textbf{Std} & 0.02 & 0.09 & 0.04 & 0.03 & 0.07 & 0.01
+	\end{tabular}
+	\begin{tablenotes}
+		\centering
+		\item $^{a}$ mol/m$^{2}$/yr/degC
+	\end{tablenotes}
+	\label{tab:pdo-atlantic}
 \end{table}
 
-\begin{table}[p!]
+\section{Cross Correlation}
+Perhaps we are underestimating the strength of relationship between some climate indices and EBU CO$_{2}$ flux, as we are not lagging/leading the correlations properly. Due to the physical mechanisms behind ENSO, there might be a sort of lag between a strong El Ni\~no and an anomalous gas flux. \\
+
+\begin{figure}[!h]
 	\centering
-	\caption{Results of the regression analysis between FGCO2 in the Benguela Current and the AMO index. Simulations with insignificant results (p $>$ 0.05) were removed from the table.}
-\begin{tabular}{c | c c c c}
-	\toprule
-	\textbf{Simulation} &  \textbf{Slope} [mol/m$^{2}$/yr/degC] &  \textbf{R} &  \textbf{R$^{2}$} & P-Value \\
-	\midrule
-	001 &   0.47 &     0.14 &       0.02 &     0.00 \\
-	002 &   0.71 &     0.17 &       0.03 &     0.00 \\
-	010 &   0.23 &     0.07 &       0.00 &     0.02 \\
-	012 &   0.66 &     0.20 &       0.04 &     0.00 \\
-	016 &   0.47 &     0.14 &       0.02 &     0.00 \\
-	018 &   0.33 &     0.09 &       0.01 &     0.00 \\
-	021 &   0.69 &     0.21 &       0.05 &     0.00 \\
-	022 &   0.34 &     0.10 &       0.01 &     0.00 \\
-	024 &   0.31 &     0.08 &       0.01 &     0.00 \\
-	025 &   0.48 &     0.13 &       0.02 &     0.00 \\
-	027 &  -0.40 &    -0.11 &       0.01 &     0.00 \\
-	029 &   0.33 &     0.09 &       0.01 &     0.00 \\
-	031 &   0.37 &     0.10 &       0.01 &     0.00 \\
-	102 &   0.45 &     0.13 &       0.02 &     0.00 \\
-	103 &   0.42 &     0.14 &       0.02 &     0.00 \\
-	104 &   0.48 &     0.14 &       0.02 &     0.00 \\
-	105 &   0.22 &     0.07 &       0.01 &     0.02 \\
-	\bottomrule
-	\textbf{Mean} & 0.00 & -0.01 & 0.01 & \\
-	\textbf{Std. Dev} & 0.03 & 0.07 & 0.01 & \\
-\end{tabular}
-	\label{tab:bencs:amo}
-	
-\end{table}
+	\includegraphics[width=\linewidth]{../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.png}
+	\caption{R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.}
+	\label{fig:CalCS-ENSO-Cross}
+\end{figure}
 
 \clearpage
 \bibliography{../../EBUS_BGC_Bibliography.bib}
