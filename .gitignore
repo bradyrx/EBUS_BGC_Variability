@@ -1,0 +1,2 @@
+# Ignore all netCDF files because they'll usually be large.
+*.nc
