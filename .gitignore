@@ -39,3 +39,8 @@ Thumbs.db
 # NetCDF Files; usually too large #
 ###################################
 *.nc
+
+# Powerpoints also likely large #
+################################
+*.ppt
+*.pptx
