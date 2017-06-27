@@ -32,12 +32,16 @@ textfont=it]{caption}
 
 \newpage
 \section{Model Evaluation}
-Figure~\ref{fig:evaluation} compares 30-year annual climatologies of sea-air CO$_{2}$ flux (FGCO2) across the four upwelling systems (spanning 1982-2011). The top row is derived from the 30-year monthly resolution neural network by \citet{Landschutzer2012}. The bottom row is the ensemble mean of 34 members of the CESM Large Ensemble spanning the same time period.
+Figure~\ref{fig:evaluation} compares 30-year annual climatologies of sea-air CO$_{2}$ flux (FGCO2) across the four upwelling systems (spanning 1982-2011). The top row is derived from the 30-year monthly resolution neural network, described in \citet{Landschutzer2013}. The bottom row is the ensemble mean of 34 members of the CESM Large Ensemble spanning the same time period. \\
 
+The Pacific Ocean systems seem to be best represented by the CESM-LE. For the CalCS, we find a gradient between equatorward outgassing and poleward uptake. Since we are truly focused on the northern HumCS--an area of warm, tropical SSTs and strong upwelling--we find persistent outgassing. For the CanCS, the observational product represents fairly weak CO$_{2}$ flux all together, and is characterized by a meridional gradient between equatorward outgassing and poleward uptake. On the other hand, the model product simulates more intense CO$_{2}$ uptake overall, and is more characterized by a zonal gradient between coastal outgassing and offshore uptake. Lastly, the BenCS is quite similar to the CalCS observationally, with uptake toward the poles and outgassing toward the equator. The model does simulate this, but has a much steeper gradient between the two regions, and more intense outgassing overall. \\
+
+There are a few caveats in this comparison. Firstly, the neural network product uses a number of independent predictors (\it e.g.\rm, SST, CHL, MLD, and SSS) to estimate the monthly resolution $p$CO$_{2}$; it isn't a truly observational product that can be treated as truth. Secondly, the neural network product omits coastal regions, so perhaps we might see stronger coastal signals in the CanCS and BenCS to match the model (note that \citet{Laruelle2017} will release a coastal interpolation product). Lastly, the comparison itself is not perfect. We can treat the neural network product as one `realization' of the climate system, which contains the influence of multi-decadal climate variability and external forcing. On the other hand, the model climatology averages out most of the internal variability, leaving us with a picture of the externally forced climatology. Perhaps a better comparison would be with one realization of the CESM-LE, but how does one choose the appropriate realization for comparison?
+\newpage
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=\linewidth]{../../figs/all-systems/landschuetzer-model-climatological-comparison.png}
-	\caption{Annual averages of Sea-Air CO$_{2}$ flux over 1982-2011 for the four major eastern boundary upwelling systems. The top row is semi-observational data, while the bottom row is the ensemble mean from the CESM Large Ensemble.}
+	\caption{Annual averages of Sea-Air CO$_{2}$ flux over 1982-2011 for the four major eastern boundary upwelling systems. The top row is observational data from \citet{Landschutzer2013}, while the bottom row is the ensemble mean from the CESM Large Ensemble. Red colors represent outgassing of CO$_{2}$, while blue colors represent uptake.}
 	\label{fig:evaluation}
 \end{figure}
 
@@ -427,6 +431,46 @@ Table~\ref{tab:HumCS-ENSO-5lag} displays the results of a regression analysis be
 \end{tablenotes}
 \label{tab:HumCS-ENSO-5lag}
 \end{table}
+
+\clearpage
+\section{Spatial Correlation}
+The above correlation results are built upon quite large EBUS regions--we generate area-weighted time series over a 1000km meridional and 800km zonal region. What if there are nuances on a finer spatial scale? Perhaps there is some sort of spatial structure, such as an r-value dipole, that we are missing out on. \\
+
+For the CalCS, FGCO2 correlations with ENSO are rather homogeneous (Figure~\ref{fig:CalCS-ENSO-Spatial}). In most simulations, we find a consistent positive correlation throughout the study area--during an El Ni\~no, there is an anomalous CO$_{2}$ outgassing. However, an interesting structure emerges from correlations with PDO (Figure~\ref{fig:CalCS-PDO-Spatial})--the stronger predictor of the two climate indices (Table~\ref{tab:pdo-pacific}). In a majority of simulations, we find a positive relationship with offshore FGCO2 and PDO (a positive PDO event causes anomalous outgassing), but a negative relationship with coastal FGCO2 along California. \\
+
+For the HumCS, I assess the spatial correlation of FGCO2, lead by 5 months by ENSO, due to its stronger relationship (see above sections). In general, we find strong negative correlations throughout the offshore region and coastal south-central Peru (Figure~\ref{fig:HumCS-ENSO5-Spatial}). In some simulations, we find a similar equatorward dipole as between CalCS FGCO2 and PDO. Except, in this case, it is of opposing sign. The spatial correlations between HumCS FGCO2 and PDO shows a clearer emergence of this dipole (Figure~\ref{fig:HumCS-PDO-Spatial}), although the correlations are weaker overall than with ENSO (a point found in Table~\ref{tab:pdo-pacific}). \\
+
+The spatial correlations between CanCS and ENSO resulted in a pretty consistent positive correlation throughout the region, with no meaningful pattern emergence. Plots were not produced for the BenCS, due to its low or insignificant correlation scores with all of the major climate indices.
+
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-nino34-postage.png}
+	\caption{Grid cell correlations with the Nino3.4 index in the CalCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.}
+	\label{fig:CalCS-ENSO-Spatial}
+\end{figure}
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-pdo-postage.png}
+	\caption{Grid cell correlations with PDO index in the CalCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.}
+	\label{fig:CalCS-PDO-Spatial}
+\end{figure}
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-nino34-postage-lag5.png}
+	\caption{Grid cell correlations with Nino3.4 index (5 month lead) in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.}
+	\label{fig:HumCS-ENSO5-Spatial}
+\end{figure}
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-pdo-postage.png}
+	\caption{Grid cell correlations with the PDO index in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.}
+	\label{fig:HumCS-PDO-Spatial}
+\end{figure}
+
 
 
 \clearpage

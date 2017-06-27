@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{3}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -13,13 +13,26 @@ Francisco~P. Chavez and Monique Messi{\'{e}}.
 \newblock \doi{10.1016/j.pocean.2009.07.032}.
 \newblock URL \url{http://dx.doi.org/10.1016/j.pocean.2009.07.032}.
 
-\bibitem[Landsch{\"{u}}tzer et~al.(2012)Landsch{\"{u}}tzer, Gruber, Haumann,
-  R{\"{o}}denbeck, Bakker, Heuven, Hoppema, Metzl, Sweeney, and
-  Takahashi]{Landschutzer2012}
-Peter Landsch{\"{u}}tzer, Nicolas Gruber, F~Alexander Haumann, Christian
-  R{\"{o}}denbeck, Dorothee C~E Bakker, Steven~Van Heuven, Mario Hoppema,
-  Nicolas Metzl, Colm Sweeney, and Taro Takahashi.
-\newblock {Ocean carbon sink}.
-\newblock 349\penalty0 (6253), 2012.
+\bibitem[Landsch{\"{u}}tzer et~al.(2013)Landsch{\"{u}}tzer, Gruber, Bakker,
+  Schuster, Nakaoka, Payne, Sasse, and Zeng]{Landschutzer2013}
+P.~Landsch{\"{u}}tzer, N.~Gruber, D.~C~E Bakker, U.~Schuster, S.~Nakaoka, M.~R.
+  Payne, T.~P. Sasse, and J.~Zeng.
+\newblock {A neural network-based estimate of the seasonal to inter-annual
+  variability of the Atlantic Ocean carbon sink}.
+\newblock \emph{Biogeosciences}, 10\penalty0 (11):\penalty0 7793--7815, 2013.
+\newblock ISSN 17264170.
+\newblock \doi{10.5194/bg-10-7793-2013}.
+
+\bibitem[Laruelle et~al.(2017)Laruelle, Landsch{\"{u}}tzer, Gruber, Tison,
+  Delille, and Regnier]{Laruelle2017}
+Goulven~G. Laruelle, Peter Landsch{\"{u}}tzer, Nicolas Gruber, Jean-Louis
+  Tison, Bruno Delille, and Pierre Regnier.
+\newblock {Global high resolution monthly pCO2 climatology for the coastal
+  ocean derived from neural network interpolation}.
+\newblock \emph{Biogeosciences Discuss.}, \penalty0 (February):\penalty0 1--40,
+  2017.
+\newblock ISSN 1810-6285.
+\newblock \doi{10.5194/bg-2017-64}.
+\newblock URL \url{http://www.biogeosciences-discuss.net/bg-2017-64/}.
 
 \end{thebibliography}
