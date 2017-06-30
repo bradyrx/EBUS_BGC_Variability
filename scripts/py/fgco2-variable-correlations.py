@@ -132,8 +132,7 @@ def main():
                     sns_ax.text(xlim1+0.25, ylim2-0.25, 'S' + ens[counter],
                                 fontsize=14, bbox=dict(facecolor='w',
                                                        edgecolor='k', alpha=1))
-                    sns_ax.text(xlim2-2, ylim2-0.25, 'r=' + str(r.round(2)),
-                                fontsize=14)
+                sns_ax.set_title('r=' + str(r.round(2)), fontsize=16)
                 sns_ax.set_xlabel(VAR)
             counter += 1
         fig.tight_layout(pad=3)
