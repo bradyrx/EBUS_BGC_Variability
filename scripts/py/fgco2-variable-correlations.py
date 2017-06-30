@@ -1,53 +1,59 @@
 # Author  : Riley X. Brady
 # Date    : 06/29/2017
-# Purpose : This is similar to the climate-correlation script, but instead of
-# correlationg FGCO2 anomalies to a climate index, I use this to correlate
-# FGCO2 anomalies to some other time series (e.g. pCO2).
+"""
+Desc: Use this script to correlated some predictor variable (that is NOT a
+climate index timeseries from the CVDP package; e.g. pCO2) to FG_CO2 anomalies in the four
+EBUS. Currently, by default, the script applies annual smoothing to both the
+FG_CO2 time series and the predictor variable. It then runs a linear regression
+on the two, producing a CSV output with results, as well as seaborn dist_plots
+for every case. 
+
+Prep Workflow: Make sure that you have already gone through the routine of
+processing the variables of interest. You should first run the shell scripts to
+concatenate the CESM-LE output into a monthly resolution time series over
+1920-2100 and then strip the netCDF down to a few variables of importance. Then
+you run the EBUS_Extraction script to create new netCDF files over each of the
+EBUS. Lastly, you run the generate_residuals.py script to create residuals,
+which are read into this script.
+"""
 # INPUTS #
 # INPUT 1 : A string of which EBU to work on
 # INPUT 2 : A string of which variable to correlate FGCO2 anomalies to.
-
-# UNIX-style globbing
+# INPUT 3 : True/False of whether or not to run the regression visualization.
+import os
 import glob
-
-# Allow for inputs
 import sys
-
 # Numerics
 import numpy as np
 import pandas as pd
 import xarray as xr
-from scipy import signal
 from scipy import stats
-import statsmodels.api as sm
-
 # Visualization
 import matplotlib
 matplotlib.use('agg')
 import matplotlib.pyplot as plt
-
 import seaborn as sns
 sns.set(color_codes=True)
+from constants import *
 
-def detrend_climate(x):
-    return signal.detrend(x)
+def area_weight(ds):
+    """
+    Takes in a dataset and simply area-weights it, forcing it into a
+    timeseries. Currently assumes the names of dimensions and area. Can be
+    modified later to fix this.
+    """
+    ds = ((ds * ds['TAREA']).sum(dim='nlat').sum(dim='nlon'))/ds['TAREA'].sum()
+    return ds
 
-def smooth_series(x, len):
-    return pd.rolling_mean(x, len)
-
-def seaborn_jointplot(carbonData, climateData, ensNum):
-    df = pd.DataFrame({'PDO':climateData,
-                       'FG_CO2':carbonData})
-    fig = plt.figure(figsize=(6,6))
-    with sns.axes_style("white"):
-        sns.jointplot(x='PDO', y='FG_CO2', data=df,
-                      kind='reg', space=0, color='k')
-        plt.savefig('smoothed_jointplot_PDO_' + ensNum + '.png', dpi=1000,
-                    transparent=True)
-        plt.close(fig)
+def smooth_series(x, length=12):
+    return pd.rolling_mean(x, length)
 
 def linear_regression(df, idx, x, y):
-    # df is where you will store the output.
+    """
+    Simple linear regression, with x as the predictor (generally NOT the CO2
+    flux anomalies) and y as the dependent variable (generally FG_CO2). Input
+    is a pandas dataframe that will store the results.
+    """
     slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
     df['Slope'][idx] = slope
     df['R Value'][idx] = r_value
@@ -55,128 +61,84 @@ def linear_regression(df, idx, x, y):
     df['P-Value'][idx] = p_value
     return df
 
-def drop_ensemble_dim(ds, x):
-    ds[x] = (('nlat', 'nlon'), ds[x][0])
-    return ds
-
-def chavez_bounds(x):
-    if x == "CalCS":
-        lat1 = 34
-        lat2 = 44
-    elif x == "CanCS":
-        lat1 = 12
-        lat2 = 22
-    elif x == "BenCS":
-        lat1 = -28
-        lat2 = -18
-    elif x == "HumCS":
-        lat1 = -16
-        lat2 = -6
-    else:
-        raise ValueError('\n' + 'Must Select from the following EBUS strings:'
-                         + '\n' + 'CalCS' + '\n' + 'CanCS' + '\n' + 'BenCS' +
-                         '\n' + 'HumCS')
-    return lat1, lat2
-
-    def filter_ds(ds, EBU, VAR, offshore=800):
-        ds = drop_ensemble_dim(ds, 'DXT')
-        ds = drop_ensemble_dim(ds, 'TAREA')
-        ds = drop_ensemble_dim(ds, 'REGION_MASK')
-        ds = drop_ensemble_dim(ds, 'TLAT')
-        if EBU != "HumCS":
-            ds = drop_ensemble_dim(ds, 'TLONG')
-        del ds['DYT']
-        del ds['ANGLET']
-        # Convert DXT to kilometers
-        ds['DXT'] = ds['DXT'] / 100 / 1000
-        # Find bounds for given EBU (10 degree latitude)
-        lat1, lat2 = chavez_bounds(EBU)
-        # Filter out latitude to given bounds
-        ds = ds.where(ds['TLAT'] >= lat1).where(ds['TLAT'] <= lat2)
-        # Create a masked array for DXT since it doesn't follow the same NaN
-        # structure as the co2/region_mask output.
-        data = ds[VAR][0,0]
-        data = np.ma.array(data, mask=np.isnan(data))
-        # Apply mask to DXT and replace in dataset
-        dxt_dat = ds['DXT']
-        dxt_dat = np.ma.array(dxt_dat, mask=np.isnan(data))
-        ds['DXT'] = (('nlat','nlon'), dxt_dat)
-        # Remove rows that don't have a coastline in them (helps for
-        # dist2coast)
-        regmask = ds['REGION_MASK']
-        counter = 0
-        for row in regmask:
-            conditional = 0 in row.values
-            if conditional == False:
-                ds['DXT'][counter, :] = np.nan
-            counter += 1
-        # Now create a cumulative sum of DXTs. Have to use a masked array so
-        # there isn't any issue with summing across NaNs.
-        x = ds['DXT'].values
-        x_masked = np.ma.array(x, mask=np.isnan(x))
-        dxt_cum = np.cumsum(x_masked[:, ::-1], axis=1)[:, ::-1]
-        ds['DXT_Cum'] = (('nlat','nlon'), dxt_cum)
-        # Filter to offshore value
-        ds = ds.where(ds['DXT_Cum'] <= offshore)
-        return ds
-
 def main():
     EBU = sys.argv[1]
     VAR = sys.argv[2]
-    print("Operating on : {}".format(EBU))
-
-    # + + + FGCO2
-    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/' + EBU = '/'
-    ds = xr.open_mfdataset(fileDir + '*.nc', concat_dim='ensemble')
-    ds = filter_ds(ds, EBU, 'FG_CO2')
-    fgco2_residuals = ds['FG_CO2'] - ds['FG_CO2'].mean(dim='ensemble')
-    fgco2_residuals = ((fgco2_residuals * fgco2_residuals['TAREA'])
-                       .sum(dim='nlat').sum(dim='nlon'))/fgco2_residuals['TAREA'].sum()
-
+    print "Correlating FG_CO2 with {} in the {}".format(VAR, EBU)
+    # + + + FG_CO2
+    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/' + EBU + \
+            '/filtered_residuals/'
+    ds_fgco2 = xr.open_dataset(fileDir + EBU.lower() +
+                               '-FG_CO2-residuals-chavez-800km.nc')
+    ds_fgco2 = area_weight(ds_fgco2)
     # + + + OTHER VARIABLE
-    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + EBU + '/'
-    ds = xr.open_mfdataset(fileDir + '*.nc', concat_dim='ensemble')
-    ds = filter_ds(ds, EBU, VAR)
-    var_residuals = ds[VAR] - ds[VAR].mean(dim='ensemble')
-    var_residuals = ((var_residuals * var_residuals['TAREA'])
-                     .sum(dim='nlat').sum(dim='nlon'))/var_residuals['TAREA'].sum()
-
-    # + - + - + - STATISTICAL ANALYSIS + - + - + -
-    # Create a DataFrame to store correlation analysis on different climate
-    # indices.
-    index = np.arange(0, 34, 1)
+    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
+            EBU + '/filtered_residuals/'
+    ds_var = xr.open_dataset(fileDir + EBU.lower() + '-' + VAR + \
+                             '-residuals-chavez-800km.nc')
+    ds_var = area_weight(ds_var)
+    # + + + STATISTICAL ANALYSIS
     columns = ['Slope', 'R Value', 'R Squared', 'P-Value']
-    df_corr = pd.DataFrame(index=index, columns=columns)
+    df_corr = pd.DataFrame(index=ens, columns=columns)
     for idx in np.arange(0, 34, 1):
-        # Apply annual filter to the FG_CO2 data and only match up with same
-        # length time series from CVDP package.
-        ts1 = ds_residuals[idx].values
-        # Apply 12-month rolling mean to the FG_CO2 data.
-        ts1 = smooth_series(ts1, 12)
-        # Cut off the NaNs on the front end.
-        ts1 = ts1[11::]
-        # Only compare the same length time series.
-        ts2 = ds_cvdp['nino34'][idx, 11::].values
-        ts3 = ds_cvdp['pdo'][idx, 11::].values
-        ts4 = ds_cvdp['amo'][idx, 11::].values
-        ts5 = ds_cvdp['nao'][idx, 11::].values
-        ts6 = ds_cvdp['sam'][idx, 11::].values
-        print "Working on simulation " + str(idx+1) + " of 34..."
-        # +++ Create Seaborn stats plots
-        # ensNum = str(idx)
-        # seaborn_jointplot(ts1, ts3, ensNum)  
-
-        # +++ Run Linear regressions.
-        df_enso = linear_regression(df_enso, idx, ts2, ts1)
-        df_pdo = linear_regression(df_pdo, idx, ts3, ts1)
-        df_amo = linear_regression(df_amo, idx, ts4, ts1)
-        df_nao = linear_regression(df_nao, idx, ts5, ts1)
-        df_sam = linear_regression(df_sam, idx, ts6, ts1)
-    df_enso.to_csv('smoothed_fgco2_vs_enso_' + EBU)
-    df_pdo.to_csv('smoothed_fgco2_vs_pdo_' + EBU)
-    df_amo.to_csv('smoothed_fgco2_vs_amo_' + EBU)
-    df_nao.to_csv('smoothed_fgco2_vs_nao_' + EBU)
-    df_sam.to_csv('smoothed_fgco2_vs_sam_' + EBU)
+        print "Working on Simulation {} of 34".format(idx+1)
+        dat_var = ds_var[VAR][idx].values
+        dat_var = smooth_series(dat_var)
+        dat_var = dat_var[11::]
+        dat_fgco2 = ds_fgco2['FG_CO2'][idx].values
+        dat_fgco2 = smooth_series(dat_fgco2)
+        dat_fgco2 = dat_fgco2[11::]
+        df_corr = linear_regression(df_corr, idx, dat_var, dat_fgco2)
+        directory = '/glade/u/home/rbrady/projects/EBUS_BGC_Variability/' + \
+                'data/processed/' + EBU.lower() + '/'
+    df_corr.to_csv(directory + 'smoothed_fgco2_vs_smoothed_' + VAR + '_' + EBU)
+    # + + + Make Seaborn postage plot
+    """
+    This is the bottleneck and you decide whether or not it is run by
+    "True/False" conditional of the third input. If "True", this runs and
+    produces a big subplot of regressions. 
+    """
+    conditional = sys.argv[3]
+    if conditional == "True":
+        fig, axes = plt.subplots(figsize=(16,16), nrows=6, ncols=6)
+        st = fig.suptitle(EBU + VAR + '-FG_CO2 Anomaly Regression (1920-2015)',
+                          fontsize=30)
+        counter = 0
+        for ax in axes.flat:
+            print "Visualizing {} of 36...".format(str(counter+1))
+            if counter >= 34:
+                fig.delaxes(ax)
+            else:
+                dat_var = ds_var[VAR][counter].values
+                dat_var = smooth_series(dat_var)
+                dat_var = dat_var[11::]
+                dat_co2 = ds_fgco2['FG_CO2'][counter].values
+                dat_co2 = smooth_series(dat_co2)
+                dat_co2 = dat_co2[11::]
+                slope,intercept,r,r2,p = stats.linregress(dat_var,dat_co2)
+                df = pd.DataFrame(dict(variable=dat_var, FG_CO2=dat_co2))
+                sns_ax = sns.regplot(x='variable', y='FG_CO2', data=df,
+                                     color=colors[EBU],
+                                     line_kws=dict(color='k', linewidth=1),
+                                     ax=ax)
+                sns_ax.set_ylim([-1, 1])
+                sns_ax.set_xlim([-10,10])
+                sns_ax.grid('on')
+                sns_ax.text(-9.5, 0.85, 'S' + ens[counter], fontsize=14,
+                            bbox=dict(facecolor='w', edgecolor='k', alpha=1))
+                sns_ax.text(3, 0.85, 'r=' + str(r.round(2)), fontsize=14)
+                sns_ax.set_ylabel('')
+                sns_ax.set_xlabel('')
+            counter += 1
+        fig.tight_layout(pad=3)
+        fig.subplots_adjust(top=0.90)
+        st.set_y(0.95)
+        directory = '/glade/u/home/rbrady/projects/EBUS_BGC_Variability/' + \
+                'reports/figs/' + EBU.lower() + '/regression_plots/'
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+        plt.savefig(directory + 'smoothed_FGCO2_vs_smoothed_' + VAR + \
+                    'regression_subplots.png')
 
 if __name__ == '__main__':
     main()

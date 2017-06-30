@@ -16,9 +16,11 @@
 # Notes : 
 # - Cannot easily do in parallel due to all the differences between ensemble member file structure.
 
-INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/FG_CO2
-OUTPUT_DIR=/glade/scratch/rbrady/fgco2_monthly
 VAR=FG_CO2
+INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/${VAR}
+OUTPUT_DIR=/glade/scratch/rbrady/fgco2_monthly
+
+mkdir -p ${OUTPUT_DIR}
 
 # Loop is for known BGC output. This is used because known ensemble members are split up differently.
 for n in {001,002,009,010,011,012,013,014,015,016,017,018,019,020,021,022,023,024,025,026,027,028,029,030,031,032,033,034,035,101,102,103,104,105}
