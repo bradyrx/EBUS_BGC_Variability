@@ -124,9 +124,16 @@ def main():
                 xlim1, xlim2 = sns_ax.get_xlim()
                 ylim1, ylim2 = sns_ax.get_ylim()
                 sns_ax.grid('on')
-                sns_ax.text(xlim1+0.5, ylim2-0.15, 'S' + ens[counter], fontsize=14,
-                            bbox=dict(facecolor='w', edgecolor='k', alpha=1))
-                sns_ax.text(xlim2-4, ylim2-0.15, 'r=' + str(r.round(2)), fontsize=14)
+                if VAR == 'pCO2SURF':
+                    sns_ax.text(xlim1+0.5, ylim2-0.15, 'S' + ens[counter], fontsize=14,
+                                bbox=dict(facecolor='w', edgecolor='k', alpha=1))
+                    sns_ax.text(xlim2-4, ylim2-0.15, 'r=' + str(r.round(2)), fontsize=14)
+                else:
+                    sns_ax.text(xlim1+0.25, ylim2-0.25, 'S' + ens[counter],
+                                fontsize=14, bbox=dict(facecolor='w',
+                                                       edgecolor='k', alpha=1))
+                    sns_ax.text(xlim2-2, ylim2-0.25, 'r=' + str(r.round(2)),
+                                fontsize=14)
                 sns_ax.set_xlabel(VAR)
             counter += 1
         fig.tight_layout(pad=3)
