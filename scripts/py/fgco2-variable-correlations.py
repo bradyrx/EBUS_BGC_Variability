@@ -121,12 +121,12 @@ def main():
                                      color=colors[EBU],
                                      line_kws=dict(color='k', linewidth=1),
                                      ax=ax)
-                sns_ax.set_ylim([-1, 1])
-                sns_ax.set_xlim([-10,10])
+                xlim1, xlim2 = sns_ax.get_xlim()
+                ylim1, ylim2 = sns_ax.get_ylim()
                 sns_ax.grid('on')
-                sns_ax.text(-9.5, 0.85, 'S' + ens[counter], fontsize=14,
+                sns_ax.text(xlim1+0.5, ylim2-0.15, 'S' + ens[counter], fontsize=14,
                             bbox=dict(facecolor='w', edgecolor='k', alpha=1))
-                sns_ax.text(3, 0.85, 'r=' + str(r.round(2)), fontsize=14)
+                sns_ax.text(xlim2-4, ylim2-0.15, 'r=' + str(r.round(2)), fontsize=14)
                 sns_ax.set_xlabel(VAR)
             counter += 1
         fig.tight_layout(pad=3)
