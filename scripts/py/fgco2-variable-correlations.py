@@ -101,7 +101,7 @@ def main():
     conditional = sys.argv[3]
     if conditional == "True":
         fig, axes = plt.subplots(figsize=(16,16), nrows=6, ncols=6)
-        st = fig.suptitle(EBU + VAR + '-FG_CO2 Anomaly Regression (1920-2015)',
+        st = fig.suptitle(EBU + ' ' + VAR + '-FG_CO2 Anomaly Regression (1920-2015)',
                           fontsize=30)
         counter = 0
         for ax in axes.flat:
@@ -127,8 +127,7 @@ def main():
                 sns_ax.text(-9.5, 0.85, 'S' + ens[counter], fontsize=14,
                             bbox=dict(facecolor='w', edgecolor='k', alpha=1))
                 sns_ax.text(3, 0.85, 'r=' + str(r.round(2)), fontsize=14)
-                sns_ax.set_ylabel('')
-                sns_ax.set_xlabel('')
+                sns_ax.set_xlabel(VAR)
             counter += 1
         fig.tight_layout(pad=3)
         fig.subplots_adjust(top=0.90)
