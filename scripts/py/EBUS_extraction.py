@@ -66,11 +66,12 @@ def main():
     ds = xr.open_dataset(fileName, decode_times=False)
     ds.coords['time'] = pandaTimes
     ds.attrs = {} # Clear out the legacy attributes from CESM and NCO.
-
+    ds = ds.squeeze() # Get rid of any 1D leftovers from a depth variable.
     # Convert to sea-air flux in mol/m2/yr
     dataVar = sys.argv[2] # Variable name (e.g. FG_CO2) 
     if dataVar == "FG_CO2":
         ds[dataVar] = ds[dataVar] * ((-1 * 3600 * 24 * 365.25) / (1000 * 100))
+        ds.attrs['carbon flux units'] = "mol/m2/yr"
     
     # Convert area to m2
     ds['TAREA'] = ds['TAREA'] / (100 * 100)
@@ -80,7 +81,6 @@ def main():
     del ds['d2']
 
     # Add in some metadata
-    ds.attrs['carbon flux units'] = "mol/m2/yr"
     ds.attrs['area units'] = "m2"
     
     # Get region bounds for EBU. If Benguela, need to convert the longitude
