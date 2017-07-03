@@ -5,6 +5,8 @@ given script so that you don't have to repeat them. To do so, run "from
 constants import *" which unpacks everything.
 """
 
+EBUS = ['CalCS', 'HumCS', 'CanCS', 'BenCS']
+
 colors = {
     'CalCS': '#80b1d3',
     'calcs': '#80b1d3',
