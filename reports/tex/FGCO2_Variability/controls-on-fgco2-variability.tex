@@ -40,7 +40,7 @@ There are a few caveats in this comparison. Firstly, the neural network product 
 \newpage
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\linewidth]{../../figs/all-systems/landschuetzer-model-climatological-comparison.png}
+	\includegraphics[width=\linewidth]{../../figs/all-systems/model_evaluation/landschuetzer-model-climatological-comparison.png}
 	\caption{Annual averages of Sea-Air CO$_{2}$ flux over 1982-2011 for the four major eastern boundary upwelling systems. The top row is observational data from \citet{Landschutzer2013}, while the bottom row is the ensemble mean from the CESM Large Ensemble. Red colors represent outgassing of CO$_{2}$, while blue colors represent uptake.}
 	\label{fig:evaluation}
 \end{figure}
@@ -74,7 +74,7 @@ For simplicity, I am using the latitudinal bounds set up by \citet{Chavez2009}, 
 \section{General Methodology}
 We use 34 CESM-LENS members, which can be treated as entirely independent time series, spanning 1920-2100 at monthly resolution. We focus, however, on the 1920-2015 period, since we are trying to understand the historical controls on FGCO2 variability (and as Adam Phillip's CVDP package covers this same period). The area-weighted mean (using TAREA) of FGCO2 is computed for each EBUS, generating a 34x1152 time series matrix. \\
 
-First, we subtract the ensemble mean time series from each individual simulation. This de-trends the data, leaving us with 34 independent anomaly time series, which we can think of as the \it natural \rm flux of CO$_{2}$ into and out of the coastal ocean. We then load in climate index time series (Nino3.4, PDO, AMO, NAO, SAM) for the same ensemble members, and remove the linear trend from each to similarly produce anomaly time series. \\
+First, we subtract the ensemble mean time series from each individual simulation. This de-trends and de-seasonalizes the data, leaving us with 34 independent anomaly time series, which we can think of as the \it natural \rm flux of CO$_{2}$ into and out of the coastal ocean (e.g. Figure~\ref{fig:CalCS-decomposition} and Figure~\ref{fig:BenCS-decomposition}). We then load in climate index time series (Nino3.4, PDO, AMO, NAO, SAM) for the same ensemble members, and remove the linear trend from each to similarly produce anomaly time series. \\
 
 % Add here proof that the anomaly time series are accurately describing inter-multi decadal modes of variability by performing an FFT on the raw climate indices.
 
@@ -82,6 +82,20 @@ We apply a 12-month (annual) rolling mean to all FGCO2 anomaly time series, as w
 % Add FFT subplots.
 
 Lastly, we regress the smoothed FGCO2 anomalies onto the four main predictors: Nino3.4, PDO, AMO, and SAM. 
+
+\clearpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/CalCS-FG_CO2-timeseries-decomposition.png}
+	\caption{Decomposed time series for simulation 001 of CalCS FGCO2. The first panel is the total simulated FGCO2 over the historical period. The second panel is the ensemble mean, displaying the trended and seasonalized component. The last plot is the residual flux after subtracting the second plot. This is what we base our correlations on and consider the natural flux.}
+	\label{fig:CalCS-decomposition}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/bencs/timeseries/BenCS-FG_CO2-timeseries-decomposition.png}
+	\caption{Decomposed time series for simulation 001 of BenCS FGCO2. The first panel is the total simulated FGCO2 over the historical period. The second panel is the ensemble mean, displaying the trended and seasonalized component. The last plot is the residual flux after subtracting the second plot. This is what we base our correlations on and consider the natural flux.}
+	\label{fig:BenCS-decomposition}
+\end{figure}
 
 \clearpage
 \begin{figure*}[!h]
@@ -438,7 +452,9 @@ The above correlation results are built upon quite large EBUS regions--we genera
 
 For the CalCS, FGCO2 correlations with ENSO are rather homogeneous (Figure~\ref{fig:CalCS-ENSO-Spatial}). In most simulations, we find a consistent positive correlation throughout the study area--during an El Ni\~no, there is an anomalous CO$_{2}$ outgassing. However, an interesting structure emerges from correlations with PDO (Figure~\ref{fig:CalCS-PDO-Spatial})--the stronger predictor of the two climate indices (Table~\ref{tab:pdo-pacific}). In a majority of simulations, we find a positive relationship with offshore FGCO2 and PDO (a positive PDO event causes anomalous outgassing), but a negative relationship with coastal FGCO2 along California. \\
 
-For the HumCS, I assess the spatial correlation of FGCO2, lead by 5 months by ENSO, due to its stronger relationship (see above sections). In general, we find strong negative correlations throughout the offshore region and coastal south-central Peru (Figure~\ref{fig:HumCS-ENSO5-Spatial}). In some simulations, we find a similar equatorward dipole as between CalCS FGCO2 and PDO. Except, in this case, it is of opposing sign. The spatial correlations between HumCS FGCO2 and PDO shows a clearer emergence of this dipole (Figure~\ref{fig:HumCS-PDO-Spatial}), although the correlations are weaker overall than with ENSO (a point found in Table~\ref{tab:pdo-pacific}). \\
+For the HumCS, I assess the spatial correlation of FGCO2, lead by 5 months by ENSO, due to its stronger relationship (see above sections). In general, we find strong negative correlations throughout the offshore region and coastal south-central Peru (Figure~\ref{fig:HumCS-ENSO5-Spatial}). In some simulations, we find a similar equatorward dipole as between CalCS FGCO2 and PDO. Except, in this case, it is of opposing sign. The spatial correlations between HumCS FGCO2 and PDO shows a clearer emergence of this dipole (Figure~\ref{fig:HumCS-PDO-Spatial}), although the correlations are weaker overall than with ENSO (a point found in Table~\ref{tab:pdo-pacific}). An interesting case is the HumCS-AMO relationship. In a number of simulations, the HumCS exhibits an nearshore-offshore dipole between a nearshore positive correlation and offshore negative correlations (Figure~\ref{fig:HumCS-AMO-Spatial}). \\
+
+A similar AMO spatial correlation was found for the CanCS, that might induce the weaker negative scores overall (Figure~\ref{fig:CanCS-AMO-Spatial}).
 
 The spatial correlations between CanCS and ENSO resulted in a pretty consistent positive correlation throughout the region, with no meaningful pattern emergence. Plots were not produced for the BenCS, due to its low or insignificant correlation scores with all of the major climate indices.
 
@@ -470,8 +486,81 @@ The spatial correlations between CanCS and ENSO resulted in a pretty consistent 
 	\caption{Grid cell correlations with the PDO index in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.}
 	\label{fig:HumCS-PDO-Spatial}
 \end{figure}
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-postage.png}
+	\caption{Grid cell correlations with the AMO index in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.}
+	\label{fig:HumCS-AMO-Spatial}
+\end{figure}
+\newpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-postage.png}
+	\caption{Grid cell correlations with the AMO index in the CamCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.}
+	\label{fig:CanCS-AMO-Spatial}
+\end{figure}
 
+\clearpage
+\section{pCO$_{2}$/SST Effects}
+The sea-air CO$_{2}$ flux is driven mainly by $\Delta$pCO$_{2}$, the difference between surface ocean and atmospheric CO$_{2}$. Since atmospheric CO$_{2}$ is relatively stable, we should expect high correlations between ocean pCO$_{2}$ variability and FGCO2. I ran correlations between annual smoothed pCO$_{2}$ and annual smoothed FGCO2 for all four systems, and we find the expected positive relationship for \it every \rm simulation across \it every \rm system. R values are generally greater than 0.95 (Figure~\ref{fig:pCO2-histograms}). High pCO$_{2}$ anomalies lead to outgassing. \\
 
+So, there isn't much to be learned from that exercise. More importantly, what is the major control on pCO$_{2}$ variability in each system? A good starting point is SST, which controls the solubility of CO$_{2}$. Figure~\ref{fig:SST-histograms} displays the results of correlations between SST anomalies and FGCO2 anomalies in all four EBUS. The CalCS behaves as one might expect a solubility-dependent system to act. When there are warm SST anomalies, there is anomalous outgassing in the system (Figure~\ref{fig:CalCS-SST-regressions}). On the other hand, the HumCS is well-explained by SSTs in an opposing fashion. Warm SST anomalies actually lead to an anomalous uptake of CO$_{2}$ (Figure~\ref{fig:HumCS-SST-regressions}). This is certainly not a direct causation, but rather the warm SST anomalies are linked to some other process. I would assume in this case, warm SST anomalies are linked to processes such as ENSO that would deepen the thermocline, leading to CO$_{2}$- (and nutrient-) deprived waters being upwelled. Perhaps the HumCS is more controlled by DIC concentrations than by solubility. \\
+
+The CanCS exhibits similar features to the HumCS in terms of SSTs, but to a fairly weak degree (Figure~\ref{fig:CanCS-SST-regressions}). And as we have become so used to, the BenCS is not really explained by SST variability at all (Figure~\ref{fig:BenCS-SST-regressions}).
+
+\clearpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=29pc]{../../figs/all-systems/histograms/pCO2SURF-correlation-distributions.png}
+	\caption{Correlation results between pCO$_{2}$ and FGCO2 across all systems. Simulations with $p$ $>$ 0.05 were excluded.}
+	\label{fig:pCO2-histograms}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=29pc]{../../figs/all-systems/histograms/SST-correlation-distributions.png}
+	\caption{Correlation results between SST and FGCO2 across all systems. Simulations with $p$ $>$ 0.05 were excluded.}
+	\label{fig:SST-histograms}
+\end{figure}
+
+\clearpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/calcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_subplots.png}
+	\caption{Regression analysis between SST and FGCO2 in the CalCS.}
+	\label{fig:CalCS-SST-regressions}
+\end{figure}
+
+\clearpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/humcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_subplots.png}
+	\caption{Regression analysis between SST and FGCO2 in the HumCS.}
+	\label{fig:HumCS-SST-regressions}
+\end{figure}
+
+\clearpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/cancs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_subplots.png}
+	\caption{Regression analysis between SST and FGCO2 in the CanCS.}
+	\label{fig:CanCS-SST-regressions}
+\end{figure}
+
+\clearpage
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\linewidth]{../../figs/bencs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_subplots.png}
+	\caption{Regression analysis between SST and FGCO2 in the BenCS.}
+	\label{fig:BenCS-SST-regressions}
+\end{figure}
+% The next step will be to partition the pCO$_{2}$ time series into temperature-dependent and biological-dependent parts, using the following two formulas from \citet{Takahashi2002}:
+% $$
+%	pCO_{2}-T = \mathrm{mean~annual}~pCO_{2} \times exp(0.0423 \times (T_{\mathrm{obs}} - T_{\mathrm{mean}}))
+% $$
+% $$
+%	pCO_{2}-\mathrm{nonT} = \mathrm{observed}~pCO_{2} \times exp(0.0423 \times (T_{\mathrm{mean}} - T_{\mathrm{obs}}))
+% $$
 
 \clearpage
 \bibliography{../../EBUS_BGC_Bibliography.bib}

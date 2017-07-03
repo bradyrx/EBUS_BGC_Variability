@@ -1,4 +1,4 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{4}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -34,5 +34,20 @@ Goulven~G. Laruelle, Peter Landsch{\"{u}}tzer, Nicolas Gruber, Jean-Louis
 \newblock ISSN 1810-6285.
 \newblock \doi{10.5194/bg-2017-64}.
 \newblock URL \url{http://www.biogeosciences-discuss.net/bg-2017-64/}.
+
+\bibitem[Takahashi et~al.(2002)Takahashi, Sutherland, Sweeney, Poisson, Metzl,
+  Tilbrook, Bates, Wanninkhof, Feely, Sabine, Olafsson, and
+  Nojiri]{Takahashi2002}
+Taro Takahashi, Stewart~C Sutherland, Colm Sweeney, Alain Poisson, Nicolas
+  Metzl, Bronte Tilbrook, Nicolas Bates, Rik Wanninkhof, Richard~a Feely,
+  Christopher Sabine, Jon Olafsson, and Yukihiro Nojiri.
+\newblock {Global sea – air CO 2 flux based on climatological surface ocean
+  pCO 2 , and seasonal biological and temperature effects}.
+\newblock \emph{Deep Sea Res. Part II Top. Stud. Oceanogr.}, 49\penalty0
+  (9-10):\penalty0 1601--1622, 2002.
+\newblock ISSN 09670645.
+\newblock \doi{10.1016/S0967-0645(02)00003-6}.
+\newblock URL
+  \url{http://linkinghub.elsevier.com/retrieve/pii/S0967064502000036}.
 
 \end{thebibliography}

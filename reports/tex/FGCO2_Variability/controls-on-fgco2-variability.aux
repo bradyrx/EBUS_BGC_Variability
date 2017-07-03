@@ -15,42 +15,64 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Nearshore regions for each EBUS over which area-weighted FGCO2 is computed. The latitude is constrained by the 10 degree bounds of most active upwelling (per \citet  {Chavez2009}). The longitude is constrained to 800km offshore to standardize region sizes across different latitudes.\relax }}{4}}
 \newlabel{model:setup}{{2}{4}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}General Methodology}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces FGCO2 anomalies for arbitrary simulation 001 in color with their annual smoothing counterpart overlaid in black.\relax }}{6}}
-\newlabel{smoothed:series}{{3}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Climate Correlations}{6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Pacific Sector}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.\relax }}{8}}
-\newlabel{fig:pacific-histograms}{{4}{8}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Results for regressing FGCO2 anomalies onto Nino3.4 time series for the two Pacific upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{9}}
-\newlabel{tab:enso-pacific}{{1}{9}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Results for regressing FGCO2 anomalies onto PDO time series for the two Pacific upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{10}}
-\newlabel{tab:pdo-pacific}{{2}{10}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Atlantic Sector}{11}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.\relax }}{11}}
-\newlabel{fig:atlantic-histograms}{{5}{11}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Results for regressing FGCO2 anomalies onto ENSO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{12}}
-\newlabel{tab:enso-atlantic}{{3}{12}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Results for regressing FGCO2 anomalies onto PDO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{13}}
-\newlabel{tab:pdo-atlantic}{{4}{13}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Cross Correlation}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Cross correlations between CalCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.\relax }}{15}}
-\newlabel{fig:CalCS-ENSO-Cross}{{6}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Cross correlations between HumCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.\relax }}{16}}
-\newlabel{fig:HumCS-ENSO-Cross}{{7}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Distribution of r values for a correlation between HumCS FGCO2 anomalies and the Nino3.4 index with a 5-month lead time.\relax }}{17}}
-\newlabel{fig:HumCS-ENSO-hist-5lag}{{8}{17}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Results for regressing HumCS FGCO2 anomalies onto Nino3.4 time series with a 5-month lead. Results with $p$ $>$ 0.05 are excluded.\relax }}{18}}
-\newlabel{tab:HumCS-ENSO-5lag}{{5}{18}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Spatial Correlation}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Grid cell correlations with the Nino3.4 index in the CalCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{20}}
-\newlabel{fig:CalCS-ENSO-Spatial}{{9}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Grid cell correlations with PDO index in the CalCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{21}}
-\newlabel{fig:CalCS-PDO-Spatial}{{10}{21}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Grid cell correlations with Nino3.4 index (5 month lead) in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{22}}
-\newlabel{fig:HumCS-ENSO5-Spatial}{{11}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Grid cell correlations with the PDO index in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{23}}
-\newlabel{fig:HumCS-PDO-Spatial}{{12}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Decomposed time series for simulation 001 of CalCS FGCO2. The first panel is the total simulated FGCO2 over the historical period. The second panel is the ensemble mean, displaying the trended and seasonalized component. The last plot is the residual flux after subtracting the second plot. This is what we base our correlations on and consider the natural flux.\relax }}{6}}
+\newlabel{fig:CalCS-decomposition}{{3}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Decomposed time series for simulation 001 of BenCS FGCO2. The first panel is the total simulated FGCO2 over the historical period. The second panel is the ensemble mean, displaying the trended and seasonalized component. The last plot is the residual flux after subtracting the second plot. This is what we base our correlations on and consider the natural flux.\relax }}{6}}
+\newlabel{fig:BenCS-decomposition}{{4}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces FGCO2 anomalies for arbitrary simulation 001 in color with their annual smoothing counterpart overlaid in black.\relax }}{7}}
+\newlabel{smoothed:series}{{5}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Climate Correlations}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Pacific Sector}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.\relax }}{9}}
+\newlabel{fig:pacific-histograms}{{6}{9}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Results for regressing FGCO2 anomalies onto Nino3.4 time series for the two Pacific upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{10}}
+\newlabel{tab:enso-pacific}{{1}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Results for regressing FGCO2 anomalies onto PDO time series for the two Pacific upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{11}}
+\newlabel{tab:pdo-pacific}{{2}{11}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Atlantic Sector}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.\relax }}{12}}
+\newlabel{fig:atlantic-histograms}{{7}{12}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Results for regressing FGCO2 anomalies onto ENSO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{13}}
+\newlabel{tab:enso-atlantic}{{3}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Results for regressing FGCO2 anomalies onto PDO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.\relax }}{14}}
+\newlabel{tab:pdo-atlantic}{{4}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Cross Correlation}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Cross correlations between CalCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.\relax }}{16}}
+\newlabel{fig:CalCS-ENSO-Cross}{{8}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Cross correlations between HumCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.\relax }}{17}}
+\newlabel{fig:HumCS-ENSO-Cross}{{9}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Distribution of r values for a correlation between HumCS FGCO2 anomalies and the Nino3.4 index with a 5-month lead time.\relax }}{18}}
+\newlabel{fig:HumCS-ENSO-hist-5lag}{{10}{18}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Results for regressing HumCS FGCO2 anomalies onto Nino3.4 time series with a 5-month lead. Results with $p$ $>$ 0.05 are excluded.\relax }}{19}}
+\newlabel{tab:HumCS-ENSO-5lag}{{5}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Spatial Correlation}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Grid cell correlations with the Nino3.4 index in the CalCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{21}}
+\newlabel{fig:CalCS-ENSO-Spatial}{{11}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Grid cell correlations with PDO index in the CalCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{22}}
+\newlabel{fig:CalCS-PDO-Spatial}{{12}{22}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Grid cell correlations with Nino3.4 index (5 month lead) in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{23}}
+\newlabel{fig:HumCS-ENSO5-Spatial}{{13}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Grid cell correlations with the PDO index in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{24}}
+\newlabel{fig:HumCS-PDO-Spatial}{{14}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Grid cell correlations with the AMO index in the HumCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{25}}
+\newlabel{fig:HumCS-AMO-Spatial}{{15}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Grid cell correlations with the AMO index in the CamCS. Brown colors are positive r-values, while blue colors are negative r-values. Gray grid cells were analyzed, but have $p$ $>$ 0.05.\relax }}{26}}
+\newlabel{fig:CanCS-AMO-Spatial}{{16}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}pCO$_{2}$/SST Effects}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Correlation results between pCO$_{2}$ and FGCO2 across all systems. Simulations with $p$ $>$ 0.05 were excluded.\relax }}{28}}
+\newlabel{fig:pCO2-histograms}{{17}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Correlation results between SST and FGCO2 across all systems. Simulations with $p$ $>$ 0.05 were excluded.\relax }}{28}}
+\newlabel{fig:SST-histograms}{{18}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Regression analysis between SST and FGCO2 in the CalCS.\relax }}{29}}
+\newlabel{fig:CalCS-SST-regressions}{{19}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Regression analysis between SST and FGCO2 in the HumCS.\relax }}{30}}
+\newlabel{fig:HumCS-SST-regressions}{{20}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Regression analysis between SST and FGCO2 in the CanCS.\relax }}{31}}
+\newlabel{fig:CanCS-SST-regressions}{{21}{31}}
+\@writefile{lof}{\contentsline {figure}{\numberline {22}{\ignorespaces Regression analysis between SST and FGCO2 in the BenCS.\relax }}{32}}
+\newlabel{fig:BenCS-SST-regressions}{{22}{32}}
 \bibdata{../../EBUS_BGC_Bibliography.bib}
 \bibcite{Chavez2009}{{1}{2009}{{Chavez and Messi{\'{e}}}}{{}}}
 \bibcite{Landschutzer2013}{{2}{2013}{{Landsch{\"{u}}tzer et~al.}}{{Landsch{\"{u}}tzer, Gruber, Bakker, Schuster, Nakaoka, Payne, Sasse, and Zeng}}}
 \bibcite{Laruelle2017}{{3}{2017}{{Laruelle et~al.}}{{Laruelle, Landsch{\"{u}}tzer, Gruber, Tison, Delille, and Regnier}}}
+\bibcite{Takahashi2002}{{4}{2002}{{Takahashi et~al.}}{{Takahashi, Sutherland, Sweeney, Poisson, Metzl, Tilbrook, Bates, Wanninkhof, Feely, Sabine, Olafsson, and Nojiri}}}
