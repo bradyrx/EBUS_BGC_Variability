@@ -109,18 +109,38 @@ def main():
     ds['DXT_Cum'] = (('nlat', 'nlon'), dxt_cum)
     # Filter out to within certain distance of coastline
     ds = ds.where(ds['DXT_Cum'] <= OFFSHORE)
-    # Create residuals by subtracting out ensemble mean.
-    ds_residuals = ds[VAR] - ds[VAR].mean(dim='ensemble')
-    ds_residuals = ds_residuals.to_dataset()
+    # GENERATE AND SAVE VARIANTS : FORCED/RESIDUALS +
+    # AREA-WEIGHTED/NON-AREA-WEIGHTED
+    ds_forced = ds[VAR].mean(dim='ensemble')
+    ds_residuals = ds[VAR] - ds_forced
+    ds_forced['TAREA'] = ds['TAREA']
     ds_residuals['TAREA'] = ds['TAREA']
+    # AREA WEIGHTING
+    ds_forced_AW = ((ds_forced * ds['TAREA']).sum(dim='nlat')
+                       .sum(dim='nlon'))/ds['TAREA'].sum()
+    ds_forced_AW.name = VAR + '_AW'
+    ds_forced_AW = ds_forced_AW.to_dataset()
+    ds_residuals_AW = ((ds_residuals * ds['TAREA']).sum(dim='nlat')
+                       .sum(dim='nlon'))/ds['TAREA'].sum()
+    ds_residuals_AW.name = VAR + '_AW'
+    ds_residuals_AW = ds_residuals_AW.to_dataset()
+    ds_forced = ds_forced.to_dataset()
+    ds_residuals = ds_residuals.to_dataset()
     # Save as NetCDF.
     directory = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
-                EBU + '/filtered_residuals/'
+                EBU + '/filtered_output/'
     if not os.path.exists(directory):
         os.makedirs(directory)
-    print "Saving residuals as a netCDF file..."
+    print "Saving forced signal to NetCDF..."
+    ds_forced.to_netcdf(directory + EBU.lower() + '-' + VAR +
+                        '-forced-signal-chavez-' + str(OFFSHORE) + 'km.nc')
+    ds_forced_AW.to_netcdf(directory + EBU.lower() + '-' + VAR +
+                        '-forced-signal-AW-chavez-' + str(OFFSHORE) + 'km.nc')
+    print "Saving residuals to NetCDF..."
     ds_residuals.to_netcdf(directory + EBU.lower() + '-' + VAR +
-                           '-residuals-chavez-' + str(OFFSHORE) + 'km.nc')
+                        '-residuals-chavez-' + str(OFFSHORE) + 'km.nc')
+    ds_residuals_AW.to_netcdf(directory + EBU.lower() + '-' + VAR +
+                        '-residuals-AW-chavez-' + str(OFFSHORE) + 'km.nc')
 
 if __name__ == '__main__':
     main()
