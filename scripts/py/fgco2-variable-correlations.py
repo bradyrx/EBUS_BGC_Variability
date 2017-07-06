@@ -36,15 +36,6 @@ import seaborn as sns
 sns.set(color_codes=True)
 from constants import *
 
-def area_weight(ds):
-    """
-    Takes in a dataset and simply area-weights it, forcing it into a
-    timeseries. Currently assumes the names of dimensions and area. Can be
-    modified later to fix this.
-    """
-    ds = ((ds * ds['TAREA']).sum(dim='nlat').sum(dim='nlon'))/ds['TAREA'].sum()
-    return ds
-
 def smooth_series(x, length=12):
     return pd.rolling_mean(x, length)
 
@@ -67,16 +58,20 @@ def main():
     print "Correlating FG_CO2 with {} in the {}".format(VAR, EBU)
     # + + + FG_CO2
     fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/' + EBU + \
-            '/filtered_residuals/'
+            '/filtered_output/'
     ds_fgco2 = xr.open_dataset(fileDir + EBU.lower() +
-                               '-FG_CO2-residuals-chavez-800km.nc')
-    ds_fgco2 = area_weight(ds_fgco2)
+                               '-FG_CO2-residuals-AW-chavez-800km.nc')
     # + + + OTHER VARIABLE
-    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
-            EBU + '/filtered_residuals/'
-    ds_var = xr.open_dataset(fileDir + EBU.lower() + '-' + VAR + \
-                             '-residuals-chavez-800km.nc')
-    ds_var = area_weight(ds_var)
+    # Distinction for pCO2 decomposed since it is saved slightly differently.
+    if VAR == 'pCO2SURF_T' or VAR == 'pCO2SURF_nonT':
+        fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/'
+        ds_var = xr.open_dataset(fileDir + EBU.lower() + '-' + VAR + \
+                                 '-detrended-AW-chavez-800km.nc')
+    else:
+        fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
+            EBU + '/filtered_output/'
+        ds_var = xr.opendataset(fileDir + EBU.lower() + '-' + VAR + \
+            '-residuals-AW-chavez-800km.nc')
     # + + + STATISTICAL ANALYSIS
     columns = ['Slope', 'R Value', 'R Squared', 'P-Value']
     df_corr = pd.DataFrame(index=ens, columns=columns)
@@ -85,7 +80,7 @@ def main():
         dat_var = ds_var[VAR][idx].values
         dat_var = smooth_series(dat_var)
         dat_var = dat_var[11::]
-        dat_fgco2 = ds_fgco2['FG_CO2'][idx].values
+        dat_fgco2 = ds_fgco2['FG_CO2_AW'][idx].values
         dat_fgco2 = smooth_series(dat_fgco2)
         dat_fgco2 = dat_fgco2[11::]
         df_corr = linear_regression(df_corr, idx, dat_var, dat_fgco2)
@@ -112,7 +107,7 @@ def main():
                 dat_var = ds_var[VAR][counter].values
                 dat_var = smooth_series(dat_var)
                 dat_var = dat_var[11::]
-                dat_co2 = ds_fgco2['FG_CO2'][counter].values
+                dat_co2 = ds_fgco2['FG_CO2_AW'][counter].values
                 dat_co2 = smooth_series(dat_co2)
                 dat_co2 = dat_co2[11::]
                 slope,intercept,r,r2,p = stats.linregress(dat_var,dat_co2)
