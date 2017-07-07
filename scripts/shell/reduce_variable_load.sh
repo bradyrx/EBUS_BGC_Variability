@@ -14,7 +14,7 @@
 # Purpose : Quick script to take output from CESM-LENS that has MANY variables embedded, and just pull out the variable and coordinates of interest. 
 # This makes it easier to manage when loading a bunch of files into xArray.
 
-MAIN_DIR=/glade/scratch/rbrady/fgco2_monthly
+MAIN_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/fgco2_monthly
 
 cd ${MAIN_DIR}
 

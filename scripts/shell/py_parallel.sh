@@ -19,8 +19,10 @@ VAR=FG_CO2
 EBU=HumCS
 OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/${VAR}/${EBU}/
 
+mkdir -p ${OUT}
+
 time (
-for INPUT in /glade/scratch/rbrady/fgco2_monthly/reduced*.nc
+for INPUT in /glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/reduced*.nc
 do
     python ${script} ${INPUT} ${VAR} ${EBU} ${OUT} &
 done

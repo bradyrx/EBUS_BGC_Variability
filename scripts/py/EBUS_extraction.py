@@ -61,7 +61,6 @@ def find_indices(latGrid, lonGrid, latPoint, lonPoint):
 def main():
     fileName = sys.argv[1] # System input (filename placed after script name on command line)
     print("Operating on : {}".format(fileName))
-
     pandaTimes = pd.date_range('1920-01', '2101-01', freq='M')
     ds = xr.open_dataset(fileName, decode_times=False)
     ds.coords['time'] = pandaTimes
@@ -72,17 +71,13 @@ def main():
     if dataVar == "FG_CO2":
         ds[dataVar] = ds[dataVar] * ((-1 * 3600 * 24 * 365.25) / (1000 * 100))
         ds.attrs['carbon flux units'] = "mol/m2/yr"
-    
     # Convert area to m2
     ds['TAREA'] = ds['TAREA'] / (100 * 100)
-
     # Drop unnecessary bits
     del ds['time_bound']
     del ds['d2']
-
     # Add in some metadata
     ds.attrs['area units'] = "m2"
-    
     # Get region bounds for EBU. If Benguela, need to convert the longitude
     # grid to go over the equator.
     EBUS_NAME = sys.argv[3]
@@ -94,10 +89,8 @@ def main():
     lat1, lat2, lon1, lon2 = detect_EBUS(EBUS_NAME)
     a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat1, lon1)
     b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat2, lon2)
-
-    # Slice out CCS, cover 1920 to 2015 per Adam Phillip's climate indices.
+    # Slice out EBUS, cover 1920 to 2015 per Adam Phillip's climate indices.
     ds = ds.sel(nlat=slice(a, b), nlon=slice(c, d), time=slice('1920-01', '2015-12'))
-
     # File output as netCDF
     ens = fileName[-20:-17] # This works if you maintain the standard naming convention of VAR.ENS.192001-210012.nc
     newFile = dataVar + '.' + ens + '.' + EBUS_NAME + '.192001-201512.nc'

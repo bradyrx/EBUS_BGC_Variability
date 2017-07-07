@@ -18,7 +18,7 @@
 
 VAR=FG_CO2
 INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/${VAR}
-OUTPUT_DIR=/glade/scratch/rbrady/fgco2_monthly
+OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly
 
 mkdir -p ${OUTPUT_DIR}
 

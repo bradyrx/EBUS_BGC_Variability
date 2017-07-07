@@ -17,7 +17,7 @@
 # - Cannot easily do in parallel due to all the differences between ensemble member file structure.
 VAR=DIC
 INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/${VAR}
-OUTPUT_DIR=/glade/scratch/rbrady/dic_monthly
+OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly
 
 mkdir -p ${OUTPUT_DIR}
 
