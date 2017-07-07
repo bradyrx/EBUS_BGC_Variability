@@ -1,48 +1,30 @@
 # Author  : Riley X. Brady
-# Date    : 06/06/2017
-# Purpose : Take in data from an EBUS (for now optimized for FG_CO2) and
-# correlate/regress it against a few climate indices from the CVDP dataset that
-# Adam Phillips developed.
-# NOTE : Make sure to input a string argument of which EBUS you want to operate
-# on.
-# UNIX-style globbing
+# Date    : 06/06/2017, updated 07/07/2017
+"""
+Desc: This script will correlate any processed variable (i.e. it has gone
+through the Extract_EBUS and generate_residuals scripts) and correlate/regress
+it against ENSO, PDO, AMO, and SAM from the CVDP dataset that Adam Phillips
+developed. As an end result, it will save the analysis information away as a
+csv in the data/processed/EBU folder. These can be opened in a notebook for
+analysis/plotting.
+"""
+# INPUT 1 : EBU
+# INPUT 2 : Variable for correlating to climate indices.
+# INPUT 3 : Boolean for smoothing (True == 12 month smoothing)
 import glob
-
-# Allow for inputs
 import sys
-
 # Numerics
 import numpy as np
 import pandas as pd
 import xarray as xr
 from scipy import signal
 from scipy import stats
-import statsmodels.api as sm
-
-# Visualization
-import matplotlib
-matplotlib.use('agg')
-import matplotlib.pyplot as plt
-
-import seaborn as sns
-sns.set(color_codes=True)
 
 def detrend_climate(x):
     return signal.detrend(x)
 
-def smooth_series(x, len):
-    return pd.rolling_mean(x, len)
-
-def seaborn_jointplot(carbonData, climateData, ensNum):
-    df = pd.DataFrame({'PDO':climateData,
-                       'FG_CO2':carbonData})
-    fig = plt.figure(figsize=(6,6))
-    with sns.axes_style("white"):
-        sns.jointplot(x='PDO', y='FG_CO2', data=df,
-                      kind='reg', space=0, color='k')
-        plt.savefig('smoothed_jointplot_PDO_' + ensNum + '.png', dpi=1000,
-                    transparent=True)
-        plt.close(fig)
+def smooth_series(x, length=12):
+    return pd.rolling_mean(x, length)
 
 def linear_regression(df, idx, x, y):
     # df is where you will store the output.
@@ -53,81 +35,22 @@ def linear_regression(df, idx, x, y):
     df['P-Value'][idx] = p_value
     return df
 
-def drop_ensemble_dim(ds, x):
-    ds[x] = (('nlat', 'nlon'), ds[x][0])
-    return ds
-
-def chavez_bounds(x):
-    if x == "CalCS":
-        lat1 = 34
-        lat2 = 44
-    elif x == "CanCS":
-        lat1 = 12
-        lat2 = 22
-    elif x == "BenCS":
-        lat1 = -28
-        lat2 = -18
-    elif x == "HumCS":
-        lat1 = -16
-        lat2 = -6
-    else:
-        raise ValueError('\n' + 'Must Select from the following EBUS strings:'
-                         + '\n' + 'CalCS' + '\n' + 'CanCS' + '\n' + 'BenCS' +
-                         '\n' + 'HumCS')
-    return lat1, lat2
-
 def main():
     EBU = sys.argv[1]
+    VAR = sys.argv[2]
+    SMOOTH = sys.argv[3]
     print("Operating on : {}".format(EBU))
-    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/' + EBU + '/'
-    ds = xr.open_mfdataset(fileDir + '*.nc', concat_dim='ensemble')
-    # Reduce ensemble dimension for coordinates.
-    ds = drop_ensemble_dim(ds, 'DXT')
-    ds = drop_ensemble_dim(ds, 'TAREA')
-    ds = drop_ensemble_dim(ds, 'REGION_MASK')
-    ds = drop_ensemble_dim(ds, 'TLAT')
-    if EBU != "HumCS":
-        ds = drop_ensemble_dim(ds, 'TLONG')
-    del ds['DYT']
-    del ds['ANGLET']
-    # Convert DXT to kilometers.
-    ds['DXT'] = ds['DXT'] / 100 / 1000
-    # Filter out latitude to Chavez bounds.
-    lat1, lat2 = chavez_bounds(EBU)
-    ds = ds.where(ds['TLAT'] >= lat1).where(ds['TLAT'] <= lat2)
-    # Create a masked array for DXT since it doesn't follow the same NaN
-    # structure as the co2/region_mask output.
-    co2 = ds['FG_CO2'][0,0]
-    co2 = np.ma.array(co2, mask=np.isnan(co2))
-    # Apply mask to DXT and replace in dataset
-    dxt_dat = ds['DXT']
-    dxt_dat = np.ma.array(dxt_dat, mask=np.isnan(co2))
-    ds['DXT'] = (('nlat','nlon'), dxt_dat)
-    # Remove rows that don't have a coastline in them (helps for dist2coast)
-    regmask = ds['REGION_MASK']
-    counter = 0
-    for row in regmask:
-        conditional = 0 in row.values
-        if conditional == False:
-            ds['DXT'][counter, :] = np.nan
-        counter += 1
-    # Now create a cumulative sum of DXTs. Have to use masked array so there
-    # isn't any issue with summing across NaNs.
-    x = ds['DXT'].values
-    x_masked = np.ma.array(x, mask=np.isnan(x))
-    dxt_cum = np.cumsum(x_masked[:, ::-1], axis=1)[:, ::-1]
-    ds['DXT_Cum'] = (('nlat','nlon'), dxt_cum)
-    # Filter to 800km offshore.
-    ds = ds.where(ds['DXT_Cum'] <= 800)
-
-    # + - + - + Post-Filter Computations + - + - + 
-    # Subtract out the ensemble mean from all members (create residuals)
-    # ds_residuals is now the residuals of FG_CO2. It is a DataArray.
-    ds_residuals = ds['FG_CO2'] - ds['FG_CO2'].mean(dim='ensemble')
-
-    # Area-weighting. ds_resiudals is now the area-weighted average time series.
-    ds_residuals = ((ds_residuals * ds['TAREA'])
-                    .sum(dim='nlat').sum(dim='nlon'))/ds['TAREA'].sum()
+    print("Correlating climate indices with {}...".format(VAR))
+    if SMOOTH == "True":
+        print "Data will be correlated after smoothing with a " + \
+                "12-month rolling average."
+    else:
+        print "Data will NOT be smoothed."
+    # Load in non-climate variable.
+    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
+              EBU + '/filtered_output/'
+    ds_var = xr.open_dataset(fileDir + EBU.lower() + '-' + VAR + \
+                             '-residuals-AW-chavez-800km.nc')
 
     # Load in CVDP data.
     fileDir = '/glade/p/work/rbrady/cesmLE_CVDP/extracted_vars/'
@@ -153,38 +76,38 @@ def main():
     df_enso = pd.DataFrame(index=index, columns=columns)
     df_pdo = pd.DataFrame(index=index, columns=columns)
     df_amo = pd.DataFrame(index=index, columns=columns)
-    df_nao = pd.DataFrame(index=index, columns=columns)
     df_sam = pd.DataFrame(index=index, columns=columns)
     for idx in np.arange(0, 34, 1):
-        # Apply annual filter to the FG_CO2 data and only match up with same
-        # length time series from CVDP package.
-        ts1 = ds_residuals[idx].values
-        # Apply 12-month rolling mean to the FG_CO2 data.
-        ts1 = smooth_series(ts1, 12)
-        # Cut off the NaNs on the front end.
-        ts1 = ts1[11::]
-        # Only compare the same length time series.
-        ts2 = ds_cvdp['nino34'][idx, 11::].values
-        ts3 = ds_cvdp['pdo'][idx, 11::].values
-        ts4 = ds_cvdp['amo'][idx, 11::].values
-        ts5 = ds_cvdp['nao'][idx, 11::].values
-        ts6 = ds_cvdp['sam'][idx, 11::].values
+        ts1 = ds_var[VAR + '_AW'][idx].values
+        ts2 = ds_cvdp['nino34'][idx].values
+        ts3 = ds_cvdp['pdo'][idx].values
+        ts4 = ds_cvdp['amo'][idx].values
+        ts5 = ds_cvdp['sam'][idx].values
+        if SMOOTH == "True":
+            ts1 = smooth_series(ts1)
+            ts1 = ts1[11::]
+            ts2 = ts2[11::]
+            ts3 = ts3[11::]
+            ts4 = ts4[11::]
+            ts5 = ts5[11::]
         print "Working on simulation " + str(idx+1) + " of 34..."
-        # +++ Create Seaborn stats plots
-        # ensNum = str(idx)
-        # seaborn_jointplot(ts1, ts3, ensNum)  
-
-        # +++ Run Linear regressions.
+        # Run linear regressions
         df_enso = linear_regression(df_enso, idx, ts2, ts1)
         df_pdo = linear_regression(df_pdo, idx, ts3, ts1)
         df_amo = linear_regression(df_amo, idx, ts4, ts1)
-        df_nao = linear_regression(df_nao, idx, ts5, ts1)
-        df_sam = linear_regression(df_sam, idx, ts6, ts1)
-    df_enso.to_csv('smoothed_fgco2_vs_enso_' + EBU)
-    df_pdo.to_csv('smoothed_fgco2_vs_pdo_' + EBU)
-    df_amo.to_csv('smoothed_fgco2_vs_amo_' + EBU)
-    df_nao.to_csv('smoothed_fgco2_vs_nao_' + EBU)
-    df_sam.to_csv('smoothed_fgco2_vs_sam_' + EBU)
+        df_sam = linear_regression(df_sam, idx, ts5, ts1)
+    directory = '/glade/u/home/rbrady/projects/EBUS_BGC_Variability/' + \
+            'data/processed/' + EBU.lower() + '/'
+    if SMOOTH == "True":
+        df_enso.to_csv(directory + 'smoothed_' + VAR + '_vs_enso_' + EBU)
+        df_pdo.to_csv(directory + 'smoothed_' + VAR + '_vs_pdo_' + EBU)
+        df_amo.to_csv(directory + 'smoothed_' + VAR + '_vs_amo_' + EBU)
+        df_sam.to_csv(directory + 'smoothed_' + VAR + '_vs_sam_' + EBU)
+    else:
+        df_enso.to_csv(directory + 'unsmoothed_' + VAR + '_vs_enso_' + EBU)
+        df_pdo.to_csv(directory + 'unsmoothed_' + VAR + '_vs_pdo_' + EBU)
+        df_amo.to_csv(directory + 'unsmoothed_' + VAR + '_vs_amo_' + EBU)
+        df_sam.to_csv(directory + 'unsmoothed_' + VAR + '_vs_sam_' + EBU)
 
 if __name__ == '__main__':
     main()
