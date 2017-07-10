@@ -14,8 +14,8 @@
 # Purpose : Use this when submitting a python script as a job.
 
 script=overhead-spatial-correlation.py
-EBU=CalCS
-VARX=pdo
+EBU=BenCS
+VARX=nino34
 VARY=FG_CO2
 
 python ${script} ${EBU} ${VARX} ${VARY}
