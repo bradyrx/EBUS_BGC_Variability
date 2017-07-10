@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 JUL 2017 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  10 JUL 2017 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -400,223 +400,256 @@ composition.png used on input line 95.
 
  <../../figs/calcs/timeseries/CalCS-FG_CO2-timeseries-decomposition.png> <../..
 /figs/bencs/timeseries/BenCS-FG_CO2-timeseries-decomposition.png>]
-<../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png, id=44, 13
-00.86pt x 289.08pt>
-File: ../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png Graph
-ic file (type png)
+<../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example-common-axis.pn
+g, id=44, 1300.86pt x 289.08pt>
+File: ../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example-common-ax
+is.png Graphic file (type png)
 
-<use ../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png>
+<use ../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example-common-axi
+s.png>
 Package pdftex.def Info: ../../figs/calcs/timeseries/calcs-filtered-fgco2-serie
-s-example.png used on input line 105.
+s-example-common-axis.png used on input line 105.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
-<../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png, id=45, 13
-00.86pt x 289.08pt>
-File: ../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png Graph
-ic file (type png)
+<../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example-common-axis.pn
+g, id=45, 1300.86pt x 289.08pt>
+File: ../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example-common-ax
+is.png Graphic file (type png)
 
-<use ../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png>
+<use ../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example-common-axi
+s.png>
 Package pdftex.def Info: ../../figs/humcs/timeseries/humcs-filtered-fgco2-serie
-s-example.png used on input line 109.
+s-example-common-axis.png used on input line 109.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
-<../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png, id=46, 13
-00.86pt x 289.08pt>
-File: ../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png Graph
-ic file (type png)
+<../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example-common-axis.pn
+g, id=46, 1300.86pt x 289.08pt>
+File: ../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example-common-ax
+is.png Graphic file (type png)
 
-<use ../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png>
+<use ../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example-common-axi
+s.png>
 Package pdftex.def Info: ../../figs/cancs/timeseries/cancs-filtered-fgco2-serie
-s-example.png used on input line 113.
+s-example-common-axis.png used on input line 113.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
 
-<../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png, id=47, 13
-00.86pt x 289.08pt>
-File: ../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png Graph
-ic file (type png)
+<../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example-common-axis.pn
+g, id=47, 1300.86pt x 289.08pt>
+File: ../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example-common-ax
+is.png Graphic file (type png)
 
-<use ../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png>
+<use ../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example-common-axi
+s.png>
 Package pdftex.def Info: ../../figs/bencs/timeseries/bencs-filtered-fgco2-serie
-s-example.png used on input line 117.
+s-example-common-axis.png used on input line 117.
 (pdftex.def)             Requested size: 469.75502pt x 104.39072pt.
+ [7
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+ <../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example-common-axis.p
+ng> <../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example-common-axi
+s.png> <../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example-common-
+axis.png> <../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example-comm
+on-axis.png>]
+<../../figs/all-systems/timeseries/filtered-nino34-001-example.png, id=56, 867.
+24pt x 216.81pt>
+File: ../../figs/all-systems/timeseries/filtered-nino34-001-example.png Graphic
+ file (type png)
 
- []
+<use ../../figs/all-systems/timeseries/filtered-nino34-001-example.png>
+Package pdftex.def Info: ../../figs/all-systems/timeseries/filtered-nino34-001-
+example.png used on input line 128.
+(pdftex.def)             Requested size: 469.75502pt x 117.43956pt.
 
-[7
-
- <../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png> <../../f
-igs/humcs/timeseries/humcs-filtered-fgco2-series-example.png> <../../figs/cancs
-/timeseries/cancs-filtered-fgco2-series-example.png> <../../figs/bencs/timeseri
-es/bencs-filtered-fgco2-series-example.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
-
- []
-
-
-<../../figs/pacific/pacific-EBU-correlation-distributions.png, id=56, 1300.86pt
- x 1011.78pt>
-File: ../../figs/pacific/pacific-EBU-correlation-distributions.png Graphic file
- (type png)
-
-<use ../../figs/pacific/pacific-EBU-correlation-distributions.png>
-Package pdftex.def Info: ../../figs/pacific/pacific-EBU-correlation-distributio
-ns.png used on input line 135.
-(pdftex.def)             Requested size: 469.75502pt x 365.36752pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[9 <../../figs/pacific/pacific-EBU-correlation-distributions.png>] [10]
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-
- []
-
-
-<../../figs/atlantic/atlantic-EBU-correlation-distributions.png, id=71, 1300.86
-pt x 1011.78pt>
-File: ../../figs/atlantic/atlantic-EBU-correlation-distributions.png Graphic fi
+<../../figs/all-systems/timeseries/filtered-pdo-001-example.png, id=57, 867.24p
+t x 216.81pt>
+File: ../../figs/all-systems/timeseries/filtered-pdo-001-example.png Graphic fi
 le (type png)
 
-<use ../../figs/atlantic/atlantic-EBU-correlation-distributions.png>
-Package pdftex.def Info: ../../figs/atlantic/atlantic-EBU-correlation-distribut
-ions.png used on input line 255.
+<use ../../figs/all-systems/timeseries/filtered-pdo-001-example.png>
+Package pdftex.def Info: ../../figs/all-systems/timeseries/filtered-pdo-001-exa
+mple.png used on input line 132.
+(pdftex.def)             Requested size: 469.75502pt x 117.43956pt.
+
+<../../figs/all-systems/timeseries/filtered-amo-001-example.png, id=58, 867.24p
+t x 216.81pt>
+File: ../../figs/all-systems/timeseries/filtered-amo-001-example.png Graphic fi
+le (type png)
+
+<use ../../figs/all-systems/timeseries/filtered-amo-001-example.png>
+Package pdftex.def Info: ../../figs/all-systems/timeseries/filtered-amo-001-exa
+mple.png used on input line 136.
+(pdftex.def)             Requested size: 469.75502pt x 117.43956pt.
+
+<../../figs/all-systems/timeseries/filtered-sam-001-example.png, id=59, 867.24p
+t x 216.81pt>
+File: ../../figs/all-systems/timeseries/filtered-sam-001-example.png Graphic fi
+le (type png)
+
+<use ../../figs/all-systems/timeseries/filtered-sam-001-example.png>
+Package pdftex.def Info: ../../figs/all-systems/timeseries/filtered-sam-001-exa
+mple.png used on input line 140.
+(pdftex.def)             Requested size: 469.75502pt x 117.43956pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+[8
+
+ <../../figs/all-systems/timeseries/filtered-nino34-001-example.png> <../../fig
+s/all-systems/timeseries/filtered-pdo-001-example.png> <../../figs/all-systems/
+timeseries/filtered-amo-001-example.png> <../../figs/all-systems/timeseries/fil
+tered-sam-001-example.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+
+<../../figs/pacific/pacific-EBU-correlation-distributions-bothSmoothed.png, id=
+67, 1300.86pt x 1011.78pt>
+File: ../../figs/pacific/pacific-EBU-correlation-distributions-bothSmoothed.png
+ Graphic file (type png)
+
+<use ../../figs/pacific/pacific-EBU-correlation-distributions-bothSmoothed.png>
+Package pdftex.def Info: ../../figs/pacific/pacific-EBU-correlation-distributio
+ns-bothSmoothed.png used on input line 158.
 (pdftex.def)             Requested size: 469.75502pt x 365.36752pt.
- [12
 
- <../../figs/atlantic/atlantic-EBU-correlation-distributions.png>] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[10 <../../figs/pacific/pacific-EBU-correlation-distributions-bothSmoothed.png>
+] [11] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 
  []
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
- []
-
-[15]
-<../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.png, i
-d=86, 1156.32pt x 1156.32pt>
-File: ../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.p
+<../../figs/atlantic/atlantic-EBU-correlation-distributions-bothSmoothed.png, i
+d=82, 1300.86pt x 1011.78pt>
+File: ../../figs/atlantic/atlantic-EBU-correlation-distributions-bothSmoothed.p
 ng Graphic file (type png)
 
-<use ../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.pn
+<use ../../figs/atlantic/atlantic-EBU-correlation-distributions-bothSmoothed.pn
 g>
-Package pdftex.def Info: ../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-
-correlation_CalCS.png used on input line 377.
+Package pdftex.def Info: ../../figs/atlantic/atlantic-EBU-correlation-distribut
+ions-bothSmoothed.png used on input line 278.
+(pdftex.def)             Requested size: 469.75502pt x 365.36752pt.
+ [13
+
+ <../../figs/atlantic/atlantic-EBU-correlation-distributions-bothSmoothed.png>]
+ [14]
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
+
+ []
+
+[15] [16]
+<../../figs/cancs/cross-correlation/AMO_FGCO2_cross-correlation_CanCS_bothSmoot
+hed.png, id=97, 1156.32pt x 1156.32pt>
+File: ../../figs/cancs/cross-correlation/AMO_FGCO2_cross-correlation_CanCS_both
+Smoothed.png Graphic file (type png)
+
+<use ../../figs/cancs/cross-correlation/AMO_FGCO2_cross-correlation_CanCS_bothS
+moothed.png>
+Package pdftex.def Info: ../../figs/cancs/cross-correlation/AMO_FGCO2_cross-cor
+relation_CanCS_bothSmoothed.png used on input line 399.
 (pdftex.def)             Requested size: 469.75502pt x 469.75385pt.
- [16 <../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.p
-ng>]
-<../../figs/humcs/cross-correlation/Nino34_FGCO2_cross-correlation_HumCS.png, i
-d=91, 1156.32pt x 1156.32pt>
-File: ../../figs/humcs/cross-correlation/Nino34_FGCO2_cross-correlation_HumCS.p
-ng Graphic file (type png)
+ [17 <../../figs/cancs/cross-correlation/AMO_FGCO2_cross-correlation_CanCS_both
+Smoothed.png>]
+<../../figs/humcs/cross-correlation/AMO_FGCO2_cross-correlation_HumCS_bothSmoot
+hed.png, id=102, 1156.32pt x 1156.32pt>
+File: ../../figs/humcs/cross-correlation/AMO_FGCO2_cross-correlation_HumCS_both
+Smoothed.png Graphic file (type png)
 
-<use ../../figs/humcs/cross-correlation/Nino34_FGCO2_cross-correlation_HumCS.pn
-g>
-Package pdftex.def Info: ../../figs/humcs/cross-correlation/Nino34_FGCO2_cross-
-correlation_HumCS.png used on input line 384.
+<use ../../figs/humcs/cross-correlation/AMO_FGCO2_cross-correlation_HumCS_bothS
+moothed.png>
+Package pdftex.def Info: ../../figs/humcs/cross-correlation/AMO_FGCO2_cross-cor
+relation_HumCS_bothSmoothed.png used on input line 406.
 (pdftex.def)             Requested size: 469.75502pt x 469.75385pt.
- [17 <../../figs/humcs/cross-correlation/Nino34_FGCO2_cross-correlation_HumCS.p
-ng>]
-<../../figs/humcs/histograms/humcs-smoothedFGCO2-enso-lag5-histograms.png, id=9
-6, 433.62pt x 433.62pt>
-File: ../../figs/humcs/histograms/humcs-smoothedFGCO2-enso-lag5-histograms.png 
-Graphic file (type png)
-
-<use ../../figs/humcs/histograms/humcs-smoothedFGCO2-enso-lag5-histograms.png>
-Package pdftex.def Info: ../../figs/humcs/histograms/humcs-smoothedFGCO2-enso-l
-ag5-histograms.png used on input line 391.
-(pdftex.def)             Requested size: 348.0pt x 348.01466pt.
-
-[18 <../../figs/humcs/histograms/humcs-smoothedFGCO2-enso-lag5-histograms.png>]
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+ [18 <../../figs/humcs/cross-correlation/AMO_FGCO2_cross-correlation_HumCS_both
+Smoothed.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
-[20
-
+[19
 
 ]
 <../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-nino34-post
-age.png, id=108, 1011.78pt x 1156.32pt>
+age.png, id=111, 1011.78pt x 1156.32pt>
 File: ../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-nino34
 -postage.png Graphic file (type png)
 
 <use ../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-nino34-
 postage.png>
 Package pdftex.def Info: ../../figs/calcs/spatial-correlations/calcs-grid-cell-
-correlations-nino34-postage.png used on input line 464.
+correlations-nino34-postage.png used on input line 426.
 (pdftex.def)             Requested size: 469.75502pt x 536.87163pt.
- [21 <../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-nino34
+ [20 <../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-nino34
 -postage.png>]
 <../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-pdo-postage
-.png, id=113, 1011.78pt x 1156.32pt>
+.png, id=116, 1011.78pt x 1156.32pt>
 File: ../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-pdo-po
 stage.png Graphic file (type png)
 
 <use ../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-pdo-pos
 tage.png>
 Package pdftex.def Info: ../../figs/calcs/spatial-correlations/calcs-grid-cell-
-correlations-pdo-postage.png used on input line 471.
+correlations-pdo-postage.png used on input line 433.
 (pdftex.def)             Requested size: 469.75502pt x 536.87163pt.
- [22 <../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-pdo-po
+ [21 <../../figs/calcs/spatial-correlations/calcs-grid-cell-correlations-pdo-po
 stage.png>]
 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-nino34-post
-age-lag5.png, id=118, 1011.78pt x 1156.32pt>
+age-lag5.png, id=121, 1011.78pt x 1156.32pt>
 File: ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-nino34
 -postage-lag5.png Graphic file (type png)
 
 <use ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-nino34-
 postage-lag5.png>
 Package pdftex.def Info: ../../figs/humcs/spatial-correlations/humcs-grid-cell-
-correlations-nino34-postage-lag5.png used on input line 478.
+correlations-nino34-postage-lag5.png used on input line 440.
 (pdftex.def)             Requested size: 469.75502pt x 536.87163pt.
- [23 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-nino34
+ [22 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-nino34
 -postage-lag5.png>]
 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-pdo-postage
-.png, id=123, 1011.78pt x 1156.32pt>
+.png, id=126, 1011.78pt x 1156.32pt>
 File: ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-pdo-po
 stage.png Graphic file (type png)
 
 <use ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-pdo-pos
 tage.png>
 Package pdftex.def Info: ../../figs/humcs/spatial-correlations/humcs-grid-cell-
-correlations-pdo-postage.png used on input line 485.
+correlations-pdo-postage.png used on input line 447.
 (pdftex.def)             Requested size: 469.75502pt x 536.87163pt.
- [24 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-pdo-po
+ [23 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-pdo-po
 stage.png>]
 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-postage
-.png, id=128, 1011.78pt x 1156.32pt>
+.png, id=131, 1011.78pt x 1156.32pt>
 File: ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-po
 stage.png Graphic file (type png)
 
 <use ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-pos
 tage.png>
 Package pdftex.def Info: ../../figs/humcs/spatial-correlations/humcs-grid-cell-
-correlations-amo-postage.png used on input line 492.
+correlations-amo-postage.png used on input line 454.
 (pdftex.def)             Requested size: 469.75502pt x 536.87163pt.
- [25 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-po
+ [24 <../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-po
 stage.png>]
 File: ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-po
 stage.png Graphic file (type png)
@@ -624,101 +657,101 @@ stage.png Graphic file (type png)
 <use ../../figs/humcs/spatial-correlations/humcs-grid-cell-correlations-amo-pos
 tage.png>
 Package pdftex.def Info: ../../figs/humcs/spatial-correlations/humcs-grid-cell-
-correlations-amo-postage.png used on input line 499.
+correlations-amo-postage.png used on input line 461.
 (pdftex.def)             Requested size: 469.75502pt x 536.87163pt.
- [26]
+ [25]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 505.
+(Font)              <17.28> on input line 467.
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--507
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 508--509
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
 
  []
 
-[27
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
+
+ []
+
+[26
 
 ]
 <../../figs/all-systems/histograms/pCO2SURF-correlation-distributions.png, id=1
-40, 505.89pt x 361.35pt>
+43, 505.89pt x 361.35pt>
 File: ../../figs/all-systems/histograms/pCO2SURF-correlation-distributions.png 
 Graphic file (type png)
 
 <use ../../figs/all-systems/histograms/pCO2SURF-correlation-distributions.png>
 Package pdftex.def Info: ../../figs/all-systems/histograms/pCO2SURF-correlation
--distributions.png used on input line 515.
+-distributions.png used on input line 477.
 (pdftex.def)             Requested size: 348.0pt x 248.57639pt.
 
-<../../figs/all-systems/histograms/SST-correlation-distributions.png, id=141, 5
+<../../figs/all-systems/histograms/SST-correlation-distributions.png, id=144, 5
 05.89pt x 361.35pt>
 File: ../../figs/all-systems/histograms/SST-correlation-distributions.png Graph
 ic file (type png)
 
 <use ../../figs/all-systems/histograms/SST-correlation-distributions.png>
 Package pdftex.def Info: ../../figs/all-systems/histograms/SST-correlation-dist
-ributions.png used on input line 521.
+ributions.png used on input line 483.
 (pdftex.def)             Requested size: 348.0pt x 248.57639pt.
 
-[28
+[27
 
  <../../figs/all-systems/histograms/pCO2SURF-correlation-distributions.png> <..
 /../figs/all-systems/histograms/SST-correlation-distributions.png>]
 <../../figs/calcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_sub
-plots.png, id=147, 1156.32pt x 1156.32pt>
+plots.png, id=150, 1156.32pt x 1156.32pt>
 File: ../../figs/calcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregressio
 n_subplots.png Graphic file (type png)
 
 <use ../../figs/calcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression
 _subplots.png>
 Package pdftex.def Info: ../../figs/calcs/regression_plots/smoothed_FGCO2_vs_sm
-oothed_SSTregression_subplots.png used on input line 529.
+oothed_SSTregression_subplots.png used on input line 491.
 (pdftex.def)             Requested size: 469.75502pt x 469.75385pt.
- [29
+ [28
 
  <../../figs/calcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_su
 bplots.png>]
 <../../figs/humcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_sub
-plots.png, id=152, 1156.32pt x 1156.32pt>
+plots.png, id=155, 1156.32pt x 1156.32pt>
 File: ../../figs/humcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregressio
 n_subplots.png Graphic file (type png)
 
 <use ../../figs/humcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression
 _subplots.png>
 Package pdftex.def Info: ../../figs/humcs/regression_plots/smoothed_FGCO2_vs_sm
-oothed_SSTregression_subplots.png used on input line 537.
+oothed_SSTregression_subplots.png used on input line 499.
 (pdftex.def)             Requested size: 469.75502pt x 469.75385pt.
- [30
+ [29
 
  <../../figs/humcs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_su
 bplots.png>]
 <../../figs/cancs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_sub
-plots.png, id=157, 1156.32pt x 1156.32pt>
+plots.png, id=160, 1156.32pt x 1156.32pt>
 File: ../../figs/cancs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregressio
 n_subplots.png Graphic file (type png)
 
 <use ../../figs/cancs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression
 _subplots.png>
 Package pdftex.def Info: ../../figs/cancs/regression_plots/smoothed_FGCO2_vs_sm
-oothed_SSTregression_subplots.png used on input line 545.
+oothed_SSTregression_subplots.png used on input line 507.
 (pdftex.def)             Requested size: 469.75502pt x 469.75385pt.
- [31
+ [30
 
  <../../figs/cancs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_su
 bplots.png>]
 <../../figs/bencs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_sub
-plots.png, id=163, 1156.32pt x 1156.32pt>
+plots.png, id=165, 1156.32pt x 1156.32pt>
 File: ../../figs/bencs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregressio
 n_subplots.png Graphic file (type png)
 
 <use ../../figs/bencs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression
 _subplots.png>
 Package pdftex.def Info: ../../figs/bencs/regression_plots/smoothed_FGCO2_vs_sm
-oothed_SSTregression_subplots.png used on input line 553.
+oothed_SSTregression_subplots.png used on input line 515.
 (pdftex.def)             Requested size: 469.75502pt x 469.75385pt.
- [32
+ [31
 
  <../../figs/bencs/regression_plots/smoothed_FGCO2_vs_smoothed_SSTregression_su
 bplots.png>] (./controls-on-fgco2-variability.bbl
@@ -739,17 +772,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--15
 URL
  []
 
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-) [33
+) [32
 
 ] (./controls-on-fgco2-variability.aux) ) 
 Here is how much of TeX's memory you used:
- 4054 strings out of 493014
- 70045 string characters out of 6133351
- 152224 words of memory out of 5000000
- 7505 multiletter control sequences out of 15000+600000
+ 4065 strings out of 493014
+ 71274 string characters out of 6133351
+ 152068 words of memory out of 5000000
+ 7513 multiletter control sequences out of 15000+600000
  12091 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,43p,1172b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -764,10 +794,10 @@ e1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1
 ublic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmtt12.pfb>
-Output written on controls-on-fgco2-variability.pdf (33 pages, 6156884 bytes).
+Output written on controls-on-fgco2-variability.pdf (32 pages, 6344087 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+ 209 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
 

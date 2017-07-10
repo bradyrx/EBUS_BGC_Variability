@@ -78,7 +78,7 @@ First, we subtract the ensemble mean time series from each individual simulation
 
 % Add here proof that the anomaly time series are accurately describing inter-multi decadal modes of variability by performing an FFT on the raw climate indices.
 
-We apply a 12-month (annual) rolling mean to all FGCO2 anomaly time series, as we find the raw time series to be much too noisy for meaningful correlations. See Figure~\ref{smoothed:series}, which demonstrated raw (color) time series for simulation 001 for each EBUS and the smoothed time series overlaid in black. This is defensible, as an FFT of these raw time series shows roughly red noise. \\
+We apply a 12-month (annual) rolling mean to all FGCO2 anomaly time series (as well as to the climate index time series), as we find the raw time series to be much too noisy for meaningful correlations. See Figure~\ref{smoothed:series}, which demonstrated raw (color) time series for simulation 001 for each EBUS and the smoothed time series overlaid in black. This is defensible, as an FFT of these raw time series shows roughly red noise. Also see Figure~\ref{fig:climate-indices} for to get a sense of what each time series looks like. \\
 % Add FFT subplots.
 
 Lastly, we regress the smoothed FGCO2 anomalies onto the four main predictors: Nino3.4, PDO, AMO, and SAM. 
@@ -102,22 +102,45 @@ Lastly, we regress the smoothed FGCO2 anomalies onto the four main predictors: N
 	\centering
 	\begin{subfigure}[b]{\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example.png}
+		\includegraphics[width=\linewidth]{../../figs/calcs/timeseries/calcs-filtered-fgco2-series-example-common-axis.png}
 	\end{subfigure} \\
 	\begin{subfigure}[b]{\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example.png}
+		\includegraphics[width=\linewidth]{../../figs/humcs/timeseries/humcs-filtered-fgco2-series-example-common-axis.png}
 	\end{subfigure} \\
 	\begin{subfigure}[b]{\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example.png}
+		\includegraphics[width=\linewidth]{../../figs/cancs/timeseries/cancs-filtered-fgco2-series-example-common-axis.png}
 	\end{subfigure} \\
 	\begin{subfigure}[b]{\textwidth}
 		\centering
-		\includegraphics[width=\linewidth]{../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example.png}
+		\includegraphics[width=\linewidth]{../../figs/bencs/timeseries/bencs-filtered-fgco2-series-example-common-axis.png}
 	\end{subfigure}
 	\caption{FGCO2 anomalies for arbitrary simulation 001 in color with their annual smoothing counterpart overlaid in black.}
 	\label{smoothed:series}
+\end{figure*}
+
+\clearpage
+\begin{figure*}[!h]
+	\centering
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/all-systems/timeseries/filtered-nino34-001-example.png}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/all-systems/timeseries/filtered-pdo-001-example.png}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/all-systems/timeseries/filtered-amo-001-example.png}
+	\end{subfigure} \\
+	\begin{subfigure}[b]{\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{../../figs/all-systems/timeseries/filtered-sam-001-example.png}
+	\end{subfigure}
+	\caption{Time series of the four major climate indices that are being correlated to CO$_{2}$ flux anomalies. The black line shows the smoothing that was applied when comparing to smoothed variables..}
+	\label{fig:climate-indices}
 \end{figure*}
 
 \section{Climate Correlations}
@@ -128,11 +151,11 @@ Figure~\ref{fig:pacific-histograms} displays the results of using four climate i
 
 During an El Ni\~no event, more CO$_{2}$ fluxes out of the CalCS, while more CO$_{2}$ is taken up by the HumCS. Perhaps this illuminates the dependency of CalCS FGCO2 on SST variability, which would alter the solubility of pCO$_{2}$; during a warm event, low pCO$_{2}$ solubility would force carbon out of the CalCS. On the other hand, SSTs might be more stable in the more tropical HumCS, so FGCO2 variability could be more dependent on DIC delivery from depth. During El Ni\~no events, upwelling of high-DIC water would be suppressed, leading to an influx of carbon. These ideas can be tested by using Takahashi formulae to separate temperature-dependent pCO$_{2}$ effects from non-temperature-dependent effects. These arguments might also hold for the PDO, since it has a large impact on Pacific Ocean SST patterns. Raw values for the regression slope, r-value, and r$^{2}$ can be found in Table~\ref{tab:enso-pacific} (Nino3.4) and Table~\ref{tab:pdo-pacific} (PDO). \\
 
-An interesting result is that AMO has a small, but discernible correlation with CalCS CO$_{2}$ flux, but hovers around an r-value of zero for the HumCS. Perhaps atmospheric teleconnections between the North Atlantic and North Pacific play a role here.
+Interestingly, the AMO has a discernible correlation with CalCS CO$_{2}$ flux on a similar magnitude as Nino3.4 and PDO. The AMO has a much weaker influence on the HumCS.
  
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\linewidth]{../../figs/pacific/pacific-EBU-correlation-distributions.png}
+	\includegraphics[width=\linewidth]{../../figs/pacific/pacific-EBU-correlation-distributions-bothSmoothed.png}
 	\caption{R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.}
 	\label{fig:pacific-histograms}
 \end{figure}
@@ -146,43 +169,43 @@ An interesting result is that AMO has a small, but discernible correlation with 
 	\cmidrule{2-4}\cmidrule{5-7}
 	\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
 	\midrule
-	001 &   0.04 &     0.30 &       0.09 &  -0.20 &    -0.29 &       0.08 \\
-	002 &   0.06 &     0.33 &       0.11 &  -0.31 &    -0.35 &       0.12 \\
-	009 &   0.03 &     0.18 &       0.03 &  -0.24 &    -0.31 &       0.10 \\
-	010 &   0.04 &     0.22 &       0.05 &  -0.33 &    -0.44 &       0.19 \\
-	011 &    - &      - &                    -  &  -0.28 &    -0.39 &       0.15 \\
-	012 &   0.05 &     0.28 &       0.08 &  -0.31 &    -0.43 &       0.19 \\
-	013 &   0.06 &     0.33 &       0.11 &  -0.33 &    -0.42 &       0.17 \\
-	014 &   0.05 &     0.35 &       0.12 &  -0.30 &    -0.44 &       0.19 \\
-	015 &   0.05 &     0.29 &       0.08 &  -0.34 &    -0.44 &       0.20 \\
-	016 &   0.04 &     0.22 &       0.05 &  -0.32 &    -0.38 &       0.14 \\
-	017 &   0.04 &     0.27 &       0.07 &  -0.26 &    -0.45 &       0.20 \\
-	018 &   0.05 &     0.29 &       0.08 &  -0.33 &    -0.40 &       0.16 \\
-	019 &   0.04 &     0.21 &       0.04 &  -0.35 &    -0.43 &       0.19 \\
-	020 &   0.05 &     0.30 &       0.09 &  -0.22 &    -0.36 &       0.13 \\
-	021 &   0.03 &     0.18 &       0.03 &  -0.28 &    -0.36 &       0.13 \\
-	022 &   0.04 &     0.24 &       0.06 &  -0.37 &    -0.46 &       0.22 \\
-	023 &   0.03 &     0.22 &       0.05 &  -0.31 &    -0.37 &       0.14 \\
-	024 &   0.06 &     0.33 &       0.11 &  -0.33 &    -0.44 &       0.19 \\
-	025 &   0.05 &     0.34 &       0.12 &  -0.29 &    -0.40 &       0.16 \\
-	026 &   0.04 &     0.25 &       0.06 &  -0.32 &    -0.39 &       0.15 \\
-	027 &   0.04 &     0.28 &       0.08 &  -0.22 &    -0.30 &       0.09 \\
-	028 &   0.03 &     0.17 &       0.03 &  -0.26 &    -0.38 &       0.15 \\
-	029 &   0.05 &     0.33 &       0.11 &  -0.39 &    -0.46 &       0.21 \\
-	030 &   0.03 &     0.19 &       0.04 &  -0.30 &    -0.42 &       0.17 \\
-	031 &   0.04 &     0.24 &       0.06 &  -0.34 &    -0.42 &       0.18 \\
-	032 &   0.04 &     0.20 &       0.04 &  -0.39 &    -0.51 &       0.26 \\
-	033 &   0.02 &     0.14 &       0.02 &  -0.14 &    -0.22 &       0.05 \\
-	034 &   0.06 &     0.31 &       0.10 &  -0.25 &    -0.32 &       0.10 \\
-	035 &   0.03 &     0.17 &       0.03 &  -0.31 &    -0.42 &       0.18 \\
-	101 &   0.07 &     0.44 &       0.20 &  -0.28 &    -0.41 &       0.17 \\
-	102 &   0.04 &     0.26 &       0.07 &  -0.24 &    -0.40 &       0.16 \\
-	103 &   0.04 &     0.22 &       0.05 &  -0.29 &    -0.40 &       0.16 \\
-	104 &   0.05 &     0.35 &       0.12 &  -0.41 &    -0.56 &       0.31 \\
-	105 &   0.02 &     0.12 &       0.01 &  -0.45 &    -0.49 &       0.24 \\
+	001 &   0.05 &     0.31 &       0.10 &  -0.39 &    -0.48 &       0.23 \\
+	002 &   0.07 &     0.31 &       0.10 &  -0.51 &    -0.48 &       0.23 \\
+	009 &   0.06 &     0.29 &       0.08 &  -0.41 &    -0.43 &       0.19 \\
+	010 &   0.05 &     0.25 &       0.06 &  -0.50 &    -0.54 &       0.29 \\
+	011 &   0.01 &     0.07 &       0.00 &  -0.52 &    -0.60 &       0.36 \\
+	012 &   0.07 &     0.36 &       0.13 &  -0.49 &    -0.56 &       0.32 \\
+	013 &   0.06 &     0.31 &       0.10 &  -0.53 &    -0.56 &       0.31 \\
+	014 &   0.06 &     0.39 &       0.15 &  -0.48 &    -0.60 &       0.36 \\
+	015 &   0.07 &     0.33 &       0.11 &  -0.47 &    -0.51 &       0.26 \\
+	016 &   0.06 &     0.30 &       0.09 &  -0.51 &    -0.52 &       0.27 \\
+	017 &   0.05 &     0.30 &       0.09 &  -0.37 &    -0.52 &       0.27 \\
+	018 &   0.05 &     0.27 &       0.07 &  -0.51 &    -0.52 &       0.27 \\
+	019 &   0.05 &     0.24 &       0.06 &  -0.53 &    -0.55 &       0.31 \\
+	020 &   0.06 &     0.33 &       0.11 &  -0.45 &    -0.63 &       0.40 \\
+	021 &   0.04 &     0.23 &       0.05 &  -0.47 &    -0.52 &       0.27 \\
+	022 &   0.06 &     0.34 &       0.12 &  -0.53 &    -0.58 &       0.34 \\
+	023 &   0.05 &     0.28 &       0.08 &  -0.43 &    -0.42 &       0.18 \\
+	024 &   0.07 &     0.32 &       0.10 &  -0.47 &    -0.53 &       0.28 \\
+	025 &   0.07 &     0.40 &       0.16 &  -0.50 &    -0.57 &       0.33 \\
+	026 &   0.06 &     0.29 &       0.09 &  -0.52 &    -0.51 &       0.26 \\
+	027 &   0.04 &     0.20 &       0.04 &  -0.46 &    -0.52 &       0.27 \\
+	028 &   0.02 &     0.12 &       0.01 &  -0.39 &    -0.49 &       0.24 \\
+	029 &   0.06 &     0.34 &       0.12 &  -0.55 &    -0.55 &       0.30 \\
+	030 &   0.04 &     0.21 &       0.04 &  -0.47 &    -0.54 &       0.30 \\
+	031 &   0.05 &     0.24 &       0.06 &  -0.50 &    -0.53 &       0.28 \\
+	032 &   0.05 &     0.23 &       0.05 &  -0.58 &    -0.64 &       0.41 \\
+	033 &   0.04 &     0.20 &       0.04 &  -0.38 &    -0.47 &       0.22 \\
+	034 &   0.08 &     0.35 &       0.13 &  -0.43 &    -0.46 &       0.22 \\
+	035 &   0.05 &     0.23 &       0.05 &  -0.38 &    -0.44 &       0.19 \\
+	101 &   0.08 &     0.44 &       0.19 &  -0.46 &    -0.57 &       0.32 \\
+	102 &   0.05 &     0.28 &       0.08 &  -0.45 &    -0.63 &       0.40 \\
+	103 &   0.05 &     0.26 &       0.07 &  -0.46 &    -0.53 &       0.29 \\
+	104 &   0.05 &     0.33 &       0.11 &  -0.54 &    -0.61 &       0.38 \\
+	105 &   0.05 &     0.22 &       0.05 &  -0.62 &    -0.57 &       0.32 \\
 	\bottomrule
-	\textbf{Mean} & 0.04 & 0.26 & 0.07 & -0.30 & -0.40 & 0.17 \\
-	\textbf{Std} & 0.01 & 0.07 & 0.04 & 0.06 & 0.06 & 0.05
+	\textbf{Mean} & 0.05 & 0.28 & 0.09 & -0.48 & -0.53 & 0.29 \\
+	\textbf{Std} & 0.01 & 0.07 & 0.04 & 0.06 & 0.06 & 0.06
 \end{tabular}
 \begin{tablenotes}
 	\centering
@@ -200,43 +223,43 @@ An interesting result is that AMO has a small, but discernible correlation with 
 		\cmidrule{2-4}\cmidrule{5-7}
 		\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
 		\midrule
-		001 &   0.06 &     0.38 &       0.14 &  -0.23 &    -0.28 &       0.08 \\
-		002 &   0.06 &     0.35 &       0.12 &  -0.20 &    -0.24 &       0.06 \\
-		009 &   0.06 &     0.36 &       0.13 &  -0.17 &    -0.22 &       0.05 \\
-		010 &   0.06 &     0.35 &       0.12 &  -0.27 &    -0.36 &       0.13 \\
-		011 &   0.03 &     0.17 &       0.03 &  -0.29 &    -0.38 &       0.14 \\
-		012 &   0.07 &     0.38 &       0.15 &  -0.20 &    -0.25 &       0.06 \\
-		013 &   0.04 &     0.25 &       0.06 &  -0.22 &    -0.30 &       0.09 \\
-		014 &   0.06 &     0.34 &       0.11 &  -0.25 &    -0.30 &       0.09 \\
-		015 &   0.05 &     0.29 &       0.09 &  -0.17 &    -0.23 &       0.05 \\
-		016 &   0.05 &     0.28 &       0.08 &  -0.18 &    -0.22 &       0.05 \\
-		017 &   0.06 &     0.37 &       0.14 &  -0.23 &    -0.34 &       0.11 \\
-		018 &   0.05 &     0.28 &       0.08 &  -0.14 &    -0.17 &       0.03 \\
-		019 &   0.07 &     0.36 &       0.13 &  -0.26 &    -0.32 &       0.10 \\
-		020 &   0.06 &     0.37 &       0.14 &  -0.26 &    -0.38 &       0.15 \\
-		021 &   0.04 &     0.26 &       0.07 &  -0.27 &    -0.35 &       0.12 \\
-		022 &   0.07 &     0.40 &       0.16 &  -0.29 &    -0.35 &       0.12 \\
-		023 &   0.05 &     0.37 &       0.14 &  -0.16 &    -0.19 &       0.04 \\
-		024 &   0.08 &     0.44 &       0.19 &  -0.26 &    -0.34 &       0.12 \\
-		025 &   0.07 &     0.41 &       0.17 &  -0.25 &    -0.30 &       0.09 \\
-		026 &   0.05 &     0.33 &       0.11 &  -0.17 &    -0.21 &       0.04 \\
-		027 &   0.03 &     0.19 &       0.04 &  -0.24 &    -0.29 &       0.08 \\
-		028 &   0.07 &     0.43 &       0.19 &  -0.20 &    -0.31 &       0.09 \\
-		029 &   0.03 &     0.22 &       0.05 &  -0.26 &    -0.27 &       0.07 \\
-		030 &   0.05 &     0.27 &       0.07 &  -0.17 &    -0.23 &       0.05 \\
-		031 &   0.05 &     0.30 &       0.09 &  -0.24 &    -0.29 &       0.08 \\
-		032 &   0.05 &     0.29 &       0.09 &  -0.35 &    -0.48 &       0.23 \\
-		033 &   0.05 &     0.34 &       0.11 &  -0.15 &    -0.21 &       0.04 \\
-		034 &   0.04 &     0.23 &       0.05 &  -0.16 &    -0.21 &       0.04 \\
-		035 &   0.04 &     0.23 &       0.05 &  -0.17 &    -0.23 &       0.05 \\
-		101 &   0.05 &     0.29 &       0.08 &  -0.27 &    -0.35 &       0.12 \\
-		102 &   0.07 &     0.39 &       0.15 &  -0.28 &    -0.39 &       0.15 \\
-		103 &   0.06 &     0.34 &       0.11 &  -0.25 &    -0.35 &       0.12 \\
-		104 &   0.06 &     0.39 &       0.15 &  -0.42 &    -0.48 &       0.23 \\
-		105 &   0.05 &     0.30 &       0.09 &  -0.24 &    -0.26 &       0.07 \\
+		001 &   0.06 &     0.31 &       0.10 &  -0.20 &    -0.21 &       0.04 \\
+		002 &   0.05 &     0.24 &       0.06 &  -0.12 &    -0.12 &       0.01 \\
+		009 &   0.07 &     0.36 &       0.13 &  -0.13 &    -0.14 &       0.02 \\
+		010 &   0.05 &     0.27 &       0.08 &  -0.24 &    -0.28 &       0.08 \\
+		011 &   0.03 &     0.14 &       0.02 &  -0.30 &    -0.33 &       0.11 \\
+		012 &   0.07 &     0.30 &       0.09 &  -0.09 &    -0.09 &       0.01 \\
+		013 &   0.03 &     0.17 &       0.03 &  -0.19 &    -0.23 &       0.05 \\
+		014 &   0.05 &     0.26 &       0.07 &  -0.23 &    -0.25 &       0.06 \\
+		015 &   0.06 &     0.26 &       0.07 &  -0.07 &    -0.08 &       0.01 \\
+		016 &   0.05 &     0.25 &       0.06 &  -0.07 &    -0.07 &       0.01 \\
+		017 &   0.06 &     0.30 &       0.09 &  -0.18 &    -0.22 &       0.05 \\
+		018 &   0.04 &     0.21 &       0.04 &    - &      - &        - \\
+		019 &   0.07 &     0.31 &       0.10 &  -0.21 &    -0.22 &       0.05 \\
+		020 &   0.08 &     0.38 &       0.15 &  -0.30 &    -0.38 &       0.14 \\
+		021 &   0.03 &     0.16 &       0.02 &  -0.23 &    -0.25 &       0.06 \\
+		022 &   0.09 &     0.41 &       0.17 &  -0.20 &    -0.20 &       0.04 \\
+		023 &   0.08 &     0.43 &       0.18 &  -0.15 &    -0.15 &       0.02 \\
+		024 &   0.08 &     0.41 &       0.17 &  -0.20 &    -0.23 &       0.05 \\
+		025 &   0.07 &     0.36 &       0.13 &  -0.19 &    -0.20 &       0.04 \\
+		026 &   0.06 &     0.29 &       0.08 &  -0.08 &    -0.08 &       0.01 \\
+		027 &   0.01 &     0.06 &       0.00 &  -0.29 &    -0.31 &       0.10 \\
+		028 &   0.07 &     0.35 &       0.13 &  -0.16 &    -0.20 &       0.04 \\
+		029 &   0.03 &     0.14 &       0.02 &  -0.20 &    -0.18 &       0.03 \\
+		030 &   0.04 &     0.19 &       0.04 &  -0.08 &    -0.09 &       0.01 \\
+		031 &   0.05 &     0.22 &       0.05 &  -0.30 &    -0.31 &       0.10 \\
+		032 &   0.04 &     0.22 &       0.05 &  -0.32 &    -0.37 &       0.14 \\
+		033 &   0.06 &     0.31 &       0.10 &  -0.09 &    -0.11 &       0.01 \\
+		034 &   0.03 &     0.13 &       0.02 &  -0.17 &    -0.19 &       0.04 \\
+		035 &   0.04 &     0.17 &       0.03 &  -0.10 &    -0.11 &       0.01 \\
+		101 &   0.05 &     0.24 &       0.06 &  -0.27 &    -0.28 &       0.08 \\
+		102 &   0.08 &     0.36 &       0.13 &  -0.30 &    -0.35 &       0.12 \\
+		103 &   0.05 &     0.28 &       0.08 &  -0.16 &    -0.19 &       0.04 \\
+		104 &   0.07 &     0.36 &       0.13 &  -0.32 &    -0.32 &       0.10 \\
+		105 &   0.05 &     0.25 &       0.06 &    - &      - &        - \\
 		\bottomrule
-		\textbf{Mean} & 0.05 & 0.32 & 0.11 & -0.23 & -0.30 & 0.09 \\
-		\textbf{Std} & 0.01 & 0.07 & 0.04 & 0.06 & 0.08 & 0.05
+		\textbf{Mean} & 0.05 & 0.27 & 0.08 & -0.19 & -0.21 & 0.05 \\
+		\textbf{Std} & 0.02 & 0.09 & 0.05 & 0.08 & 0.09 & 0.04
 	\end{tabular}
 	\begin{tablenotes}
 		\centering
@@ -246,13 +269,13 @@ An interesting result is that AMO has a small, but discernible correlation with 
 \end{table}
 \clearpage
 \subsection{Atlantic Sector}
-Figure~\ref{fig:atlantic-histograms} displays distributions of correlation tests between FGCO2 anomalies in the two Atlantic Ocean EBUS (Canary and Benguela) and the same four climate indices. At first glance, the results are much weaker than that of the Pacific systems. I find it surprising that the SAM has virtually no impact on the BenCS, when it is the only EBUS that interfaces directly with the Southern Ocean. \\
+Figure~\ref{fig:atlantic-histograms} displays distributions of correlation tests between FGCO2 anomalies in the two Atlantic Ocean EBUS (Canary and Benguela) and the same four climate indices. At first glance, the results are much weaker than that of the Pacific systems. I find it surprising that the SAM has virtually no impact on the BenCS, when it is the only EBUS that interfaces directly with the Southern Ocean. Perhaps an index that captures the location of the South Pacific High would better suit this analysis. \\
 
-Interestingly, CanCS gas flux has a reasonable relationship with ENSO and the PDO. As much as 15\% of FGCO2 variability in the CanCS can be explained by ENSO in some simulations (Table~\ref{tab:enso-atlantic}). We find a similar situation with regards to the PDO (Table~\ref{tab:pdo-atlantic}). There is a slight relationship between FGCO2 anomalies in the CanCS and the AMO, but it isn't even as strong as the correlation with ENSO and PDO. Overall, the BenCS is not well-explained by any major climate index.
+The CanCS has a relationship with both ENSO and the PDO, but with a fairly large spread across the ensemble. As much as 10\% of FGCO2 variability in the CanCS can be explained by ENSO in some simulations (Table~\ref{tab:enso-atlantic}). Slightly weaker but more compact correlations occur between the AMO and CanCS (Table~\ref{tab:amo-atlantic}). In general, the BenCS is not well-explained by any major climate index.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\linewidth]{../../figs/atlantic/atlantic-EBU-correlation-distributions.png}
+	\includegraphics[width=\linewidth]{../../figs/atlantic/atlantic-EBU-correlation-distributions-bothSmoothed.png}
 	\caption{R values for annually smoothed FGCO2 anomalies in the CalCS and HumCS compared to four major climate indices. Correlations with $p$ $>$ 0.05 were not included.}
 	\label{fig:atlantic-histograms}
 \end{figure}
@@ -266,42 +289,43 @@ Interestingly, CanCS gas flux has a reasonable relationship with ENSO and the PD
 		\cmidrule{2-4}\cmidrule{5-7}
 		\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
 		\midrule
-		001 &   0.04 &     0.28 &       0.08 &    - &      - &        - \\
-		002 &   0.06 &     0.31 &       0.10 &    - &      - &        - \\
-		009 &   0.03 &     0.18 &       0.03 &    - &      - &        - \\
-		010 &   0.05 &     0.29 &       0.08 &    - &      - &        - \\
-		011 &   0.04 &     0.25 &       0.06 &   0.05 &     0.13 &       0.02 \\
-		012 &   0.04 &     0.28 &       0.08 &  -0.05 &    -0.11 &       0.01 \\
-		013 &   0.04 &     0.22 &       0.05 &    - &      - &        - \\
-		014 &   0.05 &     0.34 &       0.12 &    - &      - &        - \\
-		015 &   0.03 &     0.16 &       0.03 &    - &      - &        - \\
-		016 &   0.02 &     0.10 &       0.01 &    - &      - &        - \\
-		017 &   0.05 &     0.38 &       0.15 &    - &      - &        - \\
-		018 &   0.03 &     0.17 &       0.03 &  -0.07 &    -0.14 &       0.02 \\
-		019 &   0.02 &     0.11 &       0.01 &   0.04 &     0.09 &       0.01 \\
-		020 &   0.05 &     0.32 &       0.10 &    - &      - &        - \\
-		021 &   0.02 &     0.12 &       0.01 &    - &      - &        - \\
-		022 &   0.02 &     0.15 &       0.02 &   0.06 &     0.12 &       0.01 \\
-		023 &   0.04 &     0.22 &       0.05 &    - &      - &        - \\
-		024 &   0.04 &     0.25 &       0.06 &   0.06 &     0.13 &       0.02 \\
-		025 &   0.01 &     0.08 &       0.01 &    - &      - &        - \\
-		026 &   0.05 &     0.27 &       0.07 &  -0.04 &    -0.09 &       0.01 \\
-		027 &   0.03 &     0.20 &       0.04 &   0.07 &     0.14 &       0.02 \\
-		028 &   0.01 &     0.07 &       0.00 &   0.06 &     0.13 &       0.02 \\
-		029 &   0.05 &     0.31 &       0.10 &    - &      - &        - \\
-		031 &   0.02 &     0.15 &       0.02 &    - &      - &        - \\
-		032 &   0.03 &     0.15 &       0.02 &    - &      - &        - \\
-		033 &   0.03 &     0.21 &       0.04 &  -0.03 &    -0.08 &       0.01 \\
-		034 &   0.03 &     0.17 &       0.03 &  -0.05 &    -0.11 &       0.01 \\
-		035 &   0.01 &     0.07 &       0.00 &  -0.03 &    -0.07 &       0.00 \\
-		101 &   0.03 &     0.22 &       0.05 &    - &      - &        - \\
-		102 &   0.03 &     0.19 &       0.04 &    - &      - &        - \\
-		103 &   0.07 &     0.39 &       0.15 &    - &      - &        - \\
-		104 &   0.03 &     0.23 &       0.05 &    - &      - &        - \\
-		105 &   0.02 &     0.13 &       0.02 &    - &      - &        - \\
+		001 &   0.05 &     0.32 &       0.10 &    - &      - &        - \\
+		002 &   0.10 &     0.39 &       0.15 &    - &      - &        - \\
+		009 &   0.04 &     0.19 &       0.04 &    - &      - &        - \\
+		010 &   0.08 &     0.36 &       0.13 &    - &      - &        - \\
+		011 &   0.05 &     0.27 &       0.07 &   0.07 &     0.15 &       0.02 \\
+		012 &   0.04 &     0.23 &       0.05 &   0.03 &     0.06 &       0.00 \\
+		013 &   0.04 &     0.16 &       0.03 &  -0.04 &    -0.06 &       0.00 \\
+		014 &   0.07 &     0.42 &       0.17 &    - &      - &        - \\
+		015 &   0.05 &     0.28 &       0.08 &    - &      - &        - \\
+		016 &   0.04 &     0.20 &       0.04 &   0.06 &     0.11 &       0.01 \\
+		017 &   0.08 &     0.48 &       0.23 &    - &      - &        - \\
+		018 &   0.04 &     0.20 &       0.04 &  -0.07 &    -0.11 &       0.01 \\
+		019 &   0.01 &     0.07 &       0.01 &   0.07 &     0.12 &       0.01 \\
+		020 &   0.05 &     0.31 &       0.09 &    - &      - &        - \\
+		021 &   0.02 &     0.09 &       0.01 &   0.07 &     0.12 &       0.01 \\
+		022 &   0.03 &     0.15 &       0.02 &   0.10 &     0.18 &       0.03 \\
+		023 &   0.05 &     0.25 &       0.06 &    - &      - &        - \\
+		024 &   0.06 &     0.28 &       0.08 &   0.10 &     0.16 &       0.03 \\
+		025 &   0.03 &     0.17 &       0.03 &    - &      - &        - \\
+		026 &   0.05 &     0.25 &       0.06 &    - &      - &        - \\
+		027 &   0.05 &     0.25 &       0.06 &   0.11 &     0.18 &       0.03 \\
+		028 &    - &      - &        - &   0.12 &     0.20 &       0.04 \\
+		029 &   0.07 &     0.38 &       0.15 &   0.06 &     0.11 &       0.01 \\
+		030 &   0.01 &     0.08 &       0.01 &   0.05 &     0.10 &       0.01 \\
+		031 &   0.02 &     0.09 &       0.01 &    - &      - &        - \\
+		032 &   0.04 &     0.22 &       0.05 &    - &      - &        - \\
+		033 &   0.06 &     0.32 &       0.10 &  -0.04 &    -0.07 &       0.01 \\
+		034 &   0.03 &     0.12 &       0.01 &    - &      - &        - \\
+		035 &   0.04 &     0.24 &       0.06 &    - &      - &        - \\
+		101 &   0.04 &     0.27 &       0.07 &    - &      - &        - \\
+		102 &   0.05 &     0.32 &       0.10 &    - &      - &        - \\
+		103 &   0.09 &     0.43 &       0.19 &   0.07 &     0.11 &       0.01 \\
+		104 &   0.05 &     0.31 &       0.10 &    - &      - &        - \\
+		105 &   0.03 &     0.20 &       0.04 &   0.08 &     0.14 &       0.02 \\
 		\bottomrule
-		\textbf{Mean} & 0.03 & 0.21 & 0.05 & 0.01 & 0.01 & 0.01 \\
-		\textbf{Std} & 0.01 & 0.09 & 0.04 & 0.05 & 0.11 & 0.01
+		\textbf{Mean} & 0.05 & 0.25 & 0.07 & 0.05 & 0.09 & 0.02 \\
+		\textbf{Std} & 0.02 & 0.1 & 0.06 & 0.05 & 0.09 & 0.01
 	\end{tabular}
 	\begin{tablenotes}
 		\centering
@@ -313,138 +337,76 @@ Interestingly, CanCS gas flux has a reasonable relationship with ENSO and the PD
 \newpage
 \begin{table}[!h]
 	\centering
-	\caption{Results for regressing FGCO2 anomalies onto PDO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.}
+	\caption{Results for regressing FGCO2 anomalies onto AMO time series for the two Atlantic upwelling systems. Results with $p$ $>$ 0.05 are excluded.}
 	\begin{tabular}{c c c c | c c c}
 		& \multicolumn{3}{c}{CanCS} & \multicolumn{3}{c}{BenCS} \\
 		\cmidrule{2-4}\cmidrule{5-7}
 		\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$}  \\
 		\midrule
-		001 &   0.05 &     0.30 &       0.09 &  -0.01 &    -0.02 &       0.00 \\
-		002 &   0.07 &     0.39 &       0.15 &  -0.00 &    -0.00 &       0.00 \\
-		009 &   0.02 &     0.11 &       0.01 &  -0.03 &    -0.05 &       0.00 \\
-		010 &   0.05 &     0.28 &       0.08 &  -0.01 &    -0.01 &       0.00 \\
-		011 &   0.03 &     0.17 &       0.03 &   0.01 &     0.02 &       0.00 \\
-		012 &   0.02 &     0.11 &       0.01 &   0.02 &     0.04 &       0.00 \\
-		013 &   0.03 &     0.21 &       0.04 &   0.02 &     0.03 &       0.00 \\
-		014 &   0.05 &     0.27 &       0.07 &  -0.02 &    -0.04 &       0.00 \\
-		015 &   0.02 &     0.11 &       0.01 &   0.03 &     0.07 &       0.01 \\
-		016 &   0.02 &     0.14 &       0.02 &   0.04 &     0.07 &       0.01 \\
-		017 &   0.04 &     0.22 &       0.05 &  -0.02 &    -0.05 &       0.00 \\
-		018 &   0.01 &     0.08 &       0.01 &  -0.01 &    -0.01 &       0.00 \\
-		019 &   0.01 &     0.06 &       0.00 &   0.09 &     0.19 &       0.03 \\
-		020 &   0.02 &     0.13 &       0.02 &  -0.00 &    -0.01 &       0.00 \\
-		021 &   0.01 &     0.06 &       0.00 &   0.06 &     0.13 &       0.02 \\
-		022 &   0.03 &     0.16 &       0.03 &   0.09 &     0.18 &       0.03 \\
-		023 &  -0.01 &    -0.05 &       0.00 &  -0.01 &    -0.02 &       0.00 \\
-		024 &   0.02 &     0.11 &       0.01 &   0.04 &     0.08 &       0.01 \\
-		025 &   0.03 &     0.17 &       0.03 &  -0.04 &    -0.08 &       0.01 \\
-		026 &   0.02 &     0.13 &       0.02 &   0.02 &     0.05 &       0.00 \\
-		027 &   0.03 &     0.19 &       0.03 &   0.06 &     0.10 &       0.01 \\
-		028 &   0.02 &     0.13 &       0.02 &   0.05 &     0.11 &       0.01 \\
-		029 &   0.06 &     0.33 &       0.11 &   0.06 &     0.12 &       0.01 \\
-		030 &   0.01 &     0.05 &       0.00 &   0.05 &     0.10 &       0.01 \\
-		031 &   0.00 &     0.02 &       0.00 &  -0.01 &    -0.02 &       0.00 \\
-		032 &   0.03 &     0.20 &       0.04 &  -0.03 &    -0.06 &       0.00 \\
-		033 &   0.03 &     0.22 &       0.05 &   0.01 &     0.02 &       0.00 \\
-		034 &   0.03 &     0.14 &       0.02 &  -0.05 &    -0.10 &       0.01 \\
-		035 &   0.02 &     0.15 &       0.02 &   0.02 &     0.04 &       0.00 \\
-		101 &   0.01 &     0.04 &       0.00 &   0.03 &     0.05 &       0.00 \\
-		102 &   0.03 &     0.19 &       0.03 &   0.00 &     0.01 &       0.00 \\
-		103 &   0.05 &     0.31 &       0.09 &   0.06 &     0.12 &       0.01 \\
-		104 &   0.04 &     0.27 &       0.07 &   0.02 &     0.03 &       0.00 \\
-		105 &   0.03 &     0.19 &       0.04 &   0.02 &     0.05 &       0.00 \\
+		001 &  -0.23 &    -0.17 &       0.03 &   0.32 &     0.08 &       0.01 \\
+		002 &  -0.37 &    -0.18 &       0.03 &   0.95 &     0.17 &       0.03 \\
+		009 &  -0.27 &    -0.17 &       0.03 &   0.32 &     0.07 &       0.00 \\
+		010 &  -0.49 &    -0.32 &       0.10 &   0.37 &     0.09 &       0.01 \\
+		011 &  -0.37 &    -0.24 &       0.06 &    - &      - &        - \\
+		012 &  -0.46 &    -0.31 &       0.10 &   0.64 &     0.15 &       0.02 \\
+		013 &  -0.33 &    -0.21 &       0.04 &   0.42 &     0.09 &       0.01 \\
+		014 &  -0.30 &    -0.21 &       0.04 &    - &      - &        - \\
+		015 &  -0.26 &    -0.17 &       0.03 &    - &      - &        - \\
+		016 &  -0.32 &    -0.22 &       0.05 &   0.34 &     0.08 &       0.01 \\
+		017 &  -0.40 &    -0.27 &       0.07 &   0.29 &     0.07 &       0.01 \\
+		018 &  -0.15 &    -0.10 &       0.01 &   0.69 &     0.14 &       0.02 \\
+		019 &  -0.39 &    -0.27 &       0.07 &   0.43 &     0.10 &       0.01 \\
+		020 &    - &      - &        - &   0.70 &     0.16 &       0.02 \\
+		021 &  -0.46 &    -0.32 &       0.10 &    - &      - &        - \\
+		022 &  -0.32 &    -0.23 &       0.05 &    - &      - &        - \\
+		023 &  -0.15 &    -0.10 &       0.01 &    - &      - &        - \\
+		024 &  -0.53 &    -0.35 &       0.12 &    - &      - &        - \\
+		025 &  -0.44 &    -0.27 &       0.07 &   1.05 &     0.22 &       0.05 \\
+		026 &  -0.55 &    -0.30 &       0.09 &   0.29 &     0.06 &       0.00 \\
+		027 &  -0.52 &    -0.32 &       0.10 &  -0.36 &    -0.07 &       0.00 \\
+		028 &    - &      - &        - &   0.33 &     0.07 &       0.01 \\
+		029 &  -0.46 &    -0.30 &       0.09 &   0.34 &     0.08 &       0.01 \\
+		030 &  -0.17 &    -0.12 &       0.02 &    - &      - &        - \\
+		031 &  -0.39 &    -0.23 &       0.06 &   1.36 &     0.26 &       0.07 \\
+		032 &  -0.43 &    -0.27 &       0.08 &    - &      - &        - \\
+		033 &    - &      - &        - &   0.29 &     0.07 &       0.00 \\
+		034 &  -0.55 &    -0.32 &       0.10 &    - &      - &        - \\
+		035 &    - &      - &        - &    - &      - &        - \\
+		101 &  -0.24 &    -0.19 &       0.03 &   0.33 &     0.08 &       0.01 \\
+		102 &  -0.20 &    -0.15 &       0.02 &   0.50 &     0.11 &       0.01 \\
+		103 &  -0.22 &    -0.16 &       0.02 &    - &      - &        - \\
+		104 &  -0.24 &    -0.19 &       0.03 &   0.46 &     0.10 &       0.01 \\
+		105 &  -0.10 &    -0.09 &       0.01 &   0.24 &     0.06 &       0.00 \\
 		\bottomrule
-		\textbf{Mean} & 0.03 & 0.16 & 0.04 & 0.02 & 0.03 & 0.01 \\
-		\textbf{Std} & 0.02 & 0.09 & 0.04 & 0.03 & 0.07 & 0.01
+		\textbf{Mean} & -0.34 & 0.22 & 0.06 & 0.47 & 0.1 & 0.01 \\
+		\textbf{Std} & 0.13 & 0.07 & 0.03 & 0.33 & 0.06 & 0.02
 	\end{tabular}
 	\begin{tablenotes}
 		\centering
 		\item $^{a}$ mol/m$^{2}$/yr/degC
 	\end{tablenotes}
-	\label{tab:pdo-atlantic}
+	\label{tab:amo-atlantic}
 \end{table}
 
 \section{Cross Correlation}
-Perhaps we are underestimating the strength of relationship between some climate indices and EBU CO$_{2}$ flux, as we are not lagging/leading the correlations properly. Due to the physical mechanisms behind ENSO, there might be a sort of lag between a strong El Ni\~no and an anomalous gas flux. Since we are trying to understand controls on CO$_{2}$ flux variability, it probably only makes sense to look at situations where the climate index leads the gas flux anomalies. \\
+Perhaps we are underestimating the strength of relationship between some climate indices and EBUS CO$_{2}$ flux, as we are not lagging/leading the correlations properly. Due to the physical mechanisms behind ENSO, there might be a sort of lag between a strong El Ni\~no and an anomalous gas flux. Since we are trying to understand controls on CO$_{2}$ flux variability, it probably only makes sense to look at situations where the climate index leads the gas flux anomalies. \\
 
-Figure~\ref{fig:CalCS-ENSO-Cross} shows little consistency in enhanced correlations at any lead/lag. I would argue that there is little sense in correlating anything but lag zero in the case of CalCS and Nino3.4. However, turning our attention to the HumCS, we find a strong case to compute a lag correlation for ENSO, rather than a standard lag zero correlation (Figure~\ref{fig:HumCS-ENSO-Cross}). In 100\% of the simulations, the correlation is stronger when leading FGCO2 anomalies by 4-5 months with the Nino3.4 index. \\
-
-Table~\ref{tab:HumCS-ENSO-5lag} displays the results of a regression analysis between HumCS FGCO2 anomalies and the Nino3.4 index with a 5-month lead. Without the lead, a 1 degree C El Ni\~no event would explain 17\% of the FGCO2 variability on average (r = -0.40) (Table~\ref{tab:enso-pacific}). After applying a 5-month lead time to the Nino3.4 index, we find the same El Ni\~no event would explain 26\% of the FGCO2 variability (r = -0.51) (Table~\ref{tab:HumCS-ENSO-5lag})). Across all systems and the four major climate index predictors, there is really only a strong argument to lead HumCS FGCO2 anomalies by a few months with ENSO. 
+The strongest argument for giving CO$_{2}$ fluxes a lead time is actually with the AMO in the CanCS and HumCS. There are a number of simulations where the AMO-CanCS FGCO2 relationship would be strengthened with lag (Figure~\ref{fig:CanCS-AMO-Cross}). But it doesn't seem to be a ubiquitous enough pattern to apply it to the whole ensemble. The HumCS might even have a better argument for being lead by the AMO than the CanCS (Figure~\ref{fig:HumCS-AMO-Cross}, but this is probably something to return to later if it is important enough at all.
 
 \newpage
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\linewidth]{../../figs/calcs/cross-correlation/Nino34_FGCO2_cross-correlation_CalCS.png}
-	\caption{Cross correlations between CalCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.}
-	\label{fig:CalCS-ENSO-Cross}
+	\includegraphics[width=\linewidth]{../../figs/cancs/cross-correlation/AMO_FGCO2_cross-correlation_CanCS_bothSmoothed.png}
+	\caption{Cross correlations between CanCS FGCO2 and the AMO index. Negative values indicate AMO leading FGCO2 in months. The red bar indicates no lag for reference.}
+	\label{fig:CanCS-AMO-Cross}
 \end{figure}
 \newpage
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\linewidth]{../../figs/humcs/cross-correlation/Nino34_FGCO2_cross-correlation_HumCS.png}
-	\caption{Cross correlations between HumCS FGCO2 and the Nino3.4 index. Negative values indicate ENSO leading FGCO2 in months. The red bar indicates no lag for reference.}
-	\label{fig:HumCS-ENSO-Cross}
+	\includegraphics[width=\linewidth]{../../figs/humcs/cross-correlation/AMO_FGCO2_cross-correlation_HumCS_bothSmoothed.png}
+	\caption{Cross correlations between HumCS FGCO2 and the AMO index. Negative values indicate AMO leading FGCO2 in months. The red bar indicates no lag for reference.}
+	\label{fig:HumCS-AMO-Cross}
 \end{figure}
-\newpage
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=29pc]{../../figs/humcs/histograms/humcs-smoothedFGCO2-enso-lag5-histograms.png}
-	\caption{Distribution of r values for a correlation between HumCS FGCO2 anomalies and the Nino3.4 index with a 5-month lead time.}
-	\label{fig:HumCS-ENSO-hist-5lag}
-\end{figure}
-
-\clearpage
-\begin{table}
-	\centering
-\caption{Results for regressing HumCS FGCO2 anomalies onto Nino3.4 time series with a 5-month lead. Results with $p$ $>$ 0.05 are excluded.}	
-\begin{tabular}{c c c c}
-	\toprule
-	\textbf{Simulation} &  \textbf{Slope}$^{a}$  &  \textbf{R} &  \textbf{R$^{2}$} \\
-	\midrule
-	0  &  -0.31 &    -0.45 &       0.20 \\
-	1  &  -0.41 &    -0.46 &       0.21 \\
-	2  &  -0.31 &    -0.41 &       0.17 \\
-	3  &  -0.40 &    -0.52 &       0.27 \\
-	4  &  -0.40 &    -0.55 &       0.30 \\
-	5  &  -0.39 &    -0.54 &       0.29 \\
-	6  &  -0.43 &    -0.54 &       0.29 \\
-	7  &  -0.38 &    -0.56 &       0.31 \\
-	8  &  -0.38 &    -0.49 &       0.24 \\
-	9  &  -0.41 &    -0.49 &       0.24 \\
-	10 &  -0.28 &    -0.48 &       0.23 \\
-	11 &  -0.41 &    -0.49 &       0.24 \\
-	12 &  -0.43 &    -0.53 &       0.28 \\
-	13 &  -0.35 &    -0.58 &       0.34 \\
-	14 &  -0.38 &    -0.49 &       0.24 \\
-	15 &  -0.45 &    -0.57 &       0.33 \\
-	16 &  -0.34 &    -0.41 &       0.17 \\
-	17 &  -0.38 &    -0.51 &       0.26 \\
-	18 &  -0.40 &    -0.55 &       0.30 \\
-	19 &  -0.41 &    -0.50 &       0.25 \\
-	20 &  -0.35 &    -0.47 &       0.22 \\
-	21 &  -0.33 &    -0.49 &       0.24 \\
-	22 &  -0.45 &    -0.52 &       0.27 \\
-	23 &  -0.37 &    -0.52 &       0.27 \\
-	24 &  -0.41 &    -0.50 &       0.25 \\
-	25 &  -0.46 &    -0.61 &       0.37 \\
-	26 &  -0.29 &    -0.43 &       0.19 \\
-	27 &  -0.34 &    -0.45 &       0.20 \\
-	28 &  -0.32 &    -0.43 &       0.19 \\
-	29 &  -0.36 &    -0.53 &       0.28 \\
-	30 &  -0.35 &    -0.58 &       0.34 \\
-	31 &  -0.37 &    -0.52 &       0.27 \\
-	32 &  -0.44 &    -0.59 &       0.34 \\
-	33 &  -0.50 &    -0.55 &       0.30 \\
-	\bottomrule
-	\textbf{Mean} & -0.38 & -0.51 & 0.26  \\
-	\textbf{Std} & 0.05 & 0.05 & 0.05  \\
-\end{tabular}
-\begin{tablenotes}
-	\centering
-	\item $^{a}$ mol/m$^{2}$/yr/degC
-\end{tablenotes}
-\label{tab:HumCS-ENSO-5lag}
-\end{table}
 
 \clearpage
 \section{Spatial Correlation}
