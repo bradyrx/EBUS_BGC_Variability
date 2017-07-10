@@ -24,7 +24,9 @@ def detrend_climate(x):
     return signal.detrend(x)
 
 def smooth_series(x, length=12):
-    return pd.rolling_mean(x, length)
+    series = pd.rolling_mean(x, length, center=False)
+    series = series[(length-1)::]
+    return series
 
 def linear_regression(df, idx, x, y):
     # df is where you will store the output.
@@ -85,11 +87,10 @@ def main():
         ts5 = ds_cvdp['sam'][idx].values
         if SMOOTH == "True":
             ts1 = smooth_series(ts1)
-            ts1 = ts1[11::]
-            ts2 = ts2[11::]
-            ts3 = ts3[11::]
-            ts4 = ts4[11::]
-            ts5 = ts5[11::]
+            ts2 = smooth_series(ts2)
+            ts3 = smooth_series(ts3)
+            ts4 = smooth_series(ts4)
+            ts5 = smooth_series(ts5)
         print "Working on simulation " + str(idx+1) + " of 34..."
         # Run linear regressions
         df_enso = linear_regression(df_enso, idx, ts2, ts1)
@@ -99,10 +100,10 @@ def main():
     directory = '/glade/u/home/rbrady/projects/EBUS_BGC_Variability/' + \
             'data/processed/' + EBU.lower() + '/'
     if SMOOTH == "True":
-        df_enso.to_csv(directory + 'smoothed_' + VAR + '_vs_enso_' + EBU)
-        df_pdo.to_csv(directory + 'smoothed_' + VAR + '_vs_pdo_' + EBU)
-        df_amo.to_csv(directory + 'smoothed_' + VAR + '_vs_amo_' + EBU)
-        df_sam.to_csv(directory + 'smoothed_' + VAR + '_vs_sam_' + EBU)
+        df_enso.to_csv(directory + 'smoothed_' + VAR + '_vs_smoothed_enso_' + EBU)
+        df_pdo.to_csv(directory + 'smoothed_' + VAR + '_vs_smoothed_pdo_' + EBU)
+        df_amo.to_csv(directory + 'smoothed_' + VAR + '_vs_smoothed_amo_' + EBU)
+        df_sam.to_csv(directory + 'smoothed_' + VAR + '_vs_smoothed_sam_' + EBU)
     else:
         df_enso.to_csv(directory + 'unsmoothed_' + VAR + '_vs_enso_' + EBU)
         df_pdo.to_csv(directory + 'unsmoothed_' + VAR + '_vs_pdo_' + EBU)
