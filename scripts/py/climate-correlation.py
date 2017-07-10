@@ -98,7 +98,7 @@ def main():
         df_amo = linear_regression(df_amo, idx, ts4, ts1)
         df_sam = linear_regression(df_sam, idx, ts5, ts1)
     directory = '/glade/u/home/rbrady/projects/EBUS_BGC_Variability/' + \
-            'data/processed/' + EBU.lower() + '/'
+            'data/processed/' + EBU.lower() + '/region_correlations/'
     if SMOOTH == "True":
         df_enso.to_csv(directory + 'smoothed_' + VAR + '_vs_smoothed_enso_' + EBU)
         df_pdo.to_csv(directory + 'smoothed_' + VAR + '_vs_smoothed_pdo_' + EBU)
