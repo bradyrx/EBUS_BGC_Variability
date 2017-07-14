@@ -112,6 +112,15 @@ where $ \gamma_{ALK} = -\frac{ALK^{2}}{(2DIC - ALK)(ALK-DIC)} $
 \vspace{0.5cm}
 The delta terms from Equation 1 (\it e.g.\rm, $\Delta DIC$) are computed by regressing the variable of interest onto the climate index of choice. For instance, if we were investigating ENSO, we would use Nino3.4 as the predictor (x), and DIC as the dependent variable (y). The regression slope would be our delta term, and thus the entire equation would be relative to 1$\sigma$ or 1 degree C of warming related to ENSO.
 
+\newpage
+Table~\ref{tab:pCO2-sensitivities} displays the sensitivities and buffers for each system and each term. Figures~\ref{fig:taylor-enso},~\ref{fig:taylor-pdo},~\ref{fig:taylor-amo}, and~\ref{fig:taylor-sam} display linear Taylor expansions for ENSO, PDO, AMO, and SAM.  \\
+
+The HumCS can be supported as a circulation-driven system by every single climate expansion. In all cases, DIC and SST act in opposing directions, with DIC winning out as the primary controller on pCO$_{2}$ trends. For ENSO and PDO, we find a large reduction in surface DIC (likely through suppressed upwelling) and a modest increase in SSTs. Note that the HumCS actually has the highest sensitivity to SST of any system, and it still intakes more CO$_{2}$ during warm events. During positive AMO and SAM events, we find increased DIC and pCO$_{2}$ in the HumCS. Is this spurious correlation or is there a physical relationship here? \\
+
+For the CalCS during Pacific climate events, SST warming contributions tend to counterbalance suppressed DIC delivery. So in a general sense, upwelling isn't weakened to the degree that it is in the HumCS, and SSTs warm enough to impact solubility and force outgassing. Interestingly, SSTs tend to work in coordination with ALK increases. We find the largest modification to the system during AMO events, which leads to CO$_{2}$ uptake, in which lower DIC and colder temperatures (solubility + circulation) work to bring in more carbon. \\
+
+The CanCS and BenCS respond almost identically to Pacific climate events, and I am not sure why. Also note that we have smaller sample sizes and higher uncertainty in these cases. We cannot glean much from SAM or AMO for the BenCS due to its very large uncertainty. However, the AMO impact is most telling for the CanCS. I would liken it most to that of the HumCS. SST and DIC impacts work in opposing directions, with suppressed DIC delivery contributing most to CO$_{2}$ uptake. \\
+
 \clearpage
 \begin{table}
 	\centering
@@ -146,7 +155,7 @@ The delta terms from Equation 1 (\it e.g.\rm, $\Delta DIC$) are computed by regr
 \begin{tabular}{c | c c c c }
 	& CalCS & HumCS & CanCS & BenCS \\
 	\midrule
-	Model Regression & 0.67 & -13.16 & 0.98 & 1.27 \\
+	Model Regression & 0.69 & -12.88 & 1.24 & 1.20 \\
 	Taylor Summation & 0.12 & -15.72 & 1.24 & 1.25 \\
 \end{tabular}
 	\caption{Comparison between regressing pCO$_{2}$ anomalies onto ENSO and the summation of each term of the linear taylor approximation for each system}
@@ -165,7 +174,7 @@ The delta terms from Equation 1 (\it e.g.\rm, $\Delta DIC$) are computed by regr
 	\begin{tabular}{c | c c c c }
 		& CalCS & HumCS & CanCS & BenCS \\
 		\midrule
-		Model Regression & 0.65 & -5.37 & 0.66 & 1.10 \\
+		Model Regression & 0.68 & -5.61 & 0.79 & 1.10 \\
 		Taylor Summation & -0.37 & -7.27 & 0.73 & 1.05 \\
 	\end{tabular}
 	\caption{Comparison between regressing pCO$_{2}$ anomalies onto PDO and the summation of each term of the linear taylor approximation for each system}
@@ -184,7 +193,7 @@ The delta terms from Equation 1 (\it e.g.\rm, $\Delta DIC$) are computed by regr
 	\begin{tabular}{c | c c c c }
 		& CalCS & HumCS & CanCS & BenCS \\
 		\midrule
-		Model Regression & -4.85 & 30.0 & -5.43 & 4.58 \\
+		Model Regression & -4.95 & 32.60 & -5.95 & 0.02 \\
 		Taylor Summation & -4.48 & 36.0 & -10.51 & -0.25 \\
 	\end{tabular}
 	\caption{Comparison between regressing pCO$_{2}$ anomalies onto AMO and the summation of each term of the linear taylor approximation for each system}
@@ -203,7 +212,7 @@ The delta terms from Equation 1 (\it e.g.\rm, $\Delta DIC$) are computed by regr
 	\begin{tabular}{c | c c c c }
 		& CalCS & HumCS & CanCS & BenCS \\
 		\midrule
-		Model Regression & -0.80 & 10.50 & -0.71 & -1.57 \\
+		Model Regression & -0.99 & 11.08 & -0.95 & -1.93 \\
 		Taylor Summation & -0.46 & 13.44 & -0.67 & -2.08 \\
 	\end{tabular}
 	\caption{Comparison between regressing pCO$_{2}$ anomalies onto SAM and the summation of each term of the linear taylor approximation for each system}
