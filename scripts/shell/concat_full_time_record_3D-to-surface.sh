@@ -18,7 +18,8 @@
 VAR=DIC
 INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/${VAR}
 OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly
-
+LAYER=6 # Fortran-indexed depth layer to extract (if singular)
+DEPTH_VAR=z_t
 mkdir -p ${OUTPUT_DIR}
 
 # Loop is for known BGC output. This is used because known ensemble members are split up differently.
@@ -29,27 +30,27 @@ do
     then
         # Dealing with the fact that s001 begins with 1850. Need to turn it into 1920, then delete it at the end of the whole process.
         temp_file=${INPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.185001-200512.nc
-        ncks -F -d time,841, -d z_t,1,1 ${temp_file} ${OUTPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.192001-200512.nc
+        ncks -F -d time,841, -d ${DEPTH_VAR},${LAYER},${LAYER} ${temp_file} ${OUTPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.192001-200512.nc
         histFile=${OUTPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.192001-200512.nc
     else
         temp_file=${INPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.192001-200512.nc
-	ncks -F -d z_t,1,1 ${temp_file} ${OUTPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.192001-200512.nc
+	ncks -F -d ${DEPTH_VAR},${LAYER},${LAYER} ${temp_file} ${OUTPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.192001-200512.nc
 	histFile=${OUTPUT_DIR}/b.e11.B20TRC5CNBDRD.f09_g16.${n}.pop.h.${VAR}.192001-200512.nc
     fi
 
     if [ ${n} == 034 ] || [ ${n} == 035 ] || [ ${n} == 101 ] || [ ${n} == 102 ] || [ ${n} == 103 ] || [ ${n} == 104 ] || [ ${n} == 105 ]
     then
         temp_file=${INPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-210012.nc
-	ncks -F -d z_t,1,1 ${temp_file} ${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-210012.nc
+	ncks -F -d ${DEPTH_VAR},${LAYER},${LAYER} ${temp_file} ${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-210012.nc
 	futFile=${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-210012.nc
         ncrcat ${histFile} ${futFile} ${OUTPUT_DIR}/${VAR}.${n}.192001-210012.nc
 	rm ${histFile} ${futFile}
     else
         temp1=${INPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-208012.nc
-	ncks -F -d z_t,1,1 ${temp1} ${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-208012.nc
+	ncks -F -d ${DEPTH_VAR},${LAYER},${LAYER} ${temp1} ${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-208012.nc
 	fut1=${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.200601-208012.nc
         temp2=${INPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.208101-210012.nc
-	ncks -F -d z_t,1,1 ${temp2} ${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.208101-210012.nc
+	ncks -F -d ${DEPTH_VAR},${LAYER},${LAYER} ${temp2} ${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.208101-210012.nc
 	fut2=${OUTPUT_DIR}/b.e11.BRCP85C5CNBDRD.f09_g16.${n}.pop.h.${VAR}.208101-210012.nc
         ncrcat ${histFile} ${fut1} ${fut2} ${OUTPUT_DIR}/${VAR}.${n}.192001-210012.nc
 	rm ${histFile} ${fut1} ${fut2}
