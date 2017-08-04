@@ -9,14 +9,14 @@ import pandas as pd
 EBUS = ['CalCS', 'HumCS', 'CanCS', 'BenCS']
 
 colors = {
-    'CalCS': '#80b1d3',
-    'calcs': '#80b1d3',
-    'HumCS': '#fb8072',
-    'humcs': '#fb8072',
-    'CanCS': '#fdb462',
-    'cancs': '#fdb462',
-    'BenCS': '#bc80bd',
-    'bencs': '#bc80bd'
+    'CalCS': '#5ea46d',
+    'calcs': '#5ea46d',
+    'HumCS': '#9173c8',
+    'humcs': '#9173c8',
+    'CanCS': '#b78f3b',
+    'cancs': '#b78f3b',
+    'BenCS': '#cd5664',
+    'bencs': '#cd5664'
 }
 
 ens = ['001', '002', '009', '010', '011', '012', '013', '014', '015', '016',
