@@ -75,6 +75,7 @@ def main():
     ds['TAREA'] = ds['TAREA'] / (100 * 100)
     # Drop unnecessary bits
     del ds['time_bound']
+    # del ds['d2']
     # Add in some metadata
     ds.attrs['area units'] = "m2"
     # Get region bounds for EBU. If Benguela, need to convert the longitude
