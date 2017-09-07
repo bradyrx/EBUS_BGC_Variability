@@ -15,6 +15,11 @@ to generate the residuals every time. It also physically speeds up analysis
 by cleaning up the dask array. For whatever reason, xarray/dask is
 SIGNIFICANTLY faster upon loading in post-processed .nc files.
 """
+# ----------------------
+# Update  : Sep 6th, 2017
+# Recently moved over to Python3 from Python2. Simply updated the print portions
+# of this script to make them compatible with print as a function.
+# ----------------------
 # Input 1 : EBU name.
 # Input 2 : Variable name.
 # NOTE: You can change the offshore distance parameter in the main script if
@@ -67,7 +72,7 @@ def drop_ensemble_dim(ds, x):
 def main():
     EBU = sys.argv[1]
     VAR = sys.argv[2]
-    print "Creating residuals for {} in the {}".format(VAR, EBU)
+    print("Creating residuals for {} in the {}".format(VAR, EBU))
     OFFSHORE = 800 # distance to filter offshore EBUS bounds to.
     fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + EBU \
             + '/'
@@ -131,12 +136,12 @@ def main():
                 EBU + '/filtered_output/'
     if not os.path.exists(directory):
         os.makedirs(directory)
-    print "Saving forced signal to NetCDF..."
+    print("Saving forced signal to NetCDF...")
     ds_forced.to_netcdf(directory + EBU.lower() + '-' + VAR +
                         '-forced-signal-chavez-' + str(OFFSHORE) + 'km.nc')
     ds_forced_AW.to_netcdf(directory + EBU.lower() + '-' + VAR +
                         '-forced-signal-AW-chavez-' + str(OFFSHORE) + 'km.nc')
-    print "Saving residuals to NetCDF..."
+    print("Saving residuals to NetCDF...")
     ds_residuals.to_netcdf(directory + EBU.lower() + '-' + VAR +
                         '-residuals-chavez-' + str(OFFSHORE) + 'km.nc')
     ds_residuals_AW.to_netcdf(directory + EBU.lower() + '-' + VAR +
