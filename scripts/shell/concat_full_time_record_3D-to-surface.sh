@@ -1,13 +1,11 @@
 #!/bin/bash
-#BSUB -P P93300670             # project code
-#BSUB -W 06:00                    # wall-clock time (hrs:mins)
-#BSUB -n 1                       # number of tasks in job
-#BSUB -J DIC-fullseries                    # job name
-#BSUB -o DIC-series.%J.out             # output file name in which %J is replaced by the job ID
-#BSUB -e DIC-series.%J.err             # error file name in which %J is replaced by the job ID
-#BSUB -q geyser                   # queue - must be either geyser or caldera
-#BSUB -B                                                                                              $
-#BSUB -N
+#PBS -A P93300670
+#PBS -N WVEL-fullseries
+#PBS -l walltime=06:00:00
+#PBS -M riley.brady@colorado.edu
+#PBS -q regular
+#PBS -l select=1:ncpus=1
+#PBS -m abe
 
 # Author : Riley X. Brady
 # Date : 05/31/2017
@@ -15,11 +13,11 @@
 # This is helpful for reading into xarray and messing around with from there. 
 # Notes : 
 # - Cannot easily do in parallel due to all the differences between ensemble member file structure.
-VAR=DIC
+VAR=WVEL
 INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/${VAR}
 OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly
 LAYER=6 # Fortran-indexed depth layer to extract (if singular)
-DEPTH_VAR=z_t
+DEPTH_VAR=z_w
 mkdir -p ${OUTPUT_DIR}
 
 # Loop is for known BGC output. This is used because known ensemble members are split up differently.
