@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N alt_co2_BenCS
+#PBS -N alt_co2_CalCS
 #PBS -l walltime=00:30:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q regular 
@@ -15,7 +15,7 @@
 source /glade/u/home/$USER/pyenvs/py2-scipy/bin/activate
 
 script=EBUS_extraction.py
-VAR=FG_ALT_CO2
+VAR=WVEL
 EBU=BenCS
 OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/${VAR}/${EBU}/
 
