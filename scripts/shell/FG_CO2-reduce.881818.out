@@ -1,0 +1,96 @@
+WVEL.019.192001-210012.nc
+WVEL.011.192001-210012.nc
+WVEL.035.192001-210012.nc
+WVEL.023.192001-210012.nc
+WVEL.029.192001-210012.nc
+WVEL.033.192001-210012.nc
+WVEL.012.192001-210012.nc
+WVEL.031.192001-210012.nc
+WVEL.027.192001-210012.nc
+WVEL.030.192001-210012.nc
+WVEL.009.192001-210012.nc
+WVEL.025.192001-210012.nc
+WVEL.024.192001-210012.nc
+WVEL.020.192001-210012.nc
+WVEL.014.192001-210012.nc
+WVEL.021.192001-210012.nc
+WVEL.015.192001-210012.nc
+WVEL.010.192001-210012.nc
+WVEL.002.192001-210012.nc
+WVEL.018.192001-210012.nc
+WVEL.026.192001-210012.nc
+WVEL.017.192001-210012.nc
+WVEL.032.192001-210012.nc
+WVEL.028.192001-210012.nc
+WVEL.016.192001-210012.nc
+WVEL.105.192001-210012.nc
+WVEL.013.192001-210012.nc
+WVEL.022.192001-210012.nc
+WVEL.001.192001-210012.nc
+WVEL.034.192001-210012.nc
+WVEL.103.192001-210012.nc
+WVEL.104.192001-210012.nc
+WVEL.101.192001-210012.nc
+WVEL.102.192001-210012.nc
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@geyser12-ib>
+Subject: Job 881818: <FG_CO2-reduce> in cluster <yellowstone> Done
+
+Job <FG_CO2-reduce> was submitted from host <yslogin3-ib> by user <rbrady> in cluster <yellowstone>.
+Job was executed on host(s) <16*geyser12-ib>, in queue <geyser>, as user <rbrady> in cluster <yellowstone>.
+</glade/u/home/rbrady> was used as the home directory.
+</glade/u/home/rbrady/projects/EBUS_BGC_Variability/scripts/shell> was used as the working directory.
+Started at Thu Sep  7 21:31:05 2017
+Results reported on Thu Sep  7 21:32:22 2017
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -P P93300670             # project code
+#BSUB -W 00:30                    # wall-clock time (hrs:mins)
+#BSUB -n 16                       # number of tasks in job
+#BSUB -J FG_CO2-reduce                    # job name
+#BSUB -o FG_CO2-reduce.%J.out             # output file name in which %J is replaced by the job ID
+#BSUB -e FG_CO2-reduce.%J.err             # error file name in which %J is replaced by the job ID
+#BSUB -q geyser                   # queue - must be either geyser or caldera
+#BSUB -B                                                                                              $
+#BSUB -N
+
+# Author  : Riley X. Brady
+# Date    : 05/25/2017
+# Purpose : Quick script to take output from CESM-LENS that has MANY variables embedded, and just pull out the variable and coordinates of interest. 
+# This makes it easier to manage when loading a bunch of files into xArray.
+
+MAIN_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/WVEL_monthly
+
+cd ${MAIN_DIR}
+
+ls *.nc | parallel 'echo {}; ncks -v WVEL,TLAT,TLONG,TAREA,ANGLET,DXT,DYT,REGION_MASK {} reduced.{}'
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   1851.84 sec.
+    Max Memory :                                 38313 MB
+    Average Memory :                             19586.00 MB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Processes :                              72
+    Max Threads :                                73
+    Run time :                                   76 sec.
+    Turnaround time :                            82 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <FG_CO2-reduce.881818.err> for stderr output of this job.
+
