@@ -17,7 +17,7 @@ VAR=WVEL
 INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/${VAR}
 OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly
 LAYER=6 # Fortran-indexed depth layer to extract (if singular)
-DEPTH_VAR=z_w
+DEPTH_VAR=z_w_top
 mkdir -p ${OUTPUT_DIR}
 
 # Loop is for known BGC output. This is used because known ensemble members are split up differently.
