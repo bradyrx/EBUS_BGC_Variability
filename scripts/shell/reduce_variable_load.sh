@@ -1,13 +1,11 @@
 #!/bin/bash
-#BSUB -P P93300670             # project code
-#BSUB -W 00:30                    # wall-clock time (hrs:mins)
-#BSUB -n 16                       # number of tasks in job
-#BSUB -J FG_CO2-reduce                    # job name
-#BSUB -o FG_CO2-reduce.%J.out             # output file name in which %J is replaced by the job ID
-#BSUB -e FG_CO2-reduce.%J.err             # error file name in which %J is replaced by the job ID
-#BSUB -q geyser                   # queue - must be either geyser or caldera
-#BSUB -B                                                                                              $
-#BSUB -N
+#PBS -A P93300670
+#PBS -N reduce_variable_load
+#PBS -l walltime=00:30:00
+#PBS -M riley.brady@colorado.edu
+#PBS -q economy
+#PBS -l select=1:ncpus=1
+#PBS -m abe
 
 # Author  : Riley X. Brady
 # Date    : 05/25/2017

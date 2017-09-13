@@ -1,14 +1,11 @@
 #!/bin/bash
-#BSUB -P P93300670             # project code
-#BSUB -W 02:00                    # wall-clock time (hrs:mins)
-#BSUB -n 1                       # number of tasks in job
-#BSUB -J FG_CO2-fullseries                    # job name
-#BSUB -o FG_CO2-series.%J.out             # output file name in which %J is replaced by the job ID
-#BSUB -e FG_CO2-series.%J.err             # error file name in which %J is replaced by the job ID
-#BSUB -q geyser                   # queue - must be either geyser or caldera
-#BSUB -B                                                                                              $
-#BSUB -N
-
+#PBS -A P93300670
+#PBS -N concat_full_record
+#PBS -l walltime=02:00:00
+#PBS -M riley.brady@colorado.edu
+#PBS -q economy
+#PBS -l select=1:ncpus=1
+#PBS -m abe
 # Author : Riley X. Brady
 # Date : 05/31/2017
 # Purpose : Given a variable, will concatenate every BGC member from 1920-2100 and store away in scratch.
