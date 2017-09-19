@@ -44,8 +44,8 @@ def chavez_bounds(x):
         lat1 = 34
         lat2 = 44
     elif x == "CanCS":
-        lat1 = 12
-        lat2 = 22
+        lat1 = 21 
+        lat2 = 31 
     elif x == "BenCS":
         lat1 = -28
         lat2 = -18

@@ -35,10 +35,10 @@ def detect_EBUS(x):
         lon1 = 0
         lon2 = 20
     elif x == "CanCS":
-        lat1 = 10
-        lat2 = 24
+        lat1 = 19 
+        lat2 = 33 
         lon1 = 330
-        lon2 = 355
+        lon2 = 359
     elif x == "HumCS":
         lat1 = -20
         lat2 = 0
