@@ -13,11 +13,11 @@
 # This is helpful for reading into xarray and messing around with from there. 
 # Notes : 
 # - Cannot easily do in parallel due to all the differences between ensemble member file structure.
-VAR=SALT
+VAR=ALK
 INPUT_DIR=/glade/p/cesmLE/CESM-CAM5-BGC-LE/ocn/proc/tseries/monthly/${VAR}
 OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly
 LAYER=6 # Fortran-indexed depth layer to extract (if singular)
-DEPTH_VAR=z_w_top
+DEPTH_VAR=z_t
 mkdir -p ${OUTPUT_DIR}
 
 # Loop is for known BGC output. This is used because known ensemble members are split up differently.
