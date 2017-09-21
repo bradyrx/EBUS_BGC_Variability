@@ -1,9 +1,9 @@
 #!/bin/bash
 #PBS -A P93300670
 #PBS -N global_variability
-#PBS -l walltime=02:00:00
+#PBS -l walltime=10:00:00
 #PBS -M riley.brady@colorado.edu
-#PBS -q regular
+#PBS -q economy 
 #PBS -l select=1:ncpus=18
 #PBS -m abe
 

@@ -31,18 +31,23 @@ def load_ensemble(VAR):
 def main():
     VAR = sys.argv[1]
     ds = load_ensemble(VAR)
-    ds['time']  = pd.date_range('1920-01', '2101-01', freq='M')
     # Extract 1920-2015
     ds = ds.sel(time=slice('1920-01','2015-12'))
     # Find ensemble mean
     ds = ds.mean(dim='ensemble')
+    # Save out and load back in
+    ds.to_netcdf('/glade/scratch/rbrady/temp.nc')
+    del ds
+    ds = xr.open_dataset('/glade/scratch/rbrady/temp.nc')
     print("Computing seasonal magnitude across grid...")
-    s_magnitude = ds.stack(allpoints=['nlat','nlon']) \
+    ds = ds[VAR].stack(allpoints=['nlat','nlon']) \
                     .groupby('allpoints', squeeze=False) \
                     .apply(et.ufunc.seasonal_magnitude) \
                     .unstack('allpoints')
-    s_magnitude.name = 's_magnitude'
-    s_magnitude.attrs['long name'] = 'Magnitude of 1920-2015 seasonal cycle'
+    ds.name = 's_magnitude'
+    ds.attrs['long name'] = 'Magnitude of 1920-2015 seasonal cycle'
+    ds.to_dataset().to_netcdf('/glade/scratch/rbrady/EBUS_BGC_Variability/' +
+                              VAR + '_seasonal_magnitude_global.nc')
     # To save memory...
     del ds
     
@@ -53,14 +58,10 @@ def main():
     ds = ds[VAR].std(dim='time').mean(dim='ensemble')
     ds.name = 'r_magnitude'
     ds.attrs['long name'] = 'Mean standard deviation of 1920-2015 residuals'
-
-    # Create new dataset for storage and saving
-    variability = xr.Dataset()
-    variability['s_magnitude'] = s_magnitude
-    variability['r_magnitude'] = ds
+    ds.to_dataset().to_netcdf('/glade/scratch/rbrady/EBUS_BGC_Variability/' +
+                              VAR + '_internal_magnitude_global.nc')
     del ds
-    variability.to_netcdf('/glade/scratch/rbrady/EBUS_BGC_Variability/' + 
-                          'global_' + VAR + '_variability_test.nc')
+    print("End task.")
 
 if __name__ == '__main__':
     main()
