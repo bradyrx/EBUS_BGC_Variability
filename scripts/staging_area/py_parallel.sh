@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N WVEL_CCS
+#PBS -N ALK_CanCS 
 #PBS -l walltime=00:30:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q economy
@@ -19,8 +19,8 @@
 source `which env_parallel.bash`
 
 script=EBUS_extraction.py
-VAR=WVEL
-EBU=CalCS
+VAR=ALK
+EBU=CanCS
 OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/${VAR}/${EBU}/
 
 mkdir -p ${OUT}
