@@ -38,7 +38,7 @@ ens_str = ['001', '002', '009', '010', '011', '012', '013', '014', '015', '016',
            '027', '028', '029', '030', '031', '032', '033', '034', '035', '101',
            '102', '103', '104', '105']
 
-def gridcell_correlations(x):
+def gridcell_correlations(x, y):
     """
     This is the main analysis part of the script. Use this on an xarray 
     apply function to correlate the current gridcell residuals with
@@ -55,7 +55,7 @@ def gridcell_correlations(x):
         # Smooth for 12 months by default.
         x = et.stats.smooth_series(x, 12)
         # Might be bad form, but uses a ds defined in the main script.
-        y = et.stats.smooth_series(ds_regional, 12)
+        y = et.stats.smooth_series(y, 12)
         m, _, r, p, _ = et.stats.linear_regression(x, y)
         return xr.Dataset({'m': m, 'r': r, 'p': p})
 
@@ -84,7 +84,7 @@ def main():
     print("Beginning global correlations for #" + ens_str[ENS])
     correlation = ds_global.stack(gridpoints=['nlat','nlon']) \
                            .groupby('gridpoints') \
-                           .apply(gridcell_correlations) \
+                           .apply(gridcell_correlations, y=ds_regional) \
                            .unstack('gridpoints')
     print("Finished global correlations for #" + ens_str[ENS])
     if not os.path.exists(OUT_DIR):

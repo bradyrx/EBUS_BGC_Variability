@@ -1,10 +1,10 @@
 #!/bin/bash
 #PBS -A P93300670
 #PBS -N SST_CalCS_global_regression
-#PBS -l walltime=06:00:00
+#PBS -l walltime=10:00:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q economy
-#PBS -l select=1:ncpus=18
+#PBS -l select=1:ncpus=8
 #PBS -m abe
 
 # Author  : Riley X. Brady
@@ -23,6 +23,5 @@ OUT_DIR=/glade/p/work/rbrady/EBUS_BGC_Variability/global_regressions/SST/${EBU}
 
 for n in {0..33}
 do
-    python ${script} ${EBU} ${GLOBAL_VAR} ${n} ${GLOBAL_DIR} ${OUT_DIR} &
+    python ${script} ${EBU} ${GLOBAL_VAR} ${n} ${GLOBAL_DIR} ${OUT_DIR} 
 done
-wait
