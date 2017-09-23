@@ -78,7 +78,7 @@ def main():
     filedir = (GLOBAL_DIR + GLOBAL_VAR + '.' + ens_str[ENS] +
                '.global_residuals.nc')
     # This is our 1152x384x320 da of global residuals.
-    ds_global = xr.open_dataset(filedir)
+    ds_global = xr.open_dataset(filedir, chunks={'time':10})
     ds_global = ds_global[GLOBAL_VAR]
     # Perform computation!
     print("Beginning global correlations for #" + ens_str[ENS])
@@ -89,7 +89,7 @@ def main():
     print("Finished global correlations for #" + ens_str[ENS])
     if not os.path.exists(OUT_DIR):
         os.makedirs(OUT_DIR)
-    out_file = (OUT_DIR + GLOBAL_VAR + '.FG_ALT_CO2.' +
+    out_file = (OUT_DIR + GLOBAL_VAR + '.FG_ALT_CO2.' + EBU + '.' +
                 ens_str[ENS] + '.smoothed_global_regression.nc')
     print("Saving #" + ens_str[ENS] + " to netCDF...")
     correlation.to_netcdf(out_file)
