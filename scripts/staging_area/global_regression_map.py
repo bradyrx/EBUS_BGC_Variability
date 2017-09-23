@@ -62,7 +62,7 @@ def gridcell_correlations(x):
 def main():
     EBU = sys.argv[1]
     GLOBAL_VAR = sys.argv[2]
-    ENS = sys.argv[3]
+    ENS = int(sys.argv[3])
     GLOBAL_DIR = sys.argv[4]
     OUT_DIR = sys.argv[5]
     print("Working on " + GLOBAL_VAR + " regressions for simulation " +
