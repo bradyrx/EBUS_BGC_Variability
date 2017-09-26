@@ -1,10 +1,10 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N SST_CalCS_global_regression
-#PBS -l walltime=10:00:00
+#PBS -N SST_HumCS_gregress
+#PBS -l walltime=00:45:00
 #PBS -M riley.brady@colorado.edu
-#PBS -q economy
-#PBS -l select=1:ncpus=8
+#PBS -q economy 
+#PBS -l select=1:ncpus=1
 #PBS -m abe
 
 # Author  : Riley X. Brady
@@ -16,12 +16,9 @@
 `source activate py36`
 
 script=global_regression_map.py
-EBU=CalCS
+EBU=HumCS
 GLOBAL_VAR=SST
 GLOBAL_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/global_residuals/SST/
-OUT_DIR=/glade/p/work/rbrady/EBUS_BGC_Variability/global_regressions/SST/${EBU}
+OUT_DIR=/glade/p/work/rbrady/EBUS_BGC_Variability/global_regressions/SST/${EBU}/lag${LAG}/
 
-for n in {0..33}
-do
-    python ${script} ${EBU} ${GLOBAL_VAR} ${n} ${GLOBAL_DIR} ${OUT_DIR} 
-done
+python ${script} ${EBU} ${GLOBAL_VAR} ${lag} ${ensemble} ${GLOBAL_DIR} ${OUT_DIR} 
