@@ -118,7 +118,7 @@ def main():
     print("Finished global correlations for #" + ens_str[ENS])
     if not os.path.exists(OUT_DIR):
         os.makedirs(OUT_DIR)
-    if SMOOTH: # Save with smoothing in filename
+    if SMOOTH == "True": # Save with smoothing in filename
         out_file = (OUT_DIR + GLOBAL_VAR + '.FG_ALT_CO2.' + EBU + '.' +
                     ens_str[ENS] + '.smoothed_global_regression.lag' +
                     str(LAG) + '.nc')

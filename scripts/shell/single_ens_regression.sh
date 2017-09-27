@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N PSL_BenCS_gregress
-#PBS -l walltime=00:45:00
+#PBS -N U10_BenCS_gregress_unsmoothed
+#PBS -l walltime=00:30:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q economy 
 #PBS -l select=1:ncpus=1
@@ -17,7 +17,7 @@
 
 script=global_regression_map.py
 EBU=BenCS
-GLOBAL_VAR=PSL
+GLOBAL_VAR=U10
 smoothing=False
 GLOBAL_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/global_residuals/${GLOBAL_VAR}/
 OUT_DIR=/glade/p/work/rbrady/EBUS_BGC_Variability/global_regressions/${GLOBAL_VAR}/${EBU}/lag${L}/
