@@ -1,5 +1,5 @@
 #!/bin/bash
-LAG=6
+LAG=0
 
 for N in {0..2}
 do

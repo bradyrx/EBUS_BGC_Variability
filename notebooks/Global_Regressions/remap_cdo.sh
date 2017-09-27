@@ -1,11 +1,11 @@
 #!/bin/bash
-# INPUT 1 : EBU
-# INPUT 2 : LAG
+# INPUT 1 : VAR 
+# INPUT 2 : EBU 
+# INPUT 3 : LAG
 
-
-GLOBAL_VAR=SST
-EBU=$1
-LAG=$2
+GLOBAL_VAR=$1
+EBU=$2
+LAG=$3
 input_dir=/glade/p/work/${USER}/EBUS_BGC_Variability/global_regressions/${GLOBAL_VAR}/${EBU}/lag${LAG}
 output_dir=${input_dir}/remapped
 
