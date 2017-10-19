@@ -13,12 +13,13 @@ correlations as a single netCDF file.
 E.g. you can correlate the entire California Current FG_ALT_CO2 residuals with
 the NPGO index. You can also specify whatever lag and smoothing necessary.
 
+NOTE: To compare with an EOF of CO2 flux, just use EOF1, EOF2, or EOF3 for the
+VARY argument. However, beware that this is only operational for FG_ALT_CO2
+EOFs currently.
+
 NOTE: There is probably a way to do this with "apply" but I can't figure out
 how. It isn't as simple as doing .groupby('ensemble') and then calling
 ds.x and ds.y in the apply function.
-
-NOTE: This script is currently set up to correlate with FG_ALT_CO2 residuals.
-You can make this an input option later if you'd like.
 
 NOTE: This script is also written to handle PDO, ENSO, AMO, etc. from the
 climate diagnostics package as well as NPGO. You will have to add functionality
@@ -28,7 +29,7 @@ INPUT 1: Str for EBUS ('CalCS', 'CanCS', 'HumCS', 'BenCS')
 INPUT 2: Predictor climate variable for the residuals 
     ('NPGO', 'PDO', 'ENSO', 'AMO', etc.)
 INPUT 3: Dependent variable in the EBU
-    (FG_ALT_CO2, FG_CO2, ...)
+    (FG_ALT_CO2, FG_CO2, EOF1, EOF2, EOF3)
 INPUT 4: Int for number of months to lag (0 is no lag).
 INPUT 5: Int for how many months to smooth by (0 is no smoothing). 
 """
@@ -66,12 +67,28 @@ def main():
         filename = 'cvdp_detrended_BGC.nc'
         ds_x = xr.open_dataset(filepath + filename)
         ds_x = ds_x[VARX.lower()]
-    # Load in the co2 flux anomalies.
-    filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' + VARY + '/' + 
-                EBU + '/filtered_output/')
-    filename = EBU.lower() + '-' + VARY + '-residuals-AW-chavez-800km.nc'
-    ds_y = xr.open_dataset(filepath + filename)
-    ds_y = ds_y[VARY + '_AW']
+    # Load in the Y variable.
+    if VARY in ['EOF1', 'EOF2', 'EOF3']:
+        filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' +
+                    'regional_EOFs/' + EBU + '/FG_ALT_CO2/')
+        filename = 'FG_ALT_CO2.' + EBU + '.EOF.192001-201512.nc'
+        ds_y = xr.open_dataset(filepath + filename)
+        if VARY == 'EOF1':
+            ds_y = ds_y['pc'].sel(mode=0)
+        elif VARY == 'EOF2':
+            ds_y = ds_y['pc'].sel(mode=1)
+        else:
+            ds_y = ds_y['pc'].sel(mode=2)
+        # Remove any trend (should be very slight).
+        ds_y = ds_y.groupby('ensemble', squeeze=True) \
+                   .apply(et.ufunc.remove_polynomial_fit)
+    else:
+        # Load in the co2 flux anomalies.
+        filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' + VARY + '/' + 
+                    EBU + '/filtered_output/')
+        filename = EBU.lower() + '-' + VARY + '-residuals-AW-chavez-800km.nc'
+        ds_y = xr.open_dataset(filepath + filename)
+        ds_y = ds_y[VARY + '_AW']
     # Smooth if necessary.
     if SMOOTH != 0:
             ds_x = ds_x.rolling(time=SMOOTH).mean().dropna('time')
