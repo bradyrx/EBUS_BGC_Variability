@@ -57,6 +57,16 @@ def main():
         filepath = '/glade/p/work/rbrady/NPGO/'
         ds_x = xr.open_mfdataset(filepath + '*.nc', concat_dim='ensemble')
         ds_x = ds_x['pc']
+    elif VARX == 'NPH':
+        """
+        This is another custom procedure. A simple box over the Northeast
+        Pacific that represents anomalies in the standard position of the
+        NPH.
+        """
+        filepath = '/glade/p/work/rbrady/EBUS_BGC_Variability/indices/NPH/'
+        filename = 'NPH.full_ensemble.192001-201512.nc'
+        ds_x = xr.open_dataset(filepath + filename)
+        ds_x = ds_x['NPH']
     else:
         """
         This assumes the variable can be found in Adam Phillip's climate

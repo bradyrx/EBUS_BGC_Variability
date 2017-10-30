@@ -16,10 +16,8 @@
 `source activate py36`
 
 script=global_regression_map.py
-EBU=BenCS
-GLOBAL_VAR=U10
+VARY=NPGO
+GLOBAL_VAR=SST
 smoothing=False
-GLOBAL_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/global_residuals/${GLOBAL_VAR}/
-OUT_DIR=/glade/p/work/rbrady/EBUS_BGC_Variability/global_regressions/${GLOBAL_VAR}/${EBU}/lag${L}/
 
-python ${script} ${EBU} ${GLOBAL_VAR} ${L} ${ensemble} ${smoothing} ${GLOBAL_DIR} ${OUT_DIR} 
+python ${script} ${VARY} ${GLOBAL_VAR} ${L} ${ensemble} ${smoothing}  
