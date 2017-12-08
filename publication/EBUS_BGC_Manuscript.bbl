@@ -1,0 +1,39 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Fiedler and Mantua(2017)]{Fiedler:2017}
+Paul~C. Fiedler and Nathan~J. Mantua.
+\newblock How are warm and cool years in the {California} {Current} related to
+  {ENSO}?
+\newblock \emph{Journal of Geophysical Research: Oceans}, 122\penalty0
+  (7):\penalty0 5936--5951, July 2017.
+\newblock ISSN 21699275.
+\newblock \doi{10.1002/2017JC013094}.
+\newblock URL \url{http://doi.wiley.com/10.1002/2017JC013094}.
+
+\bibitem[Turi et~al.(2017)Turi, Alexander, Lovenduski, Capotondi, Scott, Stock,
+  Dunne, John, and Jacox]{Turi:2017}
+G.~Turi, Michael~A. Alexander, Nicole~S. Lovenduski, Antonietta Capotondi,
+  James~D. Scott, Charles~A. Stock, John~P. Dunne, Jasmin John, and Michael~G.
+  Jacox.
+\newblock Response of {O}2 and {pH} to {ENSO} in the {California} {Current}
+  {System} in a high resolution global climate model.
+\newblock \emph{Ocean Sciences Discussion}, August 2017.
+
+\bibitem[Frischknecht et~al.(2017)Frischknecht, M{\"u}nnich, and
+  Gruber]{Frischknecht:2017}
+Martin Frischknecht, Matthias M{\"u}nnich, and Nicolas Gruber.
+\newblock Local atmospheric forcing driving an unexpected {California}
+  {Current} {System} response during the 2015--2016 {El} {Ni{\~n}o}.
+\newblock \emph{Geophys. Res. Lett.}, 44\penalty0 (1):\penalty0 2016GL071316,
+  January 2017.
+\newblock ISSN 1944-8007.
+\newblock \doi{10.1002/2016GL071316}.
+\newblock URL
+  \url{http://onlinelibrary.wiley.com/doi/10.1002/2016GL071316/abstract}.
+
+\end{thebibliography}
