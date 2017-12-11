@@ -12,8 +12,11 @@
 # Purpose : Quick script to take output from CESM-LENS that has MANY variables embedded, and just pull out the variable and coordinates of interest. 
 # This makes it easier to manage when loading a bunch of files into xArray.
 
-MAIN_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/fgco2_monthly
+VAR=pCO2SURF
+MAIN_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly
+
+source `which env_parallel.bash`
 
 cd ${MAIN_DIR}
 
-ls *.nc | parallel 'echo {}; ncks -v FG_CO2,TLAT,TLONG,TAREA,ANGLET,DXT,DYT,REGION_MASK {} reduced.{}'
+ls *.nc | env_parallel 'echo {}; ncks -v ${VAR},ULAT,ULONG,UAREA,ANGLE,TLAT,TLONG,TAREA,ANGLET,DXT,DYT,REGION_MASK {} reduced.{}'

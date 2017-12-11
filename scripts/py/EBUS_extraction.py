@@ -73,6 +73,7 @@ def main():
         ds.attrs['carbon flux units'] = "mol/m2/yr"
     # Convert area to m2
     ds['TAREA'] = ds['TAREA'] / (100 * 100)
+    ds['UAREA'] = ds['UAREA'] / (100 * 100)
     # Drop unnecessary bits
     del ds['time_bound']
     # Add in some metadata

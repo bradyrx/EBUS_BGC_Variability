@@ -77,6 +77,11 @@ def main():
         filename = 'cvdp_detrended_BGC.nc'
         ds_x = xr.open_dataset(filepath + filename)
         ds_x = ds_x[VARX.lower()]
+        if VARX == 'AMOC':
+            """
+            Account for the time dimension labeling.
+             """
+            ds_x = ds_x.rename({'TIME': 'time'})
     # Load in the Y variable.
     if VARY in ['EOF1', 'EOF2', 'EOF3']:
         filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' +
@@ -99,6 +104,12 @@ def main():
         filename = EBU.lower() + '-' + VARY + '-residuals-AW-chavez-800km.nc'
         ds_y = xr.open_dataset(filepath + filename)
         ds_y = ds_y[VARY + '_AW']
+        if VARX == 'AMOC':
+            """
+            AMOC is only sampled at annual resolution. Need to resample our data.
+            """
+            ds_y = ds_y.resample(freq='AS', dim='time')
+            ds_y['time'] = np.arange(1920, 2016, 1)
     # Smooth if necessary.
     if SMOOTH != 0:
             ds_x = ds_x.rolling(time=SMOOTH).mean().dropna('time')
