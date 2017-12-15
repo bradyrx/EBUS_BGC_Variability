@@ -6,6 +6,8 @@ Date: 10/05/2017
 For a given ensemble member, this script computes the NPGO index.
 
 INPUT 1: Str indicating the ensemble member.
+INPUT 2: Starting year for NPGO index (e.g. 1920)
+INPUT 3: Ending year for NPGO index (e.g. 2015)
 
 Reference:
 1. Di Lorenzo, E. and N. Mantua, 2016: Multi-year persistence of the 2014/15 
@@ -25,13 +27,23 @@ import sys
 
 def main():
     ens = sys.argv[1]
+    sYear = sys.argv[2]
+    eYear = sys.argv[3]
+    if int(sYear) < 1920:
+        raise ValueError("Starting year must be 1920 or later.")
+    if int(eYear) > 2100:
+        raise ValueError("End year must be 2100 or earlier.")
     print("Computing NPGO for ensemble number " + ens + "...")
     filepath = ('/glade/scratch/rbrady/EBUS_BGC_Variability/' +
         'global_residuals/SST/remapped/remapped.SST.' + ens + 
-        '.192001-201512.nc')
+        '.192001-210012.nc')
     print("Global residuals loaded...")
     ds = xr.open_dataset(filepath)
-    ds = ds['SST']
+    ds = ds['SST'].squeeze()
+    # Make time dimension readable through xarray.
+    ds['time'] = pd.date_range('1920-01', '2101-01', freq='M')
+    # Reduce to time period of interest.
+    ds = ds.sel(time=slice(sYear + '-01', eYear + '-12'))
     # Slice down to Northeast Pacific domain.
     ds = ds.sel(lat=slice(25, 62), lon=slice(180,250))
     # Take annual JFM means.
@@ -70,7 +82,8 @@ def main():
     ds.attrs['weighting'] = ('The native grid was regridded to a standard 1deg x 1deg (180x360) grid.' +
                              'Weighting was computed via the sqrt of the cosine of latitude.')
     print("Saving to netCDF...")
-    ds.to_netcdf('/glade/p/work/rbrady/NPGO/NPGO.' + ens + '.1920-2015.nc')
+    ds.to_netcdf('/glade/p/work/rbrady/NPGO/NPGO.' + ens + '.' + str(sYear) +
+                 '-' + str(eYear) + '.nc')
 
 if __name__ == '__main__':
     main()

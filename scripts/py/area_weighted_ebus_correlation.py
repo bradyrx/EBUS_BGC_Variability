@@ -3,12 +3,17 @@ Area Weighted EBUS Correlation
 ----------------------------
 Author: Riley X. Brady
 Date: Oct 11, 2017
+Updated: Dec. 12, 2017
 
 This script will correlate the area-weighted residuals time series for a given
 EBUS with a climate index time series (from its corresponding ensemble member).
 This is an updated script from the old version that used to use numpy arrays.
 This will use xarray to its fully capacity and output an entire ensemble of 
 correlations as a single netCDF file.
+
+This now accounts for autocorrelation and thus computes the effective degrees
+of freedom. This means that the p-value can be used more seriously when
+smoothing data and correlating.
 
 E.g. you can correlate the entire California Current FG_ALT_CO2 residuals with
 the NPGO index. You can also specify whatever lag and smoothing necessary.
@@ -40,6 +45,18 @@ import numpy as np
 import xarray as xr
 import esmtools as et
 
+def load_AW_residuals(e, v):
+    """
+    Loads in the area-weighted residuals time series for the given upwelling
+    system (e) and variable (v).
+    """
+    filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' + v + '/' +
+                e + '/filtered_output/')
+    filename = e.lower() + '-' + v + '-residuals-AW-chavez-800km.nc'
+    ds = xr.open_dataset(filepath + filename)
+    ds = ds[v + '_AW']
+    return ds
+
 def main():
     EBU = sys.argv[1]
     VARX = sys.argv[2]
@@ -54,7 +71,7 @@ def main():
         This was a custom EOF procedure, so the NC files are very different 
         from the way Adam Phillips set his up.
         """
-        filepath = '/glade/p/work/rbrady/NPGO/'
+        filepath = '/glade/p/work/rbrady/EBUS_BGC_Variability/NPGO/'
         ds_x = xr.open_mfdataset(filepath + '*.nc', concat_dim='ensemble')
         ds_x = ds_x['pc']
     elif VARX == 'NPH':
@@ -97,19 +114,36 @@ def main():
         # Remove any trend (should be very slight).
         ds_y = ds_y.groupby('ensemble', squeeze=True) \
                    .apply(et.ufunc.remove_polynomial_fit)
+    elif VARY == 'sDIC':
+        dic = load_AW_residuals(EBU, 'DIC')
+        salt = load_AW_residuals(EBU, 'SALT')
+        ds_y = (dic/salt)*35
+    elif VARY == 'sALK':
+        alk = load_AW_residuals(EBU, 'ALK')
+        salt = load_AW_residuals(EBU, 'SALT')
+        ds_y = (alk/salt)*35
+    elif VARY == 'U':
+        # This computes U over the ocean grid with the polynomial wind stress
+        # conversion.
+        taux = load_AW_residuals(EBU, 'TAUX')
+        tauy = load_AW_residuals(EBU, 'TAUY')
+        taux.name = 'x'
+        tau = taux.to_dataset()
+        tau['y'] = tauy
+        for label, group in tau.groupby('ensemble'):
+            print(str(label))
+            if label == 0:
+                ds_y = et.physics.stress_to_speed(group.x, group.y)
+            else:
+                u = et.physics.stress_to_speed(group.x, group.y)
+                ds_y = xr.concat([ds_y, u], dim='ensemble')
     else:
-        # Load in the co2 flux anomalies.
-        filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' + VARY + '/' + 
-                    EBU + '/filtered_output/')
-        filename = EBU.lower() + '-' + VARY + '-residuals-AW-chavez-800km.nc'
-        ds_y = xr.open_dataset(filepath + filename)
-        ds_y = ds_y[VARY + '_AW']
-        if VARX == 'AMOC':
-            """
-            AMOC is only sampled at annual resolution. Need to resample our data.
-            """
-            ds_y = ds_y.resample(freq='AS', dim='time')
-            ds_y['time'] = np.arange(1920, 2016, 1)
+        ds_y = load_AW_residuals(EBU, VARY)
+    # Resample to annual resolution if dealing with AMOC, since it is only at
+    # annual resolution.
+    if VARX == 'AMOC':
+        ds_y = ds_y.resample(freq='AS', dim='time')
+        ds_y['time'] = np.arange(1920, 2016, 1)
     # Smooth if necessary.
     if SMOOTH != 0:
             ds_x = ds_x.rolling(time=SMOOTH).mean().dropna('time')
@@ -120,27 +154,35 @@ def main():
     ds = ds_x.to_dataset()
     ds['y'] = ds_y
     # Run the correlation (Here can definitely be improved..)
-    m, r, p = ([] for i in range(3))
+    m, r, p, n = ([] for i in range(4))
     for label, group in ds.groupby('ensemble'):
         """
         Run a simple correlation/regression, but need to check for all of the
         optional lag and smoothing settings.
+
+        Updated to use new esmtools pearsonr which accounts for autocorrelation
+        when smoothing.
         """
         if LAG == 0:
-            M, _, R, P, _ = et.stats.linear_regression(group.x, group.y)
+            M, _, _, _, _ = et.stats.linear_regression(group.x, group.y)
+            R, P, N = et.stats.pearsonr(group.x, group.y)
             m.append(M)
             r.append(R)
             p.append(P)
+            n.append(N)
         else:
-            M, _, R, P, _ = et.stats.linear_regression(group.x[:-LAG],
+            M, _, _, _, _ = et.stats.linear_regression(group.x[:-LAG],
                                                        group.y[LAG:])
+            R, P, N = et.stats.pearsonr(group.x[:-LAG], group.y[LAG:])
             m.append(M)
             r.append(R)
             p.append(P)
+            n.append(N)
     # Set up in dataset.
     ds = xr.Dataset({'m': ('ensemble', m),
                      'r': ('ensemble', r),
-                     'p': ('ensemble', p)})
+                     'p': ('ensemble', p),
+                     'n_eff': ('ensemble', n)})
     print("Finished regional correlations.")
     OUT_DIR = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' +
                'area_weighted_regional_regressions/' + EBU + '/' + VARY + '/' + 
