@@ -3,9 +3,8 @@ Creates regional U10 on the ocean grid from TAUX and TAUY, using the conversion 
 
 I'm aware this is embarassingly parallel, but .apply() in xarray doesn't seem to be parallelizing it. Perhaps this is better off a Matlab script with parfor loops. I used .apply() and it seemed ~20min per simulation and wasn't coming out with the right answers. This will do for now.
 
-INPUT 1: 'TAU' or 'TAU2' to create U or U2 for regressions. 
-INPUT 2: Str for ensemble number.
-INPUT 3: Identifier for upwelling system.
+INPUT 1: Str for ensemble number.
+INPUT 2: Identifier for upwelling system.
 """
 import numpy as np
 import xarray as xr
@@ -23,33 +22,28 @@ def open_ebus_variable(v, en, eb):
     return ds
 
 def main():
-    tau_type  = sys.argv[1]
-    ens = sys.argv[2]
-    ebu = sys.argv[3]
-    if tau_type.lower() == 'tau':
-        x = open_ebus_variable('TAUX', ens, ebu)
-        y = open_ebus_variable('TAUY', ens, ebu)
-        name = 'U'
-    elif tau_type.lower() == 'tau2':
-        x = open_ebus_variable('TAUX2', ens, ebu)
-        y = open_ebus_variable('TAUY2', ens, ebu)
-        name = 'U2'
-    else:
-        raise ValueError("Incorrect input. Try either 'TAU' or 'TAU2'")
+    ens = sys.argv[1]
+    ebu = sys.argv[2]
+    x = open_ebus_variable('TAUX', ens, ebu)
+    y = open_ebus_variable('TAUY', ens, ebu)
+    name = 'U'
     _ = np.zeros([x['nlat'].size, x.nlon.size, x.time.size])
     _[:] = np.nan
     ds = xr.DataArray(_, dims=['nlat','nlon','time'], coords=[x.nlat, x.nlon, x.time])
     for i in range(ds.nlat.size):
         for j in range(ds.nlon.size):
-            if tau_type.lower() == 'tau':
-                xtemp = x['TAUX'].isel(nlat=i, nlon=j)
-                ytemp = y['TAUY'].isel(nlat=i, nlon=j)
-            else:
-                xtemp = x['TAUX2'].isel(nlat=i, nlon=j)
-                ytemp = y['TAUY2'].isel(nlat=i, nlon=j)
+            xtemp = x['TAUX'].isel(nlat=i, nlon=j)
+            ytemp = y['TAUY'].isel(nlat=i, nlon=j)
             if xtemp.min().isnull():
                 continue
             else:
+                # Check to see if there is any pointwise NaN in the time series (e.g. member 033)
+                if xtemp.isnull().any():
+                    nan_idx = np.where(xtemp.isnull())[0][0]
+                    timestamp = xtemp['time'][nan_idx].values
+                    # Replace with 0 so the script will run.
+                    xtemp.loc[dict(time=timestamp)] = 0
+                    ytemp.loc[dict(time=timestamp)] = 0
                 utemp = stress_to_speed(xtemp, ytemp)
                 ds[i,j,:] = utemp
     ds.name = name

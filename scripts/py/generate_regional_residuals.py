@@ -82,6 +82,7 @@ def main():
     ds = drop_ensemble_dim(ds, 'TAREA')
     ds = drop_ensemble_dim(ds, 'REGION_MASK')
     ds = drop_ensemble_dim(ds, 'TLAT')
+    ds = drop_ensemble_dim(ds, 'UAREA')
     if EBU != "HumCS":
         ds = drop_ensemble_dim(ds, 'TLONG')
     del ds['DYT']
@@ -93,7 +94,7 @@ def main():
     ds = ds.where(ds['TLAT'] >= lat1).where(ds['TLAT'] <= lat2)
     # Create a masked array for DXT since it doesn't follow the same NaN
     # structure.
-    data = ds[VAR][0,0]
+    data = ds[VAR].isel(ensemble=0, time=0)
     data = np.ma.array(data, mask=np.isnan(data))
     dxt_dat = ds['DXT']
     dxt_dat = np.ma.array(dxt_dat, mask=np.isnan(data))
@@ -118,15 +119,15 @@ def main():
     # AREA-WEIGHTED/NON-AREA-WEIGHTED
     ds_forced = ds[VAR].mean(dim='ensemble')
     ds_residuals = ds[VAR] - ds_forced
-    ds_forced['TAREA'] = ds['TAREA']
-    ds_residuals['TAREA'] = ds['TAREA']
+    ds_forced['UAREA'] = ds['UAREA']
+    ds_residuals['UAREA'] = ds['UAREA']
     # AREA WEIGHTING
-    ds_forced_AW = ((ds_forced * ds['TAREA']).sum(dim='nlat')
-                       .sum(dim='nlon'))/ds['TAREA'].sum()
+    ds_forced_AW = ((ds_forced * ds['UAREA']).sum(dim='nlat')
+                       .sum(dim='nlon'))/ds['UAREA'].sum()
     ds_forced_AW.name = VAR + '_AW'
     ds_forced_AW = ds_forced_AW.to_dataset()
-    ds_residuals_AW = ((ds_residuals * ds['TAREA']).sum(dim='nlat')
-                       .sum(dim='nlon'))/ds['TAREA'].sum()
+    ds_residuals_AW = ((ds_residuals * ds['UAREA']).sum(dim='nlat')
+                       .sum(dim='nlon'))/ds['UAREA'].sum()
     ds_residuals_AW.name = VAR + '_AW'
     ds_residuals_AW = ds_residuals_AW.to_dataset()
     ds_forced = ds_forced.to_dataset()
