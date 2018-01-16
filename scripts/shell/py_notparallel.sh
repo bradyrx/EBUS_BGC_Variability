@@ -1,28 +1,26 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N alt_co2_CalCS
+#PBS -N CalCS_PDO
 #PBS -l walltime=00:30:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q regular 
-#PBS -l select=1:ncpus=16
+#PBS -l select=1:ncpus=1
 #PBS -m abe
 
 # Author  : Riley X. Brady
 # Date    : 06/01/2017
 # Purpose : Use basic UNIX constructs to throughput a number of ensemble members into a
 # Python script (with independent operations of course).
+source activate py36
 
-source /glade/u/home/$USER/pyenvs/py2-scipy/bin/activate
+script=overhead_spatial_correlation.py
+EBU=CalCS
+VARX=PDO
+LAG=0
+SMOOTH=0
 
-script=EBUS_extraction.py
-VAR=WVEL
-EBU=BenCS
-OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/${VAR}/${EBU}/
-
-mkdir -p ${OUT}
-
-for INPUT in /glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/reduced*.nc
+for ENS in {0..33}
 do
-    python ${script} ${INPUT} ${VAR} ${EBU} ${OUT} 
+    python ${script} ${EBU} ${VARX} ${ENS} ${LAG} ${SMOOTH}
 done
 wait

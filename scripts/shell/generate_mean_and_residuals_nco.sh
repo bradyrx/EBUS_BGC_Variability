@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N mean_and_resid 
+#PBS -N mean_and_resid_SSH 
 #PBS -l walltime=02:00:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q economy
@@ -21,9 +21,9 @@
 source `which env_parallel.bash`
 
 # Inputs from command line
-INPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/U10_monthly/reduced/
-OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/global_residuals/U10
-VAR=U10
+VAR=SSH
+INPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/reduced/
+OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/global_residuals/${VAR}
 
 cd ${INPUT_DIR}
 

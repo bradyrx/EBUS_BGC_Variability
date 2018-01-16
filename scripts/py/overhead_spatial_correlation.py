@@ -8,10 +8,10 @@ This script will do a gridcell correlation over an EBUS with some other
 time series. This differs from the scripts that will just correlate with 
 the area-weighted EBUS, thus offering a more finer spatial assessment.
 
-E.g. you can correlate California Current FG_ALT_CO2 gridcell residuals with
+E.g. you can correlate California Current FG_CO2 gridcell residuals with
 the NPGO or PDO or ENSO.
 
-NOTE: This script is currently set up to correlate with FG_ALT_CO2 residuals.
+NOTE: This script is currently set up to correlate with FG_CO2 residuals.
 You can make this an input option later if you'd like.
 
 NOTE: This script is also written to handle PDO, ENSO, AMO, etc. from the
@@ -76,7 +76,7 @@ def main():
         This was a custom EOF procedure, so the NC files are very different 
         from the way Adam Phillips set his up.
         """
-        filepath = '/glade/p/work/rbrady/NPGO/'
+        filepath = '/glade/p/work/rbrady/EBUS_BGC_Variability/NPGO/'
         filename = 'NPGO.' + ens_str[ENS] + '.1920-2015.nc'
         ds_x = xr.open_dataset(filepath + filename)
         # Pull out a DA of the principal component time series.
@@ -92,11 +92,11 @@ def main():
         ds_x = xr.open_dataset(filepath + filename)
         ds_x = ds_x[VARX.lower()][ENS]
     # Load in the co2 flux anomalies.
-    filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/FG_ALT_CO2/' +
+    filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/FG_CO2/' +
                 EBU + '/filtered_output/')
-    filename = EBU.lower() + '-FG_ALT_CO2-residuals-chavez-800km.nc'
+    filename = EBU.lower() + '-FG_CO2-residuals-chavez-800km.nc'
     ds_y = xr.open_dataset(filepath + filename)
-    ds_y = ds_y['FG_ALT_CO2'][ENS]
+    ds_y = ds_y['FG_CO2'][ENS]
     # Run the correlation.
     correlation = ds_y.stack(gridpoints=['nlat','nlon']) \
                       .groupby('gridpoints') \
@@ -112,11 +112,11 @@ def main():
     if not os.path.exists(OUT_DIR):
         os.makedirs(OUT_DIR)
     if SMOOTH != 0: # Save with smoothing in file name.
-        out_file = (OUT_DIR + VARX + '.FG_ALT_CO2.' + EBU + '.' +
+        out_file = (OUT_DIR + VARX + '.FG_CO2.' + EBU + '.' +
                     ens_str[ENS] + '.smoothed' + str(SMOOTH) + 
                     '_regional_regression.lag' + str(LAG) + '.nc')
     else:
-        out_file = (OUT_DIR + VARX + '.FG_ALT_CO2.' + EBU + '.' +
+        out_file = (OUT_DIR + VARX + '.FG_CO2.' + EBU + '.' +
                     ens_str[ENS] + '.unsmoothed_regional_regression.lag' +
                     str(LAG) + '.nc')
     print("Saving #" + ens_str[ENS] + " to netCDF...")

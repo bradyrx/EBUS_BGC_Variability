@@ -102,7 +102,7 @@ def main():
     filedir = (GLOBAL_DIR + 'residual.' + GLOBAL_VAR + '.' + ens_str[ENS] +
                '.192001-201512.nc')
     # This is our 1152x384x320 da of global residuals.
-    ds_global = xr.open_dataset(filedir)
+    ds_global = xr.open_dataset(filedir, decode_times=False)
     # Determine if ocean or atmosphere output for stacking.
     if ds_global.dims.__contains__('nlon'):
         OCEAN=True
