@@ -85,7 +85,7 @@
 \Author[4]{Nicolas}{Gruber}
 
 
-\affil[1]{University of Colorado Boulder}
+\affil[1]{University of Colorado Boulder and Institute for Arctic and Alpine Research}
 \affil[2]{NOAA Boulder}
 \affil[3]{NOAA SWFSC}
 \affil[4]{ETH Zurich}
@@ -128,22 +128,77 @@ TEXT
 
 \introduction  %% \introduction[modified heading if necessary]
 
+% Brief description of EBUS. Mention that they are flourishing with marine life, which includes calcium carbonate forming organisms (pteropods, coccolithophores (?), and shellfish (?)) that are sensitive to local pH and the saturation state of [CO3].
 
+% Discuss how EBUS don't contribute significantly to the net flux of carbon between ocean and atmosphere, but has some of the highest flux density in the global oceans (e.g. Laurelle's coastal product paper).
 
-\section{Methodology}
+% Discuss debate on where EBUS land in terms of net sources or sinks of CO2. Open question as to what controls their variability and the magnitude of their variability in CO2 fluxes.
 
+\section{Methods}
 
+\subsection{Model Configuration and Upwelling Regions}
+We utilize monthly output from 34 members of the Community Earth System Model Large Ensemble Project (CESM-LENS), which is derived from a fully coupled Atmosphere-Ocean General Circulation Model (AOGCM) with ocean biogeochemistry \citep{Kay:2015}. Round-off level perturbations are made to the atmospheric temperature in 1920, leading to an ensemble of simulations that diverge solely due to the influence of internally generated variability. This provides us with a set of 34 independent representations of climate variability, with which we can robustly assess the controls on air-sea CO$_{2}$ flux variability in EBUS. The ensemble is forced with historical radiative forcing from 1920--2005 and RCP8.5 radiative forcing from 2006--2100. Output is made available at approximately 1$^{o}$x1$^{o}$ global resolution.
 
-\subsection{Results}
-\subsubsection{California Current}
+% Discuss removal of ensemble mean to generate residuals; FG_CO2 vs. FG_ALT_CO2; and the regions analyzed (10degrees of latitude and 800km offshore). Can point to the evaluation figure which should have a black box around the grid of the region assessed.
+
+\subsection{Statistical Analysis}
+Air-sea CO$_{2}$ fluxes in CESM are computed following the parameterization of \citet{Wanninkhof:2014}:
+\begin{equation}
+	\mathrm{F} = \mathrm{k}\cdot \mathrm{K}_{0}\cdot\left( p\mathrm{CO}_{2}^{\mathrm{o}} - p\mathrm{CO}_{2}^{\mathrm{a}}\right)
+\end{equation}
+
+where k represents the gas transfer velocity (dependent on the wind speed squared), K$_{0}$ the solubility of CO$_{2}$ in seawater, and \textit{p}CO$_{2}^{o}$ and \textit{p}CO$_{2}^{a}$ the partial pressures of CO$_{2}$ in the surface ocean and atmosphere, respectively. Surface ocean \textit{p}CO$_{2}$ tends to be the largest term in this equation, since the variability of ocean \textit{p}CO$_{2}$ is much larger than that of the atmosphere \citep{Takahashi:2002, Gruber:2002}. However, the influence of wind variability on k cannot be ignored in EBUS, since these systems are aligned with the eastern flank of subtropical gyres that exhibit interannual to decadal variability \citep{Hasanean:2004, Schroeder:2013}. Further, both upwelling and biological productivity in EBUS are highly sensitive to the structure, intensity, and persistence of alongshore winds \citep{Enriquez:1995, Capet:2004, Botsford:2006}. This sensitivity feeds back onto the CO$_{2}$ fluxes, since these processes in turn influence DIC, Alk, and SST.
+
+% Trying to discuss two things here. (1) For k itself, it only depends on variability in U. Is it true that EBUS have highly variable winds due to their positioning on the eastern flank of subtropical gyres? (2) The whole system is sensitive to the persistence and variability of wind stress, which leads to changes in upwelling and biology, which can then feed back onto CO2 fluxes.
+
+%% IMPORTANT: Compare ECOSYS_XKW to dCO2STAR to see what leads the term in an EBUS.
+
+% Mention that pCO2 is influenced by complex intercompeting factors, varying directly with DIC, SST, SSS, and indirectly by ALK. These variables are themselves modulated by both biology (e.g. calcium carbonate precipitation and photosynthesis) as well as physical circulation (e.g. upwelling, mixing, and entrainment). 
+
+We use a linear Taylor expansion to quantify the relative contribution of each parameter to internally generated variability in air-sea CO$_{2}$ flux following \citet{Lovenduski:2007} and \citet{Turi:2014}. 
+\begin{equation}
+	\Delta F = \frac{\partial F}{\partial U}\Delta U + \frac{\partial F}{\partial pCO_{2}^{oc}}\Delta pCO_{2}^{oc}
+\end{equation}
+
+where $\frac{\partial F}{\partial U}$ and $\frac{\partial F}{\partial pCO_{2}^{oc}}$ are determined from the model equations and mean values in each EBUS, and the influence of sea ice was assumed to be negligible. $\Delta$'s represent the linear regression of the given variable onto a climate index. The contributions from $\Delta pCO_{2}^{oc}$ is further decomposed into DIC, Alk, SST, and salinity terms.
+\begin{equation}
+	\Delta pCO_{2}^{oc} = \frac{\partial pCO_{2}^{oc}}{\partial DIC}\Delta DIC + \frac{\partial pCO_{2}^{oc}}{\partial Alk}\Delta Alk + \frac{\partial pCO_{2}^{oc}}{\partial T}\Delta T + \frac{\partial pCO_{2}^{oc}}{\partial S}\Delta S
+\end{equation}
+
+Because DIC and Alk can be diluted by freshwater fluxes, as well as altered by physical circulation and biology, we further partitioned the linear expansion. We introduce salinity-normalized DIC (sDIC) and Alk (sAlk), in addition to a separate freshwater term.
+\begin{equation}
+	\Delta F = \frac{\partial F}{\partial U}\Delta U + \frac{S}{S_{0}}\frac{\partial F}{\partial DIC}\Delta sDIC + \frac{S}{S_{0}}\frac{\partial F}{\partial Alk}\Delta sAlk + 	\frac{\partial F}{\partial fw}\Delta fw + \frac{\partial F}{\partial T}\Delta T + \frac{\partial F}{\partial S}\Delta S
+\end{equation}
+
+% Discussion of correlations and using N_eff (Lovenduski 2005)
+To compensate for autocorrelation that is characteristic of climate indices and also introduced from smoothing, we replace the \textit{t} statistic sample size \textit{N} with an effective sample size, \textit{N$_{eff}$}:
+\begin{equation}
+	N_{eff} = N\left(\frac{1 - r_{1}r_{2}}{1 + r_{1}r_{2}}\right)
+\end{equation}
+where r$_{1}$ and r$_{2}$ are the lag-1 autocorrelation coefficients of the two time series being correlated \citep{Bretherton:1999, Lovenduski:2005}. \textit{N}$_{eff}$ represents the number of statistically independent measurements, thus requiring a higher r-value for a significant correlation with high autocorrelation in one or both time series.
+
+\subsection{Model Evaluation}
+CESM-LENS air-sea CO$_{2}$ fluxes were compared to the SOM-FFN (Self-Organizing Map-Feed Forward Network) neural network product  \citep{Landschuetzer:2017} along the four major EBUS outlined by \citet{Chavez:2009}. The SOM-FFN was generated by a two step process. First, the global oceans were grouped in 16 biogeochemical provinces, based on common relationships between sea surface temperature, sea surface salinity, mixed layer depth, and \textit{p}CO$_{2}$ climatology from \citet{Takahashi:2009}. Secondly, nonlinear relationships were determined between an expanded set of predictor variables and the Surface Ocean Carbon Atlas version 4 \citep{Bakker:2016} database of surface ocean CO$_{2}$ measurements to interpolate \textit{p}CO$_{2}$ to monthly resolution spanning 1982-2015 at 1$^{o}$x1$^{o}$ global resolution. Extensive details on and validation of the procedure can be found in \citet{Landschuetzer:2013} and \citet{Landschuetzer:2016}.
+
+\section{Results}
+
+\subsection{Internal Variability in Upwelling Systems}
+% Plots showing the global magnitude of internal variability and that these systems stand out on a global scale. Argument for just following natural CO2 fluxes, as anthropogenic play a minor role.
+
+% Also show time series decompositions for each system showing the magnitude of residuals vs. seasonal cycle and long-term trend. 
+
+\subsection{California Current}
 % Currently just general notes on what I intend to put here. Not final at all!
 We find that natural CO$_{2}$ flux anomalies in the CalCS are most strongly correlated with the North Pacific Gyre Oscillation (NPGO). On the other hand, correlations between the CalCS and El Nino Southern Oscillation (ENSO) are modest. However, recent literature shows that the CalCS responds uniquely to any given ENSO event \citep{Fiedler:2017, Turi:2017, Frischknecht:2017}.
 
+% Figure on distribution for ENSO, NPGO, PDO
+% Supplemental figure on global regression with SST to highlight pacific decadal variability?
 
+\subsection{Humboldt Current}
 
-\subsubsection{HEADING}
-TEXT
+\subsection{Canary Current}
 
+\subsection{Benguela Current}
 
 \conclusions  %% \conclusions[modified heading if necessary]
 TEXT
@@ -154,7 +209,7 @@ TEXT
 \codeavailability{TEXT} %% use this section when having only software code available
 
 
-\dataavailability{TEXT} %% use this section when having only data sets available
+\dataavailability{TEXT} %% CESM-LENS output, CESM-CVDP, and NPGO 
 
 
 \codedataavailability{TEXT} %% use this section when having data sets and software code available
