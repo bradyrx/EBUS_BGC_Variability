@@ -1,10 +1,10 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N mean_and_resid_SSH 
+#PBS -N mean_and_resid_HMXL
 #PBS -l walltime=02:00:00
 #PBS -M riley.brady@colorado.edu
-#PBS -q economy
-#PBS -l select=1:ncpus=8
+#PBS -q share 
+#PBS -l select=1:ncpus=1
 #PBS -m abe
 
 # Author: Riley X. Brady
@@ -21,8 +21,8 @@
 source `which env_parallel.bash`
 
 # Inputs from command line
-VAR=SSH
-INPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/reduced/
+VAR=HMXL
+INPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/
 OUTPUT_DIR=/glade/scratch/rbrady/EBUS_BGC_Variability/global_residuals/${VAR}
 
 cd ${INPUT_DIR}
@@ -31,7 +31,7 @@ cd ${INPUT_DIR}
 echo "Subsetting all files to 1920-2015..."
 for n in {001,002,009,010,011,012,013,014,015,016,017,018,019,020,021,022,023,024,025,026,027,028,029,030,031,032,033,034,035,101,102,103,104,105}
 do
-    ncks -F -d time,1,1152 reduced.${VAR}.${n}.192001-210012.nc ${VAR}.${n}.192001-201512.nc &
+    ncks -F -d time,1,1152 ${VAR}.${n}.192001-210012.nc ${VAR}.${n}.192001-201512.nc &
 done
 wait
 

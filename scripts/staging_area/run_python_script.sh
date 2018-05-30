@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N SSH_NPGO 
-#PBS -l walltime=01:30:00
+#PBS -N bencs 
+#PBS -l walltime=00:20:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q regular
 #PBS -l select=1:ncpus=1
@@ -9,13 +9,10 @@
 
 `source activate py36`
 
-script=global_regression_map.py
-varx=NPGO
-vary=SLP
-LAG=0
-ENS=1
-SMOOTH=False
+script=generate_regional_residuals.py
+EBUS=BenCS
+VAR=Jint_100m_DIC
 
-python ${script} ${varx} ${vary} ${LAG} ${ENS} ${SMOOTH} 
+python ${script} ${EBUS} ${VAR}
 
 
