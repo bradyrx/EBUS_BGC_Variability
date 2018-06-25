@@ -54,7 +54,7 @@ def drop_ensemble_dim(ds, x):
     is clarified here, because for some reason, TLONG doesn't have those
     dimensions. Who knows.
     """
-    ds[x] = (('nlat','nlon'), ds[x][0])
+    ds[x] = (('nlat', 'nlon'), ds[x][0])
     return ds
 
 def main():

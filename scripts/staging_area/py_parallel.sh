@@ -1,9 +1,9 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N jint_BenCS 
+#PBS -N CO2_CalCS 
 #PBS -l walltime=00:30:00
 #PBS -M riley.brady@colorado.edu
-#PBS -q regular 
+#PBS -q economy
 #PBS -l select=1:ncpus=16
 #PBS -m abe
 
@@ -19,13 +19,13 @@
 source `which env_parallel.bash`
 
 script=EBUS_extraction.py
-VAR=Jint_100m_DIC
-EBU=BenCS
-OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/${VAR}/${EBU}/
+VAR=FG_CO2
+EBU=CalCS
+OUT=/glade/p/work/rbrady/EBUS_BGC_Variability/future_scenario/${VAR}/${EBU}/
 
 mkdir -p ${OUT}
 
-ls /glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/*.nc | env_parallel 'echo {}; python ${script} {} ${VAR} ${EBU} ${OUT}'
+ls /glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/reduced*.nc | env_parallel 'echo {}; python ${script} {} ${VAR} ${EBU} ${OUT}'
 
 # for INPUT in /glade/scratch/rbrady/EBUS_BGC_Variability/${VAR}_monthly/reduced*.nc
 # do

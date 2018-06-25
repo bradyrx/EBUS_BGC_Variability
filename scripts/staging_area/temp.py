@@ -73,15 +73,17 @@ def main():
     VAR = sys.argv[2]
     print("Creating residuals for {} in the {}".format(VAR, EBU))
     OFFSHORE = 800 # distance to filter offshore EBUS bounds to.
-    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + EBU \
+    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/future_scenario/' + VAR + '/' + EBU \
             + '/'
     ds = xr.open_mfdataset(fileDir + '*.nc', concat_dim='ensemble', 
-                           chunks={'time': 10}, engine='netcdf4')
+                           chunks={'time': 10}, engine='netcdf4', decode_times=False)
+    ds['time'] = pd.date_range('2016-01', '2101-01', freq='M')
     # Reduce pesky coordinate ensemble dimension.
     ds = drop_ensemble_dim(ds, 'DXT')
     ds = drop_ensemble_dim(ds, 'TAREA')
     ds = drop_ensemble_dim(ds, 'REGION_MASK')
     ds = drop_ensemble_dim(ds, 'TLAT')
+    ds = drop_ensemble_dim(ds, 'UAREA')
     if EBU != "HumCS":
         ds = drop_ensemble_dim(ds, 'TLONG')
     del ds['DYT']
@@ -118,21 +120,21 @@ def main():
     # AREA-WEIGHTED/NON-AREA-WEIGHTED
     ds_forced = ds[VAR].mean(dim='ensemble')
     ds_residuals = ds[VAR] - ds_forced
-    ds_forced['TAREA'] = ds['TAREA']
-    ds_residuals['TAREA'] = ds['TAREA']
+    ds_forced['UAREA'] = ds['UAREA']
+    ds_residuals['UAREA'] = ds['UAREA']
     # AREA WEIGHTING
-    ds_forced_AW = ((ds_forced * ds['TAREA']).sum(dim='nlat')
-                       .sum(dim='nlon'))/ds['TAREA'].sum()
+    ds_forced_AW = ((ds_forced * ds['UAREA']).sum(dim='nlat')
+                       .sum(dim='nlon'))/ds['UAREA'].sum()
     ds_forced_AW.name = VAR + '_AW'
     ds_forced_AW = ds_forced_AW.to_dataset()
-    ds_residuals_AW = ((ds_residuals * ds['TAREA']).sum(dim='nlat')
-                       .sum(dim='nlon'))/ds['TAREA'].sum()
+    ds_residuals_AW = ((ds_residuals * ds['UAREA']).sum(dim='nlat')
+                       .sum(dim='nlon'))/ds['UAREA'].sum()
     ds_residuals_AW.name = VAR + '_AW'
     ds_residuals_AW = ds_residuals_AW.to_dataset()
     ds_forced = ds_forced.to_dataset()
     ds_residuals = ds_residuals.to_dataset()
     # Save as NetCDF.
-    directory = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
+    directory = '/glade/p/work/rbrady/EBUS_BGC_Variability/future_scenario/' + VAR + '/' + \
                 EBU + '/filtered_output/'
     if not os.path.exists(directory):
         os.makedirs(directory)
