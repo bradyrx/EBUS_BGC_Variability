@@ -31,13 +31,12 @@ def main():
     ds['time'] = pd.date_range('1982-01', '2016-01', freq='M')
     # Detrend via 4th-order polynomial
     print("Detrending...")
-    ds = ds['fgco2_raw'].stack(points=['nlat', 'nlon']).groupby('points') \
-        .apply(et.ufunc.remove_polynomial_fit).unstack('points') \
-        .to_dataset()
+    ds = ds.stack(points=['nlat', 'nlon']).groupby('points') \
+        .apply(et.ufunc.remove_polynomial_fit).unstack('points') 
     # Remove monthly climatology
     print("Removing monthly climatology...")
-    ds = ds['fgco2_raw'].stack(points=['nlat', 'nlon']).groupby('points') \
-        .apply(remove_seasonal_cycle).unstack('points').to_dataset()
+    ds = ds.stack(points=['nlat', 'nlon']).groupby('points') \
+        .apply(remove_seasonal_cycle).unstack('points')
     # Save out file
     print("Saving to netCDF...")
     outDir = sys.argv[1]
