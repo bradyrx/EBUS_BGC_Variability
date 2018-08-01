@@ -1,4 +1,0 @@
-/glade/u/home/rbrady/miniconda3/envs/py36/lib/python3.6/site-packages/esmtools/ufunc.py:36: FutureWarning: casting an xarray.Dataset to a boolean will change in xarray v0.11 to only include data variables, not coordinates. Cast the Dataset.variables property instead to preserve existing behavior in a forwards compatible manner.
-  if ds.min().isnull():
-/glade/u/home/rbrady/miniconda3/envs/py36/lib/python3.6/site-packages/dask/utils.py:1010: UserWarning: Deprecated, see dask.base.get_scheduler instead
-  warnings.warn("Deprecated, see dask.base.get_scheduler instead")

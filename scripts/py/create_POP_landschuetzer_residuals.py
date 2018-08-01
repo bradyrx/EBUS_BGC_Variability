@@ -27,17 +27,17 @@ def main():
     filename = 'spco2_1982-2015_MPI_SOM-FFN_v2016_on_POP_gx1v6.conserve.nc'
     print("Loading dataset...")
     ds = xr.open_dataset(filepath + filename)
-    ds = ds['fgco2_raw'].to_dataset()
+    ds = ds['fgco2_raw']
     ds['time'] = pd.date_range('1982-01', '2016-01', freq='M')
     # Detrend via 4th-order polynomial
     print("Detrending...")
-    ds = ds['fgco2_raw'].stack(points=['nlat', 'nlon']).groupby('points') \
-        .apply(et.ufunc.remove_polynomial_fit).unstack('points') \
-        .to_dataset()
+    ds = ds.stack(points=['nlat', 'nlon']).groupby('points') \
+        .apply(et.ufunc.remove_polynomial_fit).unstack('points') 
     # Remove monthly climatology
     print("Removing monthly climatology...")
-    ds = ds['fgco2_raw'].stack(points=['nlat', 'nlon']).groupby('points') \
-        .apply(remove_seasonal_cycle).unstack('points').to_dataset()
+    ds = ds.stack(points=['nlat', 'nlon']).groupby('points') \
+        .apply(remove_seasonal_cycle).unstack('points')
+    ds.name = 'FG_CO2a'
     # Save out file
     print("Saving to netCDF...")
     outDir = sys.argv[1]

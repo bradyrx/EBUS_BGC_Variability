@@ -75,7 +75,7 @@ def main():
     ds['TAREA'] = ds['TAREA'] / (100 * 100)
     ds['UAREA'] = ds['UAREA'] / (100 * 100)
     # Drop unnecessary bits
-    del ds['time_bound']
+#    del ds['time_bound']
     # Add in some metadata
     ds.attrs['area units'] = "m2"
     # Get region bounds for EBU. If Benguela, need to convert the longitude
@@ -90,7 +90,8 @@ def main():
     a, c = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat1, lon1)
     b, d = find_indices(ds['TLAT'].values, ds['TLONG'].values, lat2, lon2)
     # Slice out EBUS, cover 1920 to 2015 per Adam Phillip's climate indices.
-    ds = ds.sel(nlat=slice(a, b), nlon=slice(c, d), time=slice('1920-01', '2015-12'))
+    ds = ds.sel(time=slice('1920-01', '2015-12'))
+    ds = ds.isel(nlat=slice(a, b), nlon=slice(c, d))
     # File output as netCDF
     ens = fileName[-20:-17] # This works if you maintain the standard naming convention of VAR.ENS.192001-210012.nc
     newFile = dataVar + '.' + ens + '.' + EBUS_NAME + '.192001-201512.nc'

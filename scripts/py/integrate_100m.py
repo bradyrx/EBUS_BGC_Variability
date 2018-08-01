@@ -26,8 +26,8 @@ def main():
     ds = xr.open_dataset(filepath + VAR + '.' + ens_str[ENS] + '.192001-210012.nc',
                 decode_times=False)
     ds = ds[VAR]
-    print("Summing over z_t...")
-    ds = ds.sum('z_t')
+    print("Summing over z_w_top...")
+    ds = ds.sum('z_w_top')
     ds.name = (VAR + '_int100m')
     print("Saving " + VAR + " to netCDF...")
     outdir = ('/glade/scratch/rbrady/EBUS_BGC_Variability/' + VAR + 
