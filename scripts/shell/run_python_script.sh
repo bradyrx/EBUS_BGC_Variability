@@ -13,5 +13,3 @@ script=global_seasonal_internal_magnitudes.py
 VAR=FG_ALT_CO2
 
 python ${script} ${VAR}
-
-

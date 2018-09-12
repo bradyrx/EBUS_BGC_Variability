@@ -73,7 +73,7 @@ def main():
     VAR = sys.argv[2]
     print("Creating residuals for {} in the {}".format(VAR, EBU))
     OFFSHORE = 800 # distance to filter offshore EBUS bounds to.
-    fileDir = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + EBU \
+    fileDir = '/glade/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + EBU \
             + '/'
     ds = xr.open_mfdataset(fileDir + '*.nc', concat_dim='ensemble', 
                            chunks={'time': 10}, engine='netcdf4')
@@ -132,7 +132,7 @@ def main():
     ds_forced = ds_forced.to_dataset()
     ds_residuals = ds_residuals.to_dataset()
     # Save as NetCDF.
-    directory = '/glade/p/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
+    directory = '/glade/work/rbrady/EBUS_BGC_Variability/' + VAR + '/' + \
                 EBU + '/filtered_output/'
     if not os.path.exists(directory):
         os.makedirs(directory)
