@@ -1,9 +1,382 @@
-\begin{thebibliography}{22}
+\begin{thebibliography}{86}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{Bakker} et~al.(2016){Bakker}, {Pfeil}, {O{\textquotesingle}Brien},
+  {Currie}, {Jones}, {Landa}, {Lauvset}, {Metzl}, {Munro}, {Nakaoka}, {Olsen},
+  {Pierrot}, {Saito}, {Smith}, {Sweeney}, {Takahashi}, {Wada}, {Wanninkhof},
+  {Alin}, {Becker}, {Bellerby}, {Borges}, {Boutin}, {Bozec}, {Burger}, {Cai},
+  {Castle}, {Cosca}, {DeGrandpre}, {Donnelly}, {Eischeid}, {Feely},
+  {Gkritzalis}, {Gonz\'{a}lez-D\'{a}vila}, {Goyet}, {Guillot},
+  {Hardman-Mountford}, {Hauck}, {Hoppema}, {Humphreys}, {Hunt}, {Ib\'{a}nhez},
+  {Ichikawa}, {Ishii}, {Juranek}, {Kitidis}, {K\"{o}rtzinger}, {Koffi},
+  {Kozyr}, {Kuwata}, {Lef\`{e}vre}, {Lo Monaco}, {Manke}, {Marrec}, {Mathis},
+  {Millero}, {Monacci}, {Monteiro}, {Murata}, {Newberger}, {Nojiri}, {Nonaka},
+  {Omar}, {Ono}, {Pad\'{\i}n}, {Rehder}, {Rutgersson}, {Sabine}, {Salisbury},
+  {Santana-Casiano}, {Sasano}, {Schuster}, {Sieger}, {Skjelvan}, {Steinhoff},
+  {Sullivan}, {Sutherland}, {Sutton}, {Tadokoro}, {Telszewski}, {Thomas},
+  {Tilbrook}, {van Heuven}, {Vandemark}, {Wallace}, and {Woosley}]{Bakker:2016}
+D.~C.~E. {Bakker}, B.~{Pfeil}, K.~M. {O{\textquotesingle}Brien}, K.~I.
+  {Currie}, S.~D. {Jones}, C.~S. {Landa}, S.~K. {Lauvset}, N.~{Metzl}, D.~R.
+  {Munro}, S.-I. {Nakaoka}, A.~{Olsen}, D.~{Pierrot}, S.~{Saito}, K.~{Smith},
+  C.~{Sweeney}, T.~{Takahashi}, C.~{Wada}, R.~{Wanninkhof}, S.~R. {Alin},
+  M.~{Becker}, R.~G.~J. {Bellerby}, A.~V. {Borges}, J.~{Boutin}, Y.~{Bozec},
+  E.~{Burger}, W.-J. {Cai}, R.~D. {Castle}, C.~E. {Cosca}, M.~D. {DeGrandpre},
+  M.~{Donnelly}, G.~{Eischeid}, R.~A. {Feely}, T.~{Gkritzalis},
+  M.~{Gonz\'{a}lez-D\'{a}vila}, C.~{Goyet}, A.~{Guillot}, N.~J.
+  {Hardman-Mountford}, J.~{Hauck}, M.~{Hoppema}, M.~P. {Humphreys}, C.~W.
+  {Hunt}, J.~S.~P. {Ib\'{a}nhez}, T.~{Ichikawa}, M.~{Ishii}, L.~W. {Juranek},
+  V.~{Kitidis}, A.~{K\"{o}rtzinger}, U.~K. {Koffi}, A.~{Kozyr}, A.~{Kuwata},
+  N.~{Lef\`{e}vre}, C.~{Lo Monaco}, A.~{Manke}, P.~{Marrec}, J.~T. {Mathis},
+  F.~J. {Millero}, N.~{Monacci}, P.~M.~S. {Monteiro}, A.~{Murata},
+  T.~{Newberger}, Y.~{Nojiri}, I.~{Nonaka}, A.~M. {Omar}, T.~{Ono}, X.~A.
+  {Pad\'{\i}n}, G.~{Rehder}, A.~{Rutgersson}, C.~L. {Sabine}, J.~{Salisbury},
+  J.~M. {Santana-Casiano}, D.~{Sasano}, U.~{Schuster}, R.~{Sieger},
+  I.~{Skjelvan}, T.~{Steinhoff}, K.~{Sullivan}, S.~C. {Sutherland},
+  A.~{Sutton}, K.~{Tadokoro}, M.~{Telszewski}, H.~{Thomas}, B.~{Tilbrook},
+  S.~{van Heuven}, D.~{Vandemark}, D.~W. {Wallace}, and R.~{Woosley}.
+\newblock {Surface Ocean CO2 Atlas (SOCAT) V4}, 2016.
+
+\bibitem[Bakun et~al.(2015)Bakun, Black, Bograd, Garc{\'\i}a-Reyes, Miller,
+  Rykaczewski, and Sydeman]{Bakun:2015}
+A.~Bakun, B.~A. Black, S.~J. Bograd, M.~Garc{\'\i}a-Reyes, A.~J. Miller, R.~R.
+  Rykaczewski, and W.~J. Sydeman.
+\newblock Anticipated effects of climate change on coastal upwelling
+  ecosystems.
+\newblock \emph{Current Climate Change Reports}, 1\penalty0 (2):\penalty0
+  85--93, Jun 2015.
+\newblock ISSN 2198-6061.
+\newblock \doi{10.1007/s40641-015-0008-4}.
+
+\bibitem[Barber and Chavez(1983)]{Barber:1983}
+R.~T. Barber and F.~P. Chavez.
+\newblock Biological consequences of {El} {Ni{\~n}o}.
+\newblock \emph{Science}, 222\penalty0 (4629):\penalty0 1203--1210, 1983.
+\newblock ISSN 0036-8075.
+\newblock \doi{10.1126/science.222.4629.1203}.
+
+\bibitem[Barber and Ch{\'a}vez(1986)]{Barber:1986}
+R.~T. Barber and F.~P. Ch{\'a}vez.
+\newblock Ocean variability in relation to living resources during the 1982--83
+  {El} {Ni{\~n}o}.
+\newblock \emph{Nature}, 319:\penalty0 279 EP --, 01 1986.
+
+\bibitem[Borges and Frankignoulle(2002)]{Borges:2002}
+A.~V. Borges and M.~Frankignoulle.
+\newblock Distribution of surface carbon dioxide and air-sea exchange in the
+  upwelling system off the galician coast.
+\newblock \emph{Global Biogeochemical Cycles}, 16\penalty0 (2), 2002.
+
+\bibitem[Borges et~al.(2003)Borges, Santos, Crato, Mendes, and
+  Mota]{Borges:2003}
+M.~F. Borges, A.~M.~P. Santos, N.~Crato, H.~Mendes, and B.~Mota.
+\newblock Sardine regime shifts off {Portugal}: a time series analysis of
+  catches and wind conditions.
+\newblock \emph{Scientia Marina}, 67\penalty0 (S1):\penalty0 235--244, Apr.
+  2003.
+\newblock ISSN 1886-8134, 0214-8358.
+\newblock \doi{10.3989/scimar.2003.67s1235}.
+
+\bibitem[Boyd et~al.(1987)Boyd, Salat, and Mas{\'o}]{Boyd:1987}
+A.~Boyd, J.~Salat, and M.~Mas{\'o}.
+\newblock The seasonal intrusion of relatively saline water on the shelf off
+  northern and central {Namibia}.
+\newblock \emph{South African Journal of Marine Science}, 5\penalty0
+  (1):\penalty0 107--120, 1987.
+
+\bibitem[Brady et~al.(2017)Brady, Alexander, Lovenduski, and
+  Rykaczewski]{Brady:2017}
+R.~X. Brady, M.~A. Alexander, N.~S. Lovenduski, and R.~R. Rykaczewski.
+\newblock Emergent anthropogenic trends in {California} {Current} upwelling.
+\newblock \emph{Geophysical Research Letters}, 44\penalty0 (10):\penalty0
+  5044--5052, 2017.
+
+\bibitem[Bretherton et~al.(1999)Bretherton, Widmann, Dymnikov, Wallace, and
+  Blad{\'e}]{Bretherton:1999}
+C.~S. Bretherton, M.~Widmann, V.~P. Dymnikov, J.~M. Wallace, and I.~Blad{\'e}.
+\newblock The effective number of spatial degrees of freedom of a time-varying
+  field.
+\newblock \emph{Journal of Climate}, 12\penalty0 (7):\penalty0 1990--2009,
+  1999.
+\newblock \doi{10.1175/1520-0442(1999)012<1990:TENOSD>2.0.CO;2}.
+
+\bibitem[Cai et~al.(2014)Cai, Borlace, Lengaigne, Van~Rensch, Collins, Vecchi,
+  Timmermann, Santoso, McPhaden, Wu, et~al.]{Cai:2014}
+W.~Cai, S.~Borlace, M.~Lengaigne, P.~Van~Rensch, M.~Collins, G.~Vecchi,
+  A.~Timmermann, A.~Santoso, M.~J. McPhaden, L.~Wu, et~al.
+\newblock Increasing frequency of extreme {El} {Ni{\~n}o} events due to
+  greenhouse warming.
+\newblock \emph{Nature climate change}, 4\penalty0 (2):\penalty0 111, 2014.
+
+\bibitem[Cai et~al.(2015)Cai, Wang, Santoso, McPhaden, Wu, Jin, Timmermann,
+  Collins, Vecchi, Lengaigne, et~al.]{Cai:2015}
+W.~Cai, G.~Wang, A.~Santoso, M.~J. McPhaden, L.~Wu, F.-F. Jin, A.~Timmermann,
+  M.~Collins, G.~Vecchi, M.~Lengaigne, et~al.
+\newblock Increased frequency of extreme {La} {Ni{\~n}a} events under
+  greenhouse warming.
+\newblock \emph{Nature Climate Change}, 5\penalty0 (2):\penalty0 132--137,
+  2015.
+
+\bibitem[Cai et~al.(2006)Cai, Dai, and Wang]{Cai:2006}
+W.-J. Cai, M.~Dai, and Y.~Wang.
+\newblock Air-sea exchange of carbon dioxide in ocean margins: A province-based
+  synthesis.
+\newblock \emph{Geophysical Research Letters}, 33\penalty0 (12), 2006.
+\newblock \doi{10.1029/2006GL026219}.
+
+\bibitem[Chan et~al.(2017)Chan, Barth, Blanchette, Byrne, Chavez, Cheriton,
+  Feely, Friederich, Gaylord, Gouhier, Hacker, Hill, Hofmann, McManus, Menge,
+  Nielsen, Russell, Sanford, Sevadjian, and Washburn]{Chan:2017}
+F.~Chan, J.~A. Barth, C.~A. Blanchette, R.~H. Byrne, F.~Chavez, O.~Cheriton,
+  R.~A. Feely, G.~Friederich, B.~Gaylord, T.~Gouhier, S.~Hacker, T.~Hill,
+  G.~Hofmann, M.~A. McManus, B.~A. Menge, K.~J. Nielsen, A.~Russell,
+  E.~Sanford, J.~Sevadjian, and L.~Washburn.
+\newblock Persistent spatial structuring of coastal ocean acidification in the
+  {California} {Current} {System}.
+\newblock \emph{Scientific Reports}, 7\penalty0 (1):\penalty0 2526, 2017.
+\newblock \doi{10.1038/s41598-017-02777-y}.
+
+\bibitem[Chavez and Messi{\'e}(2009)]{Chavez:2009}
+F.~P. Chavez and M.~Messi{\'e}.
+\newblock A comparison of {Eastern} {Boundary} {Upwelling} {Ecosystems}.
+\newblock \emph{Progress in Oceanography}, 83\penalty0 (1):\penalty0 80--96,
+  2009.
+\newblock \doi{https://doi.org/10.1016/j.pocean.2009.07.032}.
+
+\bibitem[Chavez et~al.(2002)Chavez, Pennington, Castro, Ryan, Michisaki,
+  Schlining, Walz, Buck, McFadyen, and Collins]{Chavez:2002}
+F.~P. Chavez, J.~T. Pennington, C.~G. Castro, J.~P. Ryan, R.~P. Michisaki,
+  B.~Schlining, P.~Walz, K.~R. Buck, A.~McFadyen, and C.~A. Collins.
+\newblock Biological and chemical consequences of the 1997--1998 {El}
+  {Ni{\~n}o} in central california waters.
+\newblock \emph{Progress in Oceanography}, 54\penalty0 (1):\penalty0 205--232,
+  2002.
+\newblock \doi{https://doi.org/10.1016/S0079-6611(02)00050-2}.
+
+\bibitem[Chelton et~al.(1982)Chelton, Bernal, and McGowan]{Chelton:1982}
+D.~B. Chelton, P.~A. Bernal, and J.~A. McGowan.
+\newblock Large-scale interannual physical and biological interaction in the
+  {California} {Current}.
+\newblock \emph{Journal of Marine Research}, 40\penalty0 (4):\penalty0
+  1095--1125, 1982.
+
+\bibitem[Chenillat et~al.(2012)Chenillat, Rivi{\`e}re, Capet, Di~Lorenzo, and
+  Blanke]{Chenillat:2012}
+F.~Chenillat, P.~Rivi{\`e}re, X.~Capet, E.~Di~Lorenzo, and B.~Blanke.
+\newblock {North} {Pacific} {Gyre} {Oscillation} modulates seasonal timing and
+  ecosystem functioning in the {California} {Current} upwelling system.
+\newblock \emph{Geophysical Research Letters}, 39\penalty0 (1), 2012.
+\newblock \doi{10.1029/2011GL049966}.
+
+\bibitem[Chhak and Di~Lorenzo(2007)]{Chhak:2007}
+K.~Chhak and E.~Di~Lorenzo.
+\newblock Decadal variations in the {California} {Current} upwelling cells.
+\newblock \emph{Geophysical Research Letters}, 34\penalty0 (14), 2007.
+\newblock \doi{10.1029/2007GL030203}.
+
+\bibitem[Colas et~al.(2008)Colas, Capet, McWilliams, and
+  Shchepetkin]{Colas:2008}
+F.~Colas, X.~Capet, J.~McWilliams, and A.~Shchepetkin.
+\newblock 1997--1998 {El} {Ni{\~n}o} off {Peru}: A numerical study.
+\newblock \emph{Progress in Oceanography}, 79\penalty0 (2-4):\penalty0
+  138--155, 2008.
+
+\bibitem[Cropper et~al.(2014)Cropper, Hanna, and Bigg]{Cropper:2014}
+T.~E. Cropper, E.~Hanna, and G.~R. Bigg.
+\newblock Spatial and temporal seasonal trends in coastal upwelling off
+  {Northwest} {Africa}, 1981--2012.
+\newblock \emph{Deep Sea Research Part I: Oceanographic Research Papers},
+  86:\penalty0 94--111, 2014.
+\newblock \doi{https://doi.org/10.1016/j.dsr.2014.01.007}.
+
+\bibitem[DeGrandpre et~al.(1998)DeGrandpre, Hammar, and
+  Wirick]{DeGrandpre:1998}
+M.~D. DeGrandpre, T.~R. Hammar, and C.~D. Wirick.
+\newblock Short-term {pCO2} and {O2} dynamics in {California} coastal waters.
+\newblock \emph{Deep Sea Research Part II: Topical Studies in Oceanography},
+  45\penalty0 (8):\penalty0 1557--1575, 1998.
+\newblock \doi{https://doi.org/10.1016/S0967-0645(98)80006-4}.
+
+\bibitem[Deser et~al.(2017)Deser, Simpson, McKinnon, and Phillips]{Deser:2017}
+C.~Deser, I.~R. Simpson, K.~A. McKinnon, and A.~S. Phillips.
+\newblock The {Northern} {Hemisphere} extratropical atmospheric circulation
+  response to {ENSO}: How well do we know it and how do we evaluate models
+  accordingly?
+\newblock \emph{Journal of Climate}, 30\penalty0 (13):\penalty0 5059--5082,
+  2017.
+
+\bibitem[Deser et~al.(2018)Deser, Simpson, Phillips, and McKinnon]{Deser:2018}
+C.~Deser, I.~R. Simpson, A.~S. Phillips, and K.~A. McKinnon.
+\newblock How well do we know {ENSO's} climate impacts over {North} {America},
+  and how do we evaluate models accordingly?
+\newblock \emph{Journal of Climate}, 2018.
+
+\bibitem[Di~Lorenzo and Mantua(2016)]{DiLorenzo:2016}
+E.~Di~Lorenzo and N.~Mantua.
+\newblock Multi-year persistence of the 2014/15 {North} {Pacific} marine
+  heatwave.
+\newblock \emph{Nature Climate Change}, 6\penalty0 (11):\penalty0 1042--1047,
+  2016.
+
+\bibitem[Di~Lorenzo et~al.(2005)Di~Lorenzo, Miller, Schneider, and
+  McWilliams]{DiLorenzo:2005}
+E.~Di~Lorenzo, A.~J. Miller, N.~Schneider, and J.~C. McWilliams.
+\newblock The warming of the {California} {Current} {System}: Dynamics and
+  ecosystem implications.
+\newblock \emph{Journal of Physical Oceanography}, 35\penalty0 (3):\penalty0
+  336--362, 2005.
+
+\bibitem[Di~Lorenzo et~al.(2008)Di~Lorenzo, Schneider, Cobb, Franks, Chhak,
+  Miller, McWilliams, Bograd, Arango, Curchitser, Powell, and
+  Rivi{\`e}re]{DiLorenzo:2008}
+E.~Di~Lorenzo, N.~Schneider, K.~M. Cobb, P.~J.~S. Franks, K.~Chhak, A.~J.
+  Miller, J.~C. McWilliams, S.~J. Bograd, H.~Arango, E.~Curchitser, T.~M.
+  Powell, and P.~Rivi{\`e}re.
+\newblock {North} {Pacific} {Gyre} {Oscillation} links ocean climate and
+  ecosystem change.
+\newblock \emph{Geophysical Research Letters}, 35\penalty0 (8), 2008.
+\newblock \doi{10.1029/2007GL032838}.
+
+\bibitem[Di~Lorenzo et~al.(2009)Di~Lorenzo, Fiechter, Schneider, Bracco,
+  Miller, Franks, Bograd, Moore, Thomas, Crawford, Pe{\~n}a, and
+  Hermann]{DiLorenzo:2009}
+E.~Di~Lorenzo, J.~Fiechter, N.~Schneider, A.~Bracco, A.~J. Miller, P.~J.~S.
+  Franks, S.~J. Bograd, A.~M. Moore, A.~C. Thomas, W.~Crawford, A.~Pe{\~n}a,
+  and A.~J. Hermann.
+\newblock Nutrient and salinity decadal variations in the central and eastern
+  {North} {Pacific}.
+\newblock \emph{Geophysical Research Letters}, 36\penalty0 (14), 2009.
+\newblock \doi{10.1029/2009GL038261}.
+
+\bibitem[Enfield(1981)]{Enfield:1981}
+D.~Enfield.
+\newblock Thermally driven wind variability in the planetary boundary layer
+  above {Lima}, {Peru}.
+\newblock \emph{Journal of Geophysical Research: Oceans}, 86\penalty0
+  (C3):\penalty0 2005--2016, 1981.
+
+\bibitem[Escribano et~al.(2004)Escribano, Daneri, Far{\'\i}as, Gallardo,
+  Gonz{\'a}lez, Guti{\'e}rrez, Lange, Morales, Pizarro, Ulloa, and
+  Braun]{Escribano:2004}
+R.~Escribano, G.~Daneri, L.~Far{\'\i}as, V.~A. Gallardo, H.~E. Gonz{\'a}lez,
+  D.~Guti{\'e}rrez, C.~B. Lange, C.~E. Morales, O.~Pizarro, O.~Ulloa, and
+  M.~Braun.
+\newblock Biological and chemical consequences of the 1997--1998 {El}
+  {Ni{\~n}o} in the {Chilean} coastal upwelling system: a synthesis.
+\newblock \emph{Deep Sea Research Part II: Topical Studies in Oceanography},
+  51\penalty0 (20):\penalty0 2389--2411, 2004.
+\newblock \doi{https://doi.org/10.1016/j.dsr2.2004.08.011}.
+
+\bibitem[Evans et~al.(2011)Evans, Hales, and Strutton]{Evans:2011}
+W.~Evans, B.~Hales, and P.~G. Strutton.
+\newblock Seasonal cycle of surface ocean {pCO2} on the {Oregon} shelf.
+\newblock \emph{Journal of Geophysical Research: Oceans}, 116\penalty0 (C5),
+  2011.
+\newblock \doi{10.1029/2010JC006625}.
+
+\bibitem[Friederich et~al.(2002)Friederich, Walz, Burczynski, and
+  Chavez]{Friederich:2002}
+G.~E. Friederich, P.~M. Walz, M.~G. Burczynski, and F.~P. Chavez.
+\newblock Inorganic carbon in the central {California} upwelling system during
+  the 1997--1999 {El} {Ni{\~n}o}--{La} {Ni{\~n}a} event.
+\newblock \emph{Progress in Oceanography}, 54\penalty0 (1):\penalty0 185--203,
+  2002.
+\newblock \doi{https://doi.org/10.1016/S0079-6611(02)00049-6}.
+
+\bibitem[Frischknecht et~al.(2015)Frischknecht, M{\"u}nnich, and
+  Gruber]{Frischknecht:2015}
+M.~Frischknecht, M.~M{\"u}nnich, and N.~Gruber.
+\newblock Remote versus local influence of {ENSO} on the {California} {Current}
+  {System}.
+\newblock \emph{Journal of Geophysical Research: Oceans}, 120\penalty0
+  (2):\penalty0 1353--1374, 2015.
+\newblock \doi{10.1002/2014JC010531}.
+
+\bibitem[Frischknecht et~al.(2017)Frischknecht, M{\"u}nnich, and
+  Gruber]{Frischknecht:2017}
+M.~Frischknecht, M.~M{\"u}nnich, and N.~Gruber.
+\newblock Local atmospheric forcing driving an unexpected {California}
+  {Current} {System} response during the 2015--2016 {El} {Ni{\~n}o}.
+\newblock \emph{Geophysical Research Letters}, 44\penalty0 (1):\penalty0
+  304--311, 2017.
+\newblock \doi{10.1002/2016GL071316}.
+
+\bibitem[Garc{\'\i}a-Reyes et~al.(2015)Garc{\'\i}a-Reyes, Sydeman, Schoeman,
+  Rykaczewski, Black, Smit, and Bograd]{Garcia-Reyes:2015}
+M.~Garc{\'\i}a-Reyes, W.~J. Sydeman, D.~S. Schoeman, R.~R. Rykaczewski, B.~A.
+  Black, A.~J. Smit, and S.~J. Bograd.
+\newblock Under pressure: {Climate} change, upwelling, and {Eastern} {Boundary}
+  {Upwelling} {Ecosystems}.
+\newblock \emph{Frontiers in Marine Science}, 2:\penalty0 109, 2015.
+
+\bibitem[Gent et~al.(2010)Gent, Yeager, Neale, Levis, and Bailey]{Gent:2010}
+P.~R. Gent, S.~G. Yeager, R.~B. Neale, S.~Levis, and D.~A. Bailey.
+\newblock Improvements in a half degree atmosphere/land version of the {CCSM}.
+\newblock \emph{Climate Dynamics}, 34\penalty0 (6):\penalty0 819--833, 2010.
+
+\bibitem[Gonz{\'a}lez-D{\'a}vila et~al.(2009)Gonz{\'a}lez-D{\'a}vila,
+  Santana-Casiano, and Ucha]{Gonzales:2009}
+M.~Gonz{\'a}lez-D{\'a}vila, J.~M. Santana-Casiano, and I.~R. Ucha.
+\newblock Seasonal variability of {fCO2} in the {Angola}-{Benguela} region.
+\newblock \emph{Progress in Oceanography}, 83\penalty0 (1-4):\penalty0
+  124--133, 2009.
+
+\bibitem[Gregor and Monteiro(2013)]{Gregor:2013}
+L.~Gregor and P.~Monteiro.
+\newblock Is the southern {Benguela} a significant regional sink of {CO2}?
+\newblock \emph{South African Journal of Science}, 109\penalty0 (5-6):\penalty0
+  01--05, 2013.
+
+\bibitem[Gruber(2015)]{Gruber:2015}
+N.~Gruber.
+\newblock Carbon at the coastal interface.
+\newblock \emph{Nature; London}, 517\penalty0 (7533):\penalty0 148--149, Jan.
+  2015.
+\newblock ISSN 00280836.
+
+\bibitem[Gruber et~al.(2002)Gruber, Keeling, and Bates]{Gruber:2002}
+N.~Gruber, C.~D. Keeling, and N.~R. Bates.
+\newblock Interannual variability in the {North} {Atlantic} {Ocean} carbon
+  sink.
+\newblock \emph{Science}, 298\penalty0 (5602):\penalty0 2374--2378, 2002.
+\newblock ISSN 0036-8075.
+\newblock \doi{10.1126/science.1077077}.
+
+\bibitem[Hales et~al.(2005)Hales, Takahashi, and Bandstra]{Hales:2005}
+B.~Hales, T.~Takahashi, and L.~Bandstra.
+\newblock Atmospheric {CO2} uptake by a coastal upwelling system.
+\newblock \emph{Global Biogeochemical Cycles}, 19\penalty0 (1), 2005.
+\newblock \doi{10.1029/2004GB002295}.
+
+\bibitem[Hauck(2018)]{Hauck:2018}
+J.~Hauck.
+\newblock Unsteady seasons in the sea.
+\newblock \emph{Nature Climate Change}, 8\penalty0 (2):\penalty0 97--98, 2018.
+\newblock \doi{10.1038/s41558-018-0069-1}.
+
+\bibitem[Hauri et~al.(2009)Hauri, Gruber, Plattner, Alin, Feely, Hales, and
+  Wheeler]{Hauri:2009}
+C.~Hauri, N.~Gruber, G.-K. Plattner, S.~Alin, R.~A. Feely, B.~Hales, and P.~A.
+  Wheeler.
+\newblock Ocean {Acidification} in the {California} {Current} {System}.
+\newblock \emph{Oceanography}, 22\penalty0 (4):\penalty0 60--71, Dec. 2009.
+
+\bibitem[Huyer et~al.(1987)Huyer, Smith, and Paluszkiewicz]{Huyer:1987}
+A.~Huyer, R.~L. Smith, and T.~Paluszkiewicz.
+\newblock Coastal upwelling off {Peru} during normal and {El} {Ni{\~n}o} times,
+  1981--1984.
+\newblock \emph{Journal of Geophysical Research: Oceans}, 92\penalty0
+  (C13):\penalty0 14297--14307, 1987.
+
+\bibitem[Jacox et~al.(2015)Jacox, Bograd, Hazen, and Fiechter]{Jacox:2015}
+M.~G. Jacox, S.~J. Bograd, E.~L. Hazen, and J.~Fiechter.
+\newblock Sensitivity of the {California} {Current} nutrient supply to wind,
+  heat, and remote ocean forcing.
+\newblock \emph{Geophysical Research Letters}, 42\penalty0 (14):\penalty0
+  5950--5957, 2015.
 
 \bibitem[Kay et~al.(2015)Kay, Deser, Phillips, Mai, Hannay, Strand, Arblaster,
   Bates, Danabasoglu, Edwards, Holland, Kushner, Lamarque, Lawrence, Lindsay,
@@ -12,231 +385,36 @@ J.~E. Kay, C.~Deser, A.~Phillips, A.~Mai, C.~Hannay, G.~Strand, J.~M.
   Arblaster, S.~C. Bates, G.~Danabasoglu, J.~Edwards, M.~Holland, P.~Kushner,
   J.-F. Lamarque, D.~Lawrence, K.~Lindsay, A.~Middleton, E.~Munoz, R.~Neale,
   K.~Oleson, L.~Polvani, and M.~Vertenstein.
-\newblock The community earth system model (cesm) large ensemble project: A
-  community resource for studying climate change in the presence of internal
-  climate variability.
+\newblock The {Community} {Earth} {System} {Model} ({CESM}) {Large} {Ensemble}
+  {Project}: {A} community resource for studying climate change in the presence
+  of internal climate variability.
 \newblock \emph{Bulletin of the American Meteorological Society}, 96\penalty0
   (8):\penalty0 1333--1349, 2015.
 \newblock \doi{10.1175/BAMS-D-13-00255.1}.
-\newblock URL \url{https://doi.org/10.1175/BAMS-D-13-00255.1}.
 
-\bibitem[Wanninkhof(2014)]{Wanninkhof:2014}
-Rik Wanninkhof.
-\newblock Relationship between wind speed and gas exchange over the ocean
-  revisited: {Gas} exchange and wind speed over the ocean.
-\newblock \emph{Limnology and Oceanography: Methods}, 12\penalty0 (6):\penalty0
-  351--362, June 2014.
-\newblock ISSN 15415856.
-\newblock \doi{10.4319/lom.2014.12.351}.
-\newblock URL \url{http://doi.wiley.com/10.4319/lom.2014.12.351}.
+\bibitem[King et~al.(2007)King, Dilling, Zimmerman, Fairman, Houghton, Marland,
+  Rose, and Wilbanks]{King:2007}
+A.~W. King, L.~Dilling, G.~P. Zimmerman, D.~M. Fairman, R.~A. Houghton,
+  G.~Marland, A.~Z. Rose, and T.~J. Wilbanks.
+\newblock \emph{The first state of the carbon cycle report ({SOCCR}): {The}
+  {North} {American} carbon budget and implications for the global carbon
+  cycle.}
+\newblock U.S. Climate Change Science Program, Washington, 2007.
 
-\bibitem[Takahashi et~al.(2002)Takahashi, Sutherland, Sweeney, Poisson, Metzl,
-  Tilbrook, Bates, Wanninkhof, Feely, Sabine, Olafsson, and
-  Nojiri]{Takahashi:2002}
-Taro Takahashi, Stewart~C. Sutherland, Colm Sweeney, Alain Poisson, Nicolas
-  Metzl, Bronte Tilbrook, Nicolas Bates, Rik Wanninkhof, Richard~A. Feely,
-  Christopher Sabine, Jon Olafsson, and Yukihiro Nojiri.
-\newblock Global sea--air {CO}2 flux based on climatological surface ocean
-  {pCO}2, and seasonal biological and temperature effects.
-\newblock \emph{Deep Sea Research Part II: Topical Studies in Oceanography},
-  49\penalty0 (9):\penalty0 1601--1622, January 2002.
-\newblock ISSN 0967-0645.
-\newblock \doi{10.1016/S0967-0645(02)00003-6}.
-\newblock URL
-  \url{http://www.sciencedirect.com/science/article/pii/S0967064502000036}.
+\bibitem[Kuzmina et~al.(2005)Kuzmina, Bengtsson, Johannessen, Drange, Bobylev,
+  and Miles]{Kuzmina:2005}
+S.~I. Kuzmina, L.~Bengtsson, O.~M. Johannessen, H.~Drange, L.~P. Bobylev, and
+  M.~W. Miles.
+\newblock The {North} {Atlantic} {Oscillation} and greenhouse-gas forcing.
+\newblock \emph{Geophysical Research Letters}, 32\penalty0 (4), 2005.
 
-\bibitem[Gruber et~al.(2002)Gruber, Keeling, and Bates]{Gruber:2002}
-Nicolas Gruber, Charles~D. Keeling, and Nicholas~R. Bates.
-\newblock Interannual {Variability} in the {North} {Atlantic} {Ocean} {Carbon}
-  {Sink}.
-\newblock \emph{Science}, 298\penalty0 (5602):\penalty0 2374--2378, December
-  2002.
-\newblock ISSN 0036-8075, 1095-9203.
-\newblock \doi{10.1126/science.1077077}.
-\newblock URL \url{http://science.sciencemag.org/content/298/5602/2374}.
-
-\bibitem[Hasanean(2004)]{Hasanean:2004}
-H.~M. Hasanean.
-\newblock Variability of the north atlantic subtropical high and associations
-  with tropical sea-surface temperature.
-\newblock \emph{International Journal of Climatology}, 24\penalty0
-  (8):\penalty0 945--957, 2004.
-\newblock ISSN 1097-0088.
-\newblock \doi{10.1002/joc.1042}.
-\newblock URL \url{http://dx.doi.org/10.1002/joc.1042}.
-
-\bibitem[Schroeder et~al.(2013)Schroeder, Black, Sydeman, Bograd, Hazen,
-  Santora, and Wells]{Schroeder:2013}
-Isaac~D. Schroeder, Bryan~A. Black, William~J. Sydeman, Steven~J. Bograd,
-  Elliott~L. Hazen, Jarrod~A. Santora, and Brian~K. Wells.
-\newblock The north pacific high and wintertime pre-conditioning of california
-  current productivity.
-\newblock \emph{Geophysical Research Letters}, 40\penalty0 (3):\penalty0
-  541--546, 2013.
-\newblock ISSN 1944-8007.
-\newblock \doi{10.1002/grl.50100}.
-\newblock URL \url{http://dx.doi.org/10.1002/grl.50100}.
-
-\bibitem[Enriquez and Friehe(1995)]{Enriquez:1995}
-A.~G. Enriquez and C.~A. Friehe.
-\newblock Effects of {Wind} {Stress} and {Wind} {Stress} {Curl} {Variability}
-  on {Coastal} {Upwelling}.
-\newblock \emph{Journal of Physical Oceanography}, 25\penalty0 (7):\penalty0
-  1651--1671, July 1995.
-\newblock ISSN 0022-3670, 1520-0485.
-\newblock \doi{10.1175/1520-0485(1995)025<1651:EOWSAW>2.0.CO;2}.
-\newblock URL
-  \url{http://journals.ametsoc.org/doi/abs/10.1175/1520-0485%281995%29025%3C1651%3AEOWSAW%3E2.0.CO%3B2}.
-
-\bibitem[Capet et~al.(2004)Capet, Marchesiello, and McWilliams]{Capet:2004}
-X.~J. Capet, P.~Marchesiello, and J.~C. McWilliams.
-\newblock Upwelling response to coastal wind profiles.
-\newblock \emph{Geophys. Res. Lett.}, 31\penalty0 (13):\penalty0 L13311, July
-  2004.
-\newblock ISSN 1944-8007.
-\newblock \doi{10.1029/2004GL020123}.
-\newblock URL
-  \url{http://onlinelibrary.wiley.com/doi/10.1029/2004GL020123/abstract}.
-
-\bibitem[Botsford et~al.(2006)Botsford, Lawrence, Dever, Hastings, and
-  Largier]{Botsford:2006}
-Louis~W. Botsford, Cathryn~A. Lawrence, Edward~P. Dever, Alan Hastings, and
-  John Largier.
-\newblock Effects of variable winds on biological productivity on continental
-  shelves in coastal upwelling systems.
-\newblock \emph{Deep Sea Research Part II: Topical Studies in Oceanography},
-  53\penalty0 (25):\penalty0 3116 -- 3140, 2006.
-\newblock ISSN 0967-0645.
-\newblock \doi{https://doi.org/10.1016/j.dsr2.2006.07.011}.
-\newblock URL
-  \url{http://www.sciencedirect.com/science/article/pii/S0967064506002281}.
-\newblock The Role of Wind-Driven Flow in Shelf Productivity.
-
-\bibitem[Lovenduski et~al.(2007)Lovenduski, Gruber, Doney, and
-  Lima]{Lovenduski:2007}
-Nicole~S. Lovenduski, Nicolas Gruber, Scott~C. Doney, and Ivan~D. Lima.
-\newblock Enhanced {CO}2 outgassing in the {Southern} {Ocean} from a positive
-  phase of the {Southern} {Annular} {Mode}.
-\newblock \emph{Global Biogeochem. Cycles}, 21\penalty0 (2):\penalty0 GB2026,
-  June 2007.
-\newblock ISSN 1944-9224.
-\newblock \doi{10.1029/2006GB002900}.
-\newblock URL
-  \url{http://onlinelibrary.wiley.com/doi/10.1029/2006GB002900/abstract}.
-
-\bibitem[Turi et~al.(2014)Turi, Lachkar, and Gruber]{Turi:2014}
-G.~Turi, Z.~Lachkar, and N.~Gruber.
-\newblock Spatiotemporal variability and drivers of {pCO}2 and air--sea {CO}2
-  fluxes in the {California} {Current} {System}: an eddy-resolving modeling
-  study.
-\newblock \emph{Biogeosciences}, 11\penalty0 (3):\penalty0 671--690, February
-  2014.
-\newblock ISSN 1726-4189.
-\newblock \doi{10.5194/bg-11-671-2014}.
-\newblock URL \url{http://www.biogeosciences.net/11/671/2014/}.
-
-\bibitem[Bretherton et~al.(1999)Bretherton, Widmann, Dymnikov, Wallace, and
-  Blad{\'e}]{Bretherton:1999}
-Christopher~S. Bretherton, Martin Widmann, Valentin~P. Dymnikov, John~M.
-  Wallace, and Ileana Blad{\'e}.
-\newblock The {Effective} {Number} of {Spatial} {Degrees} of {Freedom} of a
-  {Time}-{Varying} {Field}.
-\newblock \emph{Journal of Climate}, 12\penalty0 (7):\penalty0 1990--2009, July
-  1999.
-\newblock ISSN 0894-8755, 1520-0442.
-\newblock \doi{10.1175/1520-0442(1999)012<1990:TENOSD>2.0.CO;2}.
-\newblock URL
-  \url{http://journals.ametsoc.org/doi/abs/10.1175/1520-0442%281999%29012%3C1990%3ATENOSD%3E2.0.CO%3B2}.
-
-\bibitem[Lovenduski and Gruber(2005)]{Lovenduski:2005}
-Nicole~S. Lovenduski and Nicolas Gruber.
-\newblock Impact of the {Southern} {Annular} {Mode} on {Southern} {Ocean}
-  circulation and biology.
-\newblock \emph{Geophys. Res. Lett.}, 32\penalty0 (11):\penalty0 L11603, June
-  2005.
-\newblock ISSN 1944-8007.
-\newblock \doi{10.1029/2005GL022727}.
-\newblock URL
-  \url{http://onlinelibrary.wiley.com/doi/10.1029/2005GL022727/abstract}.
-
-\bibitem[Landsch{\"u}tzer et~al.(2017)Landsch{\"u}tzer, Gruber, and
-  Bakker]{Landschuetzer:2017}
-Peter Landsch{\"u}tzer, Nicolas Gruber, and Dorothee C.~E. Bakker.
-\newblock An updated observation-based global monthly gridded sea surface pco2
-  and air-sea co2 flux product from 1982 through 2015 and its monthly
-  climatology (ncei accession 0160558).
-\newblock Version 2.2. NOAA National Centers for Environmental Information.
-  Dataset., July 2017.
-
-\bibitem[Chavez and Messi{\'e}(2009)]{Chavez:2009}
-Francisco~P. Chavez and Monique Messi{\'e}.
-\newblock A comparison of eastern boundary upwelling ecosystems.
-\newblock \emph{Progress in Oceanography}, 83\penalty0 (1):\penalty0 80 -- 96,
-  2009.
-\newblock ISSN 0079-6611.
-\newblock \doi{https://doi.org/10.1016/j.pocean.2009.07.032}.
-\newblock URL
-  \url{http://www.sciencedirect.com/science/article/pii/S0079661109000998}.
-\newblock Eastern Boundary Upwelling Ecosystems: Integrative and Comparative
-  Approaches.
-
-\bibitem[Takahashi et~al.(2009)Takahashi, Sutherland, Wanninkhof, Sweeney,
-  Feely, Chipman, Hales, Friederich, Chavez, Sabine, Watson, Bakker, Schuster,
-  Metzl, Yoshikawa-Inoue, Ishii, Midorikawa, Nojiri, K{\"o}rtzinger, Steinhoff,
-  Hoppema, Olafsson, Arnarson, Tilbrook, Johannessen, Olsen, Bellerby, Wong,
-  Delille, Bates, and de~Baar]{Takahashi:2009}
-Taro Takahashi, Stewart~C. Sutherland, Rik Wanninkhof, Colm Sweeney, Richard~A.
-  Feely, David~W. Chipman, Burke Hales, Gernot Friederich, Francisco Chavez,
-  Christopher Sabine, Andrew Watson, Dorothee C.~E. Bakker, Ute Schuster,
-  Nicolas Metzl, Hisayuki Yoshikawa-Inoue, Masao Ishii, Takashi Midorikawa,
-  Yukihiro Nojiri, Arne K{\"o}rtzinger, Tobias Steinhoff, Mario Hoppema, Jon
-  Olafsson, Thorarinn~S. Arnarson, Bronte Tilbrook, Truls Johannessen, Are
-  Olsen, Richard Bellerby, C.~S. Wong, Bruno Delille, N.~R. Bates, and Hein
-  J.~W. de~Baar.
-\newblock Climatological mean and decadal change in surface ocean {pCO}2, and
-  net sea--air {CO}2 flux over the global oceans.
-\newblock \emph{Deep Sea Research Part II: Topical Studies in Oceanography},
-  56\penalty0 (8):\penalty0 554--577, April 2009.
-\newblock ISSN 0967-0645.
-\newblock \doi{10.1016/j.dsr2.2008.12.009}.
-\newblock URL
-  \url{http://www.sciencedirect.com/science/article/pii/S0967064508004311}.
-
-\bibitem[Bakker et~al.(2016)Bakker, Pfeil, O'Brien, Currie, Jones, Landa,
-  Lauvset, Metzl, Munro, Nakaoka, Olsen, Pierrot, Saito, Smith, Sweeney,
-  Takahashi, Wada, Wanninkhof, Alin, Becker, Bellerby, Borges, Boutin, Bozec,
-  Burger, Cai, Castle, Cosca, DeGrandpre, Donnelly, Eischeid, Feely,
-  Gkritzalis, Gonz{\'a}lez-D{\'a}vila, Goyet, Guillot, Hardman-Mountford,
-  Hauck, Hoppema, Humphreys, Hunt, Ib{\'a}nhez, Ichikawa, Ishii, Juranek,
-  Kitidis, K{\"o}rtzinger, Koffi, Kozyr, Kuwata, Lef{\`e}vre, Lo~Monaco, Manke,
-  Marrec, Mathis, Millero, Monacci, Monteiro, Murata, Newberger, Nojiri,
-  Nonaka, Omar, Ono, Pad{\'\i}n, Rehder, Rutgersson, Sabine, Salisbury,
-  Santana-Casiano, Sasano, Schuster, Sieger, Skjelvan, Steinhoff, Sullivan,
-  Sutherland, Sutton, Tadokoro, Telszewski, Thomas, Tilbrook, Van~Heuven,
-  Vandemark, Wallace, and Woosley]{Bakker:2016}
-Dorothee C~E Bakker, Benjamin Pfeil, Kevin~M O'Brien, Kim~I Currie, Stephen~D
-  Jones, Camilla~S Landa, Siv~K Lauvset, Nicolas Metzl, David~R Munro,
-  Shin-Ichiro Nakaoka, Are Olsen, Denis Pierrot, Shu Saito, Karl Smith, Colm
-  Sweeney, Taro Takahashi, Chisato Wada, Rik Wanninkhof, Simone~R Alin, Meike
-  Becker, Richard G~J Bellerby, Alberto~Vieira Borges, Jacqueline Boutin, Yann
-  Bozec, Eugene Burger, Wei-Jun Cai, Robert~D Castle, Catherine~E Cosca,
-  Michael~D DeGrandpre, Matthew Donnelly, Greg Eischeid, Richard~A Feely,
-  Thanos Gkritzalis, Melchor Gonz{\'a}lez-D{\'a}vila, Catherine Goyet, Antoine
-  Guillot, Nicolas~J Hardman-Mountford, Judith Hauck, Mario Hoppema, Matthew~P
-  Humphreys, Christopher~W Hunt, J~Severino~P Ib{\'a}nhez, Tadafumi Ichikawa,
-  Masao Ishii, Lauren~W Juranek, Vassilis Kitidis, Arne K{\"o}rtzinger,
-  Urbain~K Koffi, Alexander Kozyr, Akira Kuwata, Nathalie Lef{\`e}vre, Claire
-  Lo~Monaco, Ansley Manke, Pierre Marrec, Jeremy~T Mathis, Frank~J Millero,
-  Natalie Monacci, Pedro M~S Monteiro, Akihiko Murata, Timothy Newberger,
-  Yukihiro Nojiri, Isao Nonaka, Abdirahman~M Omar, Tsuneo Ono, Xose~Antonio
-  Pad{\'\i}n, Gregor Rehder, Anna Rutgersson, Christopher~L Sabine, Joe
-  Salisbury, Juana~Magdalena Santana-Casiano, Daisuke Sasano, Ute Schuster,
-  Rainer Sieger, Ingunn Skjelvan, Tobias Steinhoff, Kevin Sullivan, Stewart~C
-  Sutherland, Adrienne Sutton, Kazuaki Tadokoro, Maciej Telszewski, Helmuth
-  Thomas, Bronte Tilbrook, Steven Van~Heuven, Doug Vandemark, Douglas~WR
-  Wallace, and Ryan Woosley.
-\newblock Surface {Ocean} {CO}2 {Atlas} ({SOCAT}) {V}4, 2016.
-\newblock DOI: 10.1594/PANGAEA.866856.
+\bibitem[Kwiatkowski and Orr(2018)]{Kwiatkowski:2018}
+L.~Kwiatkowski and J.~C. Orr.
+\newblock Diverging seasonal extremes for ocean acidification during the
+  twenty-first century.
+\newblock \emph{Nature Climate Change}, 8\penalty0 (2):\penalty0 141--145,
+  2018.
+\newblock \doi{10.1038/s41558-017-0054-0}.
 
 \bibitem[Landsch{\"u}tzer et~al.(2013)Landsch{\"u}tzer, Gruber, Bakker,
   Schuster, Nakaoka, Payne, Sasse, and Zeng]{Landschuetzer:2013}
@@ -244,52 +422,312 @@ P.~Landsch{\"u}tzer, N.~Gruber, D.~C.~E. Bakker, U.~Schuster, S.~Nakaoka, M.~R.
   Payne, T.~P. Sasse, and J.~Zeng.
 \newblock A neural network-based estimate of the seasonal to inter-annual
   variability of the {Atlantic} {Ocean} carbon sink.
-\newblock \emph{Biogeosciences}, 10\penalty0 (11):\penalty0 7793--7815,
-  November 2013.
+\newblock \emph{Biogeosciences}, 10\penalty0 (11):\penalty0 7793--7815, Nov.
+  2013.
 \newblock ISSN 1726-4189.
 \newblock \doi{10.5194/bg-10-7793-2013}.
-\newblock URL \url{https://www.biogeosciences.net/10/7793/2013/}.
 
 \bibitem[Landsch{\"u}tzer et~al.(2016)Landsch{\"u}tzer, Gruber, and
   Bakker]{Landschuetzer:2016}
-Peter Landsch{\"u}tzer, Nicolas Gruber, and Dorothee C.~E. Bakker.
+P.~Landsch{\"u}tzer, N.~Gruber, and D.~C.~E. Bakker.
 \newblock Decadal variations and trends of the global ocean carbon sink.
 \newblock \emph{Global Biogeochemical Cycles}, 30\penalty0 (10):\penalty0
   1396--1417, 2016.
 \newblock ISSN 1944-9224.
 \newblock \doi{10.1002/2015GB005359}.
-\newblock URL \url{http://dx.doi.org/10.1002/2015GB005359}.
-\newblock 2015GB005359.
 
-\bibitem[Fiedler and Mantua(2017)]{Fiedler:2017}
-Paul~C. Fiedler and Nathan~J. Mantua.
-\newblock How are warm and cool years in the {California} {Current} related to
-  {ENSO}?
-\newblock \emph{Journal of Geophysical Research: Oceans}, 122\penalty0
-  (7):\penalty0 5936--5951, July 2017.
-\newblock ISSN 21699275.
-\newblock \doi{10.1002/2017JC013094}.
-\newblock URL \url{http://doi.wiley.com/10.1002/2017JC013094}.
+\bibitem[Landsch{\"u}tzer et~al.(2017)Landsch{\"u}tzer, Gruber, and
+  Bakker]{Landschuetzer:2017}
+P.~Landsch{\"u}tzer, N.~Gruber, and D.~C.~E. Bakker.
+\newblock An updated observation-based global monthly gridded sea surface
+  {pCO2} and air-sea {CO2} flux product from 1982 through 2015 and its monthly
+  climatology (ncei accession 0160558).
+\newblock Version 2.2. NOAA National Centers for Environmental Information.
+  Dataset., July 2017.
+
+\bibitem[Landsch{\"u}tzer et~al.(2018)Landsch{\"u}tzer, Gruber, Bakker,
+  Stemmler, and Six]{Landschuetzer:2018}
+P.~Landsch{\"u}tzer, N.~Gruber, D.~C.~E. Bakker, I.~Stemmler, and K.~D. Six.
+\newblock Strengthening seasonal marine {CO}2 variations due to increasing
+  atmospheric {CO}2.
+\newblock \emph{Nature Climate Change}, Jan. 2018.
+\newblock ISSN 1758-678X, 1758-6798.
+\newblock \doi{10.1038/s41558-017-0057-x}.
+
+\bibitem[Laruelle et~al.(2010)Laruelle, D{\"u}rr, Slomp, and
+  Borges]{Laruelle:2010}
+G.~G. Laruelle, H.~H. D{\"u}rr, C.~P. Slomp, and A.~V. Borges.
+\newblock Evaluation of sinks and sources of {CO}2 in the global coastal ocean
+  using a spatially-explicit typology of estuaries and continental shelves.
+\newblock \emph{Geophysical Research Letters}, 37\penalty0 (15), Aug. 2010.
+\newblock ISSN 00948276.
+\newblock \doi{10.1029/2010GL043691}.
+
+\bibitem[Laruelle et~al.(2014)Laruelle, Lauerwald, Pfeil, and
+  Regnier]{Laruelle:2014}
+G.~G. Laruelle, R.~Lauerwald, B.~Pfeil, and P.~Regnier.
+\newblock Regionalized global budget of the {CO}2 exchange at the air-water
+  interface in continental shelf seas.
+\newblock \emph{Global Biogeochem. Cycles}, 28\penalty0 (11):\penalty0
+  2014GB004832, Nov. 2014.
+\newblock ISSN 1944-9224.
+\newblock \doi{10.1002/2014GB004832}.
+
+\bibitem[Laruelle et~al.(2017)Laruelle, Landsch{\"u}tzer, Gruber, Tison,
+  Delille, and Regnier]{Laruelle:2017}
+G.~G. Laruelle, P.~Landsch{\"u}tzer, N.~Gruber, J.-L. Tison, B.~Delille, and
+  P.~Regnier.
+\newblock Global high-resolution monthly {pCO2} climatology for the coastal
+  ocean derived from neural network interpolation.
+\newblock \emph{Biogeosciences}, 14\penalty0 (19):\penalty0 4545, 2017.
+
+\bibitem[Leinweber et~al.(2009)Leinweber, Gruber, Frenzel, Friederich, and
+  Chavez]{Leinweber:2009}
+A.~Leinweber, N.~Gruber, H.~Frenzel, G.~E. Friederich, and F.~P. Chavez.
+\newblock Diurnal carbon cycling in the surface ocean and lower atmosphere of
+  {Santa} {Monica} {Bay}, {California}.
+\newblock \emph{Geophysical Research Letters}, 36\penalty0 (8), Apr. 2009.
+\newblock ISSN 0094-8276.
+\newblock \doi{10.1029/2008GL037018}.
+
+\bibitem[Lovenduski et~al.(2015)Lovenduski, Long, and Lindsay]{Lovenduski:2015}
+N.~Lovenduski, M.~Long, and K.~Lindsay.
+\newblock Natural variability in the surface ocean carbonate ion concentration.
+\newblock \emph{Biogeosciences}, 12\penalty0 (21):\penalty0 6321--6335, 2015.
+
+\bibitem[Lovenduski and Gruber(2005)]{Lovenduski:2005}
+N.~S. Lovenduski and N.~Gruber.
+\newblock Impact of the {Southern} {Annular} {Mode} on {Southern} {Ocean}
+  circulation and biology.
+\newblock \emph{Geophys. Res. Lett.}, 32\penalty0 (11):\penalty0 L11603, June
+  2005.
+\newblock ISSN 1944-8007.
+\newblock \doi{10.1029/2005GL022727}.
+
+\bibitem[Lovenduski et~al.(2007)Lovenduski, Gruber, Doney, and
+  Lima]{Lovenduski:2007}
+N.~S. Lovenduski, N.~Gruber, S.~C. Doney, and I.~D. Lima.
+\newblock Enhanced {CO}2 outgassing in the {Southern} {Ocean} from a positive
+  phase of the {Southern} {Annular} {Mode}.
+\newblock \emph{Global Biogeochem. Cycles}, 21\penalty0 (2), June 2007.
+\newblock ISSN 1944-9224.
+\newblock \doi{10.1029/2006GB002900}.
+
+\bibitem[Lovenduski et~al.(2016)Lovenduski, McKinley, Fay, Lindsay, and
+  Long]{Lovenduski:2016}
+N.~S. Lovenduski, G.~A. McKinley, A.~R. Fay, K.~Lindsay, and M.~C. Long.
+\newblock Partitioning uncertainty in ocean carbon uptake projections: Internal
+  variability, emission scenario, and model structure.
+\newblock \emph{Global Biogeochemical Cycles}, 30\penalty0 (9):\penalty0
+  1276--1287, 2016.
+
+\bibitem[Lynn and Bograd(2002)]{Lynn:2002}
+R.~Lynn and S.~Bograd.
+\newblock Dynamic evolution of the 1997--1999 {El} {Ni{\~n}o}--{La} {Ni{\~n}a}
+  cycle in the southern {California} {Current} {System}.
+\newblock \emph{Progress in Oceanography}, 54\penalty0 (1-4):\penalty0 59--75,
+  July 2002.
+\newblock ISSN 00796611.
+\newblock \doi{10.1016/S0079-6611(02)00043-5}.
+
+\bibitem[Mantua and Hare(2002)]{Mantua:2002}
+N.~J. Mantua and S.~R. Hare.
+\newblock The {Pacific} {Decadal} {Oscillation}.
+\newblock \emph{Journal of oceanography}, 58\penalty0 (1):\penalty0 35--44,
+  2002.
+
+\bibitem[Mantua et~al.(1997)Mantua, Hare, Zhang, Wallace, and
+  Francis]{Mantua:1997}
+N.~J. Mantua, S.~R. Hare, Y.~Zhang, J.~M. Wallace, and R.~C. Francis.
+\newblock A {Pacific} {Interdecadal} {Climate} {Oscillation} with impacts on
+  salmon production.
+\newblock \emph{Bulletin of the American Meteorological Society}, 78\penalty0
+  (6):\penalty0 1069--1079, June 1997.
+\newblock ISSN 0003-0007.
+\newblock \doi{10.1175/1520-0477(1997)078<1069:APICOW>2.0.CO;2}.
+
+\bibitem[McKinley et~al.(2006)McKinley, Takahashi, Buitenhuis, Chai, Christian,
+  Doney, Jiang, Lindsay, Moore, Le~Quere, et~al.]{McKinley:2006}
+G.~A. McKinley, T.~Takahashi, E.~Buitenhuis, F.~Chai, J.~R. Christian, S.~C.
+  Doney, M.-S. Jiang, K.~Lindsay, J.~K. Moore, C.~Le~Quere, et~al.
+\newblock {North} {Pacific} carbon cycle response to climate variability on
+  seasonal to decadal timescales.
+\newblock \emph{Journal of Geophysical Research: Oceans}, 111\penalty0 (C7),
+  2006.
+
+\bibitem[Mogoll{\'o}n and Calil(2017)]{Mogollon:2017}
+R.~Mogoll{\'o}n and P.~H. Calil.
+\newblock On the effects of {ENSO} on ocean biogeochemistry in the {Northern}
+  {Humboldt} {Current} {System} ({NHCS}): A modeling study.
+\newblock \emph{Journal of Marine Systems}, 172:\penalty0 137--159, 2017.
+
+\bibitem[Montes et~al.(2011)Montes, Schneider, Colas, Blanke, and
+  Echevin]{Montes:2011}
+I.~Montes, W.~Schneider, F.~Colas, B.~Blanke, and V.~Echevin.
+\newblock Subsurface connections in the eastern tropical {Pacific} during {La}
+  {Ni{\~n}a} 1999--2001 and {El} {Ni{\~n}o} 2002--2003.
+\newblock \emph{Journal of Geophysical Research: Oceans}, 116\penalty0 (C12),
+  2011.
+
+\bibitem[Narayan et~al.(2010)Narayan, Paul, Mulitza, and Schulz]{Narayan:2010}
+N.~Narayan, A.~Paul, S.~Mulitza, and M.~Schulz.
+\newblock Trends in coastal upwelling intensity during the late 20th century.
+\newblock \emph{Ocean Science}, 6\penalty0 (3):\penalty0 815, 2010.
+
+\bibitem[Oerder et~al.(2015)Oerder, Colas, Echevin, Codron, Tam, and
+  Belmadani]{Oerder:2015}
+V.~Oerder, F.~Colas, V.~Echevin, F.~Codron, J.~Tam, and A.~Belmadani.
+\newblock {Peru-Chile} upwelling dynamics under climate change.
+\newblock \emph{Journal of Geophysical Research: Oceans}, 120\penalty0
+  (2):\penalty0 1152--1172, 2015.
+
+\bibitem[Pozo~Buil and Di~Lorenzo(2017)]{PozoBuil:2017}
+M.~Pozo~Buil and E.~Di~Lorenzo.
+\newblock Decadal dynamics and predictability of oxygen and subsurface tracers
+  in the {California} {Current} {System}.
+\newblock \emph{Geophysical Research Letters}, 44\penalty0 (9):\penalty0
+  4204--4213, 2017.
+
+\bibitem[Reason et~al.(2006)Reason, Florenchie, Rouault, and
+  Veitch]{Reason:2006}
+C.~Reason, P.~Florenchie, M.~Rouault, and J.~Veitch.
+\newblock {Influences} of large scale climate modes and {Agulhas} system
+  variability on the {BCLME} region.
+\newblock In \emph{Large {Marine} {Ecosystems}}, volume~14, pages 223--238.
+  Elsevier, 2006.
+\newblock ISBN 978-0-444-52759-2.
+\newblock \doi{10.1016/S1570-0461(06)80015-7}.
+
+\bibitem[Rykaczewski and Dunne(2010)]{Ryk:2010}
+R.~R. Rykaczewski and J.~P. Dunne.
+\newblock Enhanced nutrient supply to the {California} {Current} {Ecosystem}
+  with global warming and increased stratification in an {Earth} {System}
+  {Model}.
+\newblock \emph{Geophysical Research Letters}, 37\penalty0 (21), 2010.
+
+\bibitem[Rykaczewski et~al.(2015)Rykaczewski, Dunne, Sydeman,
+  Garc{\'\i}a-Reyes, Black, and Bograd]{Ryk:2015}
+R.~R. Rykaczewski, J.~P. Dunne, W.~J. Sydeman, M.~Garc{\'\i}a-Reyes, B.~A.
+  Black, and S.~J. Bograd.
+\newblock Poleward displacement of coastal upwelling-favorable winds in the
+  ocean's eastern boundary currents through the 21st century.
+\newblock \emph{Geophysical Research Letters}, 42\penalty0 (15):\penalty0
+  6424--6431, 2015.
+
+\bibitem[Ryther(1969)]{Ryther:1969}
+J.~H. Ryther.
+\newblock Photosynthesis and fish production in the sea.
+\newblock \emph{Science}, 166\penalty0 (3901):\penalty0 72--76, 1969.
+
+\bibitem[Santana-Casiano et~al.(2007)Santana-Casiano, Gonz{\'a}lez-D{\'a}vila,
+  Rueda, Llin{\'a}s, and Gonz{\'a}lez-D{\'a}vila]{Santana-Casiano:2007}
+J.~M. Santana-Casiano, M.~Gonz{\'a}lez-D{\'a}vila, M.-J. Rueda, O.~Llin{\'a}s,
+  and E.-F. Gonz{\'a}lez-D{\'a}vila.
+\newblock The interannual variability of oceanic {CO2} parameters in the
+  northeast {Atlantic} subtropical gyre at the {ESTOC} site.
+\newblock \emph{Global Biogeochemical Cycles}, 21\penalty0 (1), 2007.
+
+\bibitem[Small et~al.(2015)Small, Curchitser, Hedstrom, Kauffman, and
+  Large]{Small:2015}
+R.~J. Small, E.~Curchitser, K.~Hedstrom, B.~Kauffman, and W.~G. Large.
+\newblock The {Benguela} upwelling system: {Quantifying} the sensitivity to
+  resolution and coastal wind representation in a global climate model.
+\newblock \emph{Journal of Climate}, 28\penalty0 (23):\penalty0 9409--9432,
+  2015.
+
+\bibitem[Strub et~al.(1998)Strub, Mesias, Montecino, Rutllant, and
+  Marchant]{Strub:1998}
+P.~T. Strub, J.~Mesias, V.~Montecino, J.~Rutllant, and S.~Marchant.
+\newblock Coastal ocean circulation off western {South} {America}.
+\newblock In \emph{The {Sea}}, volume~11. John Wiley, New York, 1998.
+
+\bibitem[Sydeman et~al.(2014)Sydeman, Garc{\'\i}a-Reyes, Schoeman, Rykaczewski,
+  Thompson, Black, and Bograd]{Sydeman:2014}
+W.~Sydeman, M.~Garc{\'\i}a-Reyes, D.~Schoeman, R.~Rykaczewski, S.~Thompson,
+  B.~Black, and S.~Bograd.
+\newblock Climate change and wind intensification in coastal upwelling
+  ecosystems.
+\newblock \emph{Science}, 345\penalty0 (6192):\penalty0 77--80, 2014.
+
+\bibitem[Sydeman et~al.(2013)Sydeman, Santora, Thompson, Marinovic, and
+  Lorenzo]{Sydeman:2013}
+W.~J. Sydeman, J.~A. Santora, S.~A. Thompson, B.~Marinovic, and E.~D. Lorenzo.
+\newblock Increasing variance in {North} {Pacific} climate relates to
+  unprecedented ecosystem variability off {California}.
+\newblock \emph{Global Change Biology}, 19\penalty0 (6):\penalty0 1662--1675,
+  2013.
+
+\bibitem[Takahashi et~al.(2009)Takahashi, Sutherland, Wanninkhof, Sweeney,
+  Feely, Chipman, Hales, Friederich, Chavez, Sabine, Watson, Bakker, Schuster,
+  Metzl, Yoshikawa-Inoue, Ishii, Midorikawa, Nojiri, K{\"o}rtzinger, Steinhoff,
+  Hoppema, Olafsson, Arnarson, Tilbrook, Johannessen, Olsen, Bellerby, Wong,
+  Delille, Bates, and de~Baar]{Takahashi:2009}
+T.~Takahashi, S.~C. Sutherland, R.~Wanninkhof, C.~Sweeney, R.~A. Feely, D.~W.
+  Chipman, B.~Hales, G.~Friederich, F.~Chavez, C.~Sabine, A.~Watson, D.~C.~E.
+  Bakker, U.~Schuster, N.~Metzl, H.~Yoshikawa-Inoue, M.~Ishii, T.~Midorikawa,
+  Y.~Nojiri, A.~K{\"o}rtzinger, T.~Steinhoff, M.~Hoppema, J.~Olafsson, T.~S.
+  Arnarson, B.~Tilbrook, T.~Johannessen, A.~Olsen, R.~Bellerby, C.~S. Wong,
+  B.~Delille, N.~R. Bates, and H.~J.~W. de~Baar.
+\newblock Climatological mean and decadal change in surface ocean {pCO}2, and
+  net sea--air {CO}2 flux over the global oceans.
+\newblock \emph{Deep Sea Research Part II: Topical Studies in Oceanography},
+  56\penalty0 (8):\penalty0 554--577, Apr. 2009.
+\newblock ISSN 0967-0645.
+\newblock \doi{10.1016/j.dsr2.2008.12.009}.
+
+\bibitem[Thompson et~al.(2015)Thompson, Barnes, Deser, Foust, and
+  Phillips]{Thompson:2015}
+D.~W.~J. Thompson, E.~A. Barnes, C.~Deser, W.~E. Foust, and A.~S. Phillips.
+\newblock Quantifying the role of internal climate variability in future
+  climate trends.
+\newblock \emph{Journal of Climate}, 28\penalty0 (16):\penalty0 6443--6456,
+  2015.
+\newblock \doi{10.1175/JCLI-D-14-00830.1}.
+
+\bibitem[Timmermann et~al.(1999)Timmermann, Oberhuber, Bacher, Esch, Latif, and
+  Roeckner]{Timmermann:1999}
+A.~Timmermann, J.~Oberhuber, A.~Bacher, M.~Esch, M.~Latif, and E.~Roeckner.
+\newblock Increased {El} {Ni{\~n}o} frequency in a climate model forced by
+  future greenhouse warming.
+\newblock \emph{Nature}, 398\penalty0 (6729):\penalty0 694, 1999.
+
+\bibitem[Turi et~al.(2014)Turi, Lachkar, and Gruber]{Turi:2014}
+G.~Turi, Z.~Lachkar, and N.~Gruber.
+\newblock Spatiotemporal variability and drivers of {pCO}2 and air--sea {CO}2
+  fluxes in the {California} {Current} {System}: an eddy-resolving modeling
+  study.
+\newblock \emph{Biogeosciences}, 11\penalty0 (3):\penalty0 671--690, Feb. 2014.
+\newblock ISSN 1726-4189.
+\newblock \doi{10.5194/bg-11-671-2014}.
 
 \bibitem[Turi et~al.(2017)Turi, Alexander, Lovenduski, Capotondi, Scott, Stock,
   Dunne, John, and Jacox]{Turi:2017}
-G.~Turi, Michael~A. Alexander, Nicole~S. Lovenduski, Antonietta Capotondi,
-  James~D. Scott, Charles~A. Stock, John~P. Dunne, Jasmin John, and Michael~G.
-  Jacox.
+G.~Turi, M.~A. Alexander, N.~S. Lovenduski, A.~Capotondi, J.~D. Scott, C.~A.
+  Stock, J.~P. Dunne, J.~John, and M.~G. Jacox.
 \newblock Response of {O}2 and {pH} to {ENSO} in the {California} {Current}
   {System} in a high resolution global climate model.
-\newblock \emph{Ocean Sciences Discussion}, August 2017.
+\newblock \emph{Ocean Sciences Discussion}, Aug. 2017.
 
-\bibitem[Frischknecht et~al.(2017)Frischknecht, M{\"u}nnich, and
-  Gruber]{Frischknecht:2017}
-Martin Frischknecht, Matthias M{\"u}nnich, and Nicolas Gruber.
-\newblock Local atmospheric forcing driving an unexpected {California}
-  {Current} {System} response during the 2015--2016 {El} {Ni{\~n}o}.
-\newblock \emph{Geophys. Res. Lett.}, 44\penalty0 (1):\penalty0 2016GL071316,
-  January 2017.
-\newblock ISSN 1944-8007.
-\newblock \doi{10.1002/2016GL071316}.
-\newblock URL
-  \url{http://onlinelibrary.wiley.com/doi/10.1002/2016GL071316/abstract}.
+\bibitem[Wang et~al.(2015)Wang, Gouhier, Menge, and Ganguly]{Wang:2015}
+D.~Wang, T.~C. Gouhier, B.~A. Menge, and A.~R. Ganguly.
+\newblock Intensification and spatial homogenization of coastal upwelling under
+  climate change.
+\newblock \emph{Nature}, 518\penalty0 (7539):\penalty0 390, 2015.
+
+\bibitem[Wanninkhof(2014)]{Wanninkhof:2014}
+R.~Wanninkhof.
+\newblock Relationship between wind speed and gas exchange over the ocean
+  revisited: {Gas} exchange and wind speed over the ocean.
+\newblock \emph{Limnology and Oceanography: Methods}, 12\penalty0 (6):\penalty0
+  351--362, June 2014.
+\newblock ISSN 15415856.
+\newblock \doi{10.4319/lom.2014.12.351}.
+
+\bibitem[Wyrtki(1975)]{Wyrtki:1975}
+K.~Wyrtki.
+\newblock {El} {Ni{\~n}o}---the dynamic response of the equatorial {Pacific}
+  {Ocean} to atmospheric forcing.
+\newblock \emph{Journal of Physical Oceanography}, 5\penalty0 (4):\penalty0
+  572--584, 1975.
 
 \end{thebibliography}
