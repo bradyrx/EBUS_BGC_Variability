@@ -1,7 +1,11 @@
 """
-Creates regional U10 on the ocean grid from TAUX and TAUY, using the conversion function from Nikki's 2007 paper.
+Creates regional U10 on the ocean grid from TAUX and TAUY, using the conversion 
+function from Nikki's 2007 paper.
 
-I'm aware this is embarassingly parallel, but .apply() in xarray doesn't seem to be parallelizing it. Perhaps this is better off a Matlab script with parfor loops. I used .apply() and it seemed ~20min per simulation and wasn't coming out with the right answers. This will do for now.
+I'm aware this is embarassingly parallel, but .apply() in xarray doesn't seem 
+to be parallelizing it. Perhaps this is better off a Matlab script with parfor 
+loops. I used .apply() and it seemed ~20min per simulation and wasn't 
+coming out with the right answers. This will do for now.
 
 INPUT 1: Str for ensemble number.
 INPUT 2: Identifier for upwelling system.

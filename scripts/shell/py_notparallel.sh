@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -A P93300670
-#PBS -N CalCS_PDO
+#PBS -N HumCS_FG_CO2 
 #PBS -l walltime=00:30:00
 #PBS -M riley.brady@colorado.edu
 #PBS -q regular 
@@ -14,13 +14,14 @@
 source activate py36
 
 script=overhead_spatial_correlation.py
-EBU=CalCS
-VARX=PDO
+EBU=HumCS
+VARX=NINO3
+VARY=FG_CO2
 LAG=0
 SMOOTH=0
 
 for ENS in {0..33}
 do
-    python ${script} ${EBU} ${VARX} ${ENS} ${LAG} ${SMOOTH}
+    python ${script} ${EBU} ${VARX} ${VARY} ${ENS} ${LAG} ${SMOOTH}
 done
 wait

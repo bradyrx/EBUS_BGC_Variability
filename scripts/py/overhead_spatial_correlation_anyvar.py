@@ -79,7 +79,7 @@ def main():
         This was a custom EOF procedure, so the NC files are very different 
         from the way Adam Phillips set his up.
         """
-        filepath = '/glade/p/work/rbrady/EBUS_BGC_Variability/NPGO/'
+        filepath = '/glade/work/rbrady/EBUS_BGC_Variability/NPGO/'
         filename = 'NPGO.' + ens_str[ENS] + '.1920-2015.nc'
         ds_x = xr.open_dataset(filepath + filename)
         # Pull out a DA of the principal component time series.
@@ -90,12 +90,12 @@ def main():
         diagnostics output. Need to edit this loading if that's not the
         case.
         """
-        filepath = '/glade/p/work/rbrady/cesmLE_CVDP/processed/'
+        filepath = '/glade/work/rbrady/cesmLE_CVDP/processed/'
         filename = 'cvdp_detrended_BGC.nc'
         ds_x = xr.open_dataset(filepath + filename)
         ds_x = ds_x[VARX.lower()][ENS]
     # Load in the y-variable anomalies.
-    filepath = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' + VARY + '/' +
+    filepath = ('/glade/work/rbrady/EBUS_BGC_Variability/' + VARY + '/' +
                 EBU + '/filtered_output/')
     filename = EBU.lower() + '-' + VARY + '-residuals-chavez-800km.nc'
     ds_y = xr.open_dataset(filepath + filename)
@@ -109,7 +109,7 @@ def main():
                              smooth=SMOOTH) \
                       .unstack('gridpoints')
     print("Finished regional correlations for #" + ens_str[ENS])
-    OUT_DIR = ('/glade/p/work/rbrady/EBUS_BGC_Variability/' +
+    OUT_DIR = ('/glade/work/rbrady/EBUS_BGC_Variability/' +
                'regional_regressions/' + EBU + '/' + VARY + '/' + VARX + '/' +
                'lag' + str(LAG) + '/')
     if not os.path.exists(OUT_DIR):
