@@ -21,7 +21,7 @@ if __name__ == '__main__':
         nb = read(f, 'json')
     remove_outputs(nb)
     base, ext = os.path.splitext(fname)
-    new_ipynb = "%s_removed%s" % (base, ext)
+    new_ipynb = "%s%s" % (base, ext)
     with io.open(new_ipynb, 'w', encoding='utf8') as f:
         write(nb, f, 'json')
     print("wrote %s", new_ipynb)
