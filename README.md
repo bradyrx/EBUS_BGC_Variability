@@ -1,7 +1,7 @@
 # On the role of climate modes in modulating the air-sea CO2 fluxes in Eastern Boundary Upwelling Systems 
 #### Riley X. Brady, Nicole S. Lovenduski, Michael A. Alexander, Michael Jacox, and Nicolas Gruber
 
-This is the repository for code used in my 2018 Biogeosciences study. Notebooks were generally for exploratory analyis and visualization, and might thus be a bit messy, out of order, or not really too functional due to changes in files.
+This is the repository for code used in my 2019 Biogeosciences study. Notebooks were generally for exploratory analyis and visualization, and might thus be a bit messy, out of order, or not really too functional due to changes in files.
 
 Please contact me with any questions about the paper or code in this repository:
 
